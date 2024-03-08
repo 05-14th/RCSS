@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6A821D7C-2429-48C3-B269-08778575F286}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RCSS.My.MyApplication</StartupObject>
+    <RootNamespace>RCSS</RootNamespace>
+    <AssemblyName>RCSS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>RCSS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>RCSS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>RCS-Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.CSharp" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_collectionRecord.Designer.vb">
+      <DependentUpon>frm_collectionRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collectionRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddSettlement.Designer.vb">
+      <DependentUpon>frm_AddSettlement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddSettlement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddCollection.Designer.vb">
+      <DependentUpon>frm_AddCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddCollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddCustomer.Designer.vb">
+      <DependentUpon>frm_AddCustomer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddCustomer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddRemittance.Designer.vb">
+      <DependentUpon>frm_AddRemittance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddRemittance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_arcollectionRecord.Designer.vb">
+      <DependentUpon>frm_arcollectionRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_arcollectionRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_collection.Designer.vb">
+      <DependentUpon>frm_collection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_collection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_customer.Designer.vb">
+      <DependentUpon>frm_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_remApproval.Designer.vb">
+      <DependentUpon>frm_remApproval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_remApproval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_remApproved.Designer.vb">
+      <DependentUpon>frm_remApproved.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_remApproved.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_remDecide.Designer.vb">
+      <DependentUpon>frm_remDecide.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_remDecide.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_remittance.Designer.vb">
+      <DependentUpon>frm_remittance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_remittance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_dashAdmin.Designer.vb">
+      <DependentUpon>frm_dashAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_dashAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.vb">
+      <DependentUpon>frm_Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_remRecord.Designer.vb">
+      <DependentUpon>frm_remRecord.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_remRecord.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_remRevise.Designer.vb">
+      <DependentUpon>frm_remRevise.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_remRevise.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_settlement.Designer.vb">
+      <DependentUpon>frm_settlement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_settlement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_user.Designer.vb">
+      <DependentUpon>frm_user.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_user.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_van.Designer.vb">
+      <DependentUpon>frm_van.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_van.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frm_collectionRecord.resx">
+      <DependentUpon>frm_collectionRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddCollection.resx">
+      <DependentUpon>frm_AddCollection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddCustomer.resx">
+      <DependentUpon>frm_AddCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddRemittance.resx">
+      <DependentUpon>frm_AddRemittance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddSettlement.resx">
+      <DependentUpon>frm_AddSettlement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_arcollectionRecord.resx">
+      <DependentUpon>frm_arcollectionRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_collection.resx">
+      <DependentUpon>frm_collection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_customer.resx">
+      <DependentUpon>frm_customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_remApproval.resx">
+      <DependentUpon>frm_remApproval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_remApproved.resx">
+      <DependentUpon>frm_remApproved.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_remDecide.resx">
+      <DependentUpon>frm_remDecide.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_remittance.resx">
+      <DependentUpon>frm_remittance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_dashAdmin.resx">
+      <DependentUpon>frm_dashAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_remRecord.resx">
+      <DependentUpon>frm_remRecord.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_remRevise.resx">
+      <DependentUpon>frm_remRevise.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_settlement.resx">
+      <DependentUpon>frm_settlement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_user.resx">
+      <DependentUpon>frm_user.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_van.resx">
+      <DependentUpon>frm_van.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\showpass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hidepass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete16%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opendetails24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peso512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesowhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opendetails16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report64white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\files64white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings64white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout64white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics64white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RCS Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RCS Logo 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user16gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passkeygray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passkey16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\printer64.png" />
+    <None Include="Resources\buy-home16.png" />
+    <None Include="Resources\checking16.png" />
+    <None Include="Resources\approved16.png" />
+    <None Include="Resources\revision16.png" />
+    <None Include="Resources\information-buttongray.png" />
+    <None Include="Resources\RCS Logo 3.png" />
+    <None Include="Resources\RCS Icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
