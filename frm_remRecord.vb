@@ -67,4 +67,13 @@ Public Class frm_remRecord
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
     End Sub
+
+    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        frm_rptRemRecord.ShowDialog()
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class

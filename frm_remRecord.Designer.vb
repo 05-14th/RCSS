@@ -43,7 +43,6 @@ Partial Class frm_remRecord
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_save = New System.Windows.Forms.Button()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,6 +56,7 @@ Partial Class frm_remRecord
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.btn_print = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,7 +66,7 @@ Partial Class frm_remRecord
         '
         Me.Panel2.Controls.Add(Me.DateTimePicker1)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.btn_save)
+        Me.Panel2.Controls.Add(Me.btn_print)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 35)
         Me.Panel2.Name = "Panel2"
@@ -78,7 +78,7 @@ Partial Class frm_remRecord
         Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePicker1.CustomFormat = "MM/dd/yyyy"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(55, 5)
         Me.DateTimePicker1.Name = "DateTimePicker1"
@@ -141,25 +141,6 @@ Partial Class frm_remRecord
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1024, 35)
         Me.Panel1.TabIndex = 79
-        '
-        'btn_save
-        '
-        Me.btn_save.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_save.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.btn_save.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_save.FlatAppearance.BorderSize = 0
-        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_save.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_save.ForeColor = System.Drawing.Color.White
-        Me.btn_save.Image = Global.RCSS.My.Resources.Resources.printer
-        Me.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_save.Location = New System.Drawing.Point(949, 5)
-        Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(69, 27)
-        Me.btn_save.TabIndex = 184
-        Me.btn_save.Text = "PRINT"
-        Me.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_save.UseVisualStyleBackColor = False
         '
         'Column11
         '
@@ -320,6 +301,25 @@ Partial Class frm_remRecord
         Me.DataGridView2.Size = New System.Drawing.Size(1024, 443)
         Me.DataGridView2.TabIndex = 83
         '
+        'btn_print
+        '
+        Me.btn_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_print.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btn_print.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_print.FlatAppearance.BorderSize = 0
+        Me.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_print.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_print.ForeColor = System.Drawing.Color.White
+        Me.btn_print.Image = Global.RCSS.My.Resources.Resources.printer
+        Me.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_print.Location = New System.Drawing.Point(949, 5)
+        Me.btn_print.Name = "btn_print"
+        Me.btn_print.Size = New System.Drawing.Size(69, 27)
+        Me.btn_print.TabIndex = 184
+        Me.btn_print.Text = "PRINT"
+        Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_print.UseVisualStyleBackColor = False
+        '
         'frm_remRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,7 +342,7 @@ Partial Class frm_remRecord
 
     End Sub
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents btn_save As Button
+    Friend WithEvents btn_print As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents lbl_addRemittance As Label
     Friend WithEvents lbl_close As Label

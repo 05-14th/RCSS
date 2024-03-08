@@ -6,6 +6,7 @@ Module Module1
     Public dr As MySqlDataReader
     Public dt As New DataTable
     Public da As MySqlDataAdapter
+    Public ds As DataSet
     Function ConnectToDB() As Boolean
         Try
             With cn

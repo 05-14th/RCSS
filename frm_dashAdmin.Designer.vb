@@ -26,8 +26,23 @@ Partial Class frm_dashAdmin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_dashAdmin))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SETTLEMENTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REPORTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REMITTANCERECORDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ARCollectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ARMonitoringSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ColletionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SETTINGSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.USERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VANROUTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CUSTOMERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LOGOUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl_minimize = New System.Windows.Forms.Label()
@@ -49,22 +64,8 @@ Partial Class frm_dashAdmin
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.btn_revision = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SETTLEMENTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REPORTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REMITTANCERECORDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ARCollectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ARMonitoringSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ColletionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SETTINGSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.USERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VANROUTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CUSTOMERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LOGOUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -74,7 +75,6 @@ Partial Class frm_dashAdmin
         Me.Panel7.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -103,6 +103,16 @@ Partial Class frm_dashAdmin
         Me.Label1.Text = "RCSS"
         Me.Label1.Visible = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
+        Me.PictureBox1.Location = New System.Drawing.Point(18, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(58, 52)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 30
+        Me.PictureBox1.TabStop = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
@@ -124,6 +134,102 @@ Partial Class frm_dashAdmin
         Me.MenuStrip1.Size = New System.Drawing.Size(441, 75)
         Me.MenuStrip1.TabIndex = 27
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'MENUToolStripMenuItem
+        '
+        Me.MENUToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCEToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.SETTLEMENTToolStripMenuItem})
+        Me.MENUToolStripMenuItem.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MENUToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.MENUToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.files64white
+        Me.MENUToolStripMenuItem.Name = "MENUToolStripMenuItem"
+        Me.MENUToolStripMenuItem.Size = New System.Drawing.Size(85, 71)
+        Me.MENUToolStripMenuItem.Text = "     &FILE     "
+        '
+        'REMITTANCEToolStripMenuItem
+        '
+        Me.REMITTANCEToolStripMenuItem.Name = "REMITTANCEToolStripMenuItem"
+        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.REMITTANCEToolStripMenuItem.Text = "&REMITTANCE"
+        '
+        'COLLECTIONToolStripMenuItem
+        '
+        Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
+        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.COLLECTIONToolStripMenuItem.Text = "&COLLECTION"
+        '
+        'SETTLEMENTToolStripMenuItem
+        '
+        Me.SETTLEMENTToolStripMenuItem.Name = "SETTLEMENTToolStripMenuItem"
+        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.SETTLEMENTToolStripMenuItem.Text = "&SETTLEMENT"
+        '
+        'REPORTSToolStripMenuItem
+        '
+        Me.REPORTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCERECORDToolStripMenuItem, Me.ARCollectionToolStripMenuItem, Me.ARMonitoringSummaryToolStripMenuItem, Me.ColletionsToolStripMenuItem})
+        Me.REPORTSToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.REPORTSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.analytics64white
+        Me.REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
+        Me.REPORTSToolStripMenuItem.Size = New System.Drawing.Size(111, 71)
+        Me.REPORTSToolStripMenuItem.Text = "     &REPORTS     "
+        '
+        'REMITTANCERECORDToolStripMenuItem
+        '
+        Me.REMITTANCERECORDToolStripMenuItem.Name = "REMITTANCERECORDToolStripMenuItem"
+        Me.REMITTANCERECORDToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.REMITTANCERECORDToolStripMenuItem.Text = "REMITTANCE RECORD"
+        '
+        'ARCollectionToolStripMenuItem
+        '
+        Me.ARCollectionToolStripMenuItem.Name = "ARCollectionToolStripMenuItem"
+        Me.ARCollectionToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ARCollectionToolStripMenuItem.Text = "AR COLLECTION"
+        '
+        'ARMonitoringSummaryToolStripMenuItem
+        '
+        Me.ARMonitoringSummaryToolStripMenuItem.Name = "ARMonitoringSummaryToolStripMenuItem"
+        Me.ARMonitoringSummaryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ARMonitoringSummaryToolStripMenuItem.Text = "AR MONITORING SUMMARY"
+        '
+        'ColletionsToolStripMenuItem
+        '
+        Me.ColletionsToolStripMenuItem.Name = "ColletionsToolStripMenuItem"
+        Me.ColletionsToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ColletionsToolStripMenuItem.Text = "COLLECTION"
+        '
+        'SETTINGSToolStripMenuItem
+        '
+        Me.SETTINGSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.USERToolStripMenuItem, Me.VANROUTEToolStripMenuItem, Me.CUSTOMERToolStripMenuItem})
+        Me.SETTINGSToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.SETTINGSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.settings64white
+        Me.SETTINGSToolStripMenuItem.Name = "SETTINGSToolStripMenuItem"
+        Me.SETTINGSToolStripMenuItem.Size = New System.Drawing.Size(117, 71)
+        Me.SETTINGSToolStripMenuItem.Text = "      &SETTINGS     "
+        '
+        'USERToolStripMenuItem
+        '
+        Me.USERToolStripMenuItem.Name = "USERToolStripMenuItem"
+        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.USERToolStripMenuItem.Text = "USER"
+        '
+        'VANROUTEToolStripMenuItem
+        '
+        Me.VANROUTEToolStripMenuItem.Name = "VANROUTEToolStripMenuItem"
+        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.VANROUTEToolStripMenuItem.Text = "VAN / ROUTE"
+        '
+        'CUSTOMERToolStripMenuItem
+        '
+        Me.CUSTOMERToolStripMenuItem.Name = "CUSTOMERToolStripMenuItem"
+        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.CUSTOMERToolStripMenuItem.Text = "CUSTOMER"
+        '
+        'LOGOUTToolStripMenuItem
+        '
+        Me.LOGOUTToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.LOGOUTToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.logout64white
+        Me.LOGOUTToolStripMenuItem.Name = "LOGOUTToolStripMenuItem"
+        Me.LOGOUTToolStripMenuItem.Size = New System.Drawing.Size(108, 71)
+        Me.LOGOUTToolStripMenuItem.Text = "     LOG&OUT     "
         '
         'lblName
         '
@@ -212,6 +318,7 @@ Partial Class frm_dashAdmin
         Me.lbl_user.TabIndex = 29
         Me.lbl_user.Text = "Username"
         Me.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lbl_user.Visible = False
         '
         'lbl_userID
         '
@@ -225,6 +332,7 @@ Partial Class frm_dashAdmin
         Me.lbl_userID.TabIndex = 28
         Me.lbl_userID.Text = "User ID"
         Me.lbl_userID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lbl_userID.Visible = False
         '
         'lbl_date
         '
@@ -371,112 +479,6 @@ Partial Class frm_dashAdmin
         'Timer1
         '
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
-        Me.PictureBox1.Location = New System.Drawing.Point(18, 11)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(58, 52)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
-        '
-        'MENUToolStripMenuItem
-        '
-        Me.MENUToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCEToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.SETTLEMENTToolStripMenuItem})
-        Me.MENUToolStripMenuItem.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MENUToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.MENUToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.files64white
-        Me.MENUToolStripMenuItem.Name = "MENUToolStripMenuItem"
-        Me.MENUToolStripMenuItem.Size = New System.Drawing.Size(85, 71)
-        Me.MENUToolStripMenuItem.Text = "     &FILE     "
-        '
-        'REMITTANCEToolStripMenuItem
-        '
-        Me.REMITTANCEToolStripMenuItem.Name = "REMITTANCEToolStripMenuItem"
-        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.REMITTANCEToolStripMenuItem.Text = "&REMITTANCE"
-        '
-        'COLLECTIONToolStripMenuItem
-        '
-        Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
-        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.COLLECTIONToolStripMenuItem.Text = "&COLLECTION"
-        '
-        'SETTLEMENTToolStripMenuItem
-        '
-        Me.SETTLEMENTToolStripMenuItem.Name = "SETTLEMENTToolStripMenuItem"
-        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.SETTLEMENTToolStripMenuItem.Text = "&SETTLEMENT"
-        '
-        'REPORTSToolStripMenuItem
-        '
-        Me.REPORTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCERECORDToolStripMenuItem, Me.ARCollectionToolStripMenuItem, Me.ARMonitoringSummaryToolStripMenuItem, Me.ColletionsToolStripMenuItem})
-        Me.REPORTSToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.REPORTSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.analytics64white
-        Me.REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
-        Me.REPORTSToolStripMenuItem.Size = New System.Drawing.Size(111, 71)
-        Me.REPORTSToolStripMenuItem.Text = "     &REPORTS     "
-        '
-        'REMITTANCERECORDToolStripMenuItem
-        '
-        Me.REMITTANCERECORDToolStripMenuItem.Name = "REMITTANCERECORDToolStripMenuItem"
-        Me.REMITTANCERECORDToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.REMITTANCERECORDToolStripMenuItem.Text = "REMITTANCE RECORD"
-        '
-        'ARCollectionToolStripMenuItem
-        '
-        Me.ARCollectionToolStripMenuItem.Name = "ARCollectionToolStripMenuItem"
-        Me.ARCollectionToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ARCollectionToolStripMenuItem.Text = "AR COLLECTION"
-        '
-        'ARMonitoringSummaryToolStripMenuItem
-        '
-        Me.ARMonitoringSummaryToolStripMenuItem.Name = "ARMonitoringSummaryToolStripMenuItem"
-        Me.ARMonitoringSummaryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ARMonitoringSummaryToolStripMenuItem.Text = "AR MONITORING SUMMARY"
-        '
-        'ColletionsToolStripMenuItem
-        '
-        Me.ColletionsToolStripMenuItem.Name = "ColletionsToolStripMenuItem"
-        Me.ColletionsToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ColletionsToolStripMenuItem.Text = "COLLECTION"
-        '
-        'SETTINGSToolStripMenuItem
-        '
-        Me.SETTINGSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.USERToolStripMenuItem, Me.VANROUTEToolStripMenuItem, Me.CUSTOMERToolStripMenuItem})
-        Me.SETTINGSToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.SETTINGSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.settings64white
-        Me.SETTINGSToolStripMenuItem.Name = "SETTINGSToolStripMenuItem"
-        Me.SETTINGSToolStripMenuItem.Size = New System.Drawing.Size(117, 71)
-        Me.SETTINGSToolStripMenuItem.Text = "      &SETTINGS     "
-        '
-        'USERToolStripMenuItem
-        '
-        Me.USERToolStripMenuItem.Name = "USERToolStripMenuItem"
-        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.USERToolStripMenuItem.Text = "USER"
-        '
-        'VANROUTEToolStripMenuItem
-        '
-        Me.VANROUTEToolStripMenuItem.Name = "VANROUTEToolStripMenuItem"
-        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.VANROUTEToolStripMenuItem.Text = "VAN / ROUTE"
-        '
-        'CUSTOMERToolStripMenuItem
-        '
-        Me.CUSTOMERToolStripMenuItem.Name = "CUSTOMERToolStripMenuItem"
-        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.CUSTOMERToolStripMenuItem.Text = "CUSTOMER"
-        '
-        'LOGOUTToolStripMenuItem
-        '
-        Me.LOGOUTToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.LOGOUTToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.logout64white
-        Me.LOGOUTToolStripMenuItem.Name = "LOGOUTToolStripMenuItem"
-        Me.LOGOUTToolStripMenuItem.Size = New System.Drawing.Size(108, 71)
-        Me.LOGOUTToolStripMenuItem.Text = "     LOG&OUT     "
-        '
         'frm_dashAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -498,6 +500,7 @@ Partial Class frm_dashAdmin
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -509,7 +512,6 @@ Partial Class frm_dashAdmin
         Me.Panel7.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
