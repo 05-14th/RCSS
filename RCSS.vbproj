@@ -118,6 +118,12 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frm_arMonitoringSummary.Designer.vb">
+      <DependentUpon>frm_arMonitoringSummary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_arMonitoringSummary.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_collectionRecord.Designer.vb">
       <DependentUpon>frm_collectionRecord.vb</DependentUpon>
     </Compile>

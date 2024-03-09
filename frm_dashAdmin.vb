@@ -173,11 +173,21 @@ Public Class frm_dashAdmin
     End Sub
 
     Private Sub ARCollectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ARCollectionToolStripMenuItem.Click
-
+        With frm_arcollectionRecord
+            .TopLevel = False
+            Panel5.Controls.Add(frm_arcollectionRecord)
+            .BringToFront()
+            .Show()
+        End With
     End Sub
 
     Private Sub ARMonitoringSummaryToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ARMonitoringSummaryToolStripMenuItem.Click
-
+        With frm_arMonitoringSummary
+            .TopLevel = False
+            Panel5.Controls.Add(frm_arMonitoringSummary)
+            .BringToFront()
+            .Show()
+        End With
     End Sub
 
     Private Sub ColletionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ColletionsToolStripMenuItem.Click
