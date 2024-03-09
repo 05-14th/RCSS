@@ -6,14 +6,7 @@ Public Class frm_rptRemRecord
     End Sub
     Sub Loadrecord()
         Try
-            dt.Clear()
-            cn.Open()
-            da.SelectCommand = New MySqlCommand("SELECT rmt_vanno, rmt_custodian, remDB_cash FROM rcss_remittance, rcss_rembd", cn)
-            da.Fill(ds, "DataTable1")
 
-            Dim rpt As New rpt_RemRecord
-            rpt.Load(Application.StartupPath & "\Reports\rpt_RemRecord.rpt")
-            rpt.SetDataSource(ds.Tables("DataTable1"))
 
 
             cn.Close()
