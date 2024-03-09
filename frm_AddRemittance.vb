@@ -80,10 +80,13 @@ Public Class frm_AddRemittance
                     'FOR REMITTANCE DETAILS'
                     Try
                     cn.Open()
-                        cm = New MySqlCommand("INSERT INTO rcss_remittance (rmt_transid, rmt_date, rmt_time, rmt_vanno, rmt_salesman, rmt_custodian, rmt_driver, rmt_helper, rmt_refsum, rmt_remsum, rmt_remarks, rmt_status) values(@rmt_transid, @rmt_date, @rmt_time, @rmt_vanno, @rmt_salesman, @rmt_custodian, @rmt_driver, @rmt_helper, @rmt_refsum, @rmt_remsum, @rmt_remarks, @rmt_status)", cn)
+                        cm = New MySqlCommand("INSERT INTO rcss_remittance (rmt_transid, rmt_date, rmt_month, rmt_day, rmt_year, rmt_time, rmt_vanno, rmt_salesman, rmt_custodian, rmt_driver, rmt_helper, rmt_refsum, rmt_remsum, rmt_remarks, rmt_status) values(@rmt_transid, @rmt_date, @rmt_month, @rmt_day, @rmt_year, @rmt_time, @rmt_vanno, @rmt_salesman, @rmt_custodian, @rmt_driver, @rmt_helper, @rmt_refsum, @rmt_remsum, @rmt_remarks, @rmt_status)", cn)
 
                         cm.Parameters.AddWithValue("@rmt_transid", tb_transID.Text)
                         cm.Parameters.AddWithValue("@rmt_date", DateTimePicker1.Text)
+                        cm.Parameters.AddWithValue("@rmt_month", dtp_month.Text)
+                        cm.Parameters.AddWithValue("@rmt_day", dtp_day.Text)
+                        cm.Parameters.AddWithValue("@rmt_year", dtp_year.Text)
                         cm.Parameters.AddWithValue("@rmt_time", frm_dashAdmin.lbl_time.Text)
                         cm.Parameters.AddWithValue("@rmt_vanno", tb_vanchoice.Text)
                         cm.Parameters.AddWithValue("@rmt_salesman", tb_salesman.Text)
@@ -1449,5 +1452,11 @@ Public Class frm_AddRemittance
 
     Private Sub tb_refamount_TextChanged(sender As Object, e As EventArgs) Handles tb_refamount.TextChanged
 
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        dtp_month.Text = DateTimePicker1.Value.ToString("MMMM")
+        dtp_day.Text = DateTimePicker1.Value.Day
+        dtp_year.Text = DateTimePicker1.Value.Year
     End Sub
 End Class

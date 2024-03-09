@@ -153,16 +153,16 @@ Partial Class frm_AddRemittance
         Me.Label43 = New System.Windows.Forms.Label()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.tb_ARcustomer = New System.Windows.Forms.TextBox()
-        Me.AR_close = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.AR_close = New System.Windows.Forms.Label()
+        Me.tb_ARcustomer = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DGV2colRemove = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV2colRemove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.tb_ARsino = New System.Windows.Forms.TextBox()
         Me.tb_ARrefnum = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -175,6 +175,9 @@ Partial Class frm_AddRemittance
         Me.btn_addAR = New System.Windows.Forms.Button()
         Me.cb_customers = New System.Windows.Forms.ComboBox()
         Me.Panel_AR = New System.Windows.Forms.Panel()
+        Me.dtp_month = New System.Windows.Forms.Label()
+        Me.dtp_day = New System.Windows.Forms.Label()
+        Me.dtp_year = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -197,6 +200,9 @@ Partial Class frm_AddRemittance
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.dtp_year)
+        Me.Panel1.Controls.Add(Me.dtp_day)
+        Me.Panel1.Controls.Add(Me.dtp_month)
         Me.Panel1.Controls.Add(Me.lbl_addRemittance)
         Me.Panel1.Controls.Add(Me.lbl_close)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -1630,16 +1636,16 @@ Partial Class frm_AddRemittance
         Me.Panel3.Size = New System.Drawing.Size(1006, 35)
         Me.Panel3.TabIndex = 69
         '
-        'tb_ARcustomer
+        'Label21
         '
-        Me.tb_ARcustomer.BackColor = System.Drawing.Color.White
-        Me.tb_ARcustomer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.tb_ARcustomer.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_ARcustomer.Location = New System.Drawing.Point(662, 4)
-        Me.tb_ARcustomer.Name = "tb_ARcustomer"
-        Me.tb_ARcustomer.Size = New System.Drawing.Size(252, 27)
-        Me.tb_ARcustomer.TabIndex = 74
-        Me.tb_ARcustomer.Visible = False
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Location = New System.Drawing.Point(11, 7)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(87, 20)
+        Me.Label21.TabIndex = 72
+        Me.Label21.Text = "AR DETAILS"
         '
         'AR_close
         '
@@ -1655,16 +1661,16 @@ Partial Class frm_AddRemittance
         Me.AR_close.TabIndex = 23
         Me.AR_close.Text = "X"
         '
-        'Label21
+        'tb_ARcustomer
         '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(11, 7)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(87, 20)
-        Me.Label21.TabIndex = 72
-        Me.Label21.Text = "AR DETAILS"
+        Me.tb_ARcustomer.BackColor = System.Drawing.Color.White
+        Me.tb_ARcustomer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tb_ARcustomer.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_ARcustomer.Location = New System.Drawing.Point(662, 4)
+        Me.tb_ARcustomer.Name = "tb_ARcustomer"
+        Me.tb_ARcustomer.Size = New System.Drawing.Size(252, 27)
+        Me.tb_ARcustomer.TabIndex = 74
+        Me.tb_ARcustomer.Visible = False
         '
         'DataGridView2
         '
@@ -1702,14 +1708,30 @@ Partial Class frm_AddRemittance
         Me.DataGridView2.Size = New System.Drawing.Size(985, 295)
         Me.DataGridView2.TabIndex = 70
         '
-        'DGV2colRemove
+        'Column1
         '
-        Me.DGV2colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DGV2colRemove.HeaderText = ""
-        Me.DGV2colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
-        Me.DGV2colRemove.Name = "DGV2colRemove"
-        Me.DGV2colRemove.ReadOnly = True
-        Me.DGV2colRemove.Width = 5
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "Reference #"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 111
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.FillWeight = 120.0!
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Sales Invoice #"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 150
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "Customer"
+        Me.Column3.Name = "Column3"
         '
         'Column4
         '
@@ -1722,30 +1744,14 @@ Partial Class frm_AddRemittance
         Me.Column4.Name = "Column4"
         Me.Column4.Width = 85
         '
-        'Column3
+        'DGV2colRemove
         '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "Customer"
-        Me.Column3.Name = "Column3"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Date"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.FillWeight = 120.0!
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Sales Invoice #"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 150
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "Reference #"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 111
+        Me.DGV2colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DGV2colRemove.HeaderText = ""
+        Me.DGV2colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
+        Me.DGV2colRemove.Name = "DGV2colRemove"
+        Me.DGV2colRemove.ReadOnly = True
+        Me.DGV2colRemove.Width = 5
         '
         'tb_ARsino
         '
@@ -1889,6 +1895,39 @@ Partial Class frm_AddRemittance
         Me.Panel_AR.TabIndex = 96
         Me.Panel_AR.Visible = False
         '
+        'dtp_month
+        '
+        Me.dtp_month.AutoSize = True
+        Me.dtp_month.ForeColor = System.Drawing.Color.White
+        Me.dtp_month.Location = New System.Drawing.Point(181, 11)
+        Me.dtp_month.Name = "dtp_month"
+        Me.dtp_month.Size = New System.Drawing.Size(37, 13)
+        Me.dtp_month.TabIndex = 73
+        Me.dtp_month.Text = "Month"
+        Me.dtp_month.Visible = False
+        '
+        'dtp_day
+        '
+        Me.dtp_day.AutoSize = True
+        Me.dtp_day.ForeColor = System.Drawing.Color.White
+        Me.dtp_day.Location = New System.Drawing.Point(291, 11)
+        Me.dtp_day.Name = "dtp_day"
+        Me.dtp_day.Size = New System.Drawing.Size(26, 13)
+        Me.dtp_day.TabIndex = 74
+        Me.dtp_day.Text = "Day"
+        Me.dtp_day.Visible = False
+        '
+        'dtp_year
+        '
+        Me.dtp_year.AutoSize = True
+        Me.dtp_year.ForeColor = System.Drawing.Color.White
+        Me.dtp_year.Location = New System.Drawing.Point(392, 12)
+        Me.dtp_year.Name = "dtp_year"
+        Me.dtp_year.Size = New System.Drawing.Size(29, 13)
+        Me.dtp_year.TabIndex = 75
+        Me.dtp_year.Text = "Year"
+        Me.dtp_year.Visible = False
+        '
         'frm_AddRemittance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1908,7 +1947,7 @@ Partial Class frm_AddRemittance
         Me.Controls.Add(Me.Panel_AR)
         Me.Controls.Add(Me.Panel_Online)
         Me.Controls.Add(Me.Panel_Check)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_AddRemittance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
@@ -2084,4 +2123,7 @@ Partial Class frm_AddRemittance
     Friend WithEvents btn_addAR As Button
     Friend WithEvents cb_customers As ComboBox
     Friend WithEvents Panel_AR As Panel
+    Friend WithEvents dtp_year As Label
+    Friend WithEvents dtp_day As Label
+    Friend WithEvents dtp_month As Label
 End Class

@@ -135,7 +135,14 @@ Public Class frm_remRecord
     End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
-        frm_rptRemRecord.ShowDialog()
+        ' frm_rptRemRecord.ShowDialog()
+
+        With frm_rptRemRecord
+            .TopLevel = False
+            frm_dashAdmin.Panel5.Controls.Add(frm_rptRemRecord)
+            .BringToFront()
+            .Show()
+        End With
 
     End Sub
 
@@ -155,5 +162,9 @@ Public Class frm_remRecord
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         Loadrecord()
         DataGridView2.BringToFront()
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
     End Sub
 End Class
