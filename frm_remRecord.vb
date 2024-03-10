@@ -7,16 +7,32 @@ Public Class frm_remRecord
     Private selectedMonth As String
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
-
-    End Sub
-
-    Sub GetMonthlyRecord()
         Try
-            GetYearlyRecord()
-            CountAndCalculate("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = @TargetYear", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = @TargetYear", selectedMonth)
+            Dim targetYear As Integer = ComboBox2.Text
             DataGridView2.Rows.Clear()
             cn.Open()
             cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & ComboBox2.Text & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+
+    Sub GetMonthlyRecord()
+        CountAndCalculateMonth("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = @TargetMonth", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = @TargetMonth", selectedMonth)
+        Try
+            Dim targetMonth As String = ComboBox2.Text
+            DataGridView2.Rows.Clear()
+            cn.Open()
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & targetMonth & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
@@ -102,10 +118,11 @@ Public Class frm_remRecord
         End Try
     End Sub
 
-    Sub CountAndCalculateMonth(countQuery As String, sumQuery As String, Optional ByVal monthSelected As String = "January")
+    Sub CountAndCalculateMonth(countQuery As String, sumQuery As String, Optional monthSelected As String = "January")
         Try
-
+            Console.WriteLine("1")
             Dim targetMonth As String = monthSelected
+            Console.WriteLine("2-")
 
             cn.Open()
             Dim query As String = countQuery
