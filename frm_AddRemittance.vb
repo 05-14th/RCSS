@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Globalization
 Public Class frm_AddRemittance
     Dim table As New DataTable("DataGridView1")
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
@@ -80,7 +81,7 @@ Public Class frm_AddRemittance
                     'FOR REMITTANCE DETAILS'
                     Try
                     cn.Open()
-                        cm = New MySqlCommand("INSERT INTO rcss_remittance (rmt_transid, rmt_date, rmt_month, rmt_day, rmt_year, rmt_time, rmt_vanno, rmt_salesman, rmt_custodian, rmt_driver, rmt_helper, rmt_refsum, rmt_remsum, rmt_remarks, rmt_status) values(@rmt_transid, @rmt_date, @rmt_month, @rmt_day, @rmt_year, @rmt_time, @rmt_vanno, @rmt_salesman, @rmt_custodian, @rmt_driver, @rmt_helper, @rmt_refsum, @rmt_remsum, @rmt_remarks, @rmt_status)", cn)
+                        cm = New MySqlCommand("INSERT INTO rcss_remittance (rmt_transid, rmt_date, rmt_month, rmt_day, rmt_year, rmt_time, rmt_vanno, rmt_salesman, rmt_custodian, rmt_driver, rmt_helper, rmt_refsum, rmt_remsum, rmt_remarks, rmt_status, rmt_week) values(@rmt_transid, @rmt_date, @rmt_month, @rmt_day, @rmt_year, @rmt_time, @rmt_vanno, @rmt_salesman, @rmt_custodian, @rmt_driver, @rmt_helper, @rmt_refsum, @rmt_remsum, @rmt_remarks, @rmt_status, @rmt_week)", cn)
 
                         cm.Parameters.AddWithValue("@rmt_transid", tb_transID.Text)
                         cm.Parameters.AddWithValue("@rmt_date", DateTimePicker1.Text)
@@ -97,6 +98,7 @@ Public Class frm_AddRemittance
                         cm.Parameters.AddWithValue("@rmt_remsum", CDec(tb_total.Text))
                         cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text)
                         cm.Parameters.AddWithValue("@rmt_status", tb_status.Text)
+                        cm.Parameters.AddWithValue("@rmt_week", CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(DateTimePicker1.Value, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday))
                         cm.ExecuteNonQuery()
                         cn.Close()
 
@@ -296,7 +298,7 @@ Public Class frm_AddRemittance
                     'FOR REMITTANCE DETAILS
                     Try
                         cn.Open()
-                        cm = New MySqlCommand("UPDATE rcss_remittance SET rmt_date=@rmt_date, rmt_time=@rmt_time, rmt_vanno=@rmt_vanno, rmt_salesman=@rmt_salesman, rmt_custodian=@rmt_custodian, rmt_driver=@rmt_driver, rmt_helper=@rmt_helper, rmt_refsum=@rmt_refsum, rmt_remsum=@rmt_remsum, rmt_remarks=@rmt_remarks, rmt_status=@rmt_status WHERE rmt_transid=@rmt_transid", cn)
+                        cm = New MySqlCommand("UPDATE rcss_remittance SET rmt_date=@rmt_date, rmt_time=@rmt_time, rmt_vanno=@rmt_vanno, rmt_salesman=@rmt_salesman, rmt_custodian=@rmt_custodian, rmt_driver=@rmt_driver, rmt_helper=@rmt_helper, rmt_refsum=@rmt_refsum, rmt_remsum=@rmt_remsum, rmt_remarks=@rmt_remarks, rmt_status=@rmt_status, rmt_day=@rmt_day, rmt_week=@rmt_week, rmt_month=@rmt_month, rmt_year=@rmt_year WHERE rmt_transid=@rmt_transid", cn)
 
 
                         cm.Parameters.AddWithValue("@rmt_date", DateTimePicker1.Text)
@@ -311,6 +313,10 @@ Public Class frm_AddRemittance
                         cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text)
                         cm.Parameters.AddWithValue("@rmt_status", tb_status.Text)
                         cm.Parameters.AddWithValue("@rmt_transid", tb_edittransID.Text)
+                        cm.Parameters.AddWithValue("@rmt_year", dtp_year.Text)
+                        cm.Parameters.AddWithValue("@rmt_month", dtp_month.Text)
+                        cm.Parameters.AddWithValue("@rmt_day", dtp_day.Text)
+                        cm.Parameters.AddWithValue("@rmt_week", CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(DateTimePicker1.Value, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday))
                         cm.ExecuteNonQuery()
                         cn.Close()
 
@@ -1458,5 +1464,9 @@ Public Class frm_AddRemittance
         dtp_month.Text = DateTimePicker1.Value.ToString("MMMM")
         dtp_day.Text = DateTimePicker1.Value.Day
         dtp_year.Text = DateTimePicker1.Value.Year
+    End Sub
+
+    Private Sub dtp_month_Click(sender As Object, e As EventArgs) Handles dtp_month.Click
+
     End Sub
 End Class

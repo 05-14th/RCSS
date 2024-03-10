@@ -2,22 +2,62 @@
 Imports System.Globalization
 
 Public Class frm_remRecord
+
+    Private selectedYear As String
+    Private selectedMonth As String
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
-
-    End Sub
-
-    Sub GetYearlyRecord()
         Try
-            Dim selectedDate As DateTime = DateTimePicker1.Value
-            Dim targetYear As Integer = selectedDate.Year
-            DataGridViewYear.Rows.Clear()
+            Dim targetYear As Integer = ComboBox2.Text
+            DataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand($"SELECT * FROM rcss_rembd WHERE remDB_date LIKE '%{targetYear}%'", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & ComboBox2.Text & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
-                DataGridViewYear.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+
+    Sub GetMonthlyRecord()
+        CountAndCalculateMonth("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = @TargetMonth", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = @TargetMonth", selectedMonth)
+        Try
+            Dim targetMonth As String = ComboBox2.Text
+            DataGridView2.Rows.Clear()
+            cn.Open()
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & targetMonth & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+
+    Sub GetYearlyRecord()
+        CountAndCalculate("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = @TargetYear", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = @TargetYear", selectedYear)
+        Try
+            Dim targetYear As Integer = ComboBox1.Text
+            DataGridView2.Rows.Clear()
+            cn.Open()
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = '" & ComboBox1.Text & "'", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
 
             End While
             dr.Close()
@@ -27,20 +67,23 @@ Public Class frm_remRecord
             cn.Close()
         End Try
 
-        CountAndCalculate("SELECT COUNT(*) FROM rcss_rembd WHERE remDB_date LIKE @TargetYear", "SELECT SUM(remDB_total) FROM rcss_rembd WHERE remDB_date LIKE @TargetYear")
+
     End Sub
 
-    Sub CountAndCalculate(countQuery As String, sumQuery As String)
+    Sub CountAndCalculate(countQuery As String, sumQuery As String, Optional ByVal yearSelected As String = "2024")
         Try
-            Dim selectedDate As DateTime = DateTimePicker1.Value
-            Dim targetYear As Integer = selectedDate.Year
+
+            Dim targetYear As Integer = Integer.Parse(yearSelected)
+
             cn.Open()
             Dim query As String = countQuery
 
             Using cm As New MySqlCommand(query, cn)
-                cm.Parameters.AddWithValue("@TargetYear", $"%{targetYear}%")
+                Console.WriteLine(targetYear)
+                cm.Parameters.AddWithValue("@TargetYear", targetYear)
 
                 Dim recordCount As Integer = Convert.ToInt32(cm.ExecuteScalar())
+                Console.WriteLine(recordCount)
                 If recordCount > 1 Then
                     lblCount.Text = $"({recordCount}) records found"
                 Else
@@ -49,24 +92,76 @@ Public Class frm_remRecord
             End Using
             cn.Close()
         Catch ex As Exception
-            'MsgBox(ex.Message)
+            MsgBox(ex.Message)
             lblCount.Text = "(0) record found"
             cn.Close()
         End Try
 
         Try
-            Dim selectedDate As DateTime = DateTimePicker1.Value
-            Dim targetYear As Integer = selectedDate.Year
+            Dim targetYear As Integer = Integer.Parse(yearSelected)
             cn.Open()
             Dim query As String = sumQuery
             Using cm As New MySqlCommand(query, cn)
-                cm.Parameters.AddWithValue("@TargetYear", $"%{targetYear}%")
-                Dim grandTotal As Integer = Convert.ToInt32(cm.ExecuteScalar())
+                cm.Parameters.AddWithValue("@TargetYear", targetYear)
+                Dim grandTotal As Integer = 0
+                Dim result As Object = cm.ExecuteScalar()
+                If result IsNot DBNull.Value Then
+                    grandTotal = Convert.ToInt32(result)
+                End If
                 lblSum.Text = $"Grand Total: {grandTotal}"
             End Using
             cn.Close()
         Catch ex As Exception
-            'MsgBox(ex.Message)
+            MsgBox(ex.Message)
+            lblSum.Text = "Grand Total: 0"
+            cn.Close()
+        End Try
+    End Sub
+
+    Sub CountAndCalculateMonth(countQuery As String, sumQuery As String, Optional monthSelected As String = "January")
+        Try
+            Console.WriteLine("1")
+            Dim targetMonth As String = monthSelected
+            Console.WriteLine("2-")
+
+            cn.Open()
+            Dim query As String = countQuery
+
+            Using cm As New MySqlCommand(query, cn)
+                Console.WriteLine(targetMonth)
+                cm.Parameters.AddWithValue("@TargetMonth", targetMonth)
+
+                Dim recordCount As Integer = Convert.ToInt32(cm.ExecuteScalar())
+                Console.WriteLine(recordCount)
+                If recordCount > 1 Then
+                    lblCount.Text = $"({recordCount}) records found"
+                Else
+                    lblCount.Text = $"({recordCount}) record found"
+                End If
+            End Using
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            lblCount.Text = "(0) record found"
+            cn.Close()
+        End Try
+
+        Try
+            Dim targetMonth As String = monthSelected
+            cn.Open()
+            Dim query As String = sumQuery
+            Using cm As New MySqlCommand(query, cn)
+                cm.Parameters.AddWithValue("@TargetMonth", targetMonth)
+                Dim grandTotal As Integer = 0
+                Dim result As Object = cm.ExecuteScalar()
+                If result IsNot DBNull.Value Then
+                    grandTotal = Convert.ToInt32(result)
+                End If
+                lblSum.Text = $"Grand Total: {grandTotal}"
+            End Using
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
             lblSum.Text = "Grand Total: 0"
             cn.Close()
         End Try
@@ -76,7 +171,7 @@ Public Class frm_remRecord
             DataGridView2.Rows.Clear()
             cn.Open()
             cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_date = '" & DateTimePicker1.Text & "'", cn)
-            dr = cm.ExecuteReader
+            dr = cm.ExecuteReader()
             While dr.Read
 
                 DataGridView2.Rows.Add(dr.Item("rmt_vanno").ToString, dr.Item("rmt_custodian").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
@@ -119,6 +214,18 @@ Public Class frm_remRecord
 
 
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView2.BringToFront()
+        Dim currentYear As Integer = DateTime.Now.Year
+
+        For year As Integer = 1950 To currentYear
+            ComboBox1.Items.Add(year.ToString())
+        Next
+
+        ComboBox1.SelectedItem = currentYear.ToString()
+    End Sub
+
     Private Sub frm_remRecord_Load(sender As Object, e As EventArgs) Handles Me.Load
         Loadrecord()
         ComputeRows()
@@ -130,7 +237,7 @@ Public Class frm_remRecord
         ComputeRows()
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 
@@ -151,8 +258,8 @@ Public Class frm_remRecord
     End Sub
 
     Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-        GetYearlyRecord()
-        DataGridViewYear.BringToFront()
+        YearSelect.Visible = True
+        YearSelect.BringToFront()
     End Sub
 
     Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
@@ -165,6 +272,34 @@ Public Class frm_remRecord
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        MonthSelect.Visible = True
+        MonthSelect.BringToFront()
+    End Sub
 
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles YearSelect.Paint
+        selectedYear = ComboBox1.Text
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+        YearSelect.Visible = False
+    End Sub
+
+    Private Sub Confirm_Click(sender As Object, e As EventArgs) Handles Confirm.Click
+        selectedYear = ComboBox1.Text
+        GetYearlyRecord()
+        YearSelect.Visible = False
+        DataGridView2.BringToFront()
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        selectedMonth = ComboBox2.Text
+        GetMonthlyRecord()
+        MonthSelect.Visible = False
+        DataGridView2.BringToFront()
     End Sub
 End Class

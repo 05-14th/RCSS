@@ -76,8 +76,10 @@ Partial Class frm_remittance
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.LL_ViewAll = New System.Windows.Forms.LinkLabel()
+
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -569,6 +571,7 @@ Partial Class frm_remittance
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
         '
+
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.DimGray
