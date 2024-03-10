@@ -23,8 +23,8 @@ Partial Class frm_rptRemRecord
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.rpt_Remitance1 = New RCSS.rpt_Remitance()
         Me.rpt_Remitance2 = New RCSS.rpt_Remitance()
+        Me.rpt_Remitance1 = New RCSS.rpt_Remitance()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -39,6 +39,9 @@ Partial Class frm_rptRemRecord
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(1004, 531)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
+        'rpt_Remitance2
+        '
         '
         'rpt_Remitance1
         '
