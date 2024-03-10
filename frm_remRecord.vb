@@ -263,7 +263,6 @@ Public Class frm_remRecord
         selectedYear = ComboBox1.Text
         GetYearlyRecord()
         YearSelect.Visible = False
-        DataGridView2.BringToFront()
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click

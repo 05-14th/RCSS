@@ -532,9 +532,9 @@ Partial Class frm_remRecord
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(12, 48)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(65, 13)
+        Me.Label9.Size = New System.Drawing.Size(73, 13)
         Me.Label9.TabIndex = 83
-        Me.Label9.Text = "Select Year:"
+        Me.Label9.Text = "Select Month:"
         '
         'Button1
         '

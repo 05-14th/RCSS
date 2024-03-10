@@ -22,7 +22,6 @@ Partial Class frm_AddRemittance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-<<<<<<< HEAD
         Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -35,7 +34,6 @@ Partial Class frm_AddRemittance
         Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-=======
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -48,7 +46,7 @@ Partial Class frm_AddRemittance
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
->>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
+
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dtp_year = New System.Windows.Forms.Label()
         Me.dtp_day = New System.Windows.Forms.Label()
@@ -190,12 +188,11 @@ Partial Class frm_AddRemittance
         Me.btn_addAR = New System.Windows.Forms.Button()
         Me.cb_customers = New System.Windows.Forms.ComboBox()
         Me.Panel_AR = New System.Windows.Forms.Panel()
-<<<<<<< HEAD
-=======
+
         Me.ColRef = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1colRemove = New System.Windows.Forms.DataGridViewImageColumn()
->>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
+
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,11 +241,11 @@ Partial Class frm_AddRemittance
         '
         Me.dtp_day.AutoSize = True
         Me.dtp_day.ForeColor = System.Drawing.Color.White
-<<<<<<< HEAD
+
         Me.dtp_day.Location = New System.Drawing.Point(291, 11)
-=======
+
         Me.dtp_day.Location = New System.Drawing.Point(291, 12)
->>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
+
         Me.dtp_day.Name = "dtp_day"
         Me.dtp_day.Size = New System.Drawing.Size(26, 13)
         Me.dtp_day.TabIndex = 74
@@ -259,11 +256,11 @@ Partial Class frm_AddRemittance
         '
         Me.dtp_month.AutoSize = True
         Me.dtp_month.ForeColor = System.Drawing.Color.White
-<<<<<<< HEAD
+
         Me.dtp_month.Location = New System.Drawing.Point(181, 11)
-=======
+
         Me.dtp_month.Location = New System.Drawing.Point(181, 12)
->>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
+
         Me.dtp_month.Name = "dtp_month"
         Me.dtp_month.Size = New System.Drawing.Size(37, 13)
         Me.dtp_month.TabIndex = 73
@@ -387,7 +384,6 @@ Partial Class frm_AddRemittance
         Me.DataGridView1.Size = New System.Drawing.Size(269, 189)
         Me.DataGridView1.TabIndex = 22
         '
-<<<<<<< HEAD
         'ColRef
         '
         Me.ColRef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -415,8 +411,6 @@ Partial Class frm_AddRemittance
         Me.DGV1colRemove.ReadOnly = True
         Me.DGV1colRemove.Width = 5
         '
-=======
->>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         'tb_refamount
         '
         Me.tb_refamount.BackColor = System.Drawing.Color.White
@@ -1957,8 +1951,6 @@ Partial Class frm_AddRemittance
         Me.Panel_AR.TabIndex = 96
         Me.Panel_AR.Visible = False
         '
-<<<<<<< HEAD
-=======
         'ColRef
         '
         Me.ColRef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -1986,7 +1978,6 @@ Partial Class frm_AddRemittance
         Me.DGV1colRemove.ReadOnly = True
         Me.DGV1colRemove.Width = 5
         '
->>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         'frm_AddRemittance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
