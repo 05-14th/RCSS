@@ -29,5 +29,4 @@ Public Class frm_rptRemRecord
         End Try
 
     End Sub
-
 End Class
