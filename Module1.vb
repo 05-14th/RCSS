@@ -5,7 +5,9 @@ Module Module1
     Public cm1 As New MySqlCommand
     Public dr As MySqlDataReader
     Public dt As New DataTable
+    Public dt1 As New DataTable
     Public da As MySqlDataAdapter
+    Public da1 As MySqlDataAdapter
     Public ds As DataSet
     Function ConnectToDB() As Boolean
         Try
