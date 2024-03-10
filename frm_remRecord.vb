@@ -261,8 +261,7 @@ Public Class frm_remRecord
 
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles YearSelect.Paint
         selectedYear = ComboBox1.Text
-        GetYearlyRecord()
-        YearSelect.Visible = False
+
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
