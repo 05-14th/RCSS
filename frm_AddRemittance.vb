@@ -258,7 +258,7 @@ Public Class frm_AddRemittance
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
-                            cm.Parameters.AddWithValue("@remar_status", "Uncollected")
+                            cm.Parameters.AddWithValue("@remar_status", "For Approval")
                             cm.ExecuteNonQuery()
                             cn.Close()
                             Console.WriteLine("Hit")
