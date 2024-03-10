@@ -157,7 +157,7 @@ Public Class frm_remDecide
     End Sub
 
     Private Sub btnApproved_Click(sender As Object, e As EventArgs) Handles btnApproved.Click
-        If MsgBox("Is this transaction approved?", vbYesNo + vbQuestion) = vbYes Then
+        If MsgBox("Are you sure you want this transaction to be APPROVED?", vbYesNo + vbQuestion) = vbYes Then
             Try
                 cn.Open()
                 cm = New MySqlCommand("UPDATE rcss_remittance SET rmt_status=@rmt_status, rmt_comment=@rmt_comment, rmt_approvedby=@rmt_approvedby, rmt_approveddate=@rmt_approveddate, rmt_approvedtime=@rmt_approvedtime WHERE rmt_transid = '" & tb_transID.Text & "'", cn)
@@ -205,5 +205,52 @@ Public Class frm_remDecide
 
     Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellContentClick
 
+    End Sub
+
+    Private Sub btnRevise_Click(sender As Object, e As EventArgs) Handles btnRevise.Click
+        If MsgBox("Are you sure you want this transaction to REVISE?", vbYesNo + vbQuestion) = vbYes Then
+            Try
+                cn.Open()
+                cm = New MySqlCommand("UPDATE rcss_remittance SET rmt_status=@rmt_status, rmt_comment=@rmt_comment, rmt_approvedby=@rmt_approvedby, rmt_approveddate=@rmt_approveddate, rmt_approvedtime=@rmt_approvedtime WHERE rmt_transid = '" & tb_transID.Text & "'", cn)
+
+                cm.Parameters.AddWithValue("@rmt_status", "Revise")
+                cm.Parameters.AddWithValue("@rmt_comment", tb_comment.Text)
+                cm.Parameters.AddWithValue("@rmt_approvedby", frm_dashAdmin.lbl_userID.Text)
+                cm.Parameters.AddWithValue("@rmt_approveddate", DateTimePicker1.Text)
+                cm.Parameters.AddWithValue("@rmt_approvedtime", frm_dashAdmin.lbl_time.Text)
+                cm.ExecuteNonQuery()
+                cn.Close()
+
+                frm_remApproval.Loadforapproval()
+                frm_remApproval.Count()
+                frm_remApproved.Loadapproved()
+                frm_remApproved.Count()
+                frm_dashAdmin.CountForApproval()
+                frm_dashAdmin.CountRevise()
+                frm_dashAdmin.CountApproved()
+
+            Catch ex As Exception
+                cn.Close()
+                MsgBox(ex.Message, vbCritical)
+            End Try
+
+
+            Try
+                cn.Open()
+                cm = New MySqlCommand("UPDATE rcss_remar SET remar_rmtstatus = @remar_rmtstatus WHERE remar_transid = '" & tb_transID.Text & "'", cn)
+
+                cm.Parameters.AddWithValue("@remar_rmtstatus", "Revise")
+                cm.ExecuteNonQuery()
+                cn.Close()
+
+            Catch ex As Exception
+                cn.Close()
+                MsgBox(ex.Message, vbCritical)
+            End Try
+
+
+            Me.Dispose()
+
+        End If
     End Sub
 End Class

@@ -27,7 +27,7 @@ Public Class frm_remittance
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_remittance.rmt_status = 'For Approval' OR rmt_status = 'Checking'", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_remittance.rmt_status = 'For Approval' OR rcss_remittance.rmt_status = 'Checking'", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -388,7 +388,7 @@ Public Class frm_remittance
                 Dim i As Integer = 0
                 DataGridView1.Rows.Clear()
                 cn.Open()
-                cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rmt_status = 'Checking'", cn)
+                cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rcss_remittance.rmt_status = 'Checking' OR rcss_remittance.rmt_status = 'For Revision'", cn)
                 dr = cm.ExecuteReader
                 While dr.Read
                     i += 1

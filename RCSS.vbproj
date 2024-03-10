@@ -452,6 +452,9 @@
     <Content Include="bin\Debug\RCSS.xml" />
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\Icon 128 x 128 px %283%29.png" />
+    <None Include="Resources\Icon 128 x 128 px %282%29.png" />
+    <None Include="Resources\Icon 128 x 128 px.png" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\printer64.png" />
     <None Include="Resources\buy-home16.png" />
