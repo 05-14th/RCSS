@@ -24,20 +24,24 @@ Partial Class frm_rptRemRecord
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.rpt_Remitance1 = New RCSS.rpt_Remitance()
+        Me.rpt_Remitance2 = New RCSS.rpt_Remitance()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = ""
+        Me.CrystalReportViewer1.ReportSource = Me.rpt_Remitance2
         Me.CrystalReportViewer1.Size = New System.Drawing.Size(1004, 531)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
+        '
+        'rpt_Remitance1
+        '
         '
         'frm_rptRemRecord
         '
@@ -55,4 +59,5 @@ Partial Class frm_rptRemRecord
 
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents rpt_Remitance1 As rpt_Remitance
+    Friend WithEvents rpt_Remitance2 As rpt_Remitance
 End Class
