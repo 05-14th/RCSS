@@ -26,23 +26,8 @@ Partial Class frm_dashAdmin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_dashAdmin))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SETTLEMENTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REPORTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.REMITTANCERECORDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ARCollectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ARMonitoringSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ColletionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SETTINGSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.USERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VANROUTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CUSTOMERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LOGOUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl_minimize = New System.Windows.Forms.Label()
@@ -58,14 +43,31 @@ Partial Class frm_dashAdmin
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.btn_approval = New System.Windows.Forms.Button()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.btn_approved = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.btn_revision = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SETTLEMENTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REPORTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.REMITTANCERECORDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ARCollectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ARMonitoringSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ColletionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SETTINGSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.USERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VANROUTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CUSTOMERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LOGOUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_approval = New System.Windows.Forms.Button()
+        Me.btn_approved = New System.Windows.Forms.Button()
+        Me.btn_revision = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -75,6 +77,10 @@ Partial Class frm_dashAdmin
         Me.Panel7.SuspendLayout()
         Me.Panel9.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -103,16 +109,6 @@ Partial Class frm_dashAdmin
         Me.Label1.Text = "RCSS"
         Me.Label1.Visible = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
-        Me.PictureBox1.Location = New System.Drawing.Point(18, 11)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(58, 52)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
@@ -134,102 +130,6 @@ Partial Class frm_dashAdmin
         Me.MenuStrip1.Size = New System.Drawing.Size(441, 75)
         Me.MenuStrip1.TabIndex = 27
         Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'MENUToolStripMenuItem
-        '
-        Me.MENUToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCEToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.SETTLEMENTToolStripMenuItem})
-        Me.MENUToolStripMenuItem.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MENUToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.MENUToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.files64white
-        Me.MENUToolStripMenuItem.Name = "MENUToolStripMenuItem"
-        Me.MENUToolStripMenuItem.Size = New System.Drawing.Size(85, 71)
-        Me.MENUToolStripMenuItem.Text = "     &FILE     "
-        '
-        'REMITTANCEToolStripMenuItem
-        '
-        Me.REMITTANCEToolStripMenuItem.Name = "REMITTANCEToolStripMenuItem"
-        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.REMITTANCEToolStripMenuItem.Text = "&REMITTANCE"
-        '
-        'COLLECTIONToolStripMenuItem
-        '
-        Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
-        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.COLLECTIONToolStripMenuItem.Text = "&COLLECTION"
-        '
-        'SETTLEMENTToolStripMenuItem
-        '
-        Me.SETTLEMENTToolStripMenuItem.Name = "SETTLEMENTToolStripMenuItem"
-        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
-        Me.SETTLEMENTToolStripMenuItem.Text = "&SETTLEMENT"
-        '
-        'REPORTSToolStripMenuItem
-        '
-        Me.REPORTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCERECORDToolStripMenuItem, Me.ARCollectionToolStripMenuItem, Me.ARMonitoringSummaryToolStripMenuItem, Me.ColletionsToolStripMenuItem})
-        Me.REPORTSToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.REPORTSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.analytics64white
-        Me.REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
-        Me.REPORTSToolStripMenuItem.Size = New System.Drawing.Size(111, 71)
-        Me.REPORTSToolStripMenuItem.Text = "     &REPORTS     "
-        '
-        'REMITTANCERECORDToolStripMenuItem
-        '
-        Me.REMITTANCERECORDToolStripMenuItem.Name = "REMITTANCERECORDToolStripMenuItem"
-        Me.REMITTANCERECORDToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.REMITTANCERECORDToolStripMenuItem.Text = "REMITTANCE RECORD"
-        '
-        'ARCollectionToolStripMenuItem
-        '
-        Me.ARCollectionToolStripMenuItem.Name = "ARCollectionToolStripMenuItem"
-        Me.ARCollectionToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ARCollectionToolStripMenuItem.Text = "AR COLLECTION"
-        '
-        'ARMonitoringSummaryToolStripMenuItem
-        '
-        Me.ARMonitoringSummaryToolStripMenuItem.Name = "ARMonitoringSummaryToolStripMenuItem"
-        Me.ARMonitoringSummaryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ARMonitoringSummaryToolStripMenuItem.Text = "AR MONITORING SUMMARY"
-        '
-        'ColletionsToolStripMenuItem
-        '
-        Me.ColletionsToolStripMenuItem.Name = "ColletionsToolStripMenuItem"
-        Me.ColletionsToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ColletionsToolStripMenuItem.Text = "COLLECTION"
-        '
-        'SETTINGSToolStripMenuItem
-        '
-        Me.SETTINGSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.USERToolStripMenuItem, Me.VANROUTEToolStripMenuItem, Me.CUSTOMERToolStripMenuItem})
-        Me.SETTINGSToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.SETTINGSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.settings64white
-        Me.SETTINGSToolStripMenuItem.Name = "SETTINGSToolStripMenuItem"
-        Me.SETTINGSToolStripMenuItem.Size = New System.Drawing.Size(117, 71)
-        Me.SETTINGSToolStripMenuItem.Text = "      &SETTINGS     "
-        '
-        'USERToolStripMenuItem
-        '
-        Me.USERToolStripMenuItem.Name = "USERToolStripMenuItem"
-        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.USERToolStripMenuItem.Text = "USER"
-        '
-        'VANROUTEToolStripMenuItem
-        '
-        Me.VANROUTEToolStripMenuItem.Name = "VANROUTEToolStripMenuItem"
-        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.VANROUTEToolStripMenuItem.Text = "VAN / ROUTE"
-        '
-        'CUSTOMERToolStripMenuItem
-        '
-        Me.CUSTOMERToolStripMenuItem.Name = "CUSTOMERToolStripMenuItem"
-        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.CUSTOMERToolStripMenuItem.Text = "CUSTOMER"
-        '
-        'LOGOUTToolStripMenuItem
-        '
-        Me.LOGOUTToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.LOGOUTToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.logout64white
-        Me.LOGOUTToolStripMenuItem.Name = "LOGOUTToolStripMenuItem"
-        Me.LOGOUTToolStripMenuItem.Size = New System.Drawing.Size(108, 71)
-        Me.LOGOUTToolStripMenuItem.Text = "     LOG&OUT     "
         '
         'lblName
         '
@@ -406,6 +306,7 @@ Partial Class frm_dashAdmin
         '
         Me.Panel7.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.Panel7.Controls.Add(Me.PictureBox2)
         Me.Panel7.Controls.Add(Me.btn_approval)
         Me.Panel7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel7.Location = New System.Drawing.Point(11, 0)
@@ -413,29 +314,151 @@ Partial Class frm_dashAdmin
         Me.Panel7.Size = New System.Drawing.Size(274, 106)
         Me.Panel7.TabIndex = 3
         '
-        'btn_approval
-        '
-        Me.btn_approval.FlatAppearance.BorderSize = 0
-        Me.btn_approval.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_approval.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_approval.ForeColor = System.Drawing.Color.White
-        Me.btn_approval.Location = New System.Drawing.Point(11, 13)
-        Me.btn_approval.Name = "btn_approval"
-        Me.btn_approval.Size = New System.Drawing.Size(253, 81)
-        Me.btn_approval.TabIndex = 0
-        Me.btn_approval.Text = "FOR APPROVAL"
-        Me.btn_approval.UseVisualStyleBackColor = True
-        '
         'Panel9
         '
         Me.Panel9.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(251, Byte), Integer))
+        Me.Panel9.Controls.Add(Me.PictureBox4)
         Me.Panel9.Controls.Add(Me.btn_approved)
         Me.Panel9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel9.Location = New System.Drawing.Point(11, 248)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(274, 106)
         Me.Panel9.TabIndex = 3
+        '
+        'Panel8
+        '
+        Me.Panel8.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.Panel8.Controls.Add(Me.PictureBox3)
+        Me.Panel8.Controls.Add(Me.btn_revision)
+        Me.Panel8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel8.Location = New System.Drawing.Point(11, 124)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(274, 106)
+        Me.Panel8.TabIndex = 3
+        '
+        'Timer1
+        '
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
+        Me.PictureBox1.Location = New System.Drawing.Point(18, 11)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(58, 52)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 30
+        Me.PictureBox1.TabStop = False
+        '
+        'MENUToolStripMenuItem
+        '
+        Me.MENUToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCEToolStripMenuItem, Me.COLLECTIONToolStripMenuItem, Me.SETTLEMENTToolStripMenuItem})
+        Me.MENUToolStripMenuItem.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MENUToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.MENUToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.files64white
+        Me.MENUToolStripMenuItem.Name = "MENUToolStripMenuItem"
+        Me.MENUToolStripMenuItem.Size = New System.Drawing.Size(85, 71)
+        Me.MENUToolStripMenuItem.Text = "     &FILE     "
+        '
+        'REMITTANCEToolStripMenuItem
+        '
+        Me.REMITTANCEToolStripMenuItem.Name = "REMITTANCEToolStripMenuItem"
+        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.REMITTANCEToolStripMenuItem.Text = "&REMITTANCE"
+        '
+        'COLLECTIONToolStripMenuItem
+        '
+        Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
+        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.COLLECTIONToolStripMenuItem.Text = "&COLLECTION"
+        '
+        'SETTLEMENTToolStripMenuItem
+        '
+        Me.SETTLEMENTToolStripMenuItem.Name = "SETTLEMENTToolStripMenuItem"
+        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.SETTLEMENTToolStripMenuItem.Text = "&SETTLEMENT"
+        '
+        'REPORTSToolStripMenuItem
+        '
+        Me.REPORTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCERECORDToolStripMenuItem, Me.ARCollectionToolStripMenuItem, Me.ARMonitoringSummaryToolStripMenuItem, Me.ColletionsToolStripMenuItem})
+        Me.REPORTSToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.REPORTSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.analytics64white
+        Me.REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
+        Me.REPORTSToolStripMenuItem.Size = New System.Drawing.Size(111, 71)
+        Me.REPORTSToolStripMenuItem.Text = "     &REPORTS     "
+        '
+        'REMITTANCERECORDToolStripMenuItem
+        '
+        Me.REMITTANCERECORDToolStripMenuItem.Name = "REMITTANCERECORDToolStripMenuItem"
+        Me.REMITTANCERECORDToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.REMITTANCERECORDToolStripMenuItem.Text = "REMITTANCE RECORD"
+        '
+        'ARCollectionToolStripMenuItem
+        '
+        Me.ARCollectionToolStripMenuItem.Name = "ARCollectionToolStripMenuItem"
+        Me.ARCollectionToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ARCollectionToolStripMenuItem.Text = "AR COLLECTION"
+        '
+        'ARMonitoringSummaryToolStripMenuItem
+        '
+        Me.ARMonitoringSummaryToolStripMenuItem.Name = "ARMonitoringSummaryToolStripMenuItem"
+        Me.ARMonitoringSummaryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ARMonitoringSummaryToolStripMenuItem.Text = "AR MONITORING SUMMARY"
+        '
+        'ColletionsToolStripMenuItem
+        '
+        Me.ColletionsToolStripMenuItem.Name = "ColletionsToolStripMenuItem"
+        Me.ColletionsToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ColletionsToolStripMenuItem.Text = "COLLECTION"
+        '
+        'SETTINGSToolStripMenuItem
+        '
+        Me.SETTINGSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.USERToolStripMenuItem, Me.VANROUTEToolStripMenuItem, Me.CUSTOMERToolStripMenuItem})
+        Me.SETTINGSToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.SETTINGSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.settings64white
+        Me.SETTINGSToolStripMenuItem.Name = "SETTINGSToolStripMenuItem"
+        Me.SETTINGSToolStripMenuItem.Size = New System.Drawing.Size(117, 71)
+        Me.SETTINGSToolStripMenuItem.Text = "      &SETTINGS     "
+        '
+        'USERToolStripMenuItem
+        '
+        Me.USERToolStripMenuItem.Name = "USERToolStripMenuItem"
+        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.USERToolStripMenuItem.Text = "USER"
+        '
+        'VANROUTEToolStripMenuItem
+        '
+        Me.VANROUTEToolStripMenuItem.Name = "VANROUTEToolStripMenuItem"
+        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.VANROUTEToolStripMenuItem.Text = "VAN / ROUTE"
+        '
+        'CUSTOMERToolStripMenuItem
+        '
+        Me.CUSTOMERToolStripMenuItem.Name = "CUSTOMERToolStripMenuItem"
+        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.CUSTOMERToolStripMenuItem.Text = "CUSTOMER"
+        '
+        'LOGOUTToolStripMenuItem
+        '
+        Me.LOGOUTToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.LOGOUTToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.logout64white
+        Me.LOGOUTToolStripMenuItem.Name = "LOGOUTToolStripMenuItem"
+        Me.LOGOUTToolStripMenuItem.Size = New System.Drawing.Size(108, 71)
+        Me.LOGOUTToolStripMenuItem.Text = "     LOG&OUT     "
+        '
+        'btn_approval
+        '
+        Me.btn_approval.FlatAppearance.BorderSize = 0
+        Me.btn_approval.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_approval.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_approval.ForeColor = System.Drawing.Color.White
+        Me.btn_approval.Location = New System.Drawing.Point(107, 13)
+        Me.btn_approval.Name = "btn_approval"
+        Me.btn_approval.Size = New System.Drawing.Size(157, 81)
+        Me.btn_approval.TabIndex = 0
+        Me.btn_approval.Text = "FOR APPROVAL"
+        Me.btn_approval.UseVisualStyleBackColor = True
         '
         'btn_approved
         '
@@ -444,23 +467,12 @@ Partial Class frm_dashAdmin
         Me.btn_approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_approved.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_approved.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.btn_approved.Location = New System.Drawing.Point(11, 13)
+        Me.btn_approved.Location = New System.Drawing.Point(107, 13)
         Me.btn_approved.Name = "btn_approved"
-        Me.btn_approved.Size = New System.Drawing.Size(253, 81)
+        Me.btn_approved.Size = New System.Drawing.Size(157, 81)
         Me.btn_approved.TabIndex = 2
         Me.btn_approved.Text = "APPROVED"
         Me.btn_approved.UseVisualStyleBackColor = True
-        '
-        'Panel8
-        '
-        Me.Panel8.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.Panel8.Controls.Add(Me.btn_revision)
-        Me.Panel8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel8.Location = New System.Drawing.Point(11, 124)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(274, 106)
-        Me.Panel8.TabIndex = 3
         '
         'btn_revision
         '
@@ -469,15 +481,43 @@ Partial Class frm_dashAdmin
         Me.btn_revision.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_revision.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_revision.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_revision.Location = New System.Drawing.Point(11, 13)
+        Me.btn_revision.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_revision.Location = New System.Drawing.Point(107, 13)
         Me.btn_revision.Name = "btn_revision"
-        Me.btn_revision.Size = New System.Drawing.Size(253, 81)
+        Me.btn_revision.Size = New System.Drawing.Size(157, 81)
         Me.btn_revision.TabIndex = 1
         Me.btn_revision.Text = "FOR REVISION"
         Me.btn_revision.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'PictureBox2
         '
+        Me.PictureBox2.Image = Global.RCSS.My.Resources.Resources.Icon_128_x_128_px__3_
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 13)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(89, 81)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.RCSS.My.Resources.Resources.Icon_128_x_128_px__2_
+        Me.PictureBox3.Location = New System.Drawing.Point(12, 13)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(89, 81)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 2
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.RCSS.My.Resources.Resources.Icon_128_x_128_px
+        Me.PictureBox4.Location = New System.Drawing.Point(12, 13)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(89, 81)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 3
+        Me.PictureBox4.TabStop = False
         '
         'frm_dashAdmin
         '
@@ -500,7 +540,6 @@ Partial Class frm_dashAdmin
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -512,6 +551,10 @@ Partial Class frm_dashAdmin
         Me.Panel7.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -556,4 +599,7 @@ Partial Class frm_dashAdmin
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lbl_user As Label
     Friend WithEvents REMITTANCERECORDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

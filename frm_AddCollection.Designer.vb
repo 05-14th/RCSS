@@ -72,7 +72,7 @@ Partial Class frm_AddCollection
         Me.lbl_addRemittance.AutoSize = True
         Me.lbl_addRemittance.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_addRemittance.ForeColor = System.Drawing.Color.White
-        Me.lbl_addRemittance.Location = New System.Drawing.Point(11, 7)
+        Me.lbl_addRemittance.Location = New System.Drawing.Point(8, 7)
         Me.lbl_addRemittance.Name = "lbl_addRemittance"
         Me.lbl_addRemittance.Size = New System.Drawing.Size(136, 20)
         Me.lbl_addRemittance.TabIndex = 72

@@ -24,18 +24,22 @@ Partial Class frm_remApproval
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_remApproval))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.tb_search = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,10 +49,6 @@ Partial Class frm_remApproval
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colview = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.tb_search = New MetroFramework.Controls.MetroTextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,85 +149,6 @@ Partial Class frm_remApproval
         Me.DataGridView1.Size = New System.Drawing.Size(890, 436)
         Me.DataGridView1.TabIndex = 74
         '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column7.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column7.HeaderText = "#"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 36
-        '
-        'Column4
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.HeaderText = "STATUS"
-        Me.Column4.Name = "Column4"
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.FillWeight = 150.0!
-        Me.Column1.HeaderText = "TRANSACTION NO."
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 128
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.FillWeight = 150.0!
-        Me.Column2.HeaderText = "VAN # / ROUTE"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 107
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.FillWeight = 150.0!
-        Me.Column3.HeaderText = "DATE"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 120
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "SALESMAN"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 86
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.FillWeight = 150.0!
-        Me.Column6.HeaderText = "CUSTODIAN"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 93
-        '
-        'Column17
-        '
-        Me.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column17.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column17.HeaderText = "REMITTED AMOUNT"
-        Me.Column17.Name = "Column17"
-        Me.Column17.Width = 120
-        '
-        'colview
-        '
-        Me.colview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.NullValue = CType(resources.GetObject("DataGridViewCellStyle5.NullValue"), Object)
-        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.colview.DefaultCellStyle = DataGridViewCellStyle5
-        Me.colview.HeaderText = ""
-        Me.colview.Image = Global.RCSS.My.Resources.Resources.opendetails16
-        Me.colview.Name = "colview"
-        Me.colview.ToolTipText = "SEE DETAILS"
-        Me.colview.Width = 5
-        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Label5)
@@ -295,6 +216,84 @@ Partial Class frm_remApproval
         Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails16
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column7.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column7.HeaderText = "#"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Width = 36
+        '
+        'Column4
+        '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.HeaderText = "STATUS"
+        Me.Column4.Name = "Column4"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.FillWeight = 150.0!
+        Me.Column1.HeaderText = "TRANSACTION NO."
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 128
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.FillWeight = 150.0!
+        Me.Column2.HeaderText = "VAN # / ROUTE"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 107
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column3.FillWeight = 150.0!
+        Me.Column3.HeaderText = "DATE"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 120
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.FillWeight = 150.0!
+        Me.Column5.HeaderText = "SALESMAN"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 86
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.FillWeight = 150.0!
+        Me.Column6.HeaderText = "CUSTODIAN"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 93
+        '
+        'Column17
+        '
+        Me.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column17.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column17.HeaderText = "REMITTED AMOUNT"
+        Me.Column17.Name = "Column17"
+        '
+        'colview
+        '
+        Me.colview.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.NullValue = CType(resources.GetObject("DataGridViewCellStyle5.NullValue"), Object)
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.colview.DefaultCellStyle = DataGridViewCellStyle5
+        Me.colview.HeaderText = ""
+        Me.colview.Image = Global.RCSS.My.Resources.Resources.opendetails16
+        Me.colview.Name = "colview"
+        Me.colview.ToolTipText = "SEE DETAILS"
+        Me.colview.Width = 5
         '
         'frm_remApproval
         '

@@ -76,6 +76,11 @@ Partial Class frm_remittance
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+<<<<<<< HEAD
+=======
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.LL_ViewAll = New System.Windows.Forms.LinkLabel()
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,7 +104,7 @@ Partial Class frm_remittance
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(13, 2)
+        Me.Label1.Location = New System.Drawing.Point(10, 2)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 30)
         Me.Label1.TabIndex = 24
@@ -121,6 +126,8 @@ Partial Class frm_remittance
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Panel5)
+        Me.Panel2.Controls.Add(Me.LL_ViewAll)
         Me.Panel2.Controls.Add(Me.Divider4)
         Me.Panel2.Controls.Add(Me.Divider3)
         Me.Panel2.Controls.Add(Me.Divider2)
@@ -275,13 +282,13 @@ Partial Class frm_remittance
         '
         'btn_inhouse
         '
-        Me.btn_inhouse.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btn_inhouse.ActiveLinkColor = System.Drawing.Color.LightSeaGreen
         Me.btn_inhouse.AutoSize = True
         Me.btn_inhouse.BackColor = System.Drawing.Color.White
         Me.btn_inhouse.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_inhouse.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btn_inhouse.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_inhouse.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btn_inhouse.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_inhouse.ForeColor = System.Drawing.Color.LightSeaGreen
         Me.btn_inhouse.Image = Global.RCSS.My.Resources.Resources.buy_home16
         Me.btn_inhouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_inhouse.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
@@ -289,7 +296,7 @@ Partial Class frm_remittance
         Me.btn_inhouse.Location = New System.Drawing.Point(240, 11)
         Me.btn_inhouse.Name = "btn_inhouse"
         Me.btn_inhouse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btn_inhouse.Size = New System.Drawing.Size(150, 15)
+        Me.btn_inhouse.Size = New System.Drawing.Size(151, 15)
         Me.btn_inhouse.TabIndex = 182
         Me.btn_inhouse.TabStop = True
         Me.btn_inhouse.Text = "IN-HOUSE REMITTANCE"
@@ -298,13 +305,13 @@ Partial Class frm_remittance
         '
         'btnNew
         '
-        Me.btnNew.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNew.ActiveLinkColor = System.Drawing.Color.LightSeaGreen
         Me.btnNew.AutoSize = True
         Me.btnNew.BackColor = System.Drawing.Color.White
         Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnNew.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnNew.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNew.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNew.ForeColor = System.Drawing.Color.LightSeaGreen
         Me.btnNew.Image = Global.RCSS.My.Resources.Resources.add16
         Me.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNew.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
@@ -312,7 +319,7 @@ Partial Class frm_remittance
         Me.btnNew.Location = New System.Drawing.Point(16, 11)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnNew.Size = New System.Drawing.Size(200, 15)
+        Me.btnNew.Size = New System.Drawing.Size(205, 15)
         Me.btnNew.TabIndex = 182
         Me.btnNew.TabStop = True
         Me.btnNew.Text = "&CREATE NEW REMITTANCE ENTRY"
@@ -565,6 +572,40 @@ Partial Class frm_remittance
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
         '
+<<<<<<< HEAD
+=======
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DimGray
+        Me.Panel5.Location = New System.Drawing.Point(856, 8)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1, 20)
+        Me.Panel5.TabIndex = 184
+        '
+        'LL_ViewAll
+        '
+        Me.LL_ViewAll.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_ViewAll.AutoSize = True
+        Me.LL_ViewAll.BackColor = System.Drawing.Color.White
+        Me.LL_ViewAll.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LL_ViewAll.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_ViewAll.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LL_ViewAll.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_ViewAll.Image = Global.RCSS.My.Resources.Resources.approved16
+        Me.LL_ViewAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_ViewAll.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LL_ViewAll.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_ViewAll.Location = New System.Drawing.Point(870, 11)
+        Me.LL_ViewAll.Name = "LL_ViewAll"
+        Me.LL_ViewAll.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.LL_ViewAll.Size = New System.Drawing.Size(89, 15)
+        Me.LL_ViewAll.TabIndex = 185
+        Me.LL_ViewAll.TabStop = True
+        Me.LL_ViewAll.Text = "View All (0)"
+        Me.LL_ViewAll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_ViewAll.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        '
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         'frm_remittance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -631,4 +672,6 @@ Partial Class frm_remittance
     Friend WithEvents Divider3 As Panel
     Friend WithEvents Divider2 As Panel
     Friend WithEvents Divider4 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents LL_ViewAll As LinkLabel
 End Class

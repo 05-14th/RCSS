@@ -22,6 +22,7 @@ Partial Class frm_AddRemittance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+<<<<<<< HEAD
         Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -34,6 +35,20 @@ Partial Class frm_AddRemittance
         Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+=======
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dtp_year = New System.Windows.Forms.Label()
         Me.dtp_day = New System.Windows.Forms.Label()
@@ -45,9 +60,6 @@ Partial Class frm_AddRemittance
         Me.Label18 = New System.Windows.Forms.Label()
         Me.btn_addref = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ColRef = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV1colRemove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.tb_refamount = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.tb_refno = New System.Windows.Forms.TextBox()
@@ -178,6 +190,12 @@ Partial Class frm_AddRemittance
         Me.btn_addAR = New System.Windows.Forms.Button()
         Me.cb_customers = New System.Windows.Forms.ComboBox()
         Me.Panel_AR = New System.Windows.Forms.Panel()
+<<<<<<< HEAD
+=======
+        Me.ColRef = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV1colRemove = New System.Windows.Forms.DataGridViewImageColumn()
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -226,7 +244,11 @@ Partial Class frm_AddRemittance
         '
         Me.dtp_day.AutoSize = True
         Me.dtp_day.ForeColor = System.Drawing.Color.White
+<<<<<<< HEAD
         Me.dtp_day.Location = New System.Drawing.Point(291, 11)
+=======
+        Me.dtp_day.Location = New System.Drawing.Point(291, 12)
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         Me.dtp_day.Name = "dtp_day"
         Me.dtp_day.Size = New System.Drawing.Size(26, 13)
         Me.dtp_day.TabIndex = 74
@@ -237,7 +259,11 @@ Partial Class frm_AddRemittance
         '
         Me.dtp_month.AutoSize = True
         Me.dtp_month.ForeColor = System.Drawing.Color.White
+<<<<<<< HEAD
         Me.dtp_month.Location = New System.Drawing.Point(181, 11)
+=======
+        Me.dtp_month.Location = New System.Drawing.Point(181, 12)
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         Me.dtp_month.Name = "dtp_month"
         Me.dtp_month.Size = New System.Drawing.Size(37, 13)
         Me.dtp_month.TabIndex = 73
@@ -249,7 +275,7 @@ Partial Class frm_AddRemittance
         Me.lbl_addRemittance.AutoSize = True
         Me.lbl_addRemittance.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_addRemittance.ForeColor = System.Drawing.Color.White
-        Me.lbl_addRemittance.Location = New System.Drawing.Point(11, 7)
+        Me.lbl_addRemittance.Location = New System.Drawing.Point(11, 8)
         Me.lbl_addRemittance.Name = "lbl_addRemittance"
         Me.lbl_addRemittance.Size = New System.Drawing.Size(140, 20)
         Me.lbl_addRemittance.TabIndex = 72
@@ -361,6 +387,7 @@ Partial Class frm_AddRemittance
         Me.DataGridView1.Size = New System.Drawing.Size(269, 189)
         Me.DataGridView1.TabIndex = 22
         '
+<<<<<<< HEAD
         'ColRef
         '
         Me.ColRef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -388,6 +415,8 @@ Partial Class frm_AddRemittance
         Me.DGV1colRemove.ReadOnly = True
         Me.DGV1colRemove.Width = 5
         '
+=======
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         'tb_refamount
         '
         Me.tb_refamount.BackColor = System.Drawing.Color.White
@@ -753,7 +782,7 @@ Partial Class frm_AddRemittance
         Me.DateTimePicker1.CustomFormat = "MM/dd/yyyy"
         Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(116, 58)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(116, 50)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(261, 27)
         Me.DateTimePicker1.TabIndex = 79
@@ -763,7 +792,7 @@ Partial Class frm_AddRemittance
         Me.tb_transID.BackColor = System.Drawing.Color.White
         Me.tb_transID.Enabled = False
         Me.tb_transID.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_transID.Location = New System.Drawing.Point(116, 91)
+        Me.tb_transID.Location = New System.Drawing.Point(116, 83)
         Me.tb_transID.Name = "tb_transID"
         Me.tb_transID.ReadOnly = True
         Me.tb_transID.Size = New System.Drawing.Size(261, 27)
@@ -775,7 +804,7 @@ Partial Class frm_AddRemittance
         Me.cb_vanname.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cb_vanname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_vanname.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_vanname.Location = New System.Drawing.Point(116, 124)
+        Me.cb_vanname.Location = New System.Drawing.Point(116, 116)
         Me.cb_vanname.Name = "cb_vanname"
         Me.cb_vanname.Size = New System.Drawing.Size(124, 28)
         Me.cb_vanname.TabIndex = 21
@@ -784,7 +813,7 @@ Partial Class frm_AddRemittance
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(7, 63)
+        Me.Label7.Location = New System.Drawing.Point(7, 55)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(41, 20)
         Me.Label7.TabIndex = 86
@@ -795,7 +824,7 @@ Partial Class frm_AddRemittance
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 94)
+        Me.Label1.Location = New System.Drawing.Point(7, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(111, 20)
         Me.Label1.TabIndex = 87
@@ -807,18 +836,18 @@ Partial Class frm_AddRemittance
         Me.tb_helper.BackColor = System.Drawing.Color.White
         Me.tb_helper.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tb_helper.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_helper.Location = New System.Drawing.Point(116, 257)
+        Me.tb_helper.Location = New System.Drawing.Point(116, 249)
         Me.tb_helper.Multiline = True
         Me.tb_helper.Name = "tb_helper"
         Me.tb_helper.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tb_helper.Size = New System.Drawing.Size(261, 207)
+        Me.tb_helper.Size = New System.Drawing.Size(261, 217)
         Me.tb_helper.TabIndex = 4
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 127)
+        Me.Label2.Location = New System.Drawing.Point(7, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(99, 20)
         Me.Label2.TabIndex = 88
@@ -830,7 +859,7 @@ Partial Class frm_AddRemittance
         Me.tb_driver.BackColor = System.Drawing.Color.White
         Me.tb_driver.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tb_driver.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_driver.Location = New System.Drawing.Point(116, 224)
+        Me.tb_driver.Location = New System.Drawing.Point(116, 216)
         Me.tb_driver.Name = "tb_driver"
         Me.tb_driver.Size = New System.Drawing.Size(261, 27)
         Me.tb_driver.TabIndex = 3
@@ -839,7 +868,7 @@ Partial Class frm_AddRemittance
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(7, 161)
+        Me.Label20.Location = New System.Drawing.Point(7, 153)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(72, 20)
         Me.Label20.TabIndex = 89
@@ -850,7 +879,7 @@ Partial Class frm_AddRemittance
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(7, 194)
+        Me.Label3.Location = New System.Drawing.Point(7, 186)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 20)
         Me.Label3.TabIndex = 90
@@ -861,7 +890,7 @@ Partial Class frm_AddRemittance
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(7, 260)
+        Me.Label6.Location = New System.Drawing.Point(7, 252)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 20)
         Me.Label6.TabIndex = 91
@@ -872,7 +901,7 @@ Partial Class frm_AddRemittance
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(7, 227)
+        Me.Label4.Location = New System.Drawing.Point(7, 219)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 20)
         Me.Label4.TabIndex = 92
@@ -884,7 +913,7 @@ Partial Class frm_AddRemittance
         Me.tb_salesman.BackColor = System.Drawing.Color.White
         Me.tb_salesman.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tb_salesman.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_salesman.Location = New System.Drawing.Point(116, 158)
+        Me.tb_salesman.Location = New System.Drawing.Point(116, 150)
         Me.tb_salesman.Name = "tb_salesman"
         Me.tb_salesman.Size = New System.Drawing.Size(261, 27)
         Me.tb_salesman.TabIndex = 0
@@ -894,7 +923,7 @@ Partial Class frm_AddRemittance
         Me.tb_custodian.BackColor = System.Drawing.Color.White
         Me.tb_custodian.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.tb_custodian.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_custodian.Location = New System.Drawing.Point(116, 191)
+        Me.tb_custodian.Location = New System.Drawing.Point(116, 183)
         Me.tb_custodian.Name = "tb_custodian"
         Me.tb_custodian.Size = New System.Drawing.Size(261, 27)
         Me.tb_custodian.TabIndex = 2
@@ -1566,12 +1595,12 @@ Partial Class frm_AddRemittance
         Me.tb_status.BackColor = System.Drawing.Color.DarkOrange
         Me.tb_status.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tb_status.Enabled = False
-        Me.tb_status.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_status.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_status.ForeColor = System.Drawing.Color.White
         Me.tb_status.Location = New System.Drawing.Point(116, 17)
         Me.tb_status.Multiline = True
         Me.tb_status.Name = "tb_status"
-        Me.tb_status.Size = New System.Drawing.Size(261, 32)
+        Me.tb_status.Size = New System.Drawing.Size(261, 27)
         Me.tb_status.TabIndex = 93
         Me.tb_status.Text = "For Approval"
         '
@@ -1580,7 +1609,7 @@ Partial Class frm_AddRemittance
         Me.tb_vanchoice.BackColor = System.Drawing.Color.White
         Me.tb_vanchoice.Enabled = False
         Me.tb_vanchoice.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_vanchoice.Location = New System.Drawing.Point(250, 124)
+        Me.tb_vanchoice.Location = New System.Drawing.Point(250, 116)
         Me.tb_vanchoice.Name = "tb_vanchoice"
         Me.tb_vanchoice.ReadOnly = True
         Me.tb_vanchoice.Size = New System.Drawing.Size(127, 27)
@@ -1591,7 +1620,7 @@ Partial Class frm_AddRemittance
         Me.tb_edittransID.BackColor = System.Drawing.Color.White
         Me.tb_edittransID.Enabled = False
         Me.tb_edittransID.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_edittransID.Location = New System.Drawing.Point(116, 91)
+        Me.tb_edittransID.Location = New System.Drawing.Point(116, 83)
         Me.tb_edittransID.Name = "tb_edittransID"
         Me.tb_edittransID.ReadOnly = True
         Me.tb_edittransID.Size = New System.Drawing.Size(261, 27)
@@ -1601,10 +1630,10 @@ Partial Class frm_AddRemittance
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Segoe UI Semibold", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.Location = New System.Drawing.Point(7, 23)
+        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(7, 16)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(51, 20)
+        Me.Label45.Size = New System.Drawing.Size(49, 20)
         Me.Label45.TabIndex = 101
         Me.Label45.Text = "Status"
         Me.Label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -1928,6 +1957,36 @@ Partial Class frm_AddRemittance
         Me.Panel_AR.TabIndex = 96
         Me.Panel_AR.Visible = False
         '
+<<<<<<< HEAD
+=======
+        'ColRef
+        '
+        Me.ColRef.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ColRef.HeaderText = "Manifesto Reference #"
+        Me.ColRef.Name = "ColRef"
+        Me.ColRef.ReadOnly = True
+        Me.ColRef.Width = 181
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column2.HeaderText = "Amount"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'DGV1colRemove
+        '
+        Me.DGV1colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DGV1colRemove.HeaderText = ""
+        Me.DGV1colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
+        Me.DGV1colRemove.Name = "DGV1colRemove"
+        Me.DGV1colRemove.ReadOnly = True
+        Me.DGV1colRemove.Width = 5
+        '
+>>>>>>> c4176f21b272092dfcad7a47bcc6591aa0dc0054
         'frm_AddRemittance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2093,9 +2152,6 @@ Partial Class frm_AddRemittance
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents DGV4colRemove As DataGridViewImageColumn
-    Friend WithEvents ColRef As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents DGV1colRemove As DataGridViewImageColumn
     Friend WithEvents cb_onlinecustomer As ComboBox
     Friend WithEvents cb_checkcustomer As ComboBox
     Friend WithEvents Label43 As Label
@@ -2126,4 +2182,7 @@ Partial Class frm_AddRemittance
     Friend WithEvents dtp_year As Label
     Friend WithEvents dtp_day As Label
     Friend WithEvents dtp_month As Label
+    Friend WithEvents ColRef As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents DGV1colRemove As DataGridViewImageColumn
 End Class
