@@ -1,24 +1,25 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Globalization
+Imports System.Text.RegularExpressions
 
 Public Class frm_remRecord
 
     Private selectedYear As String
     Private selectedMonth As String
-    Private selectedWeek As Integer
+    Private selectedWeek As String
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
 
     End Sub
 
     Sub GetWeeklyRecord()
-        CountAndCalculate("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = @TargetYear", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = @TargetYear", selectedYear)
+        GetCollectionValue()
+        CountAndCalculate("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = @TargetYear", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = @TargetYear", selectedWeek)
         Try
-            Dim targetYear As Integer = ComboBox1.Text
             DataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = '" & ComboBox3.Text & "'", cn)
-            dr = cm.ExecuteReader
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = " & selectedWeek & "", cn)
+            dr = cm.ExecuteReader()
             While dr.Read
 
                 DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
@@ -35,11 +36,10 @@ Public Class frm_remRecord
     Sub GetMonthlyRecord()
         CountAndCalculateMonth("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = @TargetMonth", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = @TargetMonth", selectedMonth)
         Try
-            Dim targetMonth As String = ComboBox2.Text
             DataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & targetMonth & "'", cn)
-            dr = cm.ExecuteReader
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & selectedMonth & "'", cn)
+            dr = cm.ExecuteReader()
             While dr.Read
 
                 DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
@@ -56,11 +56,10 @@ Public Class frm_remRecord
     Sub GetYearlyRecord()
         CountAndCalculate("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = @TargetYear", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = @TargetYear", selectedYear)
         Try
-            Dim targetYear As Integer = ComboBox1.Text
             DataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = '" & ComboBox1.Text & "'", cn)
-            dr = cm.ExecuteReader
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_year = '" & selectedYear & "'", cn)
+            dr = cm.ExecuteReader()
             While dr.Read
 
                 DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
@@ -77,6 +76,7 @@ Public Class frm_remRecord
     End Sub
 
     Sub CountAndCalculate(countQuery As String, sumQuery As String, Optional ByVal yearSelected As String = "2024")
+        Console.WriteLine(yearSelected)
         Try
 
             Dim targetYear As Integer = Integer.Parse(yearSelected)
@@ -293,7 +293,9 @@ Public Class frm_remRecord
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
+        WeekSelect.Visible = True
+        WeekSelect.BringToFront()
+        PopulateWeeksComboBox()
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -301,5 +303,47 @@ Public Class frm_remRecord
         GetMonthlyRecord()
         MonthSelect.Visible = False
         DataGridView2.BringToFront()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        selectedWeek = ComboBox3.Text
+        GetWeeklyRecord()
+        WeekSelect.Visible = False
+        DataGridView2.BringToFront()
+    End Sub
+
+    Sub GetCollectionValue()
+        If ComboBox3.SelectedItem IsNot Nothing Then
+
+            Dim selectedText As String = ComboBox3.SelectedItem.ToString()
+            Dim weekNumber As Integer
+            If Integer.TryParse(Regex.Match(selectedText, "\d+").Value, weekNumber) Then
+                selectedWeek = weekNumber
+            Else
+                MessageBox.Show("Unable to determine the week number.")
+            End If
+        End If
+    End Sub
+
+    Private Sub PopulateWeeksComboBox()
+
+        Dim currentYear As Integer = DateTime.Now.Year
+        Dim firstDayOfYear As New DateTime(currentYear, 1, 1)
+
+        ComboBox3.Items.Clear()
+
+
+        For weekNumber As Integer = 1 To 52
+            Dim startDate As DateTime = firstDayOfYear.AddDays((weekNumber - 1) * 7)
+            Dim endDate As DateTime = startDate.AddDays(6)
+            Dim weekText As String = $"Week {weekNumber}: {startDate.ToShortDateString()} - {endDate.ToShortDateString()}"
+            ComboBox3.Items.Add(weekText)
+        Next
+
+        ComboBox3.SelectedIndex = 0
+    End Sub
+
+    Private Sub WeekSelect_Paint(sender As Object, e As PaintEventArgs) Handles WeekSelect.Paint
+
     End Sub
 End Class
