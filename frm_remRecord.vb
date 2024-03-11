@@ -5,13 +5,19 @@ Public Class frm_remRecord
 
     Private selectedYear As String
     Private selectedMonth As String
+    Private selectedWeek As Integer
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
+
+    End Sub
+
+    Sub GetWeeklyRecord()
+        CountAndCalculate("SELECT COUNT(*) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = @TargetYear", "SELECT SUM(remDB_total) FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = @TargetYear", selectedYear)
         Try
-            Dim targetYear As Integer = ComboBox2.Text
+            Dim targetYear As Integer = ComboBox1.Text
             DataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_month = '" & ComboBox2.Text & "'", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance, rcss_rembd WHERE rcss_remittance.rmt_transid = rcss_rembd.remDB_transid AND rcss_remittance.rmt_status = 'Approved' AND rcss_remittance.rmt_week = '" & ComboBox3.Text & "'", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
@@ -79,11 +85,10 @@ Public Class frm_remRecord
             Dim query As String = countQuery
 
             Using cm As New MySqlCommand(query, cn)
-                Console.WriteLine(targetYear)
                 cm.Parameters.AddWithValue("@TargetYear", targetYear)
 
                 Dim recordCount As Integer = Convert.ToInt32(cm.ExecuteScalar())
-                Console.WriteLine(recordCount)
+
                 If recordCount > 1 Then
                     lblCount.Text = $"({recordCount}) records found"
                 Else
@@ -120,19 +125,14 @@ Public Class frm_remRecord
 
     Sub CountAndCalculateMonth(countQuery As String, sumQuery As String, Optional monthSelected As String = "January")
         Try
-            Console.WriteLine("1")
             Dim targetMonth As String = monthSelected
-            Console.WriteLine("2-")
-
             cn.Open()
             Dim query As String = countQuery
 
             Using cm As New MySqlCommand(query, cn)
-                Console.WriteLine(targetMonth)
                 cm.Parameters.AddWithValue("@TargetMonth", targetMonth)
 
                 Dim recordCount As Integer = Convert.ToInt32(cm.ExecuteScalar())
-                Console.WriteLine(recordCount)
                 If recordCount > 1 Then
                     lblCount.Text = $"({recordCount}) records found"
                 Else
