@@ -347,7 +347,6 @@ Public Class frm_remRecord
 
     End Sub
 
-<<<<<<< HEAD
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
         MonthSelect.Visible = False
     End Sub
@@ -355,6 +354,4 @@ Public Class frm_remRecord
     Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
         WeekSelect.Visible = False
     End Sub
-=======
->>>>>>> 04ee57a7acddff440d8a5b41b748854be740b583
 End Class
