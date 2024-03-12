@@ -75,17 +75,14 @@ Public Class frm_remRecord
 
     End Sub
 
-    Sub CountAndCalculate(countQuery As String, sumQuery As String, Optional ByVal yearSelected As String = "2024")
+    Sub CountAndCalculate(countQuery As String, sumQuery As String, Optional yearSelected As String = "2024")
         Console.WriteLine(yearSelected)
         Try
-
-            Dim targetYear As Integer = Integer.Parse(yearSelected)
-
             cn.Open()
             Dim query As String = countQuery
 
             Using cm As New MySqlCommand(query, cn)
-                cm.Parameters.AddWithValue("@TargetYear", targetYear)
+                cm.Parameters.AddWithValue("@TargetYear", yearSelected)
 
                 Dim recordCount As Integer = Convert.ToInt32(cm.ExecuteScalar())
 
@@ -103,11 +100,10 @@ Public Class frm_remRecord
         End Try
 
         Try
-            Dim targetYear As Integer = Integer.Parse(yearSelected)
             cn.Open()
             Dim query As String = sumQuery
             Using cm As New MySqlCommand(query, cn)
-                cm.Parameters.AddWithValue("@TargetYear", targetYear)
+                cm.Parameters.AddWithValue("@TargetYear", yearSelected)
                 Dim grandTotal As Integer = 0
                 Dim result As Object = cm.ExecuteScalar()
                 If result IsNot DBNull.Value Then
@@ -215,30 +211,10 @@ Public Class frm_remRecord
 
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DataGridView2.BringToFront()
-        Dim currentYear As Integer = DateTime.Now.Year
-
-        For year As Integer = 1950 To currentYear
-            ComboBox1.Items.Add(year.ToString())
-        Next
-
-        ComboBox1.SelectedItem = currentYear.ToString()
-    End Sub
-
     Private Sub frm_remRecord_Load(sender As Object, e As EventArgs) Handles Me.Load
         Loadrecord()
         ComputeRows()
-    End Sub
-
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-        Loadrecord()
-        DataGridView2.BringToFront()
-        ComputeRows()
-    End Sub
-
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
+        PopulateWeeksComboBox()
     End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
@@ -251,65 +227,6 @@ Public Class frm_remRecord
             .Show()
         End With
 
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-        YearSelect.Visible = True
-        YearSelect.BringToFront()
-    End Sub
-
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        Loadrecord()
-        DataGridView2.BringToFront()
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-        MonthSelect.Visible = True
-        MonthSelect.BringToFront()
-    End Sub
-
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles YearSelect.Paint
-        selectedYear = ComboBox1.Text
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-        YearSelect.Visible = False
-    End Sub
-
-    Private Sub Confirm_Click(sender As Object, e As EventArgs) Handles Confirm.Click
-        selectedYear = ComboBox1.Text
-        GetYearlyRecord()
-        YearSelect.Visible = False
-        DataGridView2.BringToFront()
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-        WeekSelect.Visible = True
-        WeekSelect.BringToFront()
-        PopulateWeeksComboBox()
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        selectedMonth = ComboBox2.Text
-        GetMonthlyRecord()
-        MonthSelect.Visible = False
-        DataGridView2.BringToFront()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        selectedWeek = ComboBox3.Text
-        GetWeeklyRecord()
-        WeekSelect.Visible = False
-        DataGridView2.BringToFront()
     End Sub
 
     Sub GetCollectionValue()
@@ -343,18 +260,52 @@ Public Class frm_remRecord
         ComboBox3.SelectedIndex = 0
     End Sub
 
-    Private Sub WeekSelect_Paint(sender As Object, e As PaintEventArgs) Handles WeekSelect.Paint
 
+    Private Sub filterSelector_SelectedIndexChanged(sender As Object, e As EventArgs) Handles filterSelector.SelectedIndexChanged
+        If filterSelector.SelectedItem Is "DAILY" Then
+            dailyPanel.Visible = True
+            dailyPanel.BringToFront()
+        ElseIf filterSelector.SelectedItem Is "WEEKLY" Then
+            weeklyPanel.Visible = True
+            weeklyPanel.BringToFront()
+        ElseIf filterSelector.SelectedItem Is "MONTHLY" Then
+            monthlyPanel.Visible = True
+            monthlyPanel.BringToFront()
+        ElseIf filterSelector.SelectedItem Is "YEARLY" Then
+            yearlyPanel.Visible = True
+            yearlyPanel.BringToFront()
+        End If
     End Sub
 
-<<<<<<< HEAD
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        MonthSelect.Visible = False
+    Private Sub YearInput_TextChanged(sender As Object, e As EventArgs) Handles YearInput.TextChanged
+        selectedYear = YearInput.Text
+        GetYearlyRecord()
+        DataGridView2.BringToFront()
     End Sub
 
-    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
-        WeekSelect.Visible = False
+    Private Sub YearInput_GotFocus(sender As Object, e As EventArgs) Handles YearInput.GotFocus
+        If YearInput.Text = "Type a Year..." Then
+            YearInput.Text = ""
+            YearInput.ForeColor = Color.Black ' Set the text color back to black
+        End If
     End Sub
-=======
->>>>>>> 04ee57a7acddff440d8a5b41b748854be740b583
+
+    Private Sub ComboBox3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox3.SelectedIndexChanged
+        selectedWeek = (ComboBox3.SelectedIndex + 1).ToString()
+        GetWeeklyRecord()
+
+        DataGridView2.BringToFront()
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        selectedMonth = ComboBox2.Text
+        GetMonthlyRecord()
+        DataGridView2.BringToFront()
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged_1(sender As Object, e As EventArgs)
+        Loadrecord()
+        DataGridView2.BringToFront()
+        ComputeRows()
+    End Sub
 End Class

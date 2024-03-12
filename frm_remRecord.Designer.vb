@@ -22,38 +22,35 @@ Partial Class frm_remRecord
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle85 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle98 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle86 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle87 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle88 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle89 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle90 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle91 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle92 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle93 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle94 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle95 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle96 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle97 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.weeklyPanel = New System.Windows.Forms.Panel()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.yearlyPanel = New System.Windows.Forms.Panel()
+        Me.YearInput = New System.Windows.Forms.TextBox()
+        Me.monthlyPanel = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.dailyPanel = New System.Windows.Forms.Panel()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.filterSelector = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_print = New System.Windows.Forms.Button()
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.YearSelect = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Confirm = New System.Windows.Forms.Button()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.lblSum = New System.Windows.Forms.Label()
@@ -72,40 +69,24 @@ Partial Class frm_remRecord
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MonthSelect = New System.Windows.Forms.Panel()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.WeekSelect = New System.Windows.Forms.Panel()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
+        Me.weeklyPanel.SuspendLayout()
+        Me.yearlyPanel.SuspendLayout()
+        Me.monthlyPanel.SuspendLayout()
+        Me.dailyPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.YearSelect.SuspendLayout()
-        Me.Panel6.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MonthSelect.SuspendLayout()
-        Me.Panel7.SuspendLayout()
-        Me.WeekSelect.SuspendLayout()
-        Me.Panel8.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.DateTimePicker1)
+        Me.Panel2.Controls.Add(Me.weeklyPanel)
+        Me.Panel2.Controls.Add(Me.yearlyPanel)
+        Me.Panel2.Controls.Add(Me.monthlyPanel)
+        Me.Panel2.Controls.Add(Me.dailyPanel)
+        Me.Panel2.Controls.Add(Me.filterSelector)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.btn_print)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
@@ -114,57 +95,90 @@ Partial Class frm_remRecord
         Me.Panel2.Size = New System.Drawing.Size(1024, 37)
         Me.Panel2.TabIndex = 81
         '
-        'Label5
+        'weeklyPanel
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label5.Location = New System.Drawing.Point(753, 13)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 13)
-        Me.Label5.TabIndex = 192
-        Me.Label5.Text = "Yearly"
+        Me.weeklyPanel.Controls.Add(Me.ComboBox3)
+        Me.weeklyPanel.Location = New System.Drawing.Point(271, 9)
+        Me.weeklyPanel.Name = "weeklyPanel"
+        Me.weeklyPanel.Size = New System.Drawing.Size(200, 38)
+        Me.weeklyPanel.TabIndex = 194
+        Me.weeklyPanel.Visible = False
         '
-        'Label4
+        'ComboBox3
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label4.Location = New System.Drawing.Point(614, 13)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(44, 13)
-        Me.Label4.TabIndex = 191
-        Me.Label4.Text = "Monthly"
+        Me.ComboBox3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
+        Me.ComboBox3.Location = New System.Drawing.Point(0, 0)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(200, 21)
+        Me.ComboBox3.TabIndex = 84
         '
-        'Label3
+        'yearlyPanel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label3.Location = New System.Drawing.Point(477, 13)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(43, 13)
-        Me.Label3.TabIndex = 190
-        Me.Label3.Text = "Weekly"
+        Me.yearlyPanel.Controls.Add(Me.YearInput)
+        Me.yearlyPanel.Location = New System.Drawing.Point(271, 9)
+        Me.yearlyPanel.Name = "yearlyPanel"
+        Me.yearlyPanel.Size = New System.Drawing.Size(200, 43)
+        Me.yearlyPanel.TabIndex = 196
         '
-        'Label1
+        'YearInput
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label1.Location = New System.Drawing.Point(356, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(30, 13)
-        Me.Label1.TabIndex = 189
-        Me.Label1.Text = "Daily"
+        Me.YearInput.Dock = System.Windows.Forms.DockStyle.Top
+        Me.YearInput.Location = New System.Drawing.Point(0, 0)
+        Me.YearInput.MaxLength = 4
+        Me.YearInput.Name = "YearInput"
+        Me.YearInput.Size = New System.Drawing.Size(200, 20)
+        Me.YearInput.TabIndex = 0
+        Me.YearInput.Text = "Type a Year..."
+        '
+        'monthlyPanel
+        '
+        Me.monthlyPanel.Controls.Add(Me.ComboBox2)
+        Me.monthlyPanel.Location = New System.Drawing.Point(271, 9)
+        Me.monthlyPanel.Name = "monthlyPanel"
+        Me.monthlyPanel.Size = New System.Drawing.Size(200, 38)
+        Me.monthlyPanel.TabIndex = 195
+        Me.monthlyPanel.Visible = False
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
+        Me.ComboBox2.Location = New System.Drawing.Point(0, 0)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(200, 21)
+        Me.ComboBox2.TabIndex = 84
+        '
+        'dailyPanel
+        '
+        Me.dailyPanel.Controls.Add(Me.DateTimePicker1)
+        Me.dailyPanel.Location = New System.Drawing.Point(271, 9)
+        Me.dailyPanel.Name = "dailyPanel"
+        Me.dailyPanel.Size = New System.Drawing.Size(200, 43)
+        Me.dailyPanel.TabIndex = 193
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePicker1.CustomFormat = "MM/dd/yyyy"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(55, 5)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(3, 3)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(165, 25)
-        Me.DateTimePicker1.TabIndex = 188
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 2
+        '
+        'filterSelector
+        '
+        Me.filterSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.filterSelector.FormattingEnabled = True
+        Me.filterSelector.Items.AddRange(New Object() {"DAILY", "WEEKLY", "MONTHLY", "YEARLY"})
+        Me.filterSelector.Location = New System.Drawing.Point(62, 8)
+        Me.filterSelector.Name = "filterSelector"
+        Me.filterSelector.Size = New System.Drawing.Size(154, 21)
+        Me.filterSelector.TabIndex = 190
         '
         'Label2
         '
@@ -173,9 +187,9 @@ Partial Class frm_remRecord
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(10, 9)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 18)
+        Me.Label2.Size = New System.Drawing.Size(46, 18)
         Me.Label2.TabIndex = 185
-        Me.Label2.Text = "DATE"
+        Me.Label2.Text = "FILTER"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btn_print
@@ -233,80 +247,6 @@ Partial Class frm_remRecord
         Me.Panel1.Size = New System.Drawing.Size(1024, 35)
         Me.Panel1.TabIndex = 79
         '
-        'YearSelect
-        '
-        Me.YearSelect.Controls.Add(Me.ComboBox1)
-        Me.YearSelect.Controls.Add(Me.Label8)
-        Me.YearSelect.Controls.Add(Me.Confirm)
-        Me.YearSelect.Controls.Add(Me.Panel6)
-        Me.YearSelect.Location = New System.Drawing.Point(430, 128)
-        Me.YearSelect.Name = "YearSelect"
-        Me.YearSelect.Size = New System.Drawing.Size(309, 132)
-        Me.YearSelect.TabIndex = 85
-        Me.YearSelect.Visible = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(15, 64)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(285, 21)
-        Me.ComboBox1.TabIndex = 84
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 48)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 13)
-        Me.Label8.TabIndex = 83
-        Me.Label8.Text = "Select Year:"
-        '
-        'Confirm
-        '
-        Me.Confirm.Location = New System.Drawing.Point(15, 91)
-        Me.Confirm.Name = "Confirm"
-        Me.Confirm.Size = New System.Drawing.Size(75, 23)
-        Me.Confirm.TabIndex = 82
-        Me.Confirm.Text = "CONFIRM"
-        Me.Confirm.UseVisualStyleBackColor = True
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Label6)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(309, 35)
-        Me.Panel6.TabIndex = 80
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(11, 7)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 20)
-        Me.Label6.TabIndex = 72
-        Me.Label6.Text = "RCSS FILTER"
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(283, 9)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(17, 16)
-        Me.Label7.TabIndex = 23
-        Me.Label7.Text = "X"
-        '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
@@ -357,26 +297,26 @@ Partial Class frm_remRecord
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle85.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle85.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle85.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle85.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle85.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle85.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle85
         Me.DataGridView2.ColumnHeadersHeight = 28
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.Column10, Me.Column5, Me.Column3, Me.Column1, Me.Column2, Me.Column7, Me.Column8, Me.Column9, Me.Column4, Me.Column6, Me.Column11, Me.Column12})
         Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle98.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle98.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle98.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle98.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle98
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
@@ -392,9 +332,9 @@ Partial Class frm_remRecord
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle86.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle86.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle86
         Me.DataGridViewTextBoxColumn2.HeaderText = "VAN DETAILS"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
@@ -402,8 +342,8 @@ Partial Class frm_remRecord
         'Column10
         '
         Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(2, 0, 0, 0)
-        Me.Column10.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle87.Padding = New System.Windows.Forms.Padding(2, 0, 0, 0)
+        Me.Column10.DefaultCellStyle = DataGridViewCellStyle87
         Me.Column10.HeaderText = "CUSTODIAN"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
@@ -411,9 +351,9 @@ Partial Class frm_remRecord
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle88.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle88
         Me.Column5.HeaderText = "CASH"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
@@ -421,9 +361,9 @@ Partial Class frm_remRecord
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle89.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle89
         Me.Column3.HeaderText = "COINS"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -431,9 +371,9 @@ Partial Class frm_remRecord
         'Column1
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle90.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle90
         Me.Column1.HeaderText = "GCASH"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -441,9 +381,9 @@ Partial Class frm_remRecord
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle91.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle91
         Me.Column2.HeaderText = "ONLINE BANKING"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
@@ -452,9 +392,9 @@ Partial Class frm_remRecord
         'Column7
         '
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column7.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle92.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column7.DefaultCellStyle = DataGridViewCellStyle92
         Me.Column7.HeaderText = "CHECK"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
@@ -462,9 +402,9 @@ Partial Class frm_remRecord
         'Column8
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle93.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle93
         Me.Column8.HeaderText = "AR"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
@@ -472,9 +412,9 @@ Partial Class frm_remRecord
         'Column9
         '
         Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column9.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle94.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column9.DefaultCellStyle = DataGridViewCellStyle94
         Me.Column9.HeaderText = "RETURN"
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
@@ -482,9 +422,9 @@ Partial Class frm_remRecord
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle95.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle95
         Me.Column4.HeaderText = "BO"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -492,9 +432,9 @@ Partial Class frm_remRecord
         'Column6
         '
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle96.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle96
         Me.Column6.HeaderText = "DISCOUNT"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
@@ -502,9 +442,9 @@ Partial Class frm_remRecord
         'Column11
         '
         Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle13.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column11.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle97.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column11.DefaultCellStyle = DataGridViewCellStyle97
         Me.Column11.HeaderText = "EXPENSES"
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
@@ -515,165 +455,12 @@ Partial Class frm_remRecord
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
         '
-        'MonthSelect
-        '
-        Me.MonthSelect.Controls.Add(Me.ComboBox2)
-        Me.MonthSelect.Controls.Add(Me.Label9)
-        Me.MonthSelect.Controls.Add(Me.Button1)
-        Me.MonthSelect.Controls.Add(Me.Panel7)
-        Me.MonthSelect.Location = New System.Drawing.Point(386, 147)
-        Me.MonthSelect.Name = "MonthSelect"
-        Me.MonthSelect.Size = New System.Drawing.Size(309, 132)
-        Me.MonthSelect.TabIndex = 88
-        Me.MonthSelect.Visible = False
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.ComboBox2.Location = New System.Drawing.Point(15, 64)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(285, 21)
-        Me.ComboBox2.TabIndex = 84
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 48)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 13)
-        Me.Label9.TabIndex = 83
-        Me.Label9.Text = "Select Month:"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(15, 91)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 82
-        Me.Button1.Text = "CONFIRM"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel7.Controls.Add(Me.Label10)
-        Me.Panel7.Controls.Add(Me.Label11)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(309, 35)
-        Me.Panel7.TabIndex = 80
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(11, 7)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(95, 20)
-        Me.Label10.TabIndex = 72
-        Me.Label10.Text = "RCSS FILTER"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(283, 9)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(17, 16)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "X"
-        '
-        'WeekSelect
-        '
-        Me.WeekSelect.Controls.Add(Me.ComboBox3)
-        Me.WeekSelect.Controls.Add(Me.Label12)
-        Me.WeekSelect.Controls.Add(Me.Button2)
-        Me.WeekSelect.Controls.Add(Me.Panel8)
-        Me.WeekSelect.Location = New System.Drawing.Point(326, 169)
-        Me.WeekSelect.Name = "WeekSelect"
-        Me.WeekSelect.Size = New System.Drawing.Size(309, 132)
-        Me.WeekSelect.TabIndex = 89
-        Me.WeekSelect.Visible = False
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.ComboBox3.Location = New System.Drawing.Point(15, 64)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(285, 21)
-        Me.ComboBox3.TabIndex = 84
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(12, 48)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(72, 13)
-        Me.Label12.TabIndex = 83
-        Me.Label12.Text = "Select Week:"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(15, 91)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 82
-        Me.Button2.Text = "CONFIRM"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Panel8
-        '
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel8.Controls.Add(Me.Label13)
-        Me.Panel8.Controls.Add(Me.Label14)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(309, 35)
-        Me.Panel8.TabIndex = 80
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(11, 7)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(95, 20)
-        Me.Label13.TabIndex = 72
-        Me.Label13.Text = "RCSS FILTER"
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(283, 9)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(17, 16)
-        Me.Label14.TabIndex = 23
-        Me.Label14.Text = "X"
-        '
         'frm_remRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 545)
-        Me.Controls.Add(Me.WeekSelect)
-        Me.Controls.Add(Me.MonthSelect)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.YearSelect)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridView2)
@@ -683,24 +470,17 @@ Partial Class frm_remRecord
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.weeklyPanel.ResumeLayout(False)
+        Me.yearlyPanel.ResumeLayout(False)
+        Me.yearlyPanel.PerformLayout()
+        Me.monthlyPanel.ResumeLayout(False)
+        Me.dailyPanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.YearSelect.ResumeLayout(False)
-        Me.YearSelect.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MonthSelect.ResumeLayout(False)
-        Me.MonthSelect.PerformLayout()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.WeekSelect.ResumeLayout(False)
-        Me.WeekSelect.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -709,23 +489,10 @@ Partial Class frm_remRecord
     Friend WithEvents lbl_addRemittance As Label
     Friend WithEvents lbl_close As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents YearSelect As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Confirm As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents lblSum As Label
     Friend WithEvents lblCount As Label
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
@@ -740,18 +507,14 @@ Partial Class frm_remRecord
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents MonthSelect As Panel
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents WeekSelect As Panel
     Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents monthlyPanel As Panel
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents weeklyPanel As Panel
+    Friend WithEvents dailyPanel As Panel
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents filterSelector As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents yearlyPanel As Panel
+    Friend WithEvents YearInput As TextBox
 End Class
