@@ -22,20 +22,20 @@ Partial Class frm_remRecord
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.weeklyPanel = New System.Windows.Forms.Panel()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
@@ -56,6 +56,7 @@ Partial Class frm_remRecord
         Me.lblSum = New System.Windows.Forms.Label()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.date1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -109,7 +110,7 @@ Partial Class frm_remRecord
         Me.ComboBox3.Dock = System.Windows.Forms.DockStyle.Top
         Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
+        Me.ComboBox3.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
         Me.ComboBox3.Location = New System.Drawing.Point(0, 0)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(200, 21)
@@ -147,7 +148,7 @@ Partial Class frm_remRecord
         Me.ComboBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
+        Me.ComboBox2.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
         Me.ComboBox2.Location = New System.Drawing.Point(0, 0)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(200, 21)
@@ -164,8 +165,9 @@ Partial Class frm_remRecord
         'DateTimePicker1
         '
         Me.DateTimePicker1.CustomFormat = "MM/dd/yyyy"
+        Me.DateTimePicker1.Dock = System.Windows.Forms.DockStyle.Top
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(3, 3)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 2
@@ -247,13 +249,6 @@ Partial Class frm_remRecord
         Me.Panel1.Size = New System.Drawing.Size(1024, 35)
         Me.Panel1.TabIndex = 79
         '
-
-        '
-        'ComboBox1
-        '
-
-        'Confirm
-
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
@@ -304,26 +299,26 @@ Partial Class frm_remRecord
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
         Me.DataGridView2.ColumnHeadersHeight = 28
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.Column10, Me.Column5, Me.Column3, Me.Column1, Me.Column2, Me.Column7, Me.Column8, Me.Column9, Me.Column4, Me.Column6, Me.Column11, Me.Column12})
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.date1, Me.DataGridViewTextBoxColumn2, Me.Column10, Me.Column5, Me.Column3, Me.Column1, Me.Column2, Me.Column7, Me.Column8, Me.Column9, Me.Column4, Me.Column6, Me.Column11, Me.Column12})
         Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle42.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle42.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle42
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
@@ -336,12 +331,18 @@ Partial Class frm_remRecord
         Me.DataGridView2.Size = New System.Drawing.Size(1024, 545)
         Me.DataGridView2.TabIndex = 87
         '
+        'date1
+        '
+        Me.date1.HeaderText = "DATE"
+        Me.date1.Name = "date1"
+        Me.date1.ReadOnly = True
+        '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle30.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle30
         Me.DataGridViewTextBoxColumn2.HeaderText = "VAN DETAILS"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
@@ -349,8 +350,8 @@ Partial Class frm_remRecord
         'Column10
         '
         Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle3.Padding = New System.Windows.Forms.Padding(2, 0, 0, 0)
-        Me.Column10.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle31.Padding = New System.Windows.Forms.Padding(2, 0, 0, 0)
+        Me.Column10.DefaultCellStyle = DataGridViewCellStyle31
         Me.Column10.HeaderText = "CUSTODIAN"
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
@@ -358,9 +359,9 @@ Partial Class frm_remRecord
         'Column5
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle32.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle32
         Me.Column5.HeaderText = "CASH"
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
@@ -368,9 +369,9 @@ Partial Class frm_remRecord
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle33.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle33
         Me.Column3.HeaderText = "COINS"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
@@ -378,9 +379,9 @@ Partial Class frm_remRecord
         'Column1
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle34.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle34
         Me.Column1.HeaderText = "GCASH"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -388,9 +389,9 @@ Partial Class frm_remRecord
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle35.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle35
         Me.Column2.HeaderText = "ONLINE BANKING"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
@@ -399,9 +400,9 @@ Partial Class frm_remRecord
         'Column7
         '
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column7.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle36.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column7.DefaultCellStyle = DataGridViewCellStyle36
         Me.Column7.HeaderText = "CHECK"
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
@@ -409,9 +410,9 @@ Partial Class frm_remRecord
         'Column8
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle37.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle37
         Me.Column8.HeaderText = "AR"
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
@@ -419,9 +420,9 @@ Partial Class frm_remRecord
         'Column9
         '
         Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column9.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle38.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column9.DefaultCellStyle = DataGridViewCellStyle38
         Me.Column9.HeaderText = "RETURN"
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
@@ -429,9 +430,9 @@ Partial Class frm_remRecord
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle39.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle39
         Me.Column4.HeaderText = "BO"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -439,9 +440,9 @@ Partial Class frm_remRecord
         'Column6
         '
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle12.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle40.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle40
         Me.Column6.HeaderText = "DISCOUNT"
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
@@ -449,9 +450,9 @@ Partial Class frm_remRecord
         'Column11
         '
         Me.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle13.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column11.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle41.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column11.DefaultCellStyle = DataGridViewCellStyle41
         Me.Column11.HeaderText = "EXPENSES"
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
@@ -461,35 +462,6 @@ Partial Class frm_remRecord
         Me.Column12.HeaderText = "TOTAL"
         Me.Column12.Name = "Column12"
         Me.Column12.ReadOnly = True
-        '
-        'MonthSelect
-
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.ComboBox2.Location = New System.Drawing.Point(15, 64)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(285, 21)
-        Me.ComboBox2.TabIndex = 84
-        '
-        'Label9
-
-        'Button1
-        '
-
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.ComboBox3.Location = New System.Drawing.Point(15, 64)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(285, 21)
-        Me.ComboBox3.TabIndex = 84
-        '
-
         '
         'frm_remRecord
         '
@@ -530,6 +502,17 @@ Partial Class frm_remRecord
     Friend WithEvents lblSum As Label
     Friend WithEvents lblCount As Label
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents monthlyPanel As Panel
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents weeklyPanel As Panel
+    Friend WithEvents dailyPanel As Panel
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents filterSelector As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents yearlyPanel As Panel
+    Friend WithEvents YearInput As TextBox
+    Friend WithEvents date1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
@@ -543,14 +526,4 @@ Partial Class frm_remRecord
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents monthlyPanel As Panel
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents weeklyPanel As Panel
-    Friend WithEvents dailyPanel As Panel
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents filterSelector As ComboBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents yearlyPanel As Panel
-    Friend WithEvents YearInput As TextBox
 End Class
