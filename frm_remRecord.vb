@@ -346,4 +346,5 @@ Public Class frm_remRecord
     Private Sub WeekSelect_Paint(sender As Object, e As PaintEventArgs) Handles WeekSelect.Paint
 
     End Sub
+
 End Class

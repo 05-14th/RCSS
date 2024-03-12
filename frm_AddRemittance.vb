@@ -259,6 +259,7 @@ Public Class frm_AddRemittance
                             cm.Parameters.AddWithValue("@remar_time", frm_dashAdmin.lbl_time.Text)
                             cm.Parameters.AddWithValue("@remar_refnum", DataGridView2.Rows(i).Cells(0).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
                             cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
                             cm.Parameters.AddWithValue("@remar_status", "Pending")
@@ -518,6 +519,7 @@ Public Class frm_AddRemittance
                             cm.Parameters.AddWithValue("@remar_time", frm_dashAdmin.lbl_time.Text)
                             cm.Parameters.AddWithValue("@remar_refnum", DataGridView2.Rows(i).Cells(0).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
                             cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
                             cm.Parameters.AddWithValue("@remar_status", "Uncollected")
@@ -1480,5 +1482,24 @@ Public Class frm_AddRemittance
 
     Private Sub dtp_month_Click(sender As Object, e As EventArgs) Handles dtp_month.Click
 
+    End Sub
+
+    Private Sub cb_customers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_customers.SelectedIndexChanged
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_customers.SelectedItem & "' ", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                lbl_CusID.Text = dr.Item("cus_accountno").ToString
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

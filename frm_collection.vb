@@ -5,9 +5,10 @@ Public Class frm_collection
     Dim countcheck As Integer
     Private Sub frm_collection_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadCol()
+        Countuncollected()
         CountCollected()
         CountProcessing()
-        Countuncollected()
+
     End Sub
 
     Sub LoadCol()
@@ -15,7 +16,7 @@ Public Class frm_collection
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_customer = rcss_customer.cus_name", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -55,7 +56,7 @@ Public Class frm_collection
             cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remar WHERE remar_status = 'Uncollected'", cn)
             Dim count As String
             count = cm.ExecuteScalar().ToString()
-            LL_forApproval.Text = "Uncollected (" + count + ")"
+            LL_Uncollected.Text = "Uncollected (" + count + ")"
 
             cn.Close()
         Catch ex As Exception
@@ -72,7 +73,7 @@ Public Class frm_collection
             cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remar WHERE remar_status = 'Processing'", cn)
             Dim count As String
             count = cm.ExecuteScalar().ToString()
-            LL_revise.Text = "Processing (" + count + ")"
+            LL_Processing.Text = "Processing (" + count + ")"
 
             cn.Close()
         Catch ex As Exception
@@ -89,7 +90,7 @@ Public Class frm_collection
             cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remar WHERE remar_status = 'Collected'", cn)
             Dim count As String
             count = cm.ExecuteScalar().ToString()
-            LL_approved.Text = "Collected (" + count + ")"
+            LL_Collected.Text = "Collected (" + count + ")"
 
             cn.Close()
         Catch ex As Exception
@@ -105,7 +106,8 @@ Public Class frm_collection
             DataGridView1.Rows.Clear()
             cn.Open()
             'cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rmt_status = 'Checking'", cn)
-            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_customer = rcss_customer.cus_name AND rcss_collection.col_remar_status = '" + status + "';", cn)
+            'cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_customer = rcss_customer.cus_name AND rcss_collection.col_remar_status = '" + status + "';", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_collection.col_remar_status = '" + status + "'", cn)
 
             dr = cm.ExecuteReader
             While dr.Read
@@ -141,7 +143,7 @@ Public Class frm_collection
                 DataGridView1.Rows.Clear()
                 cn.Open()
                 'cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid Like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rmt_status = 'Checking'", cn)
-            cm = New MySqlCommand("SELECT * FROM rcss_customer, rcss_collection WHERE rcss_customer.cus_name = rcss_collection.col_customer AND rcss_collection.col_idno like '%" & tb_search.Text & "%'", cn)
+                cm = New MySqlCommand("SELECT * FROM rcss_customer, rcss_collection WHERE rcss_customer.cus_name = rcss_collection.col_customer AND rcss_collection.col_idno like '%" & tb_search.Text & "%'", cn)
 
                 dr = cm.ExecuteReader
                 While dr.Read
@@ -157,20 +159,13 @@ Public Class frm_collection
             End Try
         End If
     End Sub
-
-    Private Sub LL_approved_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_approved.LinkClicked
-        LoadSelectedData("Collected")
+    Private Sub LL_Uncollected_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Uncollected.LinkClicked
+        LoadSelectedData("Uncollected")
     End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub LL_revise_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_revise.LinkClicked
+    Private Sub LL_Processing_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Processing.LinkClicked
         LoadSelectedData("Processing")
     End Sub
-
-    Private Sub LL_forApproval_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_forApproval.LinkClicked
-        LoadSelectedData("Uncollected")
+    Private Sub LL_Collected_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Collected.LinkClicked
+        LoadSelectedData("Collected")
     End Sub
 End Class
