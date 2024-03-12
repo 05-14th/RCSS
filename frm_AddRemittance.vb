@@ -1502,4 +1502,20 @@ Public Class frm_AddRemittance
             MsgBox(ex.Message, vbCritical)
         End Try
     End Sub
+
+    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
+
+        Dim selecteddate As Date = DateTimePicker2.Value
+
+        Dim duedate As Date = selecteddate.AddDays(7)
+
+        Dim ShowDueDate As String = duedate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)
+
+        Lbl_Duedate.Text = ShowDueDate
+
+    End Sub
+
+    Private Sub tb_ARcustomer_TextChanged(sender As Object, e As EventArgs) Handles tb_ARcustomer.TextChanged
+
+    End Sub
 End Class
