@@ -16,11 +16,11 @@ Public Class frm_collection
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer , rcss_remar WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_collection.col_transID = rcss_remar.remar_transid ", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_transid").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("col_refnum").ToString, dr.Item("col_invoice").ToString)
+                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_transid").ToString, dr.Item("remar_date").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("col_refnum").ToString, dr.Item("col_invoice").ToString)
 
             End While
             dr.Close()
@@ -56,7 +56,7 @@ Public Class frm_collection
             cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remar WHERE remar_status = 'Uncollected'", cn)
             Dim count As String
             count = cm.ExecuteScalar().ToString()
-            LL_Uncollected.Text = "Uncollected (" + count + ")"
+            btnNew.Text = "ADD NEW COLLECTION (" + count + ")"
 
             cn.Close()
         Catch ex As Exception
@@ -100,14 +100,14 @@ Public Class frm_collection
 
     End Sub
 
-    Private Sub LoadSelectedData(status As String)
+    Public Sub LoadSelectedData(status As String)
         Try
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
             'cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rmt_status = 'Checking'", cn)
             'cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_customer = rcss_customer.cus_name AND rcss_collection.col_remar_status = '" + status + "';", cn)
-            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_collection.col_remar_status = '" + status + "'", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_collection.col_remar_status = '" & status & "'", cn)
 
             dr = cm.ExecuteReader
             While dr.Read
@@ -159,13 +159,14 @@ Public Class frm_collection
             End Try
         End If
     End Sub
-    Private Sub LL_Uncollected_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Uncollected.LinkClicked
-        LoadSelectedData("Uncollected")
-    End Sub
     Private Sub LL_Processing_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Processing.LinkClicked
         LoadSelectedData("Processing")
     End Sub
     Private Sub LL_Collected_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Collected.LinkClicked
         LoadSelectedData("Collected")
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class
