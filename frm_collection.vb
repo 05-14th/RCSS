@@ -16,7 +16,8 @@ Public Class frm_collection
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remar, rcss_collection, rcss_customer  WHERE rcss_remar.remar_transid = rcss_collection.col_transID AND rcss_collection.col_cusID = rcss_customer.cus_accountno", cn)
+            'cm = New MySqlCommand("SELECT * FROM rcss_remar, rcss_collection, rcss_customer  WHERE rcss_remar.remar_transid = rcss_collection.col_transID AND rcss_collection.col_cusID = rcss_customer.cus_accountno", cn)
+            cm = New MySqlCommand("SELECT rcss_collection.col_remar_status, rcss_collection.col_idno, rcss_collection.col_transid, rcss_remar.remar_date, rcss_customer.cus_name, rcss_customer.cus_address, rcss_collection.col_refnum, rcss_collection.col_invoice FROM rcss_remar JOIN rcss_collection ON(rcss_remar.remar_transid = rcss_collection.col_transid) JOIN rcss_customer ON(rcss_customer.cus_accountno = rcss_collection.col_cusID)", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
