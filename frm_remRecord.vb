@@ -346,4 +346,12 @@ Public Class frm_remRecord
     Private Sub WeekSelect_Paint(sender As Object, e As PaintEventArgs) Handles WeekSelect.Paint
 
     End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+        MonthSelect.Visible = False
+    End Sub
+
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+        WeekSelect.Visible = False
+    End Sub
 End Class

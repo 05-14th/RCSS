@@ -310,6 +310,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Remitance.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_arMonitoringSummary.resx">
+      <DependentUpon>frm_arMonitoringSummary.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_collectionRecord.resx">
       <DependentUpon>frm_collectionRecord.vb</DependentUpon>
     </EmbeddedResource>
