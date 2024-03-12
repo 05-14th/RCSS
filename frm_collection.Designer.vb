@@ -357,9 +357,9 @@ Partial Class frm_collection
         '
         Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "REFERENCE NUMBER"
+        Me.Column5.HeaderText = "AR REFERENCE NUMBER"
         Me.Column5.Name = "Column5"
-        Me.Column5.Width = 139
+        Me.Column5.Width = 156
         '
         'Column6
         '
