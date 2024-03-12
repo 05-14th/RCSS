@@ -15,7 +15,7 @@ Public Class frm_rptRemRecord
     Sub Loadrecord()
         Try
             cn.Open()
-            cm = New MySqlCommand("SELECT rmt_transid, rmt_vanno, rmt_custodian FROM rcss_remittance", cn)
+            cm = New MySqlCommand("SELECT rmt_transid, rmt_vanno, rmt_custodian FROM rcss_remittance LIMIT 1", cn)
             da = New MySqlDataAdapter(cm)
             da.Fill(dt)
             cm = New MySqlCommand("SELECT remDB_cash, remDB_gcash, remDB_online, remDB_check, remDB_ar, remDB_return, remDB_bo, remDB_discount, remDB_expenses, remDB_total FROM rcss_rembd", cn)
