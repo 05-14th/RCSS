@@ -503,6 +503,11 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="MetroFramework.txt" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\For Revision.png" />
+    <None Include="Resources\Approved.png" />
+    <None Include="Resources\Approved.jpg" />
+    <None Include="Resources\For Approval1.png" />
+    <None Include="Resources\For Approval.png" />
     <None Include="Resources\Icon 128 x 128 px %283%29.png" />
     <None Include="Resources\Icon 128 x 128 px %282%29.png" />
     <None Include="Resources\Icon 128 x 128 px.png" />

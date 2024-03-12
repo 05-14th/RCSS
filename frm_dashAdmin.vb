@@ -24,7 +24,7 @@ Public Class frm_dashAdmin
             Dim count As String
             count = cm.ExecuteScalar().ToString()
             btn_approval.Text = "FOR APPROVAL" & vbLf & "(" & count & ")"
-
+            Lbl_ForApproval.Text = count
             cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -40,7 +40,7 @@ Public Class frm_dashAdmin
             Dim count As String
             count = cm.ExecuteScalar().ToString()
             btn_revision.Text = "FOR REVISION" & vbLf & "(" & count & ")"
-
+            Lbl_ForRevision.Text = count
             cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -56,7 +56,7 @@ Public Class frm_dashAdmin
             Dim count As String
             count = cm.ExecuteScalar().ToString()
             btn_approved.Text = "APPROVED" & vbLf & "(" & count & ")"
-
+            Lbl_Approved.Text = count
             cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -209,5 +209,65 @@ Public Class frm_dashAdmin
 
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
 
+    End Sub
+
+    Private Sub Lbl_Btn_ForApproval_Click(sender As Object, e As EventArgs) Handles Lbl_Btn_ForApproval.Click
+        With frm_remApproval
+            .TopLevel = False
+            PanelDock.Controls.Add(frm_remApproval)
+
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub Lbl_Btn_ForRevision_Click(sender As Object, e As EventArgs) Handles Lbl_Btn_ForRevision.Click
+        With frm_remRevise
+            .TopLevel = False
+            PanelDock.Controls.Add(frm_remRevise)
+
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub Lbl_Btn_Approved_Click(sender As Object, e As EventArgs) Handles Lbl_Btn_Approved.Click
+        With frm_remApproved
+            .TopLevel = False
+            PanelDock.Controls.Add(frm_remApproved)
+
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub pb_btn_forApproval_Click(sender As Object, e As EventArgs) Handles pb_btn_forApproval.Click
+        With frm_remApproval
+            .TopLevel = False
+            PanelDock.Controls.Add(frm_remApproval)
+
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub pb_btn_forRevision_Click(sender As Object, e As EventArgs) Handles pb_btn_forRevision.Click
+        With frm_remRevise
+            .TopLevel = False
+            PanelDock.Controls.Add(frm_remRevise)
+
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub pb_btn_Approved_Click(sender As Object, e As EventArgs) Handles pb_btn_Approved.Click
+        With frm_remApproved
+            .TopLevel = False
+            PanelDock.Controls.Add(frm_remApproved)
+
+            .BringToFront()
+            .Show()
+        End With
     End Sub
 End Class
