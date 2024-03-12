@@ -247,80 +247,13 @@ Partial Class frm_remRecord
         Me.Panel1.Size = New System.Drawing.Size(1024, 35)
         Me.Panel1.TabIndex = 79
         '
-        'YearSelect
-        '
-        Me.YearSelect.Controls.Add(Me.ComboBox1)
-        Me.YearSelect.Controls.Add(Me.Label8)
-        Me.YearSelect.Controls.Add(Me.Confirm)
-        Me.YearSelect.Controls.Add(Me.Panel6)
-        Me.YearSelect.Location = New System.Drawing.Point(430, 128)
-        Me.YearSelect.Name = "YearSelect"
-        Me.YearSelect.Size = New System.Drawing.Size(309, 132)
-        Me.YearSelect.TabIndex = 85
-        Me.YearSelect.Visible = False
+
         '
         'ComboBox1
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(15, 64)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(285, 21)
-        Me.ComboBox1.TabIndex = 84
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(12, 48)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 13)
-        Me.Label8.TabIndex = 83
-        Me.Label8.Text = "Select Year:"
-        '
+
         'Confirm
-        '
-        Me.Confirm.Location = New System.Drawing.Point(15, 91)
-        Me.Confirm.Name = "Confirm"
-        Me.Confirm.Size = New System.Drawing.Size(75, 23)
-        Me.Confirm.TabIndex = 82
-        Me.Confirm.Text = "CONFIRM"
-        Me.Confirm.UseVisualStyleBackColor = True
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.Label6)
-        Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(309, 35)
-        Me.Panel6.TabIndex = 80
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(11, 7)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 20)
-        Me.Label6.TabIndex = 72
-        Me.Label6.Text = "RCSS FILTER"
-        '
-        'Label7
-        '
-        Me.Label7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(283, 9)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(17, 16)
-        Me.Label7.TabIndex = 23
-        Me.Label7.Text = "X"
-        '
+
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
@@ -530,16 +463,7 @@ Partial Class frm_remRecord
         Me.Column12.ReadOnly = True
         '
         'MonthSelect
-        '
-        Me.MonthSelect.Controls.Add(Me.ComboBox2)
-        Me.MonthSelect.Controls.Add(Me.Label9)
-        Me.MonthSelect.Controls.Add(Me.Button1)
-        Me.MonthSelect.Controls.Add(Me.Panel7)
-        Me.MonthSelect.Location = New System.Drawing.Point(386, 147)
-        Me.MonthSelect.Name = "MonthSelect"
-        Me.MonthSelect.Size = New System.Drawing.Size(309, 132)
-        Me.MonthSelect.TabIndex = 88
-        Me.MonthSelect.Visible = False
+
         '
         'ComboBox2
         '
@@ -551,70 +475,10 @@ Partial Class frm_remRecord
         Me.ComboBox2.TabIndex = 84
         '
         'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(12, 48)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 13)
-        Me.Label9.TabIndex = 83
-        Me.Label9.Text = "Select Month:"
-        '
+
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(15, 91)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 82
-        Me.Button1.Text = "CONFIRM"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel7.Controls.Add(Me.Label10)
-        Me.Panel7.Controls.Add(Me.Label11)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(309, 35)
-        Me.Panel7.TabIndex = 80
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(11, 7)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(95, 20)
-        Me.Label10.TabIndex = 72
-        Me.Label10.Text = "RCSS FILTER"
-        '
-        'Label11
-        '
-        Me.Label11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(283, 9)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(17, 16)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "X"
-        '
-        'WeekSelect
-        '
-        Me.WeekSelect.Controls.Add(Me.ComboBox3)
-        Me.WeekSelect.Controls.Add(Me.Label12)
-        Me.WeekSelect.Controls.Add(Me.Button2)
-        Me.WeekSelect.Controls.Add(Me.Panel8)
-        Me.WeekSelect.Location = New System.Drawing.Point(326, 169)
-        Me.WeekSelect.Name = "WeekSelect"
-        Me.WeekSelect.Size = New System.Drawing.Size(309, 132)
-        Me.WeekSelect.TabIndex = 89
-        Me.WeekSelect.Visible = False
+
         '
         'ComboBox3
         '
@@ -625,59 +489,7 @@ Partial Class frm_remRecord
         Me.ComboBox3.Size = New System.Drawing.Size(285, 21)
         Me.ComboBox3.TabIndex = 84
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(12, 48)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(72, 13)
-        Me.Label12.TabIndex = 83
-        Me.Label12.Text = "Select Week:"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(15, 91)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 82
-        Me.Button2.Text = "CONFIRM"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Panel8
-        '
-        Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.Panel8.Controls.Add(Me.Label13)
-        Me.Panel8.Controls.Add(Me.Label14)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(309, 35)
-        Me.Panel8.TabIndex = 80
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(11, 7)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(95, 20)
-        Me.Label13.TabIndex = 72
-        Me.Label13.Text = "RCSS FILTER"
-        '
-        'Label14
-        '
-        Me.Label14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label14.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(283, 9)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(17, 16)
-        Me.Label14.TabIndex = 23
-        Me.Label14.Text = "X"
+
         '
         'frm_remRecord
         '
