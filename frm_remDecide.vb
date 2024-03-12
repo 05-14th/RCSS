@@ -213,8 +213,8 @@ Public Class frm_remDecide
                 cn.Open()
                 cm = New MySqlCommand("UPDATE rcss_remittance SET rmt_status=@rmt_status, rmt_comment=@rmt_comment, rmt_approvedby=@rmt_approvedby, rmt_approveddate=@rmt_approveddate, rmt_approvedtime=@rmt_approvedtime WHERE rmt_transid = '" & tb_transID.Text & "'", cn)
 
-                cm.Parameters.AddWithValue("@rmt_status", "Revise")
-                cm.Parameters.AddWithValue("@rmt_comment", tb_comment.Text)
+                cm.Parameters.AddWithValue("@rmt_status", "For Revision")
+                cm.Parameters.AddWithValue("@rmt_comment", tb_comment.Text & " - " & DateTimePicker1.Text & " - " & frm_dashAdmin.lbl_time.Text & vbLf)
                 cm.Parameters.AddWithValue("@rmt_approvedby", frm_dashAdmin.lbl_userID.Text)
                 cm.Parameters.AddWithValue("@rmt_approveddate", DateTimePicker1.Text)
                 cm.Parameters.AddWithValue("@rmt_approvedtime", frm_dashAdmin.lbl_time.Text)
@@ -239,7 +239,7 @@ Public Class frm_remDecide
                 cn.Open()
                 cm = New MySqlCommand("UPDATE rcss_remar SET remar_rmtstatus = @remar_rmtstatus WHERE remar_transid = '" & tb_transID.Text & "'", cn)
 
-                cm.Parameters.AddWithValue("@remar_rmtstatus", "Revise")
+                cm.Parameters.AddWithValue("@remar_rmtstatus", "For Revision")
                 cm.ExecuteNonQuery()
                 cn.Close()
 

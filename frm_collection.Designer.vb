@@ -44,10 +44,13 @@ Partial Class frm_collection
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.tb_search = New MetroFramework.Controls.MetroTextBox()
-        Me.LL_approved = New System.Windows.Forms.LinkLabel()
-        Me.LL_revise = New System.Windows.Forms.LinkLabel()
-        Me.LL_forApproval = New System.Windows.Forms.LinkLabel()
+        Me.LL_Collected = New System.Windows.Forms.LinkLabel()
+        Me.LL_Processing = New System.Windows.Forms.LinkLabel()
+        Me.LL_Uncollected = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Divider1 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -271,7 +274,7 @@ Partial Class frm_collection
         Me.tb_search.MaxLength = 32767
         Me.tb_search.Name = "tb_search"
         Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_search.PromptText = "Search here . . ."
+        Me.tb_search.PromptText = "Search collection ID here"
         Me.tb_search.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.tb_search.SelectedText = ""
         Me.tb_search.SelectionLength = 0
@@ -280,88 +283,115 @@ Partial Class frm_collection
         Me.tb_search.Size = New System.Drawing.Size(274, 25)
         Me.tb_search.TabIndex = 183
         Me.tb_search.UseSelectable = True
-        Me.tb_search.WaterMark = "Search here . . ."
+        Me.tb_search.WaterMark = "Search collection ID here"
         Me.tb_search.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.tb_search.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'LL_approved
+        'LL_Collected
         '
-        Me.LL_approved.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_approved.AutoSize = True
-        Me.LL_approved.BackColor = System.Drawing.Color.White
-        Me.LL_approved.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LL_approved.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_approved.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LL_approved.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.LL_approved.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LL_approved.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LL_approved.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_approved.Location = New System.Drawing.Point(556, 11)
-        Me.LL_approved.Name = "LL_approved"
-        Me.LL_approved.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.LL_approved.Size = New System.Drawing.Size(96, 15)
-        Me.LL_approved.TabIndex = 182
-        Me.LL_approved.TabStop = True
-        Me.LL_approved.Text = "Collected (0)"
-        Me.LL_approved.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LL_approved.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Collected.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Collected.AutoSize = True
+        Me.LL_Collected.BackColor = System.Drawing.Color.White
+        Me.LL_Collected.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LL_Collected.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Collected.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LL_Collected.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_Collected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Collected.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LL_Collected.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Collected.Location = New System.Drawing.Point(556, 11)
+        Me.LL_Collected.Name = "LL_Collected"
+        Me.LL_Collected.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.LL_Collected.Size = New System.Drawing.Size(96, 15)
+        Me.LL_Collected.TabIndex = 182
+        Me.LL_Collected.TabStop = True
+        Me.LL_Collected.Text = "Collected (0)"
+        Me.LL_Collected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Collected.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         '
-        'LL_revise
+        'LL_Processing
         '
-        Me.LL_revise.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_revise.AutoSize = True
-        Me.LL_revise.BackColor = System.Drawing.Color.White
-        Me.LL_revise.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LL_revise.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_revise.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LL_revise.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.LL_revise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LL_revise.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LL_revise.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_revise.Location = New System.Drawing.Point(392, 11)
-        Me.LL_revise.Name = "LL_revise"
-        Me.LL_revise.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.LL_revise.Size = New System.Drawing.Size(105, 15)
-        Me.LL_revise.TabIndex = 182
-        Me.LL_revise.TabStop = True
-        Me.LL_revise.Text = "Processing (0)"
-        Me.LL_revise.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LL_revise.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Processing.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Processing.AutoSize = True
+        Me.LL_Processing.BackColor = System.Drawing.Color.White
+        Me.LL_Processing.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LL_Processing.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Processing.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LL_Processing.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_Processing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Processing.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LL_Processing.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Processing.Location = New System.Drawing.Point(392, 11)
+        Me.LL_Processing.Name = "LL_Processing"
+        Me.LL_Processing.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.LL_Processing.Size = New System.Drawing.Size(105, 15)
+        Me.LL_Processing.TabIndex = 182
+        Me.LL_Processing.TabStop = True
+        Me.LL_Processing.Text = "Processing (0)"
+        Me.LL_Processing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Processing.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         '
-        'LL_forApproval
+        'LL_Uncollected
         '
-        Me.LL_forApproval.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_forApproval.AutoSize = True
-        Me.LL_forApproval.BackColor = System.Drawing.Color.White
-        Me.LL_forApproval.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LL_forApproval.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_forApproval.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LL_forApproval.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.LL_forApproval.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LL_forApproval.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.LL_forApproval.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_forApproval.Location = New System.Drawing.Point(223, 11)
-        Me.LL_forApproval.Name = "LL_forApproval"
-        Me.LL_forApproval.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.LL_forApproval.Size = New System.Drawing.Size(110, 15)
-        Me.LL_forApproval.TabIndex = 182
-        Me.LL_forApproval.TabStop = True
-        Me.LL_forApproval.Text = "Uncollected (0)"
-        Me.LL_forApproval.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LL_forApproval.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Uncollected.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Uncollected.AutoSize = True
+        Me.LL_Uncollected.BackColor = System.Drawing.Color.White
+        Me.LL_Uncollected.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LL_Uncollected.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Uncollected.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LL_Uncollected.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_Uncollected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Uncollected.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LL_Uncollected.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Uncollected.Location = New System.Drawing.Point(223, 11)
+        Me.LL_Uncollected.Name = "LL_Uncollected"
+        Me.LL_Uncollected.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.LL_Uncollected.Size = New System.Drawing.Size(110, 15)
+        Me.LL_Uncollected.TabIndex = 182
+        Me.LL_Uncollected.TabStop = True
+        Me.LL_Uncollected.Text = "Uncollected (0)"
+        Me.LL_Uncollected.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Uncollected.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Panel6)
+        Me.Panel2.Controls.Add(Me.Panel5)
+        Me.Panel2.Controls.Add(Me.Divider1)
         Me.Panel2.Controls.Add(Me.tb_search)
-        Me.Panel2.Controls.Add(Me.LL_approved)
-        Me.Panel2.Controls.Add(Me.LL_revise)
-        Me.Panel2.Controls.Add(Me.LL_forApproval)
+        Me.Panel2.Controls.Add(Me.LL_Collected)
+        Me.Panel2.Controls.Add(Me.LL_Processing)
+        Me.Panel2.Controls.Add(Me.LL_Uncollected)
         Me.Panel2.Controls.Add(Me.btnNew)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 35)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1280, 36)
         Me.Panel2.TabIndex = 73
+        '
+        'Divider1
+        '
+        Me.Divider1.BackColor = System.Drawing.Color.DimGray
+        Me.Divider1.Location = New System.Drawing.Point(205, 8)
+        Me.Divider1.Name = "Divider1"
+        Me.Divider1.Size = New System.Drawing.Size(1, 20)
+        Me.Divider1.TabIndex = 184
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DimGray
+        Me.Panel5.Location = New System.Drawing.Point(372, 8)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1, 20)
+        Me.Panel5.TabIndex = 185
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.DimGray
+        Me.Panel6.Location = New System.Drawing.Point(536, 8)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1, 20)
+        Me.Panel6.TabIndex = 186
         '
         'frm_collection
         '
@@ -400,9 +430,9 @@ Partial Class frm_collection
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel4 As Panel
     Friend WithEvents tb_search As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents LL_approved As LinkLabel
-    Friend WithEvents LL_revise As LinkLabel
-    Friend WithEvents LL_forApproval As LinkLabel
+    Friend WithEvents LL_Collected As LinkLabel
+    Friend WithEvents LL_Processing As LinkLabel
+    Friend WithEvents LL_Uncollected As LinkLabel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Column20 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
@@ -412,4 +442,7 @@ Partial Class frm_collection
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Divider1 As Panel
 End Class
