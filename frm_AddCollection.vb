@@ -31,14 +31,14 @@ Public Class frm_AddCollection
     Sub LoadAR()
 
         Try
-        'Dim i As Integer = 0
-        DataGridView1.Rows.Clear()
+            'Dim i As Integer = 0
+            DataGridView2.Rows.Clear()
             cn.Open()
             cm = New MySqlCommand("SELECT * FROM rcss_remar inner join rcss_remittance on rcss_remar.remar_transid = rcss_remittance.rmt_transid WHERE remar_rmtstatus = 'Approved' AND remar_status = 'Uncollected'", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
-                DataGridView1.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_customer").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
+                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_customer").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
 
             End While
             dr.Close()
@@ -83,16 +83,16 @@ Public Class frm_AddCollection
         '    End If
 
     End Sub
-    Private Sub DataGridView1_CurrentCellDirtyStateChanged(sender As Object, e As EventArgs) Handles DataGridView1.CurrentCellDirtyStateChanged
-        If DataGridView1.IsCurrentCellDirty Then
-            DataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit)
+    Private Sub DataGridView2_CurrentCellDirtyStateChanged(sender As Object, e As EventArgs) Handles DataGridView2.CurrentCellDirtyStateChanged
+        If DataGridView2.IsCurrentCellDirty Then
+            DataGridView2.CommitEdit(DataGridViewDataErrorContexts.Commit)
 
         End If
 
     End Sub
-    Private Sub DataGridView1_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellValueChanged
+    Private Sub DataGridView2_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellValueChanged
         If e.RowIndex < 0 Then Return
-        Dim ischecked As Boolean = CBool(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
+        Dim ischecked As Boolean = CBool(DataGridView2.Rows(e.RowIndex).Cells(0).Value)
         'MsgBox(DataGridView1.Rows(e.RowIndex).Cells(0).Value)
         If ischecked Then
             countcheck += 1
@@ -106,7 +106,7 @@ Public Class frm_AddCollection
 
 
         Dim compute As Decimal = 0
-        For Each row As DataGridViewRow In DataGridView1.Rows
+        For Each row As DataGridViewRow In DataGridView2.Rows
             Dim isSelected As Boolean = Convert.ToBoolean(row.Cells("cb_column").Value)
             If isSelected Then
 
@@ -119,13 +119,14 @@ Public Class frm_AddCollection
         Next
         lbl_TotalAR.Text = compute
         lbl_TotalAR.Text = String.Format("{0:n}", Double.Parse(lbl_TotalAR.Text))
+
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Try
             If MsgBox("Do you want to save this selection?", vbYesNo + vbQuestion) = vbYes Then
 
-                For Each row As DataGridViewRow In DataGridView1.Rows
+                For Each row As DataGridViewRow In DataGridView2.Rows
                     Dim isSelected As Boolean = Convert.ToBoolean(row.Cells("cb_column").Value)
 
                     If isSelected = True Then
@@ -255,21 +256,12 @@ Public Class frm_AddCollection
 
 
     End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
-
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
-
-    Private Sub DataGridView1_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseClick
+    Private Sub DataGridView2_MouseClick(sender As Object, e As MouseEventArgs) Handles DataGridView2.MouseClick
         Try
-            If DataGridView1.SelectedRows(0).Cells(0).Value = False Then
-                DataGridView1.SelectedRows(0).Cells(0).Value = True
+            If DataGridView2.SelectedRows(0).Cells(0).Value = False Then
+                DataGridView2.SelectedRows(0).Cells(0).Value = True
             Else
-                DataGridView1.SelectedRows(0).Cells(0).Value = False
+                DataGridView2.SelectedRows(0).Cells(0).Value = False
             End If
         Catch ex As Exception
 
@@ -277,47 +269,7 @@ Public Class frm_AddCollection
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub lbl_addRemittance_Click(sender As Object, e As EventArgs) Handles lbl_addRemittance.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
-
-    End Sub
-
-    Private Sub lbl_TotalAR_Click(sender As Object, e As EventArgs) Handles lbl_TotalAR.Click
-
-    End Sub
-
-    Private Sub lblSelectedCount_Click(sender As Object, e As EventArgs) Handles lblSelectedCount.Click
-
-    End Sub
-
-    Private Sub countselected_Click(sender As Object, e As EventArgs) Handles countselected.Click
-
-    End Sub
-
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
-
-    End Sub
-
-    Private Sub tb_collectionID_TextChanged(sender As Object, e As EventArgs) Handles tb_collectionID.TextChanged
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub tb_search_Click(sender As Object, e As EventArgs) Handles tb_search.Click
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
     End Sub
 End Class

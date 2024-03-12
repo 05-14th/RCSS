@@ -145,7 +145,28 @@ Public Class frm_remittance
 
                         '.tb_total.Text = Format(CDec(DataGridView1.Rows(e.RowIndex).Cells(17).Value.ToString), "###,###,##0.00")
 
-                        .tb_remarks.Text = DataGridView1.Rows(e.RowIndex).Cells(18).Value.ToString
+                        '.tb_remarks.Text = DataGridView1.Rows(e.RowIndex).Cells(18).Value.ToString
+
+
+
+                        'FOR Remittance Remarks
+                        Try
+                            .tb_remarks.Clear()
+                            cn.Open()
+                            cm = New MySqlCommand("SELECT * from rcss_remittance WHERE rmt_transid = '" & DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString & "'", cn)
+                            dr = cm.ExecuteReader
+                            While dr.Read
+                                .tb_remarks.Text = dr("rmt_remarks").ToString()
+                            End While
+
+                            dr.Close()
+                            cn.Close()
+                        Catch ex As Exception
+                            cn.Close()
+                            MsgBox(ex.Message, vbCritical)
+                        End Try
+
+
 
                         'FOR TOTAL.TEXT
                         With frm_AddRemittance
@@ -404,7 +425,4 @@ Public Class frm_remittance
         End If
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
-
-    End Sub
 End Class

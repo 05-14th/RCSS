@@ -80,7 +80,7 @@ Public Class frm_AddRemittance
 
                     'FOR REMITTANCE DETAILS'
                     Try
-                    cn.Open()
+                        cn.Open()
                         cm = New MySqlCommand("INSERT INTO rcss_remittance (rmt_transid, rmt_date, rmt_month, rmt_day, rmt_year, rmt_time, rmt_vanno, rmt_salesman, rmt_custodian, rmt_driver, rmt_helper, rmt_refsum, rmt_remsum, rmt_remarks, rmt_status, rmt_week) values(@rmt_transid, @rmt_date, @rmt_month, @rmt_day, @rmt_year, @rmt_time, @rmt_vanno, @rmt_salesman, @rmt_custodian, @rmt_driver, @rmt_helper, @rmt_refsum, @rmt_remsum, @rmt_remarks, @rmt_status, @rmt_week)", cn)
 
                         cm.Parameters.AddWithValue("@rmt_transid", tb_transID.Text)
@@ -96,7 +96,7 @@ Public Class frm_AddRemittance
                         cm.Parameters.AddWithValue("@rmt_helper", tb_helper.Text)
                         cm.Parameters.AddWithValue("@rmt_refsum", CDec(tb_refsum.Text))
                         cm.Parameters.AddWithValue("@rmt_remsum", CDec(tb_total.Text))
-                        cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text)
+                        cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text & " - " & DateTimePicker1.Text & " - " & frm_dashAdmin.lbl_time.Text & vbLf)
                         cm.Parameters.AddWithValue("@rmt_status", tb_status.Text)
                         cm.Parameters.AddWithValue("@rmt_week", CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(DateTimePicker1.Value, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday))
                         cm.ExecuteNonQuery()
@@ -148,6 +148,7 @@ Public Class frm_AddRemittance
 
                     'FOR REMITTANCE BREAKDOWN DETAILS
                     Try
+
 
                         cn.Open()
                         cm = New MySqlCommand("INSERT INTO rcss_rembd (remDB_transid, remDB_date, remDB_time, remDB_cash, remDB_coins, remDB_gcash, remDB_online, remDB_check, remDB_ar, remDB_return, remDB_bo, remDB_discount, remDB_expenses, remDB_total) values(@remDB_transid, @remDB_date, @remDB_time, @remDB_cash, @remDB_coins, @remDB_gcash, @remDB_online, @remDB_check, @remDB_ar, @remDB_return, @remDB_bo, @remDB_discount, @remDB_expenses, @remDB_total)", cn)
@@ -258,6 +259,7 @@ Public Class frm_AddRemittance
                             cm.Parameters.AddWithValue("@remar_time", frm_dashAdmin.lbl_time.Text)
                             cm.Parameters.AddWithValue("@remar_refnum", DataGridView2.Rows(i).Cells(0).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
                             cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
                             cm.Parameters.AddWithValue("@remar_status", "Uncollected")
@@ -310,8 +312,9 @@ Public Class frm_AddRemittance
                         cm.Parameters.AddWithValue("@rmt_helper", tb_helper.Text)
                         cm.Parameters.AddWithValue("@rmt_refsum", CDec(tb_refsum.Text))
                         cm.Parameters.AddWithValue("@rmt_remsum", CDec(tb_total.Text))
-                        cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text)
-                        cm.Parameters.AddWithValue("@rmt_status", tb_status.Text)
+                        cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text & " - " & DateTimePicker1.Text & " - " & frm_dashAdmin.lbl_time.Text & vbLf)
+                        'cm.Parameters.AddWithValue("@rmt_status", tb_status.Text)
+                        cm.Parameters.AddWithValue("@rmt_status", "For Approval")
                         cm.Parameters.AddWithValue("@rmt_transid", tb_edittransID.Text)
                         cm.Parameters.AddWithValue("@rmt_year", dtp_year.Text)
                         cm.Parameters.AddWithValue("@rmt_month", dtp_month.Text)
@@ -323,7 +326,11 @@ Public Class frm_AddRemittance
                         frm_dashAdmin.CountForApproval()
                         frm_dashAdmin.CountRevise()
                         frm_dashAdmin.CountApproved()
+
                         frm_remittance.LoadRemittanceforApproval()
+                        frm_remittance.CountForApproval()
+                        frm_remittance.CountRevise()
+                        frm_remittance.CountApproved()
 
                     Catch ex As Exception
                         cn.Close()
@@ -512,6 +519,7 @@ Public Class frm_AddRemittance
                             cm.Parameters.AddWithValue("@remar_time", frm_dashAdmin.lbl_time.Text)
                             cm.Parameters.AddWithValue("@remar_refnum", DataGridView2.Rows(i).Cells(0).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
                             cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
                             cm.Parameters.AddWithValue("@remar_status", "Uncollected")
@@ -532,10 +540,16 @@ Public Class frm_AddRemittance
 
                 End If
             End If
+
+
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+
+        Me.Dispose()
+
+
     End Sub
     Private Sub tb_cash_TextChanged(sender As Object, e As EventArgs) Handles tb_cash.TextChanged
         Try
@@ -1468,5 +1482,24 @@ Public Class frm_AddRemittance
 
     Private Sub dtp_month_Click(sender As Object, e As EventArgs) Handles dtp_month.Click
 
+    End Sub
+
+    Private Sub cb_customers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_customers.SelectedIndexChanged
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_customers.SelectedItem & "' ", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                lbl_CusID.Text = dr.Item("cus_accountno").ToString
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

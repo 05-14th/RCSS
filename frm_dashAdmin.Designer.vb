@@ -43,9 +43,21 @@ Partial Class frm_dashAdmin
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.btn_approval = New System.Windows.Forms.Button()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.btn_approved = New System.Windows.Forms.Button()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.btn_revision = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Lbl_Btn_ForApproval = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Lbl_ForApproval = New System.Windows.Forms.Label()
+        Me.Lbl_ForRevision = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Lbl_Btn_ForRevision = New System.Windows.Forms.Label()
+        Me.Lbl_Approved = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Lbl_Btn_Approved = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.REMITTANCEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,17 +73,18 @@ Partial Class frm_dashAdmin
         Me.VANROUTEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CUSTOMERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LOGOUTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_approval = New System.Windows.Forms.Button()
-        Me.btn_approved = New System.Windows.Forms.Button()
-        Me.btn_revision = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.pb_btn_Approved = New System.Windows.Forms.PictureBox()
+        Me.pb_btn_forRevision = New System.Windows.Forms.PictureBox()
+        Me.pb_btn_forApproval = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.PanelDock.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel7.SuspendLayout()
@@ -81,6 +94,9 @@ Partial Class frm_dashAdmin
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_btn_Approved, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_btn_forRevision, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_btn_forApproval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -277,29 +293,40 @@ Partial Class frm_dashAdmin
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelDock.AutoScroll = True
-        Me.PanelDock.Location = New System.Drawing.Point(323, 21)
+        Me.PanelDock.Controls.Add(Me.Panel7)
+        Me.PanelDock.Controls.Add(Me.Panel8)
+        Me.PanelDock.Controls.Add(Me.Panel9)
+        Me.PanelDock.Location = New System.Drawing.Point(330, 21)
         Me.PanelDock.Name = "PanelDock"
-        Me.PanelDock.Size = New System.Drawing.Size(689, 562)
+        Me.PanelDock.Size = New System.Drawing.Size(670, 580)
         Me.PanelDock.TabIndex = 5
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.White
         Me.Panel6.Controls.Add(Me.Panel10)
-        Me.Panel6.Location = New System.Drawing.Point(24, 21)
+        Me.Panel6.Location = New System.Drawing.Point(29, 21)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(293, 562)
+        Me.Panel6.Size = New System.Drawing.Size(300, 580)
         Me.Panel6.TabIndex = 0
         '
         'Panel10
         '
-        Me.Panel10.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Panel10.Controls.Add(Me.Panel7)
-        Me.Panel10.Controls.Add(Me.Panel9)
-        Me.Panel10.Controls.Add(Me.Panel8)
+        Me.Panel10.Controls.Add(Me.Lbl_Approved)
+        Me.Panel10.Controls.Add(Me.Label9)
+        Me.Panel10.Controls.Add(Me.Lbl_Btn_Approved)
+        Me.Panel10.Controls.Add(Me.pb_btn_Approved)
+        Me.Panel10.Controls.Add(Me.Lbl_ForRevision)
+        Me.Panel10.Controls.Add(Me.Label6)
+        Me.Panel10.Controls.Add(Me.Lbl_Btn_ForRevision)
+        Me.Panel10.Controls.Add(Me.pb_btn_forRevision)
+        Me.Panel10.Controls.Add(Me.Lbl_ForApproval)
+        Me.Panel10.Controls.Add(Me.Label4)
+        Me.Panel10.Controls.Add(Me.Lbl_Btn_ForApproval)
+        Me.Panel10.Controls.Add(Me.pb_btn_forApproval)
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(297, 562)
+        Me.Panel10.Size = New System.Drawing.Size(311, 544)
         Me.Panel10.TabIndex = 4
         '
         'Panel7
@@ -309,10 +336,25 @@ Partial Class frm_dashAdmin
         Me.Panel7.Controls.Add(Me.PictureBox2)
         Me.Panel7.Controls.Add(Me.btn_approval)
         Me.Panel7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel7.Location = New System.Drawing.Point(11, 0)
+        Me.Panel7.Location = New System.Drawing.Point(32, 35)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(274, 106)
         Me.Panel7.TabIndex = 3
+        Me.Panel7.Visible = False
+        '
+        'btn_approval
+        '
+        Me.btn_approval.BackColor = System.Drawing.Color.Transparent
+        Me.btn_approval.FlatAppearance.BorderSize = 0
+        Me.btn_approval.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_approval.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_approval.ForeColor = System.Drawing.Color.White
+        Me.btn_approval.Location = New System.Drawing.Point(107, 13)
+        Me.btn_approval.Name = "btn_approval"
+        Me.btn_approval.Size = New System.Drawing.Size(157, 81)
+        Me.btn_approval.TabIndex = 0
+        Me.btn_approval.Text = "FOR APPROVAL"
+        Me.btn_approval.UseVisualStyleBackColor = False
         '
         'Panel9
         '
@@ -321,10 +363,25 @@ Partial Class frm_dashAdmin
         Me.Panel9.Controls.Add(Me.PictureBox4)
         Me.Panel9.Controls.Add(Me.btn_approved)
         Me.Panel9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel9.Location = New System.Drawing.Point(11, 248)
+        Me.Panel9.Location = New System.Drawing.Point(32, 369)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(274, 106)
         Me.Panel9.TabIndex = 3
+        Me.Panel9.Visible = False
+        '
+        'btn_approved
+        '
+        Me.btn_approved.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_approved.FlatAppearance.BorderSize = 0
+        Me.btn_approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_approved.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_approved.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.btn_approved.Location = New System.Drawing.Point(107, 13)
+        Me.btn_approved.Name = "btn_approved"
+        Me.btn_approved.Size = New System.Drawing.Size(157, 81)
+        Me.btn_approved.TabIndex = 2
+        Me.btn_approved.Text = "APPROVED"
+        Me.btn_approved.UseVisualStyleBackColor = True
         '
         'Panel8
         '
@@ -333,13 +390,146 @@ Partial Class frm_dashAdmin
         Me.Panel8.Controls.Add(Me.PictureBox3)
         Me.Panel8.Controls.Add(Me.btn_revision)
         Me.Panel8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel8.Location = New System.Drawing.Point(11, 124)
+        Me.Panel8.Location = New System.Drawing.Point(32, 201)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(274, 106)
         Me.Panel8.TabIndex = 3
+        Me.Panel8.Visible = False
+        '
+        'btn_revision
+        '
+        Me.btn_revision.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btn_revision.FlatAppearance.BorderSize = 0
+        Me.btn_revision.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_revision.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_revision.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btn_revision.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_revision.Location = New System.Drawing.Point(107, 13)
+        Me.btn_revision.Name = "btn_revision"
+        Me.btn_revision.Size = New System.Drawing.Size(157, 81)
+        Me.btn_revision.TabIndex = 1
+        Me.btn_revision.Text = "FOR REVISION"
+        Me.btn_revision.UseVisualStyleBackColor = True
         '
         'Timer1
         '
+        '
+        'Lbl_Btn_ForApproval
+        '
+        Me.Lbl_Btn_ForApproval.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Btn_ForApproval.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Lbl_Btn_ForApproval.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Btn_ForApproval.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Btn_ForApproval.Location = New System.Drawing.Point(115, 16)
+        Me.Lbl_Btn_ForApproval.Name = "Lbl_Btn_ForApproval"
+        Me.Lbl_Btn_ForApproval.Size = New System.Drawing.Size(170, 37)
+        Me.Lbl_Btn_ForApproval.TabIndex = 5
+        Me.Lbl_Btn_ForApproval.Text = "For Approval"
+        Me.Lbl_Btn_ForApproval.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label4
+        '
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(194, 53)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(85, 17)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Remittances"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Lbl_ForApproval
+        '
+        Me.Lbl_ForApproval.AutoSize = True
+        Me.Lbl_ForApproval.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_ForApproval.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ForApproval.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_ForApproval.Location = New System.Drawing.Point(212, 76)
+        Me.Lbl_ForApproval.Name = "Lbl_ForApproval"
+        Me.Lbl_ForApproval.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Lbl_ForApproval.Size = New System.Drawing.Size(54, 65)
+        Me.Lbl_ForApproval.TabIndex = 7
+        Me.Lbl_ForApproval.Text = "0"
+        Me.Lbl_ForApproval.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Lbl_ForRevision
+        '
+        Me.Lbl_ForRevision.AutoSize = True
+        Me.Lbl_ForRevision.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_ForRevision.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ForRevision.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_ForRevision.Location = New System.Drawing.Point(212, 242)
+        Me.Lbl_ForRevision.Name = "Lbl_ForRevision"
+        Me.Lbl_ForRevision.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Lbl_ForRevision.Size = New System.Drawing.Size(54, 65)
+        Me.Lbl_ForRevision.TabIndex = 11
+        Me.Lbl_ForRevision.Text = "0"
+        Me.Lbl_ForRevision.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(194, 219)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(85, 17)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Remittances"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Lbl_Btn_ForRevision
+        '
+        Me.Lbl_Btn_ForRevision.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Btn_ForRevision.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Lbl_Btn_ForRevision.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Btn_ForRevision.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Btn_ForRevision.Location = New System.Drawing.Point(122, 182)
+        Me.Lbl_Btn_ForRevision.Name = "Lbl_Btn_ForRevision"
+        Me.Lbl_Btn_ForRevision.Size = New System.Drawing.Size(163, 37)
+        Me.Lbl_Btn_ForRevision.TabIndex = 9
+        Me.Lbl_Btn_ForRevision.Text = "For Revision"
+        Me.Lbl_Btn_ForRevision.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Lbl_Approved
+        '
+        Me.Lbl_Approved.AutoSize = True
+        Me.Lbl_Approved.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Approved.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Approved.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Approved.Location = New System.Drawing.Point(212, 410)
+        Me.Lbl_Approved.Name = "Lbl_Approved"
+        Me.Lbl_Approved.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Lbl_Approved.Size = New System.Drawing.Size(54, 65)
+        Me.Lbl_Approved.TabIndex = 15
+        Me.Lbl_Approved.Text = "0"
+        Me.Lbl_Approved.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(188, 387)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(86, 17)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "Remittances"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Lbl_Btn_Approved
+        '
+        Me.Lbl_Btn_Approved.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Btn_Approved.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Lbl_Btn_Approved.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Btn_Approved.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Btn_Approved.Location = New System.Drawing.Point(146, 350)
+        Me.Lbl_Btn_Approved.Name = "Lbl_Btn_Approved"
+        Me.Lbl_Btn_Approved.Size = New System.Drawing.Size(134, 37)
+        Me.Lbl_Btn_Approved.TabIndex = 13
+        Me.Lbl_Btn_Approved.Text = "Approved"
+        Me.Lbl_Btn_Approved.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PictureBox1
         '
@@ -447,48 +637,6 @@ Partial Class frm_dashAdmin
         Me.LOGOUTToolStripMenuItem.Size = New System.Drawing.Size(108, 71)
         Me.LOGOUTToolStripMenuItem.Text = "     LOG&OUT     "
         '
-        'btn_approval
-        '
-        Me.btn_approval.FlatAppearance.BorderSize = 0
-        Me.btn_approval.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_approval.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_approval.ForeColor = System.Drawing.Color.White
-        Me.btn_approval.Location = New System.Drawing.Point(107, 13)
-        Me.btn_approval.Name = "btn_approval"
-        Me.btn_approval.Size = New System.Drawing.Size(157, 81)
-        Me.btn_approval.TabIndex = 0
-        Me.btn_approval.Text = "FOR APPROVAL"
-        Me.btn_approval.UseVisualStyleBackColor = True
-        '
-        'btn_approved
-        '
-        Me.btn_approved.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_approved.FlatAppearance.BorderSize = 0
-        Me.btn_approved.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_approved.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_approved.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.btn_approved.Location = New System.Drawing.Point(107, 13)
-        Me.btn_approved.Name = "btn_approved"
-        Me.btn_approved.Size = New System.Drawing.Size(157, 81)
-        Me.btn_approved.TabIndex = 2
-        Me.btn_approved.Text = "APPROVED"
-        Me.btn_approved.UseVisualStyleBackColor = True
-        '
-        'btn_revision
-        '
-        Me.btn_revision.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btn_revision.FlatAppearance.BorderSize = 0
-        Me.btn_revision.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_revision.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_revision.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btn_revision.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_revision.Location = New System.Drawing.Point(107, 13)
-        Me.btn_revision.Name = "btn_revision"
-        Me.btn_revision.Size = New System.Drawing.Size(157, 81)
-        Me.btn_revision.TabIndex = 1
-        Me.btn_revision.Text = "FOR REVISION"
-        Me.btn_revision.UseVisualStyleBackColor = True
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.RCSS.My.Resources.Resources.Icon_128_x_128_px__3_
@@ -519,6 +667,39 @@ Partial Class frm_dashAdmin
         Me.PictureBox4.TabIndex = 3
         Me.PictureBox4.TabStop = False
         '
+        'pb_btn_Approved
+        '
+        Me.pb_btn_Approved.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_btn_Approved.Image = Global.RCSS.My.Resources.Resources.Approved1
+        Me.pb_btn_Approved.Location = New System.Drawing.Point(0, 334)
+        Me.pb_btn_Approved.Name = "pb_btn_Approved"
+        Me.pb_btn_Approved.Size = New System.Drawing.Size(191, 160)
+        Me.pb_btn_Approved.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_btn_Approved.TabIndex = 12
+        Me.pb_btn_Approved.TabStop = False
+        '
+        'pb_btn_forRevision
+        '
+        Me.pb_btn_forRevision.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_btn_forRevision.Image = Global.RCSS.My.Resources.Resources.For_Revision
+        Me.pb_btn_forRevision.Location = New System.Drawing.Point(0, 166)
+        Me.pb_btn_forRevision.Name = "pb_btn_forRevision"
+        Me.pb_btn_forRevision.Size = New System.Drawing.Size(191, 160)
+        Me.pb_btn_forRevision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_btn_forRevision.TabIndex = 8
+        Me.pb_btn_forRevision.TabStop = False
+        '
+        'pb_btn_forApproval
+        '
+        Me.pb_btn_forApproval.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_btn_forApproval.Image = Global.RCSS.My.Resources.Resources.For_Approval1
+        Me.pb_btn_forApproval.Location = New System.Drawing.Point(0, 0)
+        Me.pb_btn_forApproval.Name = "pb_btn_forApproval"
+        Me.pb_btn_forApproval.Size = New System.Drawing.Size(191, 160)
+        Me.pb_btn_forApproval.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_btn_forApproval.TabIndex = 4
+        Me.pb_btn_forApproval.TabStop = False
+        '
         'frm_dashAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -546,8 +727,10 @@ Partial Class frm_dashAdmin
         Me.MenuStrip1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
+        Me.PanelDock.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
+        Me.Panel10.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel9.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
@@ -555,6 +738,9 @@ Partial Class frm_dashAdmin
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_btn_Approved, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_btn_forRevision, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_btn_forApproval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -602,4 +788,16 @@ Partial Class frm_dashAdmin
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents pb_btn_forApproval As PictureBox
+    Friend WithEvents Lbl_Btn_ForApproval As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Lbl_ForApproval As Label
+    Friend WithEvents Lbl_Approved As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Lbl_Btn_Approved As Label
+    Friend WithEvents pb_btn_Approved As PictureBox
+    Friend WithEvents Lbl_ForRevision As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Lbl_Btn_ForRevision As Label
+    Friend WithEvents pb_btn_forRevision As PictureBox
 End Class

@@ -23,6 +23,10 @@ Public Class frm_Login
         Me.WindowState = FormWindowState.Minimized
     End Sub
     Private Sub frm_Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dbrefresh()
+
+    End Sub
+    Sub dbrefresh()
         If ConnectToDB() = False Then
             MsgBox("Unable to connect to database!", vbCritical)
             DBStat.BackColor = Color.Red
@@ -30,6 +34,8 @@ Public Class frm_Login
             'MsgBox("Connected to database!", vbInformation)
             DBStat.BackColor = Color.PaleTurquoise
         End If
+
+
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -114,5 +120,13 @@ Public Class frm_Login
         If MsgBox("Are you sure you want to exit?", vbYesNo + vbQuestion) = vbYes Then
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox1.DoubleClick
+        dbrefresh()
     End Sub
 End Class

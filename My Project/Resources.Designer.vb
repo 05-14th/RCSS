@@ -93,6 +93,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Approved() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Approved", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Approved1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Approved1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property approved16() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("approved16", resourceCulture)
@@ -176,6 +196,36 @@ Namespace My.Resources
         Friend ReadOnly Property files64white() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("files64white", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property For_Approval() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("For Approval", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property For_Approval1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("For Approval1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property For_Revision() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("For Revision", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
