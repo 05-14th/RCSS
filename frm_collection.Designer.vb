@@ -271,7 +271,7 @@ Partial Class frm_collection
         Me.tb_search.MaxLength = 32767
         Me.tb_search.Name = "tb_search"
         Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_search.PromptText = "Search here . . ."
+        Me.tb_search.PromptText = "Search collection ID here"
         Me.tb_search.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.tb_search.SelectedText = ""
         Me.tb_search.SelectionLength = 0
@@ -280,7 +280,7 @@ Partial Class frm_collection
         Me.tb_search.Size = New System.Drawing.Size(274, 25)
         Me.tb_search.TabIndex = 183
         Me.tb_search.UseSelectable = True
-        Me.tb_search.WaterMark = "Search here . . ."
+        Me.tb_search.WaterMark = "Search collection ID here"
         Me.tb_search.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.tb_search.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '

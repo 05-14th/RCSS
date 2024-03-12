@@ -94,6 +94,7 @@ Public Class frm_remApproval
                         .tb_expenses.Text = Format(CDec(dr.Item("remDB_expenses").ToString), "###,###,##0.00")
                         .tb_total.Text = Format(CDec(dr.Item("remDB_total").ToString), "###,###,##0.00")
                         .tb_remarks.Text = dr.Item("rmt_remarks").ToString
+                        .tb_comment.Text = dr.Item("rmt_comment").ToString
 
                         .DataGridView1.Rows.Add(dr.Item("remref_references").ToString, Format(CDec(dr.Item("remref_amount").ToString)), "###,###,##0.00")
 
