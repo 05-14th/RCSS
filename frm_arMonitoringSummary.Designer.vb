@@ -24,9 +24,10 @@ Partial Class frm_arMonitoringSummary
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
@@ -34,16 +35,11 @@ Partial Class frm_arMonitoringSummary
         Me.dailyPicker = New System.Windows.Forms.DateTimePicker()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.cus_namePanel = New System.Windows.Forms.Panel()
+        Me.cusSelect = New System.Windows.Forms.ComboBox()
         Me.areaPanel = New System.Windows.Forms.Panel()
         Me.areaSelect = New System.Windows.Forms.ComboBox()
         Me.filterSelect = New System.Windows.Forms.ComboBox()
-        Me.yearlyPanel = New System.Windows.Forms.Panel()
-        Me.yearText = New System.Windows.Forms.TextBox()
         Me.btn_print = New System.Windows.Forms.Button()
-        Me.monthlyPanel = New System.Windows.Forms.Panel()
-        Me.monthSelect = New System.Windows.Forms.ComboBox()
-        Me.weeklyPanel = New System.Windows.Forms.Panel()
-        Me.weekSelect = New System.Windows.Forms.ComboBox()
         Me.dailyPanel = New System.Windows.Forms.Panel()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -64,14 +60,10 @@ Partial Class frm_arMonitoringSummary
         Me.salesman = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.settlement_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cusSelect = New System.Windows.Forms.ComboBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.cus_namePanel.SuspendLayout()
         Me.areaPanel.SuspendLayout()
-        Me.yearlyPanel.SuspendLayout()
-        Me.monthlyPanel.SuspendLayout()
-        Me.weeklyPanel.SuspendLayout()
         Me.dailyPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,11 +136,8 @@ Partial Class frm_arMonitoringSummary
         Me.Panel3.Controls.Add(Me.areaPanel)
         Me.Panel3.Controls.Add(Me.filterSelect)
         Me.Panel3.Controls.Add(Me.btn_print)
-        Me.Panel3.Controls.Add(Me.monthlyPanel)
-        Me.Panel3.Controls.Add(Me.weeklyPanel)
         Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.dailyPanel)
-        Me.Panel3.Controls.Add(Me.yearlyPanel)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 32)
         Me.Panel3.Name = "Panel3"
@@ -163,6 +152,15 @@ Partial Class frm_arMonitoringSummary
         Me.cus_namePanel.Size = New System.Drawing.Size(200, 30)
         Me.cus_namePanel.TabIndex = 79
         Me.cus_namePanel.Visible = False
+        '
+        'cusSelect
+        '
+        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cusSelect.FormattingEnabled = True
+        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
+        Me.cusSelect.Name = "cusSelect"
+        Me.cusSelect.Size = New System.Drawing.Size(200, 21)
+        Me.cusSelect.TabIndex = 0
         '
         'areaPanel
         '
@@ -187,29 +185,11 @@ Partial Class frm_arMonitoringSummary
         '
         Me.filterSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.filterSelect.FormattingEnabled = True
-        Me.filterSelect.Items.AddRange(New Object() {"DAILY", "WEEKLY", "MONTHLY", "YEARLY", "AREA", "CUSTOMER"})
+        Me.filterSelect.Items.AddRange(New Object() {"DAILY", "AREA", "CUSTOMER"})
         Me.filterSelect.Location = New System.Drawing.Point(63, 7)
         Me.filterSelect.Name = "filterSelect"
         Me.filterSelect.Size = New System.Drawing.Size(169, 21)
         Me.filterSelect.TabIndex = 193
-        '
-        'yearlyPanel
-        '
-        Me.yearlyPanel.Controls.Add(Me.yearText)
-        Me.yearlyPanel.Location = New System.Drawing.Point(238, 7)
-        Me.yearlyPanel.Name = "yearlyPanel"
-        Me.yearlyPanel.Size = New System.Drawing.Size(200, 30)
-        Me.yearlyPanel.TabIndex = 78
-        Me.yearlyPanel.Visible = False
-        '
-        'yearText
-        '
-        Me.yearText.Dock = System.Windows.Forms.DockStyle.Top
-        Me.yearText.Location = New System.Drawing.Point(0, 0)
-        Me.yearText.MaxLength = 4
-        Me.yearText.Name = "yearText"
-        Me.yearText.Size = New System.Drawing.Size(200, 20)
-        Me.yearText.TabIndex = 0
         '
         'btn_print
         '
@@ -229,46 +209,6 @@ Partial Class frm_arMonitoringSummary
         Me.btn_print.Text = "PRINT"
         Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_print.UseVisualStyleBackColor = False
-        '
-        'monthlyPanel
-        '
-        Me.monthlyPanel.Controls.Add(Me.monthSelect)
-        Me.monthlyPanel.Location = New System.Drawing.Point(238, 7)
-        Me.monthlyPanel.Name = "monthlyPanel"
-        Me.monthlyPanel.Size = New System.Drawing.Size(200, 30)
-        Me.monthlyPanel.TabIndex = 76
-        Me.monthlyPanel.Visible = False
-        '
-        'monthSelect
-        '
-        Me.monthSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.monthSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.monthSelect.FormattingEnabled = True
-        Me.monthSelect.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.monthSelect.Location = New System.Drawing.Point(0, 0)
-        Me.monthSelect.Name = "monthSelect"
-        Me.monthSelect.Size = New System.Drawing.Size(200, 21)
-        Me.monthSelect.TabIndex = 194
-        '
-        'weeklyPanel
-        '
-        Me.weeklyPanel.Controls.Add(Me.weekSelect)
-        Me.weeklyPanel.Location = New System.Drawing.Point(238, 7)
-        Me.weeklyPanel.Name = "weeklyPanel"
-        Me.weeklyPanel.Size = New System.Drawing.Size(200, 30)
-        Me.weeklyPanel.TabIndex = 77
-        Me.weeklyPanel.Visible = False
-        '
-        'weekSelect
-        '
-        Me.weekSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.weekSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.weekSelect.FormattingEnabled = True
-        Me.weekSelect.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.weekSelect.Location = New System.Drawing.Point(0, 0)
-        Me.weekSelect.Name = "weekSelect"
-        Me.weekSelect.Size = New System.Drawing.Size(200, 21)
-        Me.weekSelect.TabIndex = 195
         '
         'dailyPanel
         '
@@ -349,14 +289,14 @@ Partial Class frm_arMonitoringSummary
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cus_name, Me.cus_number, Me.area, Me.term, Me.ar_date, Me.arNum, Me.amount, Me.Column1, Me.days, Me.re, Me.salesman, Me.Column4, Me.settlement_date})
         Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
@@ -372,13 +312,14 @@ Partial Class frm_arMonitoringSummary
         '
         'cus_name
         '
+        Me.cus_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.cus_name.HeaderText = "CUSTOMER NAME"
         Me.cus_name.Name = "cus_name"
         Me.cus_name.ReadOnly = True
-        Me.cus_name.Width = 125
         '
         'cus_number
         '
+        Me.cus_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.cus_number.HeaderText = "CUSTOMER NUMBER"
         Me.cus_number.Name = "cus_number"
         Me.cus_number.ReadOnly = True
@@ -387,7 +328,7 @@ Partial Class frm_arMonitoringSummary
         'area
         '
         Me.area.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         Me.area.DefaultCellStyle = DataGridViewCellStyle2
         Me.area.HeaderText = "AREA"
         Me.area.Name = "area"
@@ -396,6 +337,7 @@ Partial Class frm_arMonitoringSummary
         '
         'term
         '
+        Me.term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.term.HeaderText = "TERM"
         Me.term.Name = "term"
         Me.term.ReadOnly = True
@@ -403,6 +345,7 @@ Partial Class frm_arMonitoringSummary
         '
         'ar_date
         '
+        Me.ar_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.ar_date.HeaderText = "AR DATE"
         Me.ar_date.Name = "ar_date"
         Me.ar_date.ReadOnly = True
@@ -419,6 +362,9 @@ Partial Class frm_arMonitoringSummary
         '
         'amount
         '
+        Me.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.amount.DefaultCellStyle = DataGridViewCellStyle3
         Me.amount.HeaderText = "AMOUNT"
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
@@ -426,6 +372,7 @@ Partial Class frm_arMonitoringSummary
         '
         'Column1
         '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column1.HeaderText = "DAYS"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -433,6 +380,7 @@ Partial Class frm_arMonitoringSummary
         '
         'days
         '
+        Me.days.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.days.HeaderText = "DUE DATE"
         Me.days.Name = "days"
         Me.days.ReadOnly = True
@@ -440,6 +388,7 @@ Partial Class frm_arMonitoringSummary
         '
         're
         '
+        Me.re.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.re.HeaderText = "REMARKS"
         Me.re.Name = "re"
         Me.re.ReadOnly = True
@@ -447,6 +396,7 @@ Partial Class frm_arMonitoringSummary
         '
         'salesman
         '
+        Me.salesman.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.salesman.HeaderText = "SALESMAN"
         Me.salesman.Name = "salesman"
         Me.salesman.ReadOnly = True
@@ -454,8 +404,9 @@ Partial Class frm_arMonitoringSummary
         '
         'Column4
         '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column4.HeaderText = "STATUS"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -463,19 +414,11 @@ Partial Class frm_arMonitoringSummary
         '
         'settlement_date
         '
+        Me.settlement_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.settlement_date.HeaderText = "DATE"
         Me.settlement_date.Name = "settlement_date"
         Me.settlement_date.ReadOnly = True
         Me.settlement_date.Width = 56
-        '
-        'cusSelect
-        '
-        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.cusSelect.FormattingEnabled = True
-        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
-        Me.cusSelect.Name = "cusSelect"
-        Me.cusSelect.Size = New System.Drawing.Size(200, 21)
-        Me.cusSelect.TabIndex = 0
         '
         'frm_arMonitoringSummary
         '
@@ -497,10 +440,6 @@ Partial Class frm_arMonitoringSummary
         Me.Panel3.PerformLayout()
         Me.cus_namePanel.ResumeLayout(False)
         Me.areaPanel.ResumeLayout(False)
-        Me.yearlyPanel.ResumeLayout(False)
-        Me.yearlyPanel.PerformLayout()
-        Me.monthlyPanel.ResumeLayout(False)
-        Me.weeklyPanel.ResumeLayout(False)
         Me.dailyPanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -516,13 +455,7 @@ Partial Class frm_arMonitoringSummary
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btn_print As Button
     Friend WithEvents filterSelect As ComboBox
-    Friend WithEvents monthSelect As ComboBox
     Friend WithEvents dailyPanel As Panel
-    Friend WithEvents weeklyPanel As Panel
-    Friend WithEvents weekSelect As ComboBox
-    Friend WithEvents monthlyPanel As Panel
-    Friend WithEvents yearlyPanel As Panel
-    Friend WithEvents yearText As TextBox
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents cus_namePanel As Panel
     Friend WithEvents areaPanel As Panel
@@ -532,6 +465,7 @@ Partial Class frm_arMonitoringSummary
     Friend WithEvents lblAR As Label
     Friend WithEvents lblCount As Label
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents cusSelect As ComboBox
     Friend WithEvents cus_name As DataGridViewTextBoxColumn
     Friend WithEvents cus_number As DataGridViewTextBoxColumn
     Friend WithEvents area As DataGridViewTextBoxColumn
@@ -545,5 +479,4 @@ Partial Class frm_arMonitoringSummary
     Friend WithEvents salesman As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents settlement_date As DataGridViewTextBoxColumn
-    Friend WithEvents cusSelect As ComboBox
 End Class

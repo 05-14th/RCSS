@@ -9,7 +9,7 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Private Sub frm_arMonitoringSummary_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LoadARData("SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name")
+        LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND  remar_date = '{dailyPicker.Text}'")
         populateSelections()
     End Sub
 
@@ -112,20 +112,6 @@ Public Class frm_arMonitoringSummary
             cn.Close()
         End Using
 
-        Dim currentYear As Integer = DateTime.Now.Year
-        Dim firstDayOfYear As New DateTime(currentYear, 1, 1)
-
-        weekSelect.Items.Clear()
-
-        For weekNumber As Integer = 1 To 52
-            Dim startDate As DateTime = firstDayOfYear.AddDays((weekNumber - 1) * 7)
-            Dim endDate As DateTime = startDate.AddDays(6)
-            Dim weekText As String = $"Week {weekNumber}: {startDate.ToShortDateString()} - {endDate.ToShortDateString()}"
-            weekSelect.Items.Add(weekText)
-        Next
-
-        weekSelect.SelectedIndex = 0
-
         Dim stringQuery As String = "SELECT DISTINCT cus_name FROM rcss_customer"
 
 
@@ -167,28 +153,19 @@ Public Class frm_arMonitoringSummary
 
     End Sub
 
-    Sub togglePanelVisibility(dailyStat As Boolean, weeklyStat As Boolean, monthlyStat As Boolean, yearlyStat As Boolean, cusStat As Boolean, areaStat As Boolean)
+    Sub togglePanelVisibility(dailyStat As Boolean, cusStat As Boolean, areaStat As Boolean)
         dailyPanel.Visible = dailyStat
-        weeklyPanel.Visible = weeklyStat
-        monthlyPanel.Visible = monthlyStat
-        yearlyPanel.Visible = yearlyStat
         cus_namePanel.Visible = cusStat
         areaPanel.Visible = areaStat
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles filterSelect.SelectedIndexChanged
         If filterSelect.SelectedItem Is "DAILY" Then
-            togglePanelVisibility(True, False, False, False, False, False)
-        ElseIf filterSelect.SelectedItem Is "WEEKLY" Then
-            togglePanelVisibility(False, True, False, False, False, False)
-        ElseIf filterSelect.SelectedItem Is "MONTHLY" Then
-            togglePanelVisibility(False, False, True, False, False, False)
-        ElseIf filterSelect.SelectedItem Is "YEARLY" Then
-            togglePanelVisibility(False, False, False, True, False, False)
+            togglePanelVisibility(True, False, False)
         ElseIf filterSelect.SelectedItem Is "CUSTOMER" Then
-            togglePanelVisibility(False, False, False, False, True, False)
+            togglePanelVisibility(False, True, False)
         ElseIf filterSelect.SelectedItem Is "AREA" Then
-            togglePanelVisibility(False, False, False, False, False, True)
+            togglePanelVisibility(False, False, True)
         End If
     End Sub
 
@@ -201,27 +178,6 @@ Public Class frm_arMonitoringSummary
         updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE remar_date = '{dailyPicker.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{dailyPicker.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{dailyPicker.Text}';")
-    End Sub
-
-    Private Sub yearText_TextChanged(sender As Object, e As EventArgs) Handles yearText.TextChanged
-        LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{yearText.Text}'")
-        updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE remar_date = '{yearText.Text}'",
-                   $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{yearText.Text}'",
-                   $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{yearText.Text}';")
-    End Sub
-
-    Private Sub weekSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles weekSelect.SelectedIndexChanged
-        'LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{yearText.Text}'")
-        ' updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE remar_date = '{yearText.Text}'",
-        '      $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{yearText.Text}'",
-        '    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{yearText.Text}';")
-    End Sub
-
-    Private Sub monthSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles monthSelect.SelectedIndexChanged
-        'LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{yearText.Text}'")
-        ' updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE remar_date = '{yearText.Text}'",
-        ' $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{yearText.Text}'",
-        ' $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{yearText.Text}';")
     End Sub
 
     Private Sub areaSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles areaSelect.SelectedIndexChanged
@@ -243,5 +199,9 @@ Public Class frm_arMonitoringSummary
         updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE cus_name = '{cusSelect.Text}'",
              $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND cus_name = '{cusSelect.Text}'",
              $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND cus_name = '{cusSelect.Text}';")
+    End Sub
+
+    Private Sub areaPanel_Paint(sender As Object, e As PaintEventArgs)
+
     End Sub
 End Class
