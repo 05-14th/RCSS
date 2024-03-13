@@ -9,13 +9,13 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Private Sub frm_arMonitoringSummary_Load(sender As Object, e As EventArgs) Handles Me.Load
-        LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND  remar_date = '{dailyPicker.Text}'")
+        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'")
         populateSelections()
     End Sub
 
     Function getRE(dateValue As String) As String
         Dim currentDate As DateTime = DateTime.Now
-        Dim dueDate As DateTime = DateTime.Parse(dateValue)
+        Dim dueDate As DateTime = Date.ParseExact(dateValue, "MM/dd/yyyy", Nothing).AddDays(7).ToString("MM/dd/yyyy")
 
         ' Compare date1 with currentDate
         If dueDate > currentDate Then
@@ -82,7 +82,8 @@ Public Class frm_arMonitoringSummary
             cm = New MySqlCommand(dataQuery, cn)
             dr = cm.ExecuteReader
             While dr.Read
-                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("cus_address").ToString, 7, dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(DateTime.ParseExact(dr.Item("remar_date").ToString(), "MM/dd/yyyy", Nothing).AddDays(7).ToString("MM/dd/yyyy")), DateTime.ParseExact(dr.Item("remar_date").ToString(), "MM/dd/yyyy", Nothing).AddDays(7).ToString("MM/dd/yyyy"), getRE(DateTime.ParseExact(dr.Item("remar_date").ToString(), "MM/dd/yyyy", Nothing).AddDays(7).ToString("MM/dd/yyyy")), dr.Item("cus_contactperson").ToString, dr.Item("remar_status").ToString, " ")
+                Dim convertedDate As Date = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing).AddDays(7).ToString("MM/dd/yyyy")
+                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("cus_address").ToString, 7, dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(convertedDate), convertedDate, getRE(dr.Item("remar_date")), dr.Item("cus_contactperson").ToString, dr.Item("remar_status").ToString, " ")
                 'AutoSizeCells()
             End While
             dr.Close()
@@ -91,10 +92,6 @@ Public Class frm_arMonitoringSummary
             MsgBox(ex.Message)
             cn.Close()
         End Try
-
-        updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE DATE(remar_date) = {DateTime.Now.Date.ToString("yyyy-MM-dd")}",
-                    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name",
-                    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY);")
     End Sub
 
     Sub populateSelections()
@@ -128,10 +125,12 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Function calculateDaysLeft(daysVal As String) As Integer
-        Dim dueDate As DateTime = DateTime.Parse(daysVal)
-        Dim curDate As DateTime = DateTime.Now
-        Dim numberOfDays As Integer = (curDate - dueDate).Days
-        Return numberOfDays - 1
+        Dim dueDate As DateTime
+        If DateTime.TryParse(daysVal, dueDate) Then
+            Dim curDate As DateTime = DateTime.Now.Date
+            Dim numberOfDays As Integer = (curDate - dueDate.Date).Days
+            Return numberOfDays
+        End If
     End Function
 
     Sub AutoSizeCells()
@@ -168,10 +167,10 @@ Public Class frm_arMonitoringSummary
             togglePanelVisibility(False, False, True)
         ElseIf filterSelect.SelectedItem Is "VIEW ALL" Then
             togglePanelVisibility(False, False, False)
-            LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name")
-            updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name",
-                        $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name",
-                        $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY);")
+            LoadARData("SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid")
+            updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY)")
         End If
     End Sub
 
@@ -180,17 +179,17 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Private Sub dailyPicker_ValueChanged(sender As Object, e As EventArgs) Handles dailyPicker.ValueChanged
-        LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{dailyPicker.Text}'")
-        updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE remar_date = '{dailyPicker.Text}'",
-                    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND remar_date = '{dailyPicker.Text}'",
-                    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{dailyPicker.Text}';")
+        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'")
+        updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{dailyPicker.Text}'")
     End Sub
 
     Private Sub areaSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles areaSelect.SelectedIndexChanged
-        LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND cus_address = '{areaSelect.Text}'")
-        updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE cus_address = '{areaSelect.Text}'",
-             $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND cus_address = '{areaSelect.Text}'",
-             $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND cus_address = '{areaSelect.Text}';")
+        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE cus_address = '{areaSelect.Text}'")
+        updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE cus_address = '{areaSelect.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE cus_address = '{areaSelect.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND cus_address = '{areaSelect.Text}'")
     End Sub
 
     Private Sub cusName_TextChanged(sender As Object, e As EventArgs)
@@ -201,10 +200,10 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Private Sub cusSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cusSelect.SelectedIndexChanged
-        LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND cus_name = '{cusSelect.Text}'")
-        updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE cus_name = '{cusSelect.Text}'",
-             $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND cus_name = '{cusSelect.Text}'",
-             $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND cus_name = '{cusSelect.Text}';")
+        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE cus_name = '{cusSelect.Text}'")
+        updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE cus_name = '{cusSelect.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE cus_name = '{cusSelect.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND cus_name = '{cusSelect.Text}'")
     End Sub
 
     Private Sub areaPanel_Paint(sender As Object, e As PaintEventArgs)
