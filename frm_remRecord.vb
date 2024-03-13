@@ -284,12 +284,6 @@ Public Class frm_remRecord
         DataGridView2.BringToFront()
 
     End Sub
-    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
-        MonthSelect.Visible = False
-
-    End Sub
-
-
 
     Private Sub YearInput_GotFocus(sender As Object, e As EventArgs) Handles YearInput.GotFocus
         If YearInput.Text = "Type a Year..." Then
