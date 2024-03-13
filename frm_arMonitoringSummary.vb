@@ -213,4 +213,13 @@ Public Class frm_arMonitoringSummary
     Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
     End Sub
+
+    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        With frm_rptArsRecord
+            .TopLevel = False
+            frm_dashAdmin.Panel5.Controls.Add(frm_rptArsRecord)
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
 End Class
