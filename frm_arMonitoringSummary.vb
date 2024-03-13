@@ -131,7 +131,7 @@ Public Class frm_arMonitoringSummary
         Dim dueDate As DateTime = DateTime.Parse(daysVal)
         Dim curDate As DateTime = DateTime.Now
         Dim numberOfDays As Integer = (curDate - dueDate).Days
-        Return numberOfDays
+        Return numberOfDays - 1
     End Function
 
     Sub AutoSizeCells()
@@ -166,6 +166,12 @@ Public Class frm_arMonitoringSummary
             togglePanelVisibility(False, True, False)
         ElseIf filterSelect.SelectedItem Is "AREA" Then
             togglePanelVisibility(False, False, True)
+        ElseIf filterSelect.SelectedItem Is "VIEW ALL" Then
+            togglePanelVisibility(False, False, False)
+            LoadARData($"SELECT * FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name")
+            updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name",
+                        $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name",
+                        $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY);")
         End If
     End Sub
 
