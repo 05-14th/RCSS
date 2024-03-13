@@ -34,6 +34,7 @@ Partial Class frm_customer
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,8 +42,8 @@ Partial Class frm_customer
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colUpdate = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -191,7 +192,7 @@ Partial Class frm_customer
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column4, Me.Column5, Me.colUpdate})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column4, Me.Column5, Me.Column8, Me.colUpdate})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow
@@ -211,6 +212,14 @@ Partial Class frm_customer
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1280, 533)
         Me.DataGridView1.TabIndex = 73
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
         '
         'Column7
         '
@@ -257,6 +266,13 @@ Partial Class frm_customer
         Me.Column5.Name = "Column5"
         Me.Column5.Width = 101
         '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "PAYMENT TERMS"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 118
+        '
         'colUpdate
         '
         Me.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -265,14 +281,6 @@ Partial Class frm_customer
         Me.colUpdate.Name = "colUpdate"
         Me.colUpdate.ToolTipText = "SEE DETAILS"
         Me.colUpdate.Width = 5
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
         '
         'frm_customer
         '
@@ -317,5 +325,6 @@ Partial Class frm_customer
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents colUpdate As DataGridViewImageColumn
 End Class

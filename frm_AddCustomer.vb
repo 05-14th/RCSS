@@ -20,7 +20,7 @@ Public Class frm_AddCustomer
                 If MsgBox("Do you want to save this record?", vbYesNo + vbQuestion) = vbYes Then
                     Try
                         cn.Open()
-                        cm = New MySqlCommand("INSERT INTO rcss_customer (cus_accountno , cus_name, cus_address, cus_contactperson, cus_contactno, cus_limit) values(@cus_accountno , @cus_name, @cus_address, @cus_contactperson, @cus_contactno, @cus_limit)", cn)
+                        cm = New MySqlCommand("INSERT INTO rcss_customer (cus_accountno , cus_name, cus_address, cus_contactperson, cus_contactno, cus_limit, cus_terms) values(@cus_accountno , @cus_name, @cus_address, @cus_contactperson, @cus_contactno, @cus_limit, @cus_terms)", cn)
 
                         cm.Parameters.AddWithValue("@cus_accountno", tb_accountno.Text)
                         cm.Parameters.AddWithValue("@cus_name", tb_name.Text)
@@ -28,6 +28,7 @@ Public Class frm_AddCustomer
                         cm.Parameters.AddWithValue("@cus_contactperson", tb_conperson.Text)
                         cm.Parameters.AddWithValue("@cus_contactno", tb_contactno.Text)
                         cm.Parameters.AddWithValue("@cus_limit", CDec(tb_limit.Text))
+                        cm.Parameters.AddWithValue("@cus_terms", tb_terms.Text)
                         cm.ExecuteNonQuery()
                         cn.Close()
 
@@ -36,6 +37,8 @@ Public Class frm_AddCustomer
                         tb_conperson.Clear()
                         tb_contactno.Clear()
                         tb_limit.Clear()
+                        tb_terms.Clear()
+
                         tb_name.Focus()
 
                         RANDID()
@@ -60,7 +63,7 @@ Public Class frm_AddCustomer
         Try
 
             cn.Open()
-            cm = New MySqlCommand("UPDATE rcss_customer SET cus_accountno=@cus_accountno, cus_name=@cus_name, cus_address=@cus_address, cus_contactperson=@cus_contactperson, cus_contactno=@cus_contactno, cus_limit=@cus_limit WHERE cus_id = @cus_id", cn)
+            cm = New MySqlCommand("UPDATE rcss_customer SET cus_accountno=@cus_accountno, cus_name=@cus_name, cus_address=@cus_address, cus_contactperson=@cus_contactperson, cus_contactno=@cus_contactno, cus_limit=@cus_limit, cus_terms=@cus_terms WHERE cus_id = @cus_id", cn)
             With cm
                 .Parameters.AddWithValue("@cus_accountno", tb_accountnoEdit.Text)
                 .Parameters.AddWithValue("@cus_name", tb_name.Text)
@@ -68,6 +71,7 @@ Public Class frm_AddCustomer
                 .Parameters.AddWithValue("@cus_contactperson", tb_conperson.Text)
                 .Parameters.AddWithValue("@cus_contactno", tb_contactno.Text)
                 .Parameters.AddWithValue("@cus_limit", CDec(tb_limit.Text))
+                .Parameters.AddWithValue("@cus_terms", tb_terms.Text)
                 .Parameters.AddWithValue("@cus_id", lbl_CustomerID.Text)
 
                 .ExecuteNonQuery()
@@ -79,6 +83,7 @@ Public Class frm_AddCustomer
             tb_conperson.Clear()
             tb_contactno.Clear()
             tb_limit.Clear()
+            tb_terms.Clear()
             tb_name.Focus()
 
             RANDID()
@@ -116,6 +121,7 @@ Public Class frm_AddCustomer
         tb_conperson.Clear()
         tb_contactno.Clear()
         tb_limit.Clear()
+        tb_terms.Clear()
         btnSubmit.Visible = True
         btnUpdate.Visible = False
         lbl_CustomerID.Text = "0"

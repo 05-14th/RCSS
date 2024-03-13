@@ -31,7 +31,7 @@ Public Class frm_customer
             dr = cm.ExecuteReader
             While dr.Read
 
-                DataGridView1.Rows.Add(dr.Item("cus_id").ToString, dr.Item("cus_accountno").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("cus_contactperson").ToString, dr.Item("cus_contactno").ToString, Format(CDec(dr.Item("cus_limit").ToString), "###,###,##0.00"))
+                DataGridView1.Rows.Add(dr.Item("cus_id").ToString, dr.Item("cus_accountno").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("cus_contactperson").ToString, dr.Item("cus_contactno").ToString, Format(CDec(dr.Item("cus_limit").ToString), "###,###,##0.00"), dr.Item("cus_terms").ToString)
 
             End While
             dr.Close()
@@ -68,6 +68,7 @@ Public Class frm_customer
                 .tb_conperson.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString
                 .tb_contactno.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString
                 .tb_limit.Text = Format(CDec(DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString), "###,###,##0.00")
+                .tb_terms.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString
                 .btnSubmit.Visible = False
                 .btnUpdate.Visible = True
                 .lbl_cadd.Text = "UPDATE CUSTOMER"
