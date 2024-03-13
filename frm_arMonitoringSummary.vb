@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-
 Public Class frm_arMonitoringSummary
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
@@ -27,9 +26,49 @@ Public Class frm_arMonitoringSummary
         End If
     End Function
 
+    Sub updateStats(countQuery As String, totalArQuery As String, totalAmountQuery As String)
+        Try
+            cn.Open()
+            cm = New MySqlCommand(countQuery, cn)
+            Dim countResult As Integer = Convert.ToInt32(cm.ExecuteScalar())
+            If countResult = 0 Then
+                lblCount.Text = $"({countResult}) record found"
+            Else
+                lblCount.Text = $"({countResult}) records found"
+            End If
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+        Try
+            cn.Open()
+            cm = New MySqlCommand(totalArQuery, cn)
+            Dim totalArResult As Integer = Convert.ToDecimal(cm.ExecuteScalar())
+            lblAR.Text = $"Total AR: {totalArResult}"
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+        Try
+            cn.Open()
+            cm = New MySqlCommand(totalAmountQuery, cn)
+            Dim totalArResult As Integer = Convert.ToDecimal(cm.ExecuteScalar())
+            lblTotalDue.Text = $"Total Amount Due: {totalArResult}"
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
 
     Sub LoadARData()
-
         Try
             DataGridView2.Rows.Clear()
             cn.Open()
@@ -45,6 +84,10 @@ Public Class frm_arMonitoringSummary
             MsgBox(ex.Message)
             cn.Close()
         End Try
+
+        updateStats($"SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_customer ON rcss_remar.remar_customer = rcss_customer.cus_name WHERE DATE(remar_date) = {DateTime.Now.Date.ToString("yyyy-MM-dd")}",
+                    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name",
+                    $"SELECT SUM(remar_amount) FROM rcss_remar, rcss_customer WHERE rcss_remar.remar_customer = rcss_customer.cus_name AND CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY);")
     End Sub
 
     Function calculateDaysLeft(daysVal As String) As Integer
@@ -70,6 +113,29 @@ Public Class frm_arMonitoringSummary
 
             column.Width = maxWidth
         Next
+
+    End Sub
+
+    Sub togglePanelVisibility(dailyStat As Boolean, weeklyStat As Boolean, monthlyStat As Boolean, yearlyStat As Boolean)
+        dailyPanel.Visible = dailyStat
+        weeklyPanel.Visible = weeklyStat
+        monthlyPanel.Visible = monthlyStat
+        yearlyPanel.Visible = yearlyStat
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles filterSelect.SelectedIndexChanged
+        If filterSelect.SelectedItem Is "DAILY" Then
+            togglePanelVisibility(True, False, False, False)
+        ElseIf filterSelect.SelectedItem Is "WEEKLY" Then
+            togglePanelVisibility(False, True, False, False)
+        ElseIf filterSelect.SelectedItem Is "MONTHLY" Then
+            togglePanelVisibility(False, False, True, False)
+        ElseIf filterSelect.SelectedItem Is "YEARLY" Then
+            togglePanelVisibility(False, False, False, True)
+        End If
+    End Sub
+
+    Private Sub lblSum_Click(sender As Object, e As EventArgs) Handles lblAR.Click
 
     End Sub
 End Class
