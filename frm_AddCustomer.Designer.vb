@@ -42,6 +42,8 @@ Partial Class frm_AddCustomer
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.lbl_CustomerID = New System.Windows.Forms.Label()
         Me.tb_accountnoEdit = New System.Windows.Forms.TextBox()
+        Me.tb_terms = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -220,7 +222,7 @@ Partial Class frm_AddCustomer
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnCancel.Location = New System.Drawing.Point(387, 318)
+        Me.btnCancel.Location = New System.Drawing.Point(387, 351)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(86, 27)
         Me.btnCancel.TabIndex = 6
@@ -236,7 +238,7 @@ Partial Class frm_AddCustomer
         Me.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSubmit.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubmit.ForeColor = System.Drawing.Color.White
-        Me.btnSubmit.Location = New System.Drawing.Point(268, 318)
+        Me.btnSubmit.Location = New System.Drawing.Point(268, 351)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(115, 27)
         Me.btnSubmit.TabIndex = 5
@@ -252,7 +254,7 @@ Partial Class frm_AddCustomer
         Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdate.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdate.ForeColor = System.Drawing.Color.White
-        Me.btnUpdate.Location = New System.Drawing.Point(268, 318)
+        Me.btnUpdate.Location = New System.Drawing.Point(268, 349)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(115, 27)
         Me.btnUpdate.TabIndex = 5
@@ -285,13 +287,36 @@ Partial Class frm_AddCustomer
         Me.tb_accountnoEdit.TabIndex = 94
         Me.tb_accountnoEdit.Visible = False
         '
+        'tb_terms
+        '
+        Me.tb_terms.BackColor = System.Drawing.Color.White
+        Me.tb_terms.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tb_terms.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_terms.Location = New System.Drawing.Point(149, 316)
+        Me.tb_terms.Name = "tb_terms"
+        Me.tb_terms.Size = New System.Drawing.Size(324, 27)
+        Me.tb_terms.TabIndex = 95
+        '
+        'Label5
+        '
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(29, 319)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(126, 20)
+        Me.Label5.TabIndex = 96
+        Me.Label5.Text = "Payment Terms"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'frm_AddCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(503, 354)
+        Me.ClientSize = New System.Drawing.Size(503, 388)
         Me.ControlBox = False
+        Me.Controls.Add(Me.tb_terms)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.tb_accountnoEdit)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.tb_limit)
@@ -340,4 +365,6 @@ Partial Class frm_AddCustomer
     Friend WithEvents btnUpdate As Button
     Friend WithEvents lbl_CustomerID As Label
     Friend WithEvents tb_accountnoEdit As TextBox
+    Friend WithEvents tb_terms As TextBox
+    Friend WithEvents Label5 As Label
 End Class

@@ -209,4 +209,8 @@ Public Class frm_arMonitoringSummary
     Private Sub areaPanel_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
+
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
 End Class
