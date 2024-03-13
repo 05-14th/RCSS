@@ -22,127 +22,52 @@ Partial Class frm_arMonitoringSummary
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dailyPicker = New System.Windows.Forms.DateTimePicker()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.cus_namePanel = New System.Windows.Forms.Panel()
+        Me.cusSelect = New System.Windows.Forms.ComboBox()
+        Me.areaPanel = New System.Windows.Forms.Panel()
+        Me.areaSelect = New System.Windows.Forms.ComboBox()
+        Me.filterSelect = New System.Windows.Forms.ComboBox()
         Me.btn_print = New System.Windows.Forms.Button()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dailyPanel = New System.Windows.Forms.Panel()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblTotalDue = New System.Windows.Forms.Label()
+        Me.lblAR = New System.Windows.Forms.Label()
+        Me.lblCount = New System.Windows.Forms.Label()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.cus_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cus_number = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.area = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.term = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ar_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.arNum = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.days = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.re = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.salesman = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.settlement_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.cus_namePanel.SuspendLayout()
+        Me.areaPanel.SuspendLayout()
+        Me.dailyPanel.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AllowUserToResizeRows = False
-        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView2.ColumnHeadersHeight = 28
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.Column2, Me.Column3, Me.Column1, Me.Column7, Me.Column5, Me.Column6})
-        Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.EnableHeadersVisualStyles = False
-        Me.DataGridView2.GridColor = System.Drawing.Color.Gray
-        Me.DataGridView2.Location = New System.Drawing.Point(0, 69)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersVisible = False
-        Me.DataGridView2.RowTemplate.Height = 30
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(1249, 342)
-        Me.DataGridView2.TabIndex = 74
-        '
-        'Column20
-        '
-        Me.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column20.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column20.HeaderText = "      #"
-        Me.Column20.Name = "Column20"
-        Me.Column20.Width = 54
-        '
-        'Column4
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.HeaderText = "STATUS"
-        Me.Column4.Name = "Column4"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.FillWeight = 150.0!
-        Me.Column2.HeaderText = "COLLECTION CODE"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 129
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.FillWeight = 150.0!
-        Me.Column3.HeaderText = "TRANSACTION NUMBER"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 155
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "CUSTOMER"
-        Me.Column1.Name = "Column1"
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "ADDRESS"
-        Me.Column7.Name = "Column7"
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "REFERENCE NUMBER"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column6.FillWeight = 150.0!
-        Me.Column6.HeaderText = "INVOICE"
-        Me.Column6.Name = "Column6"
         '
         'Panel2
         '
@@ -152,7 +77,7 @@ Partial Class frm_arMonitoringSummary
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1249, 32)
+        Me.Panel2.Size = New System.Drawing.Size(958, 32)
         Me.Panel2.TabIndex = 73
         '
         'lbl_addRemittance
@@ -174,7 +99,7 @@ Partial Class frm_arMonitoringSummary
         Me.lbl_close.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_close.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_close.ForeColor = System.Drawing.Color.White
-        Me.lbl_close.Location = New System.Drawing.Point(1220, 7)
+        Me.lbl_close.Location = New System.Drawing.Point(929, 7)
         Me.lbl_close.Name = "lbl_close"
         Me.lbl_close.Size = New System.Drawing.Size(17, 16)
         Me.lbl_close.TabIndex = 24
@@ -187,33 +112,84 @@ Partial Class frm_arMonitoringSummary
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(11, 7)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 18)
+        Me.Label2.Size = New System.Drawing.Size(46, 18)
         Me.Label2.TabIndex = 189
-        Me.Label2.Text = "DATE"
+        Me.Label2.Text = "FILTER"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'DateTimePicker1
+        'dailyPicker
         '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DateTimePicker1.CustomFormat = "MM/dd/yyyy"
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(56, 3)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(165, 25)
-        Me.DateTimePicker1.TabIndex = 190
+        Me.dailyPicker.CalendarFont = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dailyPicker.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.dailyPicker.CustomFormat = "MM/dd/yyyy"
+        Me.dailyPicker.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dailyPicker.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dailyPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dailyPicker.Location = New System.Drawing.Point(0, 0)
+        Me.dailyPicker.Name = "dailyPicker"
+        Me.dailyPicker.Size = New System.Drawing.Size(200, 22)
+        Me.dailyPicker.TabIndex = 190
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.cus_namePanel)
+        Me.Panel3.Controls.Add(Me.areaPanel)
+        Me.Panel3.Controls.Add(Me.filterSelect)
         Me.Panel3.Controls.Add(Me.btn_print)
-        Me.Panel3.Controls.Add(Me.DateTimePicker1)
         Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.dailyPanel)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 32)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1249, 37)
+        Me.Panel3.Size = New System.Drawing.Size(958, 37)
         Me.Panel3.TabIndex = 72
+        '
+        'cus_namePanel
+        '
+        Me.cus_namePanel.Controls.Add(Me.cusSelect)
+        Me.cus_namePanel.Location = New System.Drawing.Point(238, 7)
+        Me.cus_namePanel.Name = "cus_namePanel"
+        Me.cus_namePanel.Size = New System.Drawing.Size(200, 30)
+        Me.cus_namePanel.TabIndex = 79
+        Me.cus_namePanel.Visible = False
+        '
+        'cusSelect
+        '
+        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cusSelect.FormattingEnabled = True
+        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
+        Me.cusSelect.Name = "cusSelect"
+        Me.cusSelect.Size = New System.Drawing.Size(200, 21)
+        Me.cusSelect.TabIndex = 0
+        '
+        'areaPanel
+        '
+        Me.areaPanel.Controls.Add(Me.areaSelect)
+        Me.areaPanel.Location = New System.Drawing.Point(238, 7)
+        Me.areaPanel.Name = "areaPanel"
+        Me.areaPanel.Size = New System.Drawing.Size(200, 30)
+        Me.areaPanel.TabIndex = 195
+        Me.areaPanel.Visible = False
+        '
+        'areaSelect
+        '
+        Me.areaSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.areaSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.areaSelect.FormattingEnabled = True
+        Me.areaSelect.Location = New System.Drawing.Point(0, 0)
+        Me.areaSelect.Name = "areaSelect"
+        Me.areaSelect.Size = New System.Drawing.Size(200, 21)
+        Me.areaSelect.TabIndex = 194
+        '
+        'filterSelect
+        '
+        Me.filterSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.filterSelect.FormattingEnabled = True
+        Me.filterSelect.Items.AddRange(New Object() {"VIEW ALL", "DAILY", "AREA", "CUSTOMER"})
+        Me.filterSelect.Location = New System.Drawing.Point(63, 7)
+        Me.filterSelect.Name = "filterSelect"
+        Me.filterSelect.Size = New System.Drawing.Size(169, 21)
+        Me.filterSelect.TabIndex = 193
         '
         'btn_print
         '
@@ -226,7 +202,7 @@ Partial Class frm_arMonitoringSummary
         Me.btn_print.ForeColor = System.Drawing.Color.White
         Me.btn_print.Image = Global.RCSS.My.Resources.Resources.printer
         Me.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_print.Location = New System.Drawing.Point(1173, 5)
+        Me.btn_print.Location = New System.Drawing.Point(882, 5)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(69, 27)
         Me.btn_print.TabIndex = 192
@@ -234,12 +210,223 @@ Partial Class frm_arMonitoringSummary
         Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_print.UseVisualStyleBackColor = False
         '
+        'dailyPanel
+        '
+        Me.dailyPanel.Controls.Add(Me.dailyPicker)
+        Me.dailyPanel.Location = New System.Drawing.Point(238, 7)
+        Me.dailyPanel.Name = "dailyPanel"
+        Me.dailyPanel.Size = New System.Drawing.Size(200, 21)
+        Me.dailyPanel.TabIndex = 75
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.lblTotalDue)
+        Me.Panel1.Controls.Add(Me.lblAR)
+        Me.Panel1.Controls.Add(Me.lblCount)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(0, 381)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(958, 30)
+        Me.Panel1.TabIndex = 81
+        '
+        'lblTotalDue
+        '
+        Me.lblTotalDue.AutoSize = True
+        Me.lblTotalDue.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalDue.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblTotalDue.Location = New System.Drawing.Point(961, 8)
+        Me.lblTotalDue.Name = "lblTotalDue"
+        Me.lblTotalDue.Size = New System.Drawing.Size(116, 15)
+        Me.lblTotalDue.TabIndex = 2
+        Me.lblTotalDue.Text = "Total Amount Due: 0"
+        '
+        'lblAR
+        '
+        Me.lblAR.AutoSize = True
+        Me.lblAR.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblAR.Location = New System.Drawing.Point(456, 8)
+        Me.lblAR.Name = "lblAR"
+        Me.lblAR.Size = New System.Drawing.Size(64, 15)
+        Me.lblAR.TabIndex = 1
+        Me.lblAR.Text = "Total AR: 0"
+        '
+        'lblCount
+        '
+        Me.lblCount.AutoSize = True
+        Me.lblCount.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblCount.Location = New System.Drawing.Point(7, 8)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(93, 15)
+        Me.lblCount.TabIndex = 0
+        Me.lblCount.Text = "(0) record found"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.AllowUserToResizeRows = False
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridView2.ColumnHeadersHeight = 28
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cus_name, Me.cus_number, Me.area, Me.term, Me.ar_date, Me.arNum, Me.amount, Me.Column1, Me.days, Me.re, Me.salesman, Me.Column4, Me.settlement_date})
+        Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView2.EnableHeadersVisualStyles = False
+        Me.DataGridView2.GridColor = System.Drawing.Color.Gray
+        Me.DataGridView2.Location = New System.Drawing.Point(0, 69)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DataGridView2.RowHeadersVisible = False
+        Me.DataGridView2.RowTemplate.Height = 30
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView2.Size = New System.Drawing.Size(958, 312)
+        Me.DataGridView2.TabIndex = 83
+        '
+        'cus_name
+        '
+        Me.cus_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.cus_name.HeaderText = "CUSTOMER NAME"
+        Me.cus_name.Name = "cus_name"
+        Me.cus_name.ReadOnly = True
+        '
+        'cus_number
+        '
+        Me.cus_number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.cus_number.HeaderText = "CUSTOMER NUMBER"
+        Me.cus_number.Name = "cus_number"
+        Me.cus_number.ReadOnly = True
+        Me.cus_number.Width = 140
+        '
+        'area
+        '
+        Me.area.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.area.DefaultCellStyle = DataGridViewCellStyle7
+        Me.area.HeaderText = "AREA"
+        Me.area.Name = "area"
+        Me.area.ReadOnly = True
+        Me.area.Width = 57
+        '
+        'term
+        '
+        Me.term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.term.HeaderText = "TERM"
+        Me.term.Name = "term"
+        Me.term.ReadOnly = True
+        Me.term.Width = 60
+        '
+        'ar_date
+        '
+        Me.ar_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.ar_date.HeaderText = "AR DATE"
+        Me.ar_date.Name = "ar_date"
+        Me.ar_date.ReadOnly = True
+        Me.ar_date.Width = 73
+        '
+        'arNum
+        '
+        Me.arNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.arNum.FillWeight = 150.0!
+        Me.arNum.HeaderText = "AR NUMBER"
+        Me.arNum.Name = "arNum"
+        Me.arNum.ReadOnly = True
+        Me.arNum.Width = 94
+        '
+        'amount
+        '
+        Me.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.amount.DefaultCellStyle = DataGridViewCellStyle8
+        Me.amount.HeaderText = "AMOUNT"
+        Me.amount.Name = "amount"
+        Me.amount.ReadOnly = True
+        Me.amount.Width = 79
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.HeaderText = "DAYS"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 56
+        '
+        'days
+        '
+        Me.days.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.days.HeaderText = "DUE DATE"
+        Me.days.Name = "days"
+        Me.days.ReadOnly = True
+        Me.days.Width = 81
+        '
+        're
+        '
+        Me.re.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.re.HeaderText = "REMARKS"
+        Me.re.Name = "re"
+        Me.re.ReadOnly = True
+        Me.re.Width = 81
+        '
+        'salesman
+        '
+        Me.salesman.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.salesman.HeaderText = "SALESMAN"
+        Me.salesman.Name = "salesman"
+        Me.salesman.ReadOnly = True
+        Me.salesman.Width = 86
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle9
+        Me.Column4.HeaderText = "STATUS"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        Me.Column4.Width = 67
+        '
+        'settlement_date
+        '
+        Me.settlement_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.settlement_date.HeaderText = "DATE"
+        Me.settlement_date.Name = "settlement_date"
+        Me.settlement_date.ReadOnly = True
+        Me.settlement_date.Width = 56
+        '
         'frm_arMonitoringSummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1249, 411)
+        Me.ClientSize = New System.Drawing.Size(958, 411)
         Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -247,29 +434,49 @@ Partial Class frm_arMonitoringSummary
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.cus_namePanel.ResumeLayout(False)
+        Me.areaPanel.ResumeLayout(False)
+        Me.dailyPanel.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents Column20 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lbl_addRemittance As Label
     Friend WithEvents lbl_close As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dailyPicker As DateTimePicker
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btn_print As Button
+    Friend WithEvents filterSelect As ComboBox
+    Friend WithEvents dailyPanel As Panel
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents cus_namePanel As Panel
+    Friend WithEvents areaPanel As Panel
+    Friend WithEvents areaSelect As ComboBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblTotalDue As Label
+    Friend WithEvents lblAR As Label
+    Friend WithEvents lblCount As Label
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents cusSelect As ComboBox
+    Friend WithEvents cus_name As DataGridViewTextBoxColumn
+    Friend WithEvents cus_number As DataGridViewTextBoxColumn
+    Friend WithEvents area As DataGridViewTextBoxColumn
+    Friend WithEvents term As DataGridViewTextBoxColumn
+    Friend WithEvents ar_date As DataGridViewTextBoxColumn
+    Friend WithEvents arNum As DataGridViewTextBoxColumn
+    Friend WithEvents amount As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents days As DataGridViewTextBoxColumn
+    Friend WithEvents re As DataGridViewTextBoxColumn
+    Friend WithEvents salesman As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents settlement_date As DataGridViewTextBoxColumn
 End Class

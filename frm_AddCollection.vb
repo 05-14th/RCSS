@@ -38,7 +38,7 @@ Public Class frm_AddCollection
             dr = cm.ExecuteReader
             While dr.Read
 
-                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_customer").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
+                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_cusID").ToString, dr.Item("remar_customer").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
 
             End While
             dr.Close()
@@ -132,13 +132,13 @@ Public Class frm_AddCollection
                     If isSelected = True Then
                         'SAVE TO COLLECTION
                         cn.Open()
-                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_customer) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_customer)", cn)
+                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_cusID)", cn)
                         cm.Parameters.AddWithValue("@col_remar_status", "Processing")
                         cm.Parameters.AddWithValue("@col_idno", tb_collectionID.Text)
                         cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
                         cm.Parameters.AddWithValue("@col_refnum", row.Cells(5).Value.ToString())
                         cm.Parameters.AddWithValue("@col_invoice", row.Cells(6).Value.ToString())
-                        cm.Parameters.AddWithValue("@col_customer", row.Cells(7).Value.ToString())
+                        cm.Parameters.AddWithValue("@col_cusID", row.Cells(7).Value.ToString())
 
                         cm.ExecuteNonQuery()
                         cn.Close()
@@ -154,32 +154,37 @@ Public Class frm_AddCollection
                         cm.ExecuteNonQuery()
                         cn.Close()
 
+                        'SAVE TO COLLECTION ID
+
+                        cn.Open()
+                        cm = New MySqlCommand("INSERT INTO rcss_collectionid (collection_number, collection_TOTAL) values(@collection_number, @collection_TOTAL)", cn)
+                        cm.Parameters.AddWithValue("@collection_number", tb_collectionID.Text)
+                        cm.Parameters.AddWithValue("@collection_TOTAL", CDec(lbl_TotalAR.Text))
+
+                        cm.ExecuteNonQuery()
+                        cn.Close()
+
+                        'END SAVE TO COLLECTION ID
+
+                        LoadAR()
+                        RANDID()
+                        frm_collection.LoadCol()
+                        countcheck = 0
+                        lbl_TotalAR.Text = "0.00"
+                        lblSelectedCount.Text = "(" & countcheck & ") record selected"
+
+                        frm_collection.Countuncollected()
+                        frm_collection.CountProcessing()
+                        frm_collection.CountCollected()
+
                     End If
 
                 Next
 
-                'SAVE TO COLLECTION ID
-
-                cn.Open()
-                cm = New MySqlCommand("INSERT INTO rcss_collectionid (collection_number, collection_TOTAL) values(@collection_number, @collection_TOTAL)", cn)
-                cm.Parameters.AddWithValue("@collection_number", tb_collectionID.Text)
-                cm.Parameters.AddWithValue("@collection_TOTAL", CDec(lbl_TotalAR.Text))
-
-                cm.ExecuteNonQuery()
-                cn.Close()
-
-                'END SAVE TO COLLECTION ID
-
-                LoadAR()
-                RANDID()
-                frm_collection.LoadCol()
-                countcheck = 0
-                lbl_TotalAR.Text = "0.00"
-                lblSelectedCount.Text = "(" & countcheck & ") record selected"
-
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            cn.Close()
         End Try
 
 

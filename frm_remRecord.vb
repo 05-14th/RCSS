@@ -22,7 +22,7 @@ Public Class frm_remRecord
             dr = cm.ExecuteReader()
             While dr.Read
 
-                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+                DataGridView2.Rows.Add(dr.Item("rmt_date"), dr.Item("rmt_vanno").ToString, dr.Item("rmt_custodian").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
 
             End While
             dr.Close()
@@ -42,7 +42,7 @@ Public Class frm_remRecord
             dr = cm.ExecuteReader()
             While dr.Read
 
-                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+                DataGridView2.Rows.Add(dr.Item("rmt_date"), dr.Item("rmt_vanno").ToString, dr.Item("rmt_custodian").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
 
             End While
             dr.Close()
@@ -62,7 +62,7 @@ Public Class frm_remRecord
             dr = cm.ExecuteReader()
             While dr.Read
 
-                DataGridView2.Rows.Add(dr.Item("remDB_date").ToString, dr.Item("remDB_time").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+                DataGridView2.Rows.Add(dr.Item("rmt_date"), dr.Item("rmt_vanno").ToString, dr.Item("rmt_custodian").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
 
             End While
             dr.Close()
@@ -170,7 +170,7 @@ Public Class frm_remRecord
             dr = cm.ExecuteReader()
             While dr.Read
 
-                DataGridView2.Rows.Add(dr.Item("rmt_vanno").ToString, dr.Item("rmt_custodian").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
+                DataGridView2.Rows.Add(dr.Item("rmt_date"), dr.Item("rmt_vanno").ToString, dr.Item("rmt_custodian").ToString, CDec(dr.Item("remDB_cash").ToString), CDec(dr.Item("remDB_coins").ToString), CDec(dr.Item("remDB_gcash").ToString), CDec(dr.Item("remDB_online").ToString), CDec(dr.Item("remDB_check").ToString), CDec(dr.Item("remDB_ar").ToString), CDec(dr.Item("remDB_return").ToString), CDec(dr.Item("remDB_bo").ToString), CDec(dr.Item("remDB_discount").ToString), CDec(dr.Item("remDB_expenses").ToString), CDec(dr.Item("remDB_total")))
 
             End While
             dr.Close()
@@ -282,11 +282,14 @@ Public Class frm_remRecord
         selectedYear = YearInput.Text
         GetYearlyRecord()
         DataGridView2.BringToFront()
+
     End Sub
     Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
         MonthSelect.Visible = False
 
     End Sub
+
+
 
     Private Sub YearInput_GotFocus(sender As Object, e As EventArgs) Handles YearInput.GotFocus
         If YearInput.Text = "Type a Year..." Then
@@ -312,5 +315,9 @@ Public Class frm_remRecord
         Loadrecord()
         DataGridView2.BringToFront()
         ComputeRows()
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+        Loadrecord()
     End Sub
 End Class
