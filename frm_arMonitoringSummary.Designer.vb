@@ -140,7 +140,7 @@ Partial Class frm_arMonitoringSummary
         Me.dailyPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dailyPicker.Location = New System.Drawing.Point(0, 0)
         Me.dailyPicker.Name = "dailyPicker"
-        Me.dailyPicker.Size = New System.Drawing.Size(145, 22)
+        Me.dailyPicker.Size = New System.Drawing.Size(205, 22)
         Me.dailyPicker.TabIndex = 190
         '
         'Panel3
@@ -172,9 +172,15 @@ Partial Class frm_arMonitoringSummary
         '
         Me.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_Refresh.Image = Global.RCSS.My.Resources.Resources.pngs
+
+        Me.btn_Refresh.Location = New System.Drawing.Point(485, 15)
+        Me.btn_Refresh.Name = "btn_Refresh"
+        Me.btn_Refresh.Size = New System.Drawing.Size(30, 30)
+
         Me.btn_Refresh.Location = New System.Drawing.Point(482, 14)
         Me.btn_Refresh.Name = "btn_Refresh"
         Me.btn_Refresh.Size = New System.Drawing.Size(34, 34)
+
         Me.btn_Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_Refresh.TabIndex = 203
         Me.btn_Refresh.TabStop = False
@@ -282,9 +288,9 @@ Partial Class frm_arMonitoringSummary
         'areaPanel
         '
         Me.areaPanel.Controls.Add(Me.areaSelect)
-        Me.areaPanel.Location = New System.Drawing.Point(797, 21)
+        Me.areaPanel.Location = New System.Drawing.Point(737, 21)
         Me.areaPanel.Name = "areaPanel"
-        Me.areaPanel.Size = New System.Drawing.Size(145, 27)
+        Me.areaPanel.Size = New System.Drawing.Size(205, 27)
         Me.areaPanel.TabIndex = 195
         Me.areaPanel.Visible = False
         '
@@ -295,17 +301,18 @@ Partial Class frm_arMonitoringSummary
         Me.areaSelect.FormattingEnabled = True
         Me.areaSelect.Location = New System.Drawing.Point(0, 0)
         Me.areaSelect.Name = "areaSelect"
-        Me.areaSelect.Size = New System.Drawing.Size(145, 21)
+        Me.areaSelect.Size = New System.Drawing.Size(205, 21)
         Me.areaSelect.TabIndex = 194
         '
         'filterSelect
         '
+        Me.filterSelect.Cursor = System.Windows.Forms.Cursors.Hand
         Me.filterSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.filterSelect.FormattingEnabled = True
         Me.filterSelect.Items.AddRange(New Object() {"VIEW ALL", "DAILY", "AREA", "CUSTOMER"})
         Me.filterSelect.Location = New System.Drawing.Point(629, 21)
         Me.filterSelect.Name = "filterSelect"
-        Me.filterSelect.Size = New System.Drawing.Size(145, 21)
+        Me.filterSelect.Size = New System.Drawing.Size(102, 21)
         Me.filterSelect.TabIndex = 193
         '
         'btn_print
@@ -330,9 +337,15 @@ Partial Class frm_arMonitoringSummary
         'cus_namePanel
         '
         Me.cus_namePanel.Controls.Add(Me.cusSelect)
+
+        Me.cus_namePanel.Location = New System.Drawing.Point(737, 21)
+        Me.cus_namePanel.Name = "cus_namePanel"
+        Me.cus_namePanel.Size = New System.Drawing.Size(205, 27)
+
         Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
         Me.cus_namePanel.Name = "cus_namePanel"
         Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
+
         Me.cus_namePanel.TabIndex = 79
         Me.cus_namePanel.Visible = False
         '
@@ -343,15 +356,19 @@ Partial Class frm_arMonitoringSummary
         Me.cusSelect.FormattingEnabled = True
         Me.cusSelect.Location = New System.Drawing.Point(0, 0)
         Me.cusSelect.Name = "cusSelect"
+
+        Me.cusSelect.Size = New System.Drawing.Size(205, 21)
+
         Me.cusSelect.Size = New System.Drawing.Size(145, 21)
+
         Me.cusSelect.TabIndex = 0
         '
         'dailyPanel
         '
         Me.dailyPanel.Controls.Add(Me.dailyPicker)
-        Me.dailyPanel.Location = New System.Drawing.Point(797, 21)
+        Me.dailyPanel.Location = New System.Drawing.Point(737, 21)
         Me.dailyPanel.Name = "dailyPanel"
-        Me.dailyPanel.Size = New System.Drawing.Size(145, 27)
+        Me.dailyPanel.Size = New System.Drawing.Size(205, 27)
         Me.dailyPanel.TabIndex = 75
         '
         'ContextMenuStrip1

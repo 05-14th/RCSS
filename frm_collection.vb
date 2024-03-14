@@ -17,11 +17,13 @@ Public Class frm_collection
             DataGridView1.Rows.Clear()
             cn.Open()
             'cm = New MySqlCommand("SELECT * FROM rcss_remar, rcss_collection, rcss_customer  WHERE rcss_remar.remar_transid = rcss_collection.col_transID AND rcss_collection.col_cusID = rcss_customer.cus_accountno", cn)
-            cm = New MySqlCommand("SELECT rcss_collection.col_remar_status, rcss_collection.col_idno, rcss_collection.col_transid, rcss_remar.remar_date, rcss_customer.cus_name, rcss_customer.cus_address, rcss_collection.col_refnum, rcss_collection.col_invoice FROM rcss_remar JOIN rcss_collection ON(rcss_remar.remar_transid = rcss_collection.col_transid) JOIN rcss_customer ON(rcss_customer.cus_accountno = rcss_collection.col_cusID)", cn)
+            'cm = New MySqlCommand("SELECT rcss_collection.col_remar_status, rcss_collection.col_idno, rcss_collection.col_transid, rcss_remar.remar_date, rcss_customer.cus_name, rcss_customer.cus_address, rcss_collection.col_refnum, rcss_collection.col_invoice FROM rcss_remar JOIN rcss_collection ON(rcss_remar.remar_transid = rcss_collection.col_transid) JOIN rcss_customer ON(rcss_customer.cus_accountno = rcss_collection.col_cusID)", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_remar, rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_customer.cus_accountno = rcss_remar.remar_cusID AND rcss_remar.remar_invoice = rcss_collection.col_invoice", cn)
+
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_transid").ToString, dr.Item("remar_date").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("col_refnum").ToString, dr.Item("col_invoice").ToString)
+                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("col_refnum").ToString, dr.Item("col_invoice").ToString)
 
             End While
             dr.Close()

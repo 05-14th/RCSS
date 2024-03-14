@@ -5,7 +5,7 @@ Public Class frm_settlement
         LoadCol()
     End Sub
 
-    Private Sub lbl_close_Click_1(sender As Object, e As EventArgs) Handles lbl_close.Click
+    Private Sub lbl_close_Click_1(sender As Object, e As EventArgs)
         Me.Dispose()
     End Sub
     Sub LoadCol()
@@ -13,7 +13,7 @@ Public Class frm_settlement
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_collectionid", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_collection", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -28,17 +28,17 @@ Public Class frm_settlement
         End Try
 
     End Sub
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 
-    Private Sub btnNew_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btnNew.LinkClicked
+    Private Sub btnNew_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         With frm_AddSettlement
             .ShowDialog()
         End With
     End Sub
 
-    Private Sub tb_search_TextChanged(sender As Object, e As EventArgs) Handles tb_search.TextChanged
+    Private Sub tb_search_TextChanged(sender As Object, e As EventArgs)
         If tb_search.Text = "" Then
             LoadCol()
         Else
@@ -54,7 +54,6 @@ Public Class frm_settlement
                     i += 1
                     DataGridView1.Rows.Add(i, dr.Item("collection_id").ToString, dr.Item("collection_number").ToString, dr.Item("collection_TOTAL").ToString)
 
-
                 End While
                 dr.Close()
                 cn.Close()
@@ -63,5 +62,14 @@ Public Class frm_settlement
                 cn.Close()
             End Try
         End If
+    End Sub
+
+    Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
+        Me.Dispose()
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class
