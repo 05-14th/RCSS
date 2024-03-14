@@ -177,6 +177,7 @@ Public Class frm_remDecide
                 frm_dashAdmin.CountForApproval()
                 frm_dashAdmin.CountRevise()
                 frm_dashAdmin.CountApproved()
+                frm_dashAdmin.CountForCollection()
 
             Catch ex As Exception
                 cn.Close()

@@ -22,11 +22,9 @@ Public Class frm_arMonitoringSummary
             Dim result As Object = cm.ExecuteScalar()
             ' Check if the result is not null
             If result IsNot DBNull.Value Then
-                ' Convert the result to the appropriate data type
+                ' Convert the result to the appropriate datatype
                 Dim sum As Decimal = Convert.ToDecimal(result)
                 Dim formattedSum As String = String.Format("₱{0:#,##0.00}", sum)
-                ' Alternatively, you can use string interpolation:
-                ' Dim formattedSum As String = $"{sum:0.00}"
                 Lbl_Total_AR.Text = formattedSum
 
             Else
@@ -248,5 +246,9 @@ Public Class frm_arMonitoringSummary
             .BringToFront()
             .Show()
         End With
+    End Sub
+
+    Private Sub btn_Refresh_Click(sender As Object, e As EventArgs) Handles btn_Refresh.Click
+        computeTotal_AR()
     End Sub
 End Class

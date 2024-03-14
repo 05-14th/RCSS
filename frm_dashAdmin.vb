@@ -4,6 +4,7 @@ Public Class frm_dashAdmin
         CountForApproval()
         CountRevise()
         CountApproved()
+        CountForCollection()
         Timer1.Start()
         lbl_date.Text = (DateTime.Now.ToString("D")) & "        |"
 
@@ -64,10 +65,25 @@ Public Class frm_dashAdmin
         End Try
 
     End Sub
+    Sub CountForCollection()
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remar WHERE remar_status = 'Uncollected'", cn)
+            Dim count As String
+            count = cm.ExecuteScalar().ToString()
+            Lbl_ForCollection.Text = count
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+    End Sub
     Private Sub LOGOUTToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LOGOUTToolStripMenuItem.Click
         If MsgBox("Do you want to logout?", vbYesNo + vbQuestion) = vbYes Then
             frm_Login.Show()
-            Me.Hide()
+            Me.Dispose()
         End If
     End Sub
 
@@ -269,5 +285,37 @@ Public Class frm_dashAdmin
             .BringToFront()
             .Show()
         End With
+    End Sub
+
+    Private Sub Lbl_Btn_ForCollection_Click(sender As Object, e As EventArgs) Handles Lbl_Btn_ForCollection.Click
+        With frm_collection
+            .TopLevel = False
+            Panel5.Controls.Add(frm_collection)
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub pb_btn_ForCollection_Click(sender As Object, e As EventArgs) Handles pb_btn_ForCollection.Click
+        With frm_collection
+            .TopLevel = False
+            Panel5.Controls.Add(frm_collection)
+            .BringToFront()
+            .Show()
+        End With
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles pb_Home.Click
+
+    End Sub
+
+    Private Sub pb_Home_DoubleClick(sender As Object, e As EventArgs) Handles pb_Home.DoubleClick
+        CountForApproval()
+        CountRevise()
+        CountApproved()
+        CountForCollection()
+        Timer1.Start()
+        lbl_date.Text = (DateTime.Now.ToString("D")) & "        |"
+
     End Sub
 End Class

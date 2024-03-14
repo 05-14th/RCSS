@@ -192,16 +192,16 @@ Public Class frm_AddRemittance
                         Dim i As Integer
                         For i = 0 To DataGridView4.RowCount - 1
                             cn.Open()
-                            cm = New MySqlCommand("INSERT INTO rcss_remonline (remOnline_transid, remOnline_Orefnum, remOnline_customer, remOnline_bank, remOnline_refno, remOnline_amount, remOnline_date, remOnline_time) values(@remOnline_transid, @remOnline_Orefnum, @remOnline_customer, @remOnline_bank, @remOnline_refno, @remOnline_amount, @remOnline_date, @remOnline_time)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_remonline (remOnline_transid, remOnline_Orefnum, remOnline_cusID, remOnline_bank, remOnline_refno, remOnline_amount, remOnline_date, remOnline_time) values(@remOnline_transid, @remOnline_Orefnum, @remOnline_cusID, @remOnline_bank, @remOnline_refno, @remOnline_amount, @remOnline_date, @remOnline_time)", cn)
 
                             cm.Parameters.AddWithValue("@remOnline_transid", tb_transID.Text)
                             cm.Parameters.AddWithValue("@remOnline_Orefnum", DataGridView4.Rows(i).Cells(0).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_customer", DataGridView4.Rows(i).Cells(1).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_bank", DataGridView4.Rows(i).Cells(2).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_refno", DataGridView4.Rows(i).Cells(3).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_amount", CDec(DataGridView4.Rows(i).Cells(4).Value.ToString))
+                            cm.Parameters.AddWithValue("@remOnline_cusID", DataGridView4.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_bank", DataGridView4.Rows(i).Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_refno", DataGridView4.Rows(i).Cells(4).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_amount", CDec(DataGridView4.Rows(i).Cells(5).Value.ToString))
                             'cm.Parameters.AddWithValue("@remOnline_total", CDec(tb_online.Text))
-                            cm.Parameters.AddWithValue("@remOnline_date", DataGridView4.Rows(i).Cells(5).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_date", DataGridView4.Rows(i).Cells(6).Value.ToString)
                             cm.Parameters.AddWithValue("@remOnline_time", frm_dashAdmin.lbl_time.Text)
                             cm.ExecuteNonQuery()
                             cn.Close()
@@ -221,16 +221,16 @@ Public Class frm_AddRemittance
                         Dim i As Integer
                         For i = 0 To DataGridView3.RowCount - 1
                             cn.Open()
-                            cm = New MySqlCommand("INSERT INTO rcss_remcheck (remcheck_transid , remcheck_refnum, remcheck_customer, remcheck_bank, remcheck_checkno, remcheck_amount, remcheck_date, remcheck_time) values(@remcheck_transid , @remcheck_refnum, @remcheck_customer, @remcheck_bank, @remcheck_checkno, @remcheck_amount, @remcheck_date, @remcheck_time)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_remcheck (remcheck_transid , remcheck_refnum, remcheck_cusID, remcheck_bank, remcheck_checkno, remcheck_amount, remcheck_date, remcheck_time) values(@remcheck_transid , @remcheck_refnum, @remcheck_cusID, @remcheck_bank, @remcheck_checkno, @remcheck_amount, @remcheck_date, @remcheck_time)", cn)
 
                             cm.Parameters.AddWithValue("@remcheck_transid", tb_transID.Text)
                             cm.Parameters.AddWithValue("@remcheck_refnum", DataGridView3.Rows(i).Cells(0).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_customer", DataGridView3.Rows(i).Cells(1).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_bank", DataGridView3.Rows(i).Cells(2).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_checkno", DataGridView3.Rows(i).Cells(3).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_amount", CDec(DataGridView3.Rows(i).Cells(4).Value.ToString))
+                            cm.Parameters.AddWithValue("@remcheck_cusID", DataGridView3.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_bank", DataGridView3.Rows(i).Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_checkno", DataGridView3.Rows(i).Cells(4).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_amount", CDec(DataGridView3.Rows(i).Cells(5).Value.ToString))
                             'cm.Parameters.AddWithValue("@remcheck_total", CDec(tb_check.Text))
-                            cm.Parameters.AddWithValue("@remcheck_date", DataGridView3.Rows(i).Cells(5).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_date", DataGridView3.Rows(i).Cells(6).Value.ToString)
                             cm.Parameters.AddWithValue("@remcheck_time", frm_dashAdmin.lbl_time.Text)
                             cm.ExecuteNonQuery()
                             cn.Close()
@@ -251,7 +251,7 @@ Public Class frm_AddRemittance
                         Dim i As Integer
                         For i = 0 To DataGridView2.RowCount - 1
                             cn.Open()
-                            cm = New MySqlCommand("INSERT INTO rcss_remar (remar_transid, remar_rmtstatus, remar_date, remar_time, remar_refnum, remar_invoice, remar_customer, remar_amount, remar_status) values(@remar_transid, @remar_rmtstatus, @remar_date, @remar_time, @remar_refnum, @remar_invoice, @remar_customer, @remar_amount, @remar_status)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_remar (remar_transid, remar_rmtstatus, remar_date, remar_time, remar_refnum, remar_invoice, remar_cusID, remar_amount, remar_status) values(@remar_transid, @remar_rmtstatus, @remar_date, @remar_time, @remar_refnum, @remar_invoice, @remar_cusID, @remar_amount, @remar_status)", cn)
 
                             cm.Parameters.AddWithValue("@remar_transid", tb_transID.Text)
                             cm.Parameters.AddWithValue("@remar_rmtstatus", tb_status.Text)
@@ -259,9 +259,9 @@ Public Class frm_AddRemittance
                             cm.Parameters.AddWithValue("@remar_time", frm_dashAdmin.lbl_time.Text)
                             cm.Parameters.AddWithValue("@remar_refnum", DataGridView2.Rows(i).Cells(0).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
-                            cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
-                            cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
-                            cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
+                            'cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
+                            cm.Parameters.AddWithValue("@remar_cusID", DataGridView2.Rows(i).Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(5).Value.ToString))
                             cm.Parameters.AddWithValue("@remar_status", "Uncollected")
                             cm.ExecuteNonQuery()
                             cn.Close()
@@ -284,6 +284,9 @@ Public Class frm_AddRemittance
 
                 End If
             End If
+            frm_remittance.CountForApproval()
+            Me.Dispose()
+
         Catch ex As Exception
             cn.Close()
             MsgBox(ex.Message, vbCritical)
@@ -422,19 +425,20 @@ Public Class frm_AddRemittance
                         Dim i As Integer
                         For i = 0 To DataGridView4.RowCount - 1
                             cn.Open()
-                            cm = New MySqlCommand("INSERT INTO rcss_remonline (remOnline_transid, remOnline_Orefnum, remOnline_customer, remOnline_bank, remOnline_refno, remOnline_amount, remOnline_date, remOnline_time) values(@remOnline_transid, @remOnline_Orefnum, @remOnline_customer, @remOnline_bank, @remOnline_refno, @remOnline_amount, @remOnline_date, @remOnline_time)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_remonline (remOnline_transid, remOnline_Orefnum, remOnline_cusID, remOnline_bank, remOnline_refno, remOnline_amount, remOnline_date, remOnline_time) values(@remOnline_transid, @remOnline_Orefnum, @remOnline_cusID, @remOnline_bank, @remOnline_refno, @remOnline_amount, @remOnline_date, @remOnline_time)", cn)
 
-                            cm.Parameters.AddWithValue("@remOnline_transid", tb_edittransID.Text)
+                            cm.Parameters.AddWithValue("@remOnline_transid", tb_transID.Text)
                             cm.Parameters.AddWithValue("@remOnline_Orefnum", DataGridView4.Rows(i).Cells(0).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_customer", DataGridView4.Rows(i).Cells(1).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_bank", DataGridView4.Rows(i).Cells(2).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_refno", DataGridView4.Rows(i).Cells(3).Value.ToString)
-                            cm.Parameters.AddWithValue("@remOnline_amount", CDec(DataGridView4.Rows(i).Cells(4).Value.ToString))
-                            cm.Parameters.AddWithValue("@remOnline_total", CDec(tb_online.Text))
-                            cm.Parameters.AddWithValue("@remOnline_date", DataGridView4.Rows(i).Cells(5).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_cusID", DataGridView4.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_bank", DataGridView4.Rows(i).Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_refno", DataGridView4.Rows(i).Cells(4).Value.ToString)
+                            cm.Parameters.AddWithValue("@remOnline_amount", CDec(DataGridView4.Rows(i).Cells(5).Value.ToString))
+                            'cm.Parameters.AddWithValue("@remOnline_total", CDec(tb_online.Text))
+                            cm.Parameters.AddWithValue("@remOnline_date", DataGridView4.Rows(i).Cells(6).Value.ToString)
                             cm.Parameters.AddWithValue("@remOnline_time", frm_dashAdmin.lbl_time.Text)
                             cm.ExecuteNonQuery()
                             cn.Close()
+                            Console.WriteLine("Hit3")
                         Next
 
                         Dim Osum As Decimal = 0
@@ -472,19 +476,20 @@ Public Class frm_AddRemittance
                         Dim i As Integer
                         For i = 0 To DataGridView3.RowCount - 1
                             cn.Open()
-                            cm = New MySqlCommand("INSERT INTO rcss_remcheck (remcheck_transid , remcheck_refnum, remcheck_customer, remcheck_bank, remcheck_checkno, remcheck_amount, remcheck_date, remcheck_time) values(@remcheck_transid , @remcheck_refnum, @remcheck_customer, @remcheck_bank, @remcheck_checkno, @remcheck_amount, @remcheck_date, @remcheck_time)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_remcheck (remcheck_transid , remcheck_refnum, remcheck_cusID, remcheck_bank, remcheck_checkno, remcheck_amount, remcheck_date, remcheck_time) values(@remcheck_transid , @remcheck_refnum, @remcheck_cusID, @remcheck_bank, @remcheck_checkno, @remcheck_amount, @remcheck_date, @remcheck_time)", cn)
 
-                            cm.Parameters.AddWithValue("@remcheck_transid", tb_edittransID.Text)
+                            cm.Parameters.AddWithValue("@remcheck_transid", tb_transID.Text)
                             cm.Parameters.AddWithValue("@remcheck_refnum", DataGridView3.Rows(i).Cells(0).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_customer", DataGridView3.Rows(i).Cells(1).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_bank", DataGridView3.Rows(i).Cells(2).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_checkno", DataGridView3.Rows(i).Cells(3).Value.ToString)
-                            cm.Parameters.AddWithValue("@remcheck_amount", CDec(DataGridView3.Rows(i).Cells(4).Value.ToString))
-                            cm.Parameters.AddWithValue("@remcheck_total", CDec(tb_check.Text))
-                            cm.Parameters.AddWithValue("@remcheck_date", DataGridView3.Rows(i).Cells(5).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_cusID", DataGridView3.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_bank", DataGridView3.Rows(i).Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_checkno", DataGridView3.Rows(i).Cells(4).Value.ToString)
+                            cm.Parameters.AddWithValue("@remcheck_amount", CDec(DataGridView3.Rows(i).Cells(5).Value.ToString))
+                            'cm.Parameters.AddWithValue("@remcheck_total", CDec(tb_check.Text))
+                            cm.Parameters.AddWithValue("@remcheck_date", DataGridView3.Rows(i).Cells(6).Value.ToString)
                             cm.Parameters.AddWithValue("@remcheck_time", frm_dashAdmin.lbl_time.Text)
                             cm.ExecuteNonQuery()
                             cn.Close()
+                            Console.WriteLine("Hit2")
                         Next
 
                     Catch ex As Exception
@@ -511,20 +516,21 @@ Public Class frm_AddRemittance
                         Dim i As Integer
                         For i = 0 To DataGridView2.RowCount - 1
                             cn.Open()
-                            cm = New MySqlCommand("INSERT INTO rcss_remar (remar_transid, remar_rmtstatus, remar_date, remar_time, remar_refnum, remar_invoice, remar_customer, remar_amount, remar_status) values(@remar_transid, @remar_rmtstatus, @remar_date, @remar_time, @remar_refnum, @remar_invoice, @remar_customer, @remar_amount, @remar_status)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_remar (remar_transid, remar_rmtstatus, remar_date, remar_time, remar_refnum, remar_invoice, remar_cusID, remar_amount, remar_status) values(@remar_transid, @remar_rmtstatus, @remar_date, @remar_time, @remar_refnum, @remar_invoice, @remar_cusID, @remar_amount, @remar_status)", cn)
 
-                            cm.Parameters.AddWithValue("@remar_transid", tb_edittransID.Text)
+                            cm.Parameters.AddWithValue("@remar_transid", tb_transID.Text)
                             cm.Parameters.AddWithValue("@remar_rmtstatus", tb_status.Text)
                             cm.Parameters.AddWithValue("@remar_date", DataGridView2.Rows(i).Cells(2).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_time", frm_dashAdmin.lbl_time.Text)
                             cm.Parameters.AddWithValue("@remar_refnum", DataGridView2.Rows(i).Cells(0).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_invoice", DataGridView2.Rows(i).Cells(1).Value.ToString)
-                            cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
-                            cm.Parameters.AddWithValue("@remar_customer", DataGridView2.Rows(i).Cells(3).Value.ToString)
-                            cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(4).Value.ToString))
+                            'cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
+                            cm.Parameters.AddWithValue("@remar_cusID", DataGridView2.Rows(i).Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(5).Value.ToString))
                             cm.Parameters.AddWithValue("@remar_status", "Uncollected")
                             cm.ExecuteNonQuery()
                             cn.Close()
+                            Console.WriteLine("Hit")
                         Next
 
 
@@ -935,10 +941,10 @@ Public Class frm_AddRemittance
         If tb_ARsino.Text = String.Empty Or cb_customers.SelectedItem = String.Empty Or tb_ARamount.Text = String.Empty Or tb_ARrefnum.Text = String.Empty Then
             MessageBox.Show("Fill missing fields", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            DataGridView2.Rows.Add(tb_ARrefnum.Text, tb_ARsino.Text, DateTimePicker2.Text, cb_customers.SelectedItem, tb_ARamount.Text)
+            DataGridView2.Rows.Add(tb_ARrefnum.Text, tb_ARsino.Text, DateTimePicker2.Text, lbl_CusID.Text, cb_customers.SelectedItem, tb_ARamount.Text)
             Dim ARsum As Decimal = 0
             For i = 0 To DataGridView2.Rows.Count - 1
-                ARsum += DataGridView2.Rows(i).Cells(4).Value
+                ARsum += DataGridView2.Rows(i).Cells(5).Value
             Next
 
             'tb_AR.Text = Format(ARsum, "###,###,###.00")
@@ -957,7 +963,7 @@ Public Class frm_AddRemittance
         If cb_checkcustomer.SelectedItem = String.Empty Or tb_CBank.Text = String.Empty Or tb_Cno.Text = String.Empty Or tb_Camount.Text = String.Empty Then
             MessageBox.Show("Fill missing fields", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            DataGridView3.Rows.Add(tb_Crefnum.Text, cb_checkcustomer.SelectedItem, tb_CBank.Text, tb_Cno.Text, tb_Camount.Text, DateTimePicker3.Text)
+            DataGridView3.Rows.Add(tb_Crefnum.Text, Lbl_CheckCusID.Text, cb_checkcustomer.SelectedItem, tb_CBank.Text, tb_Cno.Text, tb_Camount.Text, DateTimePicker3.Text)
 
             Dim Csum As Decimal = 0
             For i = 0 To DataGridView3.Rows.Count - 1
@@ -981,12 +987,12 @@ Public Class frm_AddRemittance
         If cb_onlinecustomer.SelectedItem = String.Empty Or tb_Obank.Text = String.Empty Or tb_Orefno.Text = String.Empty Or tb_Oamount.Text = String.Empty Then
             MessageBox.Show("Fill missing fields", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            DataGridView4.Rows.Add(tb_Orefnum.Text, cb_onlinecustomer.SelectedItem, tb_Obank.Text, tb_Orefno.Text, tb_Oamount.Text, DateTimePicker4.Text)
+            DataGridView4.Rows.Add(tb_Orefnum.Text, lbl_OnlineCusID.Text, cb_onlinecustomer.SelectedItem, tb_Obank.Text, tb_Orefno.Text, tb_Oamount.Text, DateTimePicker4.Text)
 
 
             Dim Osum As Decimal = 0
             For i = 0 To DataGridView4.Rows.Count - 1
-                Osum += DataGridView4.Rows(i).Cells(4).Value
+                Osum += DataGridView4.Rows(i).Cells(5).Value
             Next
 
             tb_online.Text = Osum
@@ -1363,76 +1369,118 @@ Public Class frm_AddRemittance
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
-            Dim colname As String = DataGridView1.Columns(e.ColumnIndex).Name
+        Try
 
+            Dim colname As String = DataGridView1.Columns(e.ColumnIndex).Name
             If colname = "DGV1colRemove" Then
                 For Each row As DataGridViewRow In DataGridView1.SelectedRows
-                    DataGridView1.Rows.Remove(row)
+                    If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
+                        DataGridView1.Rows.Remove(row)
+                    End If
                 Next
             End If
             Dim sum As Decimal = 0
             For i = 0 To DataGridView1.Rows.Count - 1
                 sum += DataGridView1.Rows(i).Cells(1).Value
             Next
-            tb_refsum.Text = sum
-            tb_refsum.Text = String.Format("{0:n}", Double.Parse(tb_refsum.Text))
-        End If
+            'tb_refsum.Text = sum
+            'tb_refsum.Text = String.Format("{0:n}", Double.Parse(tb_refsum.Text))
+
+            ' Convert the result to the appropriate datatype
+            Dim convertsum As Decimal = Convert.ToDecimal(sum)
+            Dim formattedSum As String = String.Format("{0:#,##0.00}", convertsum)
+            tb_refsum.Text = formattedSum
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
-        If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
-            Dim colname As String = DataGridView2.Columns(e.ColumnIndex).Name
+        Try
 
+            Dim colname As String = DataGridView2.Columns(e.ColumnIndex).Name
             If colname = "DGV2colRemove" Then
                 For Each row As DataGridViewRow In DataGridView2.SelectedRows
-                    DataGridView2.Rows.Remove(row)
+                    If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
+                        DataGridView2.Rows.Remove(row)
+                    End If
                 Next
             End If
+
             Dim ARsum As Decimal = 0
             For i = 0 To DataGridView2.Rows.Count - 1
-                ARsum += DataGridView2.Rows(i).Cells(4).Value
+                ARsum += DataGridView2.Rows(i).Cells(5).Value
             Next
 
-            'tb_AR.Text = Format(ARsum, "###,###,###.00")
-            tb_AR.Text = ARsum
-            tb_AR.Text = String.Format("{0:n}", Double.Parse(tb_AR.Text))
-        End If
+            'tb_AR.Text = ARsum
+            'tb_AR.Text = String.Format("{0:n}", Double.Parse(tb_AR.Text))
+            ' Convert the result to the appropriate datatype
+            Dim ARconvertsum As Decimal = Convert.ToDecimal(ARsum)
+            Dim ARformattedSum As String = String.Format("{0:#,##0.00}", ARconvertsum)
+            tb_AR.Text = ARformattedSum
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentClick
-        If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
-            Dim colname As String = DataGridView3.Columns(e.ColumnIndex).Name
+        Try
 
+            Dim colname As String = DataGridView3.Columns(e.ColumnIndex).Name
             If colname = "DGV3colRemove" Then
                 For Each row As DataGridViewRow In DataGridView3.SelectedRows
-                    DataGridView3.Rows.Remove(row)
+                    If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
+                        DataGridView3.Rows.Remove(row)
+                    End If
                 Next
             End If
+
             Dim Csum As Decimal = 0
-            For i = 0 To DataGridView3.Rows.Count - 1
-                Csum += DataGridView3.Rows(i).Cells(4).Value
+                For i = 0 To DataGridView3.Rows.Count - 1
+                Csum += DataGridView3.Rows(i).Cells(5).Value
             Next
 
-            tb_check.Text = Csum
-            tb_check.Text = String.Format("{0:n}", Double.Parse(tb_check.Text))
-        End If
+            'tb_check.Text = Csum
+            'tb_check.Text = String.Format("{0:n}", Double.Parse(tb_check.Text))
+            ' Convert the result to the appropriate datatype
+            Dim Cconvertsum As Decimal = Convert.ToDecimal(Csum)
+            Dim CformattedSum As String = String.Format("{0:#,##0.00}", Cconvertsum)
+            tb_check.Text = CformattedSum
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
     Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellContentClick
-        If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
-            Dim colname As String = DataGridView4.Columns(e.ColumnIndex).Name
+        Try
 
+            Dim colname As String = DataGridView4.Columns(e.ColumnIndex).Name
             If colname = "DGV4colRemove" Then
                 For Each row As DataGridViewRow In DataGridView4.SelectedRows
-                    DataGridView4.Rows.Remove(row)
+                    If MsgBox("Are you sure you want to remove this?", vbYesNo + vbQuestion) = vbYes Then
+                        DataGridView4.Rows.Remove(row)
+                    End If
                 Next
             End If
             Dim Osum As Decimal = 0
             For i = 0 To DataGridView4.Rows.Count - 1
-                Osum += DataGridView4.Rows(i).Cells(4).Value
+                Osum += DataGridView4.Rows(i).Cells(5).Value
             Next
 
-            tb_online.Text = Osum
-            tb_online.Text = String.Format("{0:n}", Double.Parse(tb_online.Text))
-        End If
+            'tb_online.Text = Osum
+            'tb_online.Text = String.Format("{0:n}", Double.Parse(tb_online.Text))
+            ' Convert the result to the appropriate datatype
+            Dim Oconvertsum As Decimal = Convert.ToDecimal(Osum)
+            Dim OformattedSum As String = String.Format("{0:#,##0.00}", Oconvertsum)
+            tb_online.Text = OformattedSum
+
+        Catch ex As Exception
+
+        End Try
+
 
     End Sub
     Private Sub tb_Oamount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tb_Oamount.KeyPress
@@ -1517,5 +1565,43 @@ Public Class frm_AddRemittance
 
     Private Sub tb_ARcustomer_TextChanged(sender As Object, e As EventArgs) Handles tb_ARcustomer.TextChanged
 
+    End Sub
+
+    Private Sub cb_onlinecustomer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_onlinecustomer.SelectedIndexChanged
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_customers.SelectedItem & "' ", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                lbl_OnlineCusID.Text = dr.Item("cus_accountno").ToString
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
+    End Sub
+
+    Private Sub cb_checkcustomer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_checkcustomer.SelectedIndexChanged
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_customers.SelectedItem & "' ", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+
+                Lbl_CheckCusID.Text = dr.Item("cus_accountno").ToString
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 End Class

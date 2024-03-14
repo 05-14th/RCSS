@@ -132,10 +132,11 @@ Public Class frm_AddCollection
                     If isSelected = True Then
                         'SAVE TO COLLECTION
                         cn.Open()
-                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_cusID)", cn)
+                        'cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_cusID)", cn)
+                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_refnum, @col_invoice, @col_cusID)", cn)
                         cm.Parameters.AddWithValue("@col_remar_status", "Processing")
                         cm.Parameters.AddWithValue("@col_idno", tb_collectionID.Text)
-                        cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
+                        'cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
                         cm.Parameters.AddWithValue("@col_refnum", row.Cells(5).Value.ToString())
                         cm.Parameters.AddWithValue("@col_invoice", row.Cells(6).Value.ToString())
                         cm.Parameters.AddWithValue("@col_cusID", row.Cells(7).Value.ToString())

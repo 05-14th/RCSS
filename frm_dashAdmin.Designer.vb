@@ -26,7 +26,7 @@ Partial Class frm_dashAdmin
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_dashAdmin))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pb_Home = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MENUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -66,6 +66,10 @@ Partial Class frm_dashAdmin
         Me.btn_approved = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Lbl_ForCollection = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Lbl_Btn_ForCollection = New System.Windows.Forms.Label()
+        Me.pb_btn_ForCollection = New System.Windows.Forms.PictureBox()
         Me.Lbl_Approved = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Lbl_Btn_Approved = New System.Windows.Forms.Label()
@@ -80,7 +84,7 @@ Partial Class frm_dashAdmin
         Me.pb_btn_forApproval = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -94,6 +98,7 @@ Partial Class frm_dashAdmin
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        CType(Me.pb_btn_ForCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_btn_Approved, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_btn_forRevision, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_btn_forApproval, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,7 +108,7 @@ Partial Class frm_dashAdmin
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.pb_Home)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.lblName)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -125,15 +130,16 @@ Partial Class frm_dashAdmin
         Me.Label1.Text = "RCSS"
         Me.Label1.Visible = False
         '
-        'PictureBox1
+        'pb_Home
         '
-        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
-        Me.PictureBox1.Location = New System.Drawing.Point(18, 11)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(58, 52)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
+        Me.pb_Home.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_Home.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
+        Me.pb_Home.Location = New System.Drawing.Point(18, 11)
+        Me.pb_Home.Name = "pb_Home"
+        Me.pb_Home.Size = New System.Drawing.Size(58, 52)
+        Me.pb_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Home.TabIndex = 30
+        Me.pb_Home.TabStop = False
         '
         'Panel2
         '
@@ -521,15 +527,22 @@ Partial Class frm_dashAdmin
         '
         'Panel6
         '
+        Me.Panel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel6.BackColor = System.Drawing.Color.White
         Me.Panel6.Controls.Add(Me.Panel10)
-        Me.Panel6.Location = New System.Drawing.Point(29, 21)
+        Me.Panel6.Location = New System.Drawing.Point(18, 21)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(300, 580)
+        Me.Panel6.Size = New System.Drawing.Size(311, 580)
         Me.Panel6.TabIndex = 0
         '
         'Panel10
         '
+        Me.Panel10.AutoScroll = True
+        Me.Panel10.Controls.Add(Me.Lbl_ForCollection)
+        Me.Panel10.Controls.Add(Me.Label5)
+        Me.Panel10.Controls.Add(Me.Lbl_Btn_ForCollection)
+        Me.Panel10.Controls.Add(Me.pb_btn_ForCollection)
         Me.Panel10.Controls.Add(Me.Lbl_Approved)
         Me.Panel10.Controls.Add(Me.Label9)
         Me.Panel10.Controls.Add(Me.Lbl_Btn_Approved)
@@ -542,10 +555,61 @@ Partial Class frm_dashAdmin
         Me.Panel10.Controls.Add(Me.Label4)
         Me.Panel10.Controls.Add(Me.Lbl_Btn_ForApproval)
         Me.Panel10.Controls.Add(Me.pb_btn_forApproval)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(311, 544)
+        Me.Panel10.Size = New System.Drawing.Size(311, 580)
         Me.Panel10.TabIndex = 4
+        '
+        'Lbl_ForCollection
+        '
+        Me.Lbl_ForCollection.AutoSize = True
+        Me.Lbl_ForCollection.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_ForCollection.Font = New System.Drawing.Font("Segoe UI", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_ForCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_ForCollection.Location = New System.Drawing.Point(212, 601)
+        Me.Lbl_ForCollection.Name = "Lbl_ForCollection"
+        Me.Lbl_ForCollection.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Lbl_ForCollection.Size = New System.Drawing.Size(54, 65)
+        Me.Lbl_ForCollection.TabIndex = 19
+        Me.Lbl_ForCollection.Text = "0"
+        Me.Lbl_ForCollection.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label5
+        '
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(139, 576)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(135, 17)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Account Receivables"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Lbl_Btn_ForCollection
+        '
+        Me.Lbl_Btn_ForCollection.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Btn_ForCollection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Lbl_Btn_ForCollection.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Btn_ForCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Btn_ForCollection.Location = New System.Drawing.Point(93, 540)
+        Me.Lbl_Btn_ForCollection.Name = "Lbl_Btn_ForCollection"
+        Me.Lbl_Btn_ForCollection.Size = New System.Drawing.Size(187, 37)
+        Me.Lbl_Btn_ForCollection.TabIndex = 17
+        Me.Lbl_Btn_ForCollection.Text = "For Collection"
+        Me.Lbl_Btn_ForCollection.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'pb_btn_ForCollection
+        '
+        Me.pb_btn_ForCollection.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_btn_ForCollection.Image = Global.RCSS.My.Resources.Resources._1
+        Me.pb_btn_ForCollection.Location = New System.Drawing.Point(0, 538)
+        Me.pb_btn_ForCollection.Name = "pb_btn_ForCollection"
+        Me.pb_btn_ForCollection.Size = New System.Drawing.Size(191, 160)
+        Me.pb_btn_ForCollection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_btn_ForCollection.TabIndex = 16
+        Me.pb_btn_ForCollection.TabStop = False
         '
         'Lbl_Approved
         '
@@ -721,7 +785,7 @@ Partial Class frm_dashAdmin
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
@@ -738,6 +802,7 @@ Partial Class frm_dashAdmin
         Me.Panel6.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
+        CType(Me.pb_btn_ForCollection, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_btn_Approved, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_btn_forRevision, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_btn_forApproval, System.ComponentModel.ISupportInitialize).EndInit()
@@ -782,7 +847,7 @@ Partial Class frm_dashAdmin
     Friend WithEvents Panel8 As Panel
     Friend WithEvents PanelDock As Panel
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pb_Home As PictureBox
     Friend WithEvents lbl_user As Label
     Friend WithEvents REMITTANCERECORDToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox2 As PictureBox
@@ -800,4 +865,8 @@ Partial Class frm_dashAdmin
     Friend WithEvents Label6 As Label
     Friend WithEvents Lbl_Btn_ForRevision As Label
     Friend WithEvents pb_btn_forRevision As PictureBox
+    Friend WithEvents Lbl_ForCollection As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Lbl_Btn_ForCollection As Label
+    Friend WithEvents pb_btn_ForCollection As PictureBox
 End Class
