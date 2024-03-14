@@ -38,19 +38,19 @@ Partial Class frm_arMonitoringSummary
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Lbl_Total_ARDue = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Lbl_Total_AR = New System.Windows.Forms.Label()
         Me.Lbl_TotalAR = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.areaPanel = New System.Windows.Forms.Panel()
-        Me.areaSelect = New System.Windows.Forms.ComboBox()
         Me.filterSelect = New System.Windows.Forms.ComboBox()
         Me.btn_print = New System.Windows.Forms.Button()
+        Me.dailyPanel = New System.Windows.Forms.Panel()
+        Me.areaPanel = New System.Windows.Forms.Panel()
+        Me.areaSelect = New System.Windows.Forms.ComboBox()
         Me.cus_namePanel = New System.Windows.Forms.Panel()
         Me.cusSelect = New System.Windows.Forms.ComboBox()
-        Me.dailyPanel = New System.Windows.Forms.Panel()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblTotalDue = New System.Windows.Forms.Label()
@@ -75,9 +75,9 @@ Partial Class frm_arMonitoringSummary
         CType(Me.btn_Refresh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dailyPanel.SuspendLayout()
         Me.areaPanel.SuspendLayout()
         Me.cus_namePanel.SuspendLayout()
-        Me.dailyPanel.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -133,14 +133,15 @@ Partial Class frm_arMonitoringSummary
         'dailyPicker
         '
         Me.dailyPicker.CalendarFont = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dailyPicker.CalendarForeColor = System.Drawing.Color.Gray
         Me.dailyPicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.dailyPicker.CustomFormat = "MM/dd/yyyy"
         Me.dailyPicker.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dailyPicker.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dailyPicker.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dailyPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dailyPicker.Location = New System.Drawing.Point(0, 0)
         Me.dailyPicker.Name = "dailyPicker"
-        Me.dailyPicker.Size = New System.Drawing.Size(205, 22)
+        Me.dailyPicker.Size = New System.Drawing.Size(205, 23)
         Me.dailyPicker.TabIndex = 190
         '
         'Panel3
@@ -150,18 +151,18 @@ Partial Class frm_arMonitoringSummary
         Me.Panel3.Controls.Add(Me.Panel6)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.Panel5)
-        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.Lbl_Total_ARDue)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.Lbl_Total_AR)
         Me.Panel3.Controls.Add(Me.Lbl_TotalAR)
         Me.Panel3.Controls.Add(Me.PictureBox2)
         Me.Panel3.Controls.Add(Me.PictureBox1)
-        Me.Panel3.Controls.Add(Me.areaPanel)
         Me.Panel3.Controls.Add(Me.filterSelect)
         Me.Panel3.Controls.Add(Me.btn_print)
         Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.cus_namePanel)
         Me.Panel3.Controls.Add(Me.dailyPanel)
+        Me.Panel3.Controls.Add(Me.areaPanel)
+        Me.Panel3.Controls.Add(Me.cus_namePanel)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 32)
         Me.Panel3.Name = "Panel3"
@@ -172,15 +173,9 @@ Partial Class frm_arMonitoringSummary
         '
         Me.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_Refresh.Image = Global.RCSS.My.Resources.Resources.pngs
-
-        Me.btn_Refresh.Location = New System.Drawing.Point(485, 15)
-        Me.btn_Refresh.Name = "btn_Refresh"
-        Me.btn_Refresh.Size = New System.Drawing.Size(30, 30)
-
         Me.btn_Refresh.Location = New System.Drawing.Point(482, 14)
         Me.btn_Refresh.Name = "btn_Refresh"
         Me.btn_Refresh.Size = New System.Drawing.Size(34, 34)
-
         Me.btn_Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_Refresh.TabIndex = 203
         Me.btn_Refresh.TabStop = False
@@ -209,19 +204,19 @@ Partial Class frm_arMonitoringSummary
         Me.Panel5.Size = New System.Drawing.Size(1, 35)
         Me.Panel5.TabIndex = 200
         '
-        'Label3
+        'Lbl_Total_ARDue
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(346, 30)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 17)
-        Me.Label3.TabIndex = 198
-        Me.Label3.Text = "0.00"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Lbl_Total_ARDue.AutoSize = True
+        Me.Lbl_Total_ARDue.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Total_ARDue.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Lbl_Total_ARDue.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Total_ARDue.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Total_ARDue.Location = New System.Drawing.Point(346, 30)
+        Me.Lbl_Total_ARDue.Name = "Lbl_Total_ARDue"
+        Me.Lbl_Total_ARDue.Size = New System.Drawing.Size(32, 17)
+        Me.Lbl_Total_ARDue.TabIndex = 198
+        Me.Lbl_Total_ARDue.Text = "0.00"
+        Me.Lbl_Total_ARDue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label4
         '
@@ -285,34 +280,17 @@ Partial Class frm_arMonitoringSummary
         Me.PictureBox1.TabIndex = 196
         Me.PictureBox1.TabStop = False
         '
-        'areaPanel
-        '
-        Me.areaPanel.Controls.Add(Me.areaSelect)
-        Me.areaPanel.Location = New System.Drawing.Point(737, 21)
-        Me.areaPanel.Name = "areaPanel"
-        Me.areaPanel.Size = New System.Drawing.Size(205, 27)
-        Me.areaPanel.TabIndex = 195
-        Me.areaPanel.Visible = False
-        '
-        'areaSelect
-        '
-        Me.areaSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.areaSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.areaSelect.FormattingEnabled = True
-        Me.areaSelect.Location = New System.Drawing.Point(0, 0)
-        Me.areaSelect.Name = "areaSelect"
-        Me.areaSelect.Size = New System.Drawing.Size(205, 21)
-        Me.areaSelect.TabIndex = 194
-        '
         'filterSelect
         '
         Me.filterSelect.Cursor = System.Windows.Forms.Cursors.Hand
         Me.filterSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.filterSelect.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.filterSelect.ForeColor = System.Drawing.Color.Gray
         Me.filterSelect.FormattingEnabled = True
-        Me.filterSelect.Items.AddRange(New Object() {"VIEW ALL", "DAILY", "AREA", "CUSTOMER"})
+        Me.filterSelect.Items.AddRange(New Object() {"", "VIEW ALL", "DAILY", "AREA", "CUSTOMER"})
         Me.filterSelect.Location = New System.Drawing.Point(629, 21)
         Me.filterSelect.Name = "filterSelect"
-        Me.filterSelect.Size = New System.Drawing.Size(102, 21)
+        Me.filterSelect.Size = New System.Drawing.Size(102, 23)
         Me.filterSelect.TabIndex = 193
         '
         'btn_print
@@ -334,35 +312,6 @@ Partial Class frm_arMonitoringSummary
         Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_print.UseVisualStyleBackColor = False
         '
-        'cus_namePanel
-        '
-        Me.cus_namePanel.Controls.Add(Me.cusSelect)
-
-        Me.cus_namePanel.Location = New System.Drawing.Point(737, 21)
-        Me.cus_namePanel.Name = "cus_namePanel"
-        Me.cus_namePanel.Size = New System.Drawing.Size(205, 27)
-
-        Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
-        Me.cus_namePanel.Name = "cus_namePanel"
-        Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
-
-        Me.cus_namePanel.TabIndex = 79
-        Me.cus_namePanel.Visible = False
-        '
-        'cusSelect
-        '
-        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.cusSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cusSelect.FormattingEnabled = True
-        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
-        Me.cusSelect.Name = "cusSelect"
-
-        Me.cusSelect.Size = New System.Drawing.Size(205, 21)
-
-        Me.cusSelect.Size = New System.Drawing.Size(145, 21)
-
-        Me.cusSelect.TabIndex = 0
-        '
         'dailyPanel
         '
         Me.dailyPanel.Controls.Add(Me.dailyPicker)
@@ -370,6 +319,49 @@ Partial Class frm_arMonitoringSummary
         Me.dailyPanel.Name = "dailyPanel"
         Me.dailyPanel.Size = New System.Drawing.Size(205, 27)
         Me.dailyPanel.TabIndex = 75
+        Me.dailyPanel.Visible = False
+        '
+        'areaPanel
+        '
+        Me.areaPanel.Controls.Add(Me.areaSelect)
+        Me.areaPanel.Location = New System.Drawing.Point(737, 21)
+        Me.areaPanel.Name = "areaPanel"
+        Me.areaPanel.Size = New System.Drawing.Size(205, 27)
+        Me.areaPanel.TabIndex = 195
+        Me.areaPanel.Visible = False
+        '
+        'areaSelect
+        '
+        Me.areaSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.areaSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.areaSelect.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.areaSelect.ForeColor = System.Drawing.Color.Gray
+        Me.areaSelect.FormattingEnabled = True
+        Me.areaSelect.Location = New System.Drawing.Point(0, 0)
+        Me.areaSelect.Name = "areaSelect"
+        Me.areaSelect.Size = New System.Drawing.Size(205, 23)
+        Me.areaSelect.TabIndex = 194
+        '
+        'cus_namePanel
+        '
+        Me.cus_namePanel.Controls.Add(Me.cusSelect)
+        Me.cus_namePanel.Location = New System.Drawing.Point(737, 21)
+        Me.cus_namePanel.Name = "cus_namePanel"
+        Me.cus_namePanel.Size = New System.Drawing.Size(205, 27)
+        Me.cus_namePanel.TabIndex = 79
+        Me.cus_namePanel.Visible = False
+        '
+        'cusSelect
+        '
+        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cusSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cusSelect.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cusSelect.ForeColor = System.Drawing.Color.Gray
+        Me.cusSelect.FormattingEnabled = True
+        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
+        Me.cusSelect.Name = "cusSelect"
+        Me.cusSelect.Size = New System.Drawing.Size(205, 23)
+        Me.cusSelect.TabIndex = 0
         '
         'ContextMenuStrip1
         '
@@ -594,9 +586,9 @@ Partial Class frm_arMonitoringSummary
         CType(Me.btn_Refresh, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.dailyPanel.ResumeLayout(False)
         Me.areaPanel.ResumeLayout(False)
         Me.cus_namePanel.ResumeLayout(False)
-        Me.dailyPanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -637,7 +629,7 @@ Partial Class frm_arMonitoringSummary
     Friend WithEvents settlement_date As DataGridViewTextBoxColumn
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents Lbl_Total_ARDue As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Lbl_Total_AR As Label
     Friend WithEvents Lbl_TotalAR As Label

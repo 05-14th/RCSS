@@ -208,9 +208,11 @@ Partial Class frm_dashAdmin
         '
         'ARCollectionToolStripMenuItem
         '
+        Me.ARCollectionToolStripMenuItem.Enabled = False
         Me.ARCollectionToolStripMenuItem.Name = "ARCollectionToolStripMenuItem"
         Me.ARCollectionToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.ARCollectionToolStripMenuItem.Text = "AR COLLECTION"
+        Me.ARCollectionToolStripMenuItem.Visible = False
         '
         'ARMonitoringSummaryToolStripMenuItem
         '
@@ -220,9 +222,11 @@ Partial Class frm_dashAdmin
         '
         'ColletionsToolStripMenuItem
         '
+        Me.ColletionsToolStripMenuItem.Enabled = False
         Me.ColletionsToolStripMenuItem.Name = "ColletionsToolStripMenuItem"
         Me.ColletionsToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.ColletionsToolStripMenuItem.Text = "COLLECTION"
+        Me.ColletionsToolStripMenuItem.Visible = False
         '
         'SETTINGSToolStripMenuItem
         '
@@ -236,19 +240,19 @@ Partial Class frm_dashAdmin
         'USERToolStripMenuItem
         '
         Me.USERToolStripMenuItem.Name = "USERToolStripMenuItem"
-        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.USERToolStripMenuItem.Text = "USER"
         '
         'VANROUTEToolStripMenuItem
         '
         Me.VANROUTEToolStripMenuItem.Name = "VANROUTEToolStripMenuItem"
-        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.VANROUTEToolStripMenuItem.Text = "VAN / ROUTE"
         '
         'CUSTOMERToolStripMenuItem
         '
         Me.CUSTOMERToolStripMenuItem.Name = "CUSTOMERToolStripMenuItem"
-        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CUSTOMERToolStripMenuItem.Text = "CUSTOMER"
         '
         'LOGOUTToolStripMenuItem
@@ -580,7 +584,7 @@ Partial Class frm_dashAdmin
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(139, 576)
+        Me.Label5.Location = New System.Drawing.Point(139, 569)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(135, 17)
         Me.Label5.TabIndex = 18
@@ -593,7 +597,7 @@ Partial Class frm_dashAdmin
         Me.Lbl_Btn_ForCollection.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Lbl_Btn_ForCollection.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lbl_Btn_ForCollection.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Lbl_Btn_ForCollection.Location = New System.Drawing.Point(93, 540)
+        Me.Lbl_Btn_ForCollection.Location = New System.Drawing.Point(93, 533)
         Me.Lbl_Btn_ForCollection.Name = "Lbl_Btn_ForCollection"
         Me.Lbl_Btn_ForCollection.Size = New System.Drawing.Size(187, 37)
         Me.Lbl_Btn_ForCollection.TabIndex = 17
@@ -604,7 +608,7 @@ Partial Class frm_dashAdmin
         '
         Me.pb_btn_ForCollection.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pb_btn_ForCollection.Image = Global.RCSS.My.Resources.Resources._1
-        Me.pb_btn_ForCollection.Location = New System.Drawing.Point(0, 538)
+        Me.pb_btn_ForCollection.Location = New System.Drawing.Point(0, 531)
         Me.pb_btn_ForCollection.Name = "pb_btn_ForCollection"
         Me.pb_btn_ForCollection.Size = New System.Drawing.Size(191, 160)
         Me.pb_btn_ForCollection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom

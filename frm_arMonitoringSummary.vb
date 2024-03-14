@@ -18,7 +18,7 @@ Public Class frm_arMonitoringSummary
         Try
 
             cn.Open()
-            cm = New MySqlCommand("SELECT SUM(remar_amount) FROM rcss_remar", cn)
+            cm = New MySqlCommand("SELECT SUM(remar_amount) FROM rcss_remar WHERE remar_rmtstatus = 'Approved'", cn)
             Dim result As Object = cm.ExecuteScalar()
             ' Check if the result is not null
             If result IsNot DBNull.Value Then
@@ -40,10 +40,12 @@ Public Class frm_arMonitoringSummary
 
     Function getRE(termValue As Integer, daysValue As Integer) As String
 
-        If daysValue >= termValue Then
+        If daysValue = termValue Then
             Return "Due"
+        ElseIf daysValue > termValue Then
+            Return "Overdue"
         Else
-            Return " "
+            Return ""
         End If
     End Function
 
@@ -87,6 +89,10 @@ Public Class frm_arMonitoringSummary
                 totalArResult = Convert.ToDecimal(cm.ExecuteScalar())
             End If
             lblTotalDue.Text = $"Total Amount Due: {totalArResult}"
+            Dim formattedSum As String = String.Format("₱{0:#,##0.00}", totalArResult)
+            Lbl_Total_ARDue.Text = $"{formattedSum}"
+
+
             dr.Close()
             cn.Close()
         Catch ex As Exception
@@ -192,6 +198,8 @@ Public Class frm_arMonitoringSummary
             updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY)")
+        Else
+            togglePanelVisibility(False, False, False)
         End If
     End Sub
 

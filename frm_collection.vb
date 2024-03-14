@@ -10,16 +10,13 @@ Public Class frm_collection
         CountProcessing()
 
     End Sub
-
     Sub LoadCol()
+
         Try
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
             cn.Open()
-            'cm = New MySqlCommand("SELECT * FROM rcss_remar, rcss_collection, rcss_customer  WHERE rcss_remar.remar_transid = rcss_collection.col_transID AND rcss_collection.col_cusID = rcss_customer.cus_accountno", cn)
-            'cm = New MySqlCommand("SELECT rcss_collection.col_remar_status, rcss_collection.col_idno, rcss_collection.col_transid, rcss_remar.remar_date, rcss_customer.cus_name, rcss_customer.cus_address, rcss_collection.col_refnum, rcss_collection.col_invoice FROM rcss_remar JOIN rcss_collection ON(rcss_remar.remar_transid = rcss_collection.col_transid) JOIN rcss_customer ON(rcss_customer.cus_accountno = rcss_collection.col_cusID)", cn)
-            cm = New MySqlCommand("SELECT * FROM rcss_remar, rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_customer.cus_accountno = rcss_remar.remar_cusID AND rcss_remar.remar_invoice = rcss_collection.col_invoice", cn)
-
+            cm = New MySqlCommand("SELECT DISTINCT * FROM rcss_remar, rcss_collection, rcss_customer WHERE rcss_collection.col_cusID = rcss_customer.cus_accountno AND rcss_customer.cus_accountno = rcss_remar.remar_cusID AND rcss_remar.remar_invoice = rcss_collection.col_invoice", cn)
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
@@ -32,23 +29,6 @@ Public Class frm_collection
             MsgBox(ex.Message)
             cn.Close()
         End Try
-        'Try
-        '    Dim i As Integer = 0
-        '    DataGridView1.Rows.Clear()
-        '    cn.Open()
-        '    cm = New MySqlCommand("SELECT * FROM rcss_collection ORDER BY col_id DESC ", cn)
-        '    dr = cm.ExecuteReader
-        '    While dr.Read
-        '        i += 1
-        '        DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("col_invoice").ToString)
-
-        '    End While
-        '    dr.Close()
-        '    cn.Close()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        '    cn.Close()
-        'End Try
 
     End Sub
 
@@ -146,7 +126,7 @@ Public Class frm_collection
                 DataGridView1.Rows.Clear()
                 cn.Open()
                 'cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid Like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rmt_status = 'Checking'", cn)
-                cm = New MySqlCommand("SELECT * FROM rcss_customer, rcss_collection WHERE rcss_customer.cus_name = rcss_collection.col_customer AND rcss_collection.col_idno like '%" & tb_search.Text & "%'", cn)
+                cm = New MySqlCommand("SELECT DISTINCT * FROM rcss_customer, rcss_collection WHERE rcss_customer.cus_accountno = rcss_collection.col_cusID AND rcss_collection.col_idno like '%" & tb_search.Text & "%'", cn)
 
                 dr = cm.ExecuteReader
                 While dr.Read
