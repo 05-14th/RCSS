@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_arMonitoringSummary
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_arMonitoringSummary
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -172,9 +172,15 @@ Partial Class frm_arMonitoringSummary
         '
         Me.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_Refresh.Image = Global.RCSS.My.Resources.Resources.pngs
+<<<<<<< HEAD
         Me.btn_Refresh.Location = New System.Drawing.Point(485, 15)
         Me.btn_Refresh.Name = "btn_Refresh"
         Me.btn_Refresh.Size = New System.Drawing.Size(30, 30)
+=======
+        Me.btn_Refresh.Location = New System.Drawing.Point(482, 14)
+        Me.btn_Refresh.Name = "btn_Refresh"
+        Me.btn_Refresh.Size = New System.Drawing.Size(34, 34)
+>>>>>>> 2a06ca07a91931f18383c5584ae23eb9c9cae76c
         Me.btn_Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_Refresh.TabIndex = 203
         Me.btn_Refresh.TabStop = False
@@ -331,9 +337,15 @@ Partial Class frm_arMonitoringSummary
         'cus_namePanel
         '
         Me.cus_namePanel.Controls.Add(Me.cusSelect)
+<<<<<<< HEAD
         Me.cus_namePanel.Location = New System.Drawing.Point(737, 21)
         Me.cus_namePanel.Name = "cus_namePanel"
         Me.cus_namePanel.Size = New System.Drawing.Size(205, 27)
+=======
+        Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
+        Me.cus_namePanel.Name = "cus_namePanel"
+        Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
+>>>>>>> 2a06ca07a91931f18383c5584ae23eb9c9cae76c
         Me.cus_namePanel.TabIndex = 79
         Me.cus_namePanel.Visible = False
         '
@@ -344,7 +356,11 @@ Partial Class frm_arMonitoringSummary
         Me.cusSelect.FormattingEnabled = True
         Me.cusSelect.Location = New System.Drawing.Point(0, 0)
         Me.cusSelect.Name = "cusSelect"
+<<<<<<< HEAD
         Me.cusSelect.Size = New System.Drawing.Size(205, 21)
+=======
+        Me.cusSelect.Size = New System.Drawing.Size(145, 21)
+>>>>>>> 2a06ca07a91931f18383c5584ae23eb9c9cae76c
         Me.cusSelect.TabIndex = 0
         '
         'dailyPanel
