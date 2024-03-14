@@ -185,7 +185,7 @@ Public Class frm_remRecord
 
     End Sub
     Sub ComputeRows()
-        Dim total1, total2, total3, total4, total5, total6, total7, total8, total9, total10 As Double
+        Dim total1, total2, total3, total4, total5, total6, total7, total8, total9, total10
         For i As Integer = 0 To DataGridView2.RowCount - 1
             total1 += DataGridView2.Rows(i).Cells(2).Value
             total2 += DataGridView2.Rows(i).Cells(3).Value

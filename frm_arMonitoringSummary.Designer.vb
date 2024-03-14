@@ -172,15 +172,9 @@ Partial Class frm_arMonitoringSummary
         '
         Me.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_Refresh.Image = Global.RCSS.My.Resources.Resources.pngs
-
-        Me.btn_Refresh.Location = New System.Drawing.Point(485, 15)
-        Me.btn_Refresh.Name = "btn_Refresh"
-        Me.btn_Refresh.Size = New System.Drawing.Size(30, 30)
-
         Me.btn_Refresh.Location = New System.Drawing.Point(482, 14)
         Me.btn_Refresh.Name = "btn_Refresh"
         Me.btn_Refresh.Size = New System.Drawing.Size(34, 34)
-
         Me.btn_Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_Refresh.TabIndex = 203
         Me.btn_Refresh.TabStop = False
@@ -337,15 +331,9 @@ Partial Class frm_arMonitoringSummary
         'cus_namePanel
         '
         Me.cus_namePanel.Controls.Add(Me.cusSelect)
-
-        Me.cus_namePanel.Location = New System.Drawing.Point(737, 21)
-        Me.cus_namePanel.Name = "cus_namePanel"
-        Me.cus_namePanel.Size = New System.Drawing.Size(205, 27)
-
         Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
         Me.cus_namePanel.Name = "cus_namePanel"
         Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
-
         Me.cus_namePanel.TabIndex = 79
         Me.cus_namePanel.Visible = False
         '
@@ -356,11 +344,7 @@ Partial Class frm_arMonitoringSummary
         Me.cusSelect.FormattingEnabled = True
         Me.cusSelect.Location = New System.Drawing.Point(0, 0)
         Me.cusSelect.Name = "cusSelect"
-
-        Me.cusSelect.Size = New System.Drawing.Size(205, 21)
-
         Me.cusSelect.Size = New System.Drawing.Size(145, 21)
-
         Me.cusSelect.TabIndex = 0
         '
         'dailyPanel
