@@ -9,8 +9,35 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Private Sub frm_arMonitoringSummary_Load(sender As Object, e As EventArgs) Handles Me.Load
+        computeTotal_AR()
         LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'")
         populateSelections()
+    End Sub
+    Sub computeTotal_AR()
+
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT SUM(remar_amount) FROM rcss_remar", cn)
+            Dim result As Object = cm.ExecuteScalar()
+            ' Check if the result is not null
+            If result IsNot DBNull.Value Then
+                ' Convert the result to the appropriate data type
+                Dim sum As Decimal = Convert.ToDecimal(result)
+                Dim formattedSum As String = String.Format("₱{0:#,##0.00}", sum)
+                ' Alternatively, you can use string interpolation:
+                ' Dim formattedSum As String = $"{sum:0.00}"
+                Lbl_Total_AR.Text = formattedSum
+
+            Else
+                MessageBox.Show("No Record Found", "RCSS - Message!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
     End Sub
 
     Function getRE(dateValue As String) As String
