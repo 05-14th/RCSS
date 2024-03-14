@@ -527,6 +527,9 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="MetroFramework.txt" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\pngs.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\1.png" />
     <None Include="Resources\For Revision.png" />
     <None Include="Resources\Approved.png" />
     <None Include="Resources\Approved.jpg" />

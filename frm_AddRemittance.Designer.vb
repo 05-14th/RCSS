@@ -1963,7 +1963,6 @@ Partial Class frm_AddRemittance
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1022, 565)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Panel_AR)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.Label43)
         Me.Controls.Add(Me.btnSubmit)
@@ -1975,6 +1974,7 @@ Partial Class frm_AddRemittance
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.Panel_Online)
         Me.Controls.Add(Me.Panel_Check)
+        Me.Controls.Add(Me.Panel_AR)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_AddRemittance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

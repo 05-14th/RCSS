@@ -2,6 +2,7 @@
 Imports MySql.Data.MySqlClient
 
 Public Class frm_rptArsRecord
+<<<<<<< HEAD
     Private Sub frm_rptRemRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dt.Clear()
         dt1.Clear()
@@ -30,4 +31,9 @@ Public Class frm_rptArsRecord
         End Try
 
     End Sub
+=======
+    Private Sub frm_rptArsRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+>>>>>>> refs/remotes/origin/master
 End Class
