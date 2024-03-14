@@ -106,7 +106,7 @@ Public Class frm_arMonitoringSummary
             While dr.Read
                 Dim convertedDate As Date = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing).AddDays(7)
                 Dim dateString As String = convertedDate.ToString("MM/dd/yyyy")
-                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("van_route").ToString, 7, dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(convertedDate), dateString, getRE(7, calculateDaysLeft(convertedDate)), dr.Item("cus_contactperson").ToString, dr.Item("remar_status").ToString, " ")
+                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("van_route").ToString, 7, dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(convertedDate), dateString, getRE(7, calculateDaysLeft(convertedDate)), dr.Item("rmt_salesman").ToString, dr.Item("remar_status").ToString, " ")
                 'AutoSizeCells()
             End While
             dr.Close()
