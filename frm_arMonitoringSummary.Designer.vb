@@ -23,22 +23,33 @@ Partial Class frm_arMonitoringSummary
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dailyPicker = New System.Windows.Forms.DateTimePicker()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.cus_namePanel = New System.Windows.Forms.Panel()
-        Me.cusSelect = New System.Windows.Forms.ComboBox()
+        Me.btn_Refresh = New System.Windows.Forms.PictureBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Lbl_Total_AR = New System.Windows.Forms.Label()
+        Me.Lbl_TotalAR = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.areaPanel = New System.Windows.Forms.Panel()
         Me.areaSelect = New System.Windows.Forms.ComboBox()
         Me.filterSelect = New System.Windows.Forms.ComboBox()
+        Me.btn_print = New System.Windows.Forms.Button()
+        Me.cus_namePanel = New System.Windows.Forms.Panel()
+        Me.cusSelect = New System.Windows.Forms.ComboBox()
         Me.dailyPanel = New System.Windows.Forms.Panel()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -59,27 +70,16 @@ Partial Class frm_arMonitoringSummary
         Me.salesman = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.settlement_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Lbl_TotalAR = New System.Windows.Forms.Label()
-        Me.Lbl_Total_AR = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.btn_Refresh = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btn_print = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.cus_namePanel.SuspendLayout()
-        Me.areaPanel.SuspendLayout()
-        Me.dailyPanel.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_Refresh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.areaPanel.SuspendLayout()
+        Me.cus_namePanel.SuspendLayout()
+        Me.dailyPanel.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel2
@@ -168,24 +168,116 @@ Partial Class frm_arMonitoringSummary
         Me.Panel3.Size = New System.Drawing.Size(1024, 60)
         Me.Panel3.TabIndex = 72
         '
-        'cus_namePanel
+        'btn_Refresh
         '
-        Me.cus_namePanel.Controls.Add(Me.cusSelect)
-        Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
-        Me.cus_namePanel.Name = "cus_namePanel"
-        Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
-        Me.cus_namePanel.TabIndex = 79
-        Me.cus_namePanel.Visible = False
+        Me.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_Refresh.Image = Global.RCSS.My.Resources.Resources.pngs
+        Me.btn_Refresh.Location = New System.Drawing.Point(482, 14)
+        Me.btn_Refresh.Name = "btn_Refresh"
+        Me.btn_Refresh.Size = New System.Drawing.Size(34, 34)
+        Me.btn_Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btn_Refresh.TabIndex = 203
+        Me.btn_Refresh.TabStop = False
         '
-        'cusSelect
+        'Panel6
         '
-        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.cusSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cusSelect.FormattingEnabled = True
-        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
-        Me.cusSelect.Name = "cusSelect"
-        Me.cusSelect.Size = New System.Drawing.Size(145, 21)
-        Me.cusSelect.TabIndex = 0
+        Me.Panel6.BackColor = System.Drawing.Color.DimGray
+        Me.Panel6.Location = New System.Drawing.Point(544, 13)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1, 35)
+        Me.Panel6.TabIndex = 202
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.DimGray
+        Me.Panel4.Location = New System.Drawing.Point(451, 13)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1, 35)
+        Me.Panel4.TabIndex = 201
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DimGray
+        Me.Panel5.Location = New System.Drawing.Point(248, 13)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1, 35)
+        Me.Panel5.TabIndex = 200
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(346, 30)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(32, 17)
+        Me.Label3.TabIndex = 198
+        Me.Label3.Text = "0.00"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(334, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(99, 20)
+        Me.Label4.TabIndex = 199
+        Me.Label4.Text = "Total AR due"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_Total_AR
+        '
+        Me.Lbl_Total_AR.AutoSize = True
+        Me.Lbl_Total_AR.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_Total_AR.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Lbl_Total_AR.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_Total_AR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_Total_AR.Location = New System.Drawing.Point(81, 30)
+        Me.Lbl_Total_AR.Name = "Lbl_Total_AR"
+        Me.Lbl_Total_AR.Size = New System.Drawing.Size(32, 17)
+        Me.Lbl_Total_AR.TabIndex = 84
+        Me.Lbl_Total_AR.Text = "0.00"
+        Me.Lbl_Total_AR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Lbl_TotalAR
+        '
+        Me.Lbl_TotalAR.AutoSize = True
+        Me.Lbl_TotalAR.BackColor = System.Drawing.Color.Transparent
+        Me.Lbl_TotalAR.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Lbl_TotalAR.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_TotalAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Lbl_TotalAR.Location = New System.Drawing.Point(69, 8)
+        Me.Lbl_TotalAR.Name = "Lbl_TotalAR"
+        Me.Lbl_TotalAR.Size = New System.Drawing.Size(150, 20)
+        Me.Lbl_TotalAR.TabIndex = 84
+        Me.Lbl_TotalAR.Text = "Total Amount of AR"
+        Me.Lbl_TotalAR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.RCSS.My.Resources.Resources._2
+        Me.PictureBox2.Location = New System.Drawing.Point(282, 5)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 197
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources._1
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(77, 50)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 196
+        Me.PictureBox1.TabStop = False
         '
         'areaPanel
         '
@@ -215,6 +307,44 @@ Partial Class frm_arMonitoringSummary
         Me.filterSelect.Name = "filterSelect"
         Me.filterSelect.Size = New System.Drawing.Size(145, 21)
         Me.filterSelect.TabIndex = 193
+        '
+        'btn_print
+        '
+        Me.btn_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_print.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btn_print.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_print.FlatAppearance.BorderSize = 0
+        Me.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_print.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_print.ForeColor = System.Drawing.Color.White
+        Me.btn_print.Image = Global.RCSS.My.Resources.Resources.printer
+        Me.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_print.Location = New System.Drawing.Point(948, 6)
+        Me.btn_print.Name = "btn_print"
+        Me.btn_print.Size = New System.Drawing.Size(69, 49)
+        Me.btn_print.TabIndex = 192
+        Me.btn_print.Text = "PRINT"
+        Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_print.UseVisualStyleBackColor = False
+        '
+        'cus_namePanel
+        '
+        Me.cus_namePanel.Controls.Add(Me.cusSelect)
+        Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
+        Me.cus_namePanel.Name = "cus_namePanel"
+        Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
+        Me.cus_namePanel.TabIndex = 79
+        Me.cus_namePanel.Visible = False
+        '
+        'cusSelect
+        '
+        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cusSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cusSelect.FormattingEnabled = True
+        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
+        Me.cusSelect.Name = "cusSelect"
+        Me.cusSelect.Size = New System.Drawing.Size(145, 21)
+        Me.cusSelect.TabIndex = 0
         '
         'dailyPanel
         '
@@ -285,26 +415,26 @@ Partial Class frm_arMonitoringSummary
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView2.ColumnHeadersHeight = 28
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cus_name, Me.cus_number, Me.area, Me.term, Me.ar_date, Me.arNum, Me.amount, Me.Column1, Me.days, Me.re, Me.salesman, Me.Column4, Me.settlement_date})
         Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
@@ -336,8 +466,8 @@ Partial Class frm_arMonitoringSummary
         'area
         '
         Me.area.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.area.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        Me.area.DefaultCellStyle = DataGridViewCellStyle2
         Me.area.HeaderText = "AREA"
         Me.area.Name = "area"
         Me.area.ReadOnly = True
@@ -370,8 +500,8 @@ Partial Class frm_arMonitoringSummary
         'amount
         '
         Me.amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.amount.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.amount.DefaultCellStyle = DataGridViewCellStyle3
         Me.amount.HeaderText = "AMOUNT"
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
@@ -411,8 +541,8 @@ Partial Class frm_arMonitoringSummary
         'Column4
         '
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column4.HeaderText = "STATUS"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
@@ -425,136 +555,6 @@ Partial Class frm_arMonitoringSummary
         Me.settlement_date.Name = "settlement_date"
         Me.settlement_date.ReadOnly = True
         Me.settlement_date.Width = 56
-        '
-        'Lbl_TotalAR
-        '
-        Me.Lbl_TotalAR.AutoSize = True
-        Me.Lbl_TotalAR.BackColor = System.Drawing.Color.Transparent
-        Me.Lbl_TotalAR.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Lbl_TotalAR.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_TotalAR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Lbl_TotalAR.Location = New System.Drawing.Point(69, 8)
-        Me.Lbl_TotalAR.Name = "Lbl_TotalAR"
-        Me.Lbl_TotalAR.Size = New System.Drawing.Size(150, 20)
-        Me.Lbl_TotalAR.TabIndex = 84
-        Me.Lbl_TotalAR.Text = "Total Amount of AR"
-        Me.Lbl_TotalAR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Lbl_Total_AR
-        '
-        Me.Lbl_Total_AR.AutoSize = True
-        Me.Lbl_Total_AR.BackColor = System.Drawing.Color.Transparent
-        Me.Lbl_Total_AR.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Lbl_Total_AR.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_Total_AR.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Lbl_Total_AR.Location = New System.Drawing.Point(81, 30)
-        Me.Lbl_Total_AR.Name = "Lbl_Total_AR"
-        Me.Lbl_Total_AR.Size = New System.Drawing.Size(32, 17)
-        Me.Lbl_Total_AR.TabIndex = 84
-        Me.Lbl_Total_AR.Text = "0.00"
-        Me.Lbl_Total_AR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(346, 30)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(32, 17)
-        Me.Label3.TabIndex = 198
-        Me.Label3.Text = "0.00"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(334, 8)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 20)
-        Me.Label4.TabIndex = 199
-        Me.Label4.Text = "Total AR due"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.DimGray
-        Me.Panel5.Location = New System.Drawing.Point(248, 13)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1, 35)
-        Me.Panel5.TabIndex = 200
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.DimGray
-        Me.Panel4.Location = New System.Drawing.Point(451, 13)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1, 35)
-        Me.Panel4.TabIndex = 201
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.DimGray
-        Me.Panel6.Location = New System.Drawing.Point(544, 13)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1, 35)
-        Me.Panel6.TabIndex = 202
-        '
-        'btn_Refresh
-        '
-        Me.btn_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_Refresh.Image = Global.RCSS.My.Resources.Resources.pngs
-        Me.btn_Refresh.Location = New System.Drawing.Point(482, 14)
-        Me.btn_Refresh.Name = "btn_Refresh"
-        Me.btn_Refresh.Size = New System.Drawing.Size(34, 34)
-        Me.btn_Refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btn_Refresh.TabIndex = 203
-        Me.btn_Refresh.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.RCSS.My.Resources.Resources._2
-        Me.PictureBox2.Location = New System.Drawing.Point(282, 5)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 197
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources._1
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(77, 50)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 196
-        Me.PictureBox1.TabStop = False
-        '
-        'btn_print
-        '
-        Me.btn_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_print.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
-        Me.btn_print.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_print.FlatAppearance.BorderSize = 0
-        Me.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_print.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_print.ForeColor = System.Drawing.Color.White
-        Me.btn_print.Image = Global.RCSS.My.Resources.Resources.printer
-        Me.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_print.Location = New System.Drawing.Point(948, 6)
-        Me.btn_print.Name = "btn_print"
-        Me.btn_print.Size = New System.Drawing.Size(69, 49)
-        Me.btn_print.TabIndex = 192
-        Me.btn_print.Text = "PRINT"
-        Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btn_print.UseVisualStyleBackColor = False
         '
         'frm_arMonitoringSummary
         '
@@ -574,15 +574,15 @@ Partial Class frm_arMonitoringSummary
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.cus_namePanel.ResumeLayout(False)
+        CType(Me.btn_Refresh, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.areaPanel.ResumeLayout(False)
+        Me.cus_namePanel.ResumeLayout(False)
         Me.dailyPanel.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_Refresh, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
