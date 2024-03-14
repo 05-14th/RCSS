@@ -108,9 +108,10 @@ Public Class frm_arMonitoringSummary
             cm = New MySqlCommand(dataQuery, cn)
             dr = cm.ExecuteReader
             While dr.Read
-                Dim convertedDate As Date = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing).AddDays(7)
+                Dim arDate = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing)
+                Dim convertedDate As Date = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing).AddDays(dr.Item("cus_terms"))
                 Dim dateString As String = convertedDate.ToString("MM/dd/yyyy")
-                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("van_route").ToString, 7, dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(convertedDate), dateString, getRE(7, calculateDaysLeft(convertedDate)), dr.Item("cus_contactperson").ToString, dr.Item("remar_status").ToString, " ")
+                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("van_route").ToString, dr.Item("cus_terms"), dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(arDate), dateString, getRE(dr.Item("cus_terms"), calculateDaysLeft(arDate)), dr.Item("rmt_salesman").ToString, dr.Item("remar_status").ToString, " ")
                 'AutoSizeCells()
             End While
             dr.Close()
@@ -151,13 +152,10 @@ Public Class frm_arMonitoringSummary
         End Using
     End Sub
 
-    Function calculateDaysLeft(daysVal As String) As Integer
-        Dim dueDate As DateTime
-        If DateTime.TryParse(daysVal, dueDate) Then
-            Dim curDate As DateTime = DateTime.Now.Date
-            Dim numberOfDays As Integer = (curDate - dueDate.Date).Days
-            Return numberOfDays
-        End If
+    Function calculateDaysLeft(arDate As DateTime) As Integer
+        Dim curDate As DateTime = DateTime.Now.Date
+        Dim numberOfDays As Integer = (curDate - arDate.Date).Days
+        Return numberOfDays
     End Function
 
     Sub AutoSizeCells()

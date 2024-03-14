@@ -24,6 +24,9 @@ Partial Class frm_rptArsRecord
     Private Sub InitializeComponent()
         Me.DataSet21 = New RCSS.DataSet2()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.rpt_ArMonitoring1 = New RCSS.rpt_ArMonitoring()
+        Me.rpt_ArMonitoring2 = New RCSS.rpt_ArMonitoring()
+        Me.rpt_ArMonitoring3 = New RCSS.rpt_ArMonitoring()
         CType(Me.DataSet21, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -34,20 +37,21 @@ Partial Class frm_rptArsRecord
         '
         'CrystalReportViewer1
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.CrystalReportViewer1.ReportSource = Me.rpt_ArMonitoring3
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(841, 450)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'frm_rptArsRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(841, 450)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frm_rptArsRecord"
@@ -58,4 +62,7 @@ Partial Class frm_rptArsRecord
     End Sub
     Friend WithEvents DataSet21 As DataSet2
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents rpt_ArMonitoring1 As rpt_ArMonitoring
+    Friend WithEvents rpt_ArMonitoring3 As rpt_ArMonitoring
+    Friend WithEvents rpt_ArMonitoring2 As rpt_ArMonitoring
 End Class

@@ -312,6 +312,28 @@ Partial Class frm_arMonitoringSummary
         Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_print.UseVisualStyleBackColor = False
         '
+<<<<<<< HEAD
+=======
+        'cus_namePanel
+        '
+        Me.cus_namePanel.Controls.Add(Me.cusSelect)
+        Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
+        Me.cus_namePanel.Name = "cus_namePanel"
+        Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
+        Me.cus_namePanel.TabIndex = 79
+        Me.cus_namePanel.Visible = False
+        '
+        'cusSelect
+        '
+        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cusSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cusSelect.FormattingEnabled = True
+        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
+        Me.cusSelect.Name = "cusSelect"
+        Me.cusSelect.Size = New System.Drawing.Size(145, 21)
+        Me.cusSelect.TabIndex = 0
+        '
+>>>>>>> 06a95dfd016ee14893f91bbd2dacaaeaabf95888
         'dailyPanel
         '
         Me.dailyPanel.Controls.Add(Me.dailyPicker)
