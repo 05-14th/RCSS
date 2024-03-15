@@ -74,7 +74,15 @@ Public Class frm_customer
                 .lbl_cadd.Text = "UPDATE CUSTOMER"
                 .ShowDialog()
             End With
+        ElseIf colname = "cusName" Then
+            With frm_CustomerLog.GetInstance()
+                .BringToFront()
+                .LoadData("SELECT * FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid")
+                .ShowDialog()
+            End With
 
         End If
+
+
     End Sub
 End Class

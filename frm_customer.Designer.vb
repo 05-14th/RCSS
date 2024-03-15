@@ -33,17 +33,17 @@ Partial Class frm_customer
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colUpdate = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cusName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -175,6 +175,75 @@ Partial Class frm_customer
         Me.lblCount.TabIndex = 0
         Me.lblCount.Text = "(0) record found"
         '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
+        '
+        'colUpdate
+        '
+        Me.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.colUpdate.HeaderText = ""
+        Me.colUpdate.Image = Global.RCSS.My.Resources.Resources.opendetails16
+        Me.colUpdate.Name = "colUpdate"
+        Me.colUpdate.ToolTipText = "SEE DETAILS"
+        Me.colUpdate.Width = 5
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "PAYMENT TERMS"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 118
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "CREDIT LIMIT"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 101
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column4.HeaderText = "CONTACT DETAILS"
+        Me.Column4.Name = "Column4"
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column6.HeaderText = "CONTACT PERSON"
+        Me.Column6.Name = "Column6"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "ADDRESS"
+        Me.Column3.Name = "Column3"
+        '
+        'cusName
+        '
+        Me.cusName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.cusName.HeaderText = "CUSTOMER NAME"
+        Me.cusName.Name = "cusName"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column1.FillWeight = 317.8082!
+        Me.Column1.HeaderText = "ACCOUNT NO."
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 105
+        '
+        'Column7
+        '
+        Me.Column7.HeaderText = "#"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Visible = False
+        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
@@ -192,7 +261,7 @@ Partial Class frm_customer
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.Column2, Me.Column3, Me.Column6, Me.Column4, Me.Column5, Me.Column8, Me.colUpdate})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.cusName, Me.Column3, Me.Column6, Me.Column4, Me.Column5, Me.Column8, Me.colUpdate})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow
@@ -212,75 +281,6 @@ Partial Class frm_customer
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1280, 533)
         Me.DataGridView1.TabIndex = 73
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
-        '
-        'Column7
-        '
-        Me.Column7.HeaderText = "#"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.FillWeight = 317.8082!
-        Me.Column1.HeaderText = "ACCOUNT NO."
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 105
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column2.HeaderText = "CUSTOMER NAME"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "ADDRESS"
-        Me.Column3.Name = "Column3"
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column6.HeaderText = "CONTACT PERSON"
-        Me.Column6.Name = "Column6"
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column4.HeaderText = "CONTACT DETAILS"
-        Me.Column4.Name = "Column4"
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "CREDIT LIMIT"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 101
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "PAYMENT TERMS"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 118
-        '
-        'colUpdate
-        '
-        Me.colUpdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colUpdate.HeaderText = ""
-        Me.colUpdate.Image = Global.RCSS.My.Resources.Resources.opendetails16
-        Me.colUpdate.Name = "colUpdate"
-        Me.colUpdate.ToolTipText = "SEE DETAILS"
-        Me.colUpdate.Width = 5
         '
         'frm_customer
         '
@@ -315,16 +315,16 @@ Partial Class frm_customer
     Friend WithEvents lbl_close As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents lblCount As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents tb_search As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents colUpdate As DataGridViewImageColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents cusName As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridView1 As DataGridView
 End Class
