@@ -30,11 +30,22 @@ Public Class frm_CustomerLog
                 DataGridView2.Rows.Add(dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_amount").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_salesman").ToString,
                                        dr.Item("rmt_custodian").ToString, dr.Item("rmt_driver").ToString, dr.Item("rmt_helper").ToString, dr.Item("remar_status").ToString)
             End While
+            accountNum.Text = dr.Item("cus_accountno").ToString
+            Label1.Text = dr.Item("cus_name").ToString
+            cusAddress.Text = dr.Item("cus_address").ToString
+            contactNum.Text = dr.Item("cus_contactperson").ToString
+            contactNum.Text = dr.Item("cus_contactno").ToString
+            TextBox6.Text = dr.Item("cus_terms").ToString
+
             dr.Close()
             cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()
         End Try
+    End Sub
+
+    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs) Handles contactPerson.TextChanged
+
     End Sub
 End Class

@@ -29,6 +29,7 @@ Partial Class frm_CustomerLog
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.tb_search = New MetroFramework.Controls.MetroTextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,8 +40,21 @@ Partial Class frm_CustomerLog
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.accountNum = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.name = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cusAddress = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.contactPerson = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.contactNum = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,6 +139,26 @@ Partial Class frm_CustomerLog
         Me.tb_search.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.tb_search.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Controls.Add(Me.TextBox6)
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.contactNum)
+        Me.Panel3.Controls.Add(Me.Label4)
+        Me.Panel3.Controls.Add(Me.contactPerson)
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.cusAddress)
+        Me.Panel3.Controls.Add(Me.Label1)
+        Me.Panel3.Controls.Add(Me.name)
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.accountNum)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(0, 71)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(800, 200)
+        Me.Panel3.TabIndex = 84
+        '
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToAddRows = False
@@ -155,14 +189,14 @@ Partial Class frm_CustomerLog
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
-        Me.DataGridView2.Location = New System.Drawing.Point(0, 71)
+        Me.DataGridView2.Location = New System.Drawing.Point(0, 271)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 30
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(800, 379)
-        Me.DataGridView2.TabIndex = 83
+        Me.DataGridView2.Size = New System.Drawing.Size(800, 179)
+        Me.DataGridView2.TabIndex = 85
         '
         'Column1
         '
@@ -227,20 +261,119 @@ Partial Class frm_CustomerLog
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
+        'accountNum
+        '
+        Me.accountNum.Location = New System.Drawing.Point(97, 26)
+        Me.accountNum.Name = "accountNum"
+        Me.accountNum.Size = New System.Drawing.Size(170, 20)
+        Me.accountNum.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(21, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(70, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Account No.:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(21, 79)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Name:"
+        '
+        'name
+        '
+        Me.name.Location = New System.Drawing.Point(97, 76)
+        Me.name.Name = "name"
+        Me.name.Size = New System.Drawing.Size(170, 20)
+        Me.name.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(21, 135)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Address:"
+        '
+        'cusAddress
+        '
+        Me.cusAddress.Location = New System.Drawing.Point(97, 132)
+        Me.cusAddress.Name = "cusAddress"
+        Me.cusAddress.Size = New System.Drawing.Size(170, 20)
+        Me.cusAddress.TabIndex = 5
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(406, 29)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(83, 13)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Contact Person:"
+        '
+        'contactPerson
+        '
+        Me.contactPerson.Location = New System.Drawing.Point(495, 26)
+        Me.contactPerson.Name = "contactPerson"
+        Me.contactPerson.Size = New System.Drawing.Size(170, 20)
+        Me.contactPerson.TabIndex = 7
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(406, 79)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(87, 13)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Contact Number:"
+        '
+        'contactNum
+        '
+        Me.contactNum.Location = New System.Drawing.Point(495, 76)
+        Me.contactNum.Name = "contactNum"
+        Me.contactNum.Size = New System.Drawing.Size(170, 20)
+        Me.contactNum.TabIndex = 9
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(406, 135)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Terms:"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(495, 132)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(170, 20)
+        Me.TextBox6.TabIndex = 11
+        '
         'frm_CustomerLog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frm_CustomerLog"
+
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -250,6 +383,15 @@ Partial Class frm_CustomerLog
     Friend WithEvents lbl_close As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents tb_search As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label4 As Label
+    Friend WithEvents contactPerson As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cusAddress As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents name As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents accountNum As TextBox
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -260,4 +402,8 @@ Partial Class frm_CustomerLog
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents contactNum As TextBox
 End Class
