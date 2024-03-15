@@ -10,8 +10,14 @@ Public Class frm_arMonitoringSummary
 
     Private Sub frm_arMonitoringSummary_Load(sender As Object, e As EventArgs) Handles Me.Load
         computeTotal_AR()
-        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'")
+        'LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid WHERE remar_date = '{dailyPicker.Text}'")
         populateSelections()
+
+        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno")
+        updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
+                $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
+                $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY)")
+
     End Sub
     Sub computeTotal_AR()
 
@@ -111,7 +117,7 @@ Public Class frm_arMonitoringSummary
                 Dim arDate = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing)
                 Dim convertedDate As Date = Date.ParseExact(dr.Item("remar_date"), "MM/dd/yyyy", Nothing).AddDays(dr.Item("cus_terms"))
                 Dim dateString As String = convertedDate.ToString("MM/dd/yyyy")
-                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("van_route").ToString, dr.Item("cus_terms"), dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_amount").ToString, calculateDaysLeft(arDate), dateString, getRE(dr.Item("cus_terms"), calculateDaysLeft(arDate)), dr.Item("rmt_salesman").ToString, dr.Item("remar_status").ToString, " ")
+                DataGridView2.Rows.Add(dr.Item("cus_name"), dr.Item("cus_contactno").ToString, dr.Item("van_route").ToString, dr.Item("cus_terms"), dr.Item("remar_date").ToString, dr.Item("remar_transid").ToString, String.Format("{0:N2}", dr.Item("remar_amount")), calculateDaysLeft(arDate), dateString, getRE(dr.Item("cus_terms"), calculateDaysLeft(arDate)), dr.Item("rmt_salesman").ToString, dr.Item("remar_status").ToString, "")
                 'AutoSizeCells()
             End While
             dr.Close()
@@ -123,6 +129,9 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Sub populateSelections()
+
+        areaSelect.Items.Clear()
+
         Dim query As String = "SELECT DISTINCT van_route FROM rcss_van"
 
 
@@ -136,6 +145,8 @@ Public Class frm_arMonitoringSummary
             End Using
             cn.Close()
         End Using
+
+        cusSelect.Items.Clear()
 
         Dim stringQuery As String = "SELECT DISTINCT cus_name FROM rcss_customer"
 
@@ -242,15 +253,29 @@ Public Class frm_arMonitoringSummary
     End Sub
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
-        With frm_rptArsRecord
-            .TopLevel = False
-            frm_dashAdmin.Panel5.Controls.Add(frm_rptArsRecord)
-            .BringToFront()
-            .Show()
-        End With
+        Try
+            With frm_rptArsRecord
+                .TopLevel = False
+                frm_dashAdmin.Panel5.Controls.Add(frm_rptArsRecord)
+                .BringToFront()
+                .Show()
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+            cn.Close()
+        End Try
+
     End Sub
 
     Private Sub btn_Refresh_Click(sender As Object, e As EventArgs) Handles btn_Refresh.Click
+
         computeTotal_AR()
+        populateSelections()
+
+        LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno")
+        updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
+                $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
+                $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY)")
+
     End Sub
 End Class

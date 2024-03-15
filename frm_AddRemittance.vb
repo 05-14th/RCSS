@@ -262,7 +262,7 @@ Public Class frm_AddRemittance
                             'cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
                             cm.Parameters.AddWithValue("@remar_cusID", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(5).Value.ToString))
-                            cm.Parameters.AddWithValue("@remar_status", "Uncollected")
+                            cm.Parameters.AddWithValue("@remar_status", "Pending")
                             cm.ExecuteNonQuery()
                             cn.Close()
                             Console.WriteLine("Hit")
@@ -527,7 +527,7 @@ Public Class frm_AddRemittance
                             'cm.Parameters.AddWithValue("@remar_cusID", lbl_CusID.Text)
                             cm.Parameters.AddWithValue("@remar_cusID", DataGridView2.Rows(i).Cells(3).Value.ToString)
                             cm.Parameters.AddWithValue("@remar_amount", CDec(DataGridView2.Rows(i).Cells(5).Value.ToString))
-                            cm.Parameters.AddWithValue("@remar_status", "Uncollected")
+                            cm.Parameters.AddWithValue("@remar_status", "Pending")
                             cm.ExecuteNonQuery()
                             cn.Close()
                             Console.WriteLine("Hit")
@@ -1603,5 +1603,9 @@ Public Class frm_AddRemittance
             cn.Close()
             MsgBox(ex.Message, vbCritical)
         End Try
+    End Sub
+
+    Private Sub Panel_Online_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Online.Paint
+
     End Sub
 End Class

@@ -9,17 +9,23 @@ Public Class frm_AddCollection
     Private Sub frm_AddCollection_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadAR()
         RANDID()
+        Count()
+    End Sub
+    Sub Count()
+        Try
 
-        'Dim headercelllocation As Point = Me.DataGridView1.GetCellDisplayRectangle(0, -1, True).Location
-        ''this place the header location
-        'Checkboxheader.Location = New Point(headercelllocation.X + 5, headercelllocation.Y + 5)
-        'Checkboxheader.Size = New Size(18, 18)
-        'Checkboxheader.BackColor = Color.FromArgb(64, 64, 64)
+            cn.Open()
+            cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remar INNER JOIN rcss_remittance ON rcss_remar.remar_transid = rcss_remittance.rmt_transid INNER JOIN rcss_customer ON rcss_remar.remar_cusID = rcss_customer.cus_accountno WHERE remar_rmtstatus = 'Approved' AND remar_status = 'Uncollected'", cn)
+            Dim count As String
+            count = cm.ExecuteScalar().ToString()
+            lblCount.Text = "(" & count & ") record/s found"
 
-        'DataGridView1.Controls.Add(Checkboxheader)
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
 
-        'AddHandler Checkboxheader.Click, AddressOf headercheckbox_click
-        'AddHandler DataGridView1.CellContentClick, AddressOf datagridview_Cellclick
     End Sub
     Private Sub RANDID()
         Randomize()
@@ -34,11 +40,11 @@ Public Class frm_AddCollection
             'Dim i As Integer = 0
             DataGridView2.Rows.Clear()
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM rcss_remar inner join rcss_remittance on rcss_remar.remar_transid = rcss_remittance.rmt_transid WHERE remar_rmtstatus = 'Approved' AND remar_status = 'Uncollected'", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_remar INNER JOIN rcss_remittance ON rcss_remar.remar_transid = rcss_remittance.rmt_transid INNER JOIN rcss_customer ON rcss_remar.remar_cusID = rcss_customer.cus_accountno WHERE remar_rmtstatus = 'Approved' AND remar_status = 'Uncollected'", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
-                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_cusID").ToString, dr.Item("remar_customer").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
+                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_cusID").ToString, dr.Item("cus_name").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
 
             End While
             dr.Close()
@@ -101,7 +107,7 @@ Public Class frm_AddCollection
             countcheck -= 1
 
         End If
-        lblSelectedCount.Text = "(" & countcheck & ") record selected"
+        lblCount.Text = "(" & countcheck & ") record selected"
 
 
 
@@ -128,19 +134,20 @@ Public Class frm_AddCollection
 
                 For Each row As DataGridViewRow In DataGridView2.Rows
                     Dim isSelected As Boolean = Convert.ToBoolean(row.Cells("cb_column").Value)
-
+                    Dim currentDate As String = Date.Now.ToString("MM/dd/yyyy")
                     If isSelected = True Then
                         'SAVE TO COLLECTION
                         cn.Open()
                         'cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_cusID)", cn)
-                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_refnum, @col_invoice, @col_cusID)", cn)
+                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_refnum, col_invoice, col_cusID, col_balance, col_collectiondate) values(@col_remar_status, @col_idno, @col_refnum, @col_invoice, @col_cusID, @col_balance, @col_collectiondate)", cn)
                         cm.Parameters.AddWithValue("@col_remar_status", "Processing")
                         cm.Parameters.AddWithValue("@col_idno", tb_collectionID.Text)
-                        'cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
+                        cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
                         cm.Parameters.AddWithValue("@col_refnum", row.Cells(5).Value.ToString())
                         cm.Parameters.AddWithValue("@col_invoice", row.Cells(6).Value.ToString())
                         cm.Parameters.AddWithValue("@col_cusID", row.Cells(7).Value.ToString())
-
+                        cm.Parameters.AddWithValue("@col_balance", row.Cells(9).Value.ToString())
+                        cm.Parameters.AddWithValue("@col_collectiondate", currentDate)
                         cm.ExecuteNonQuery()
                         cn.Close()
 
@@ -172,7 +179,7 @@ Public Class frm_AddCollection
                         frm_collection.LoadCol()
                         countcheck = 0
                         lbl_TotalAR.Text = "0.00"
-                        lblSelectedCount.Text = "(" & countcheck & ") record selected"
+                        lblCount.Text = "(" & countcheck & ") record selected"
 
                         frm_collection.Countuncollected()
                         frm_collection.CountProcessing()

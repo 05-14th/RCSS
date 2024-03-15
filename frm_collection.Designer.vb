@@ -29,27 +29,30 @@ Partial Class frm_collection
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
-        Me.btnNew = New System.Windows.Forms.LinkLabel()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LL_Refresh = New System.Windows.Forms.LinkLabel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.tb_search = New MetroFramework.Controls.MetroTextBox()
         Me.LL_Collected = New System.Windows.Forms.LinkLabel()
         Me.LL_Processing = New System.Windows.Forms.LinkLabel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnNew = New System.Windows.Forms.LinkLabel()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,37 +96,6 @@ Partial Class frm_collection
         Me.lbl_close.TabIndex = 23
         Me.lbl_close.Text = "X"
         '
-        'btnNew
-        '
-        Me.btnNew.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnNew.AutoSize = True
-        Me.btnNew.BackColor = System.Drawing.Color.White
-        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnNew.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnNew.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnNew.Image = Global.RCSS.My.Resources.Resources.add16
-        Me.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNew.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.btnNew.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnNew.Location = New System.Drawing.Point(16, 11)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
-        Me.btnNew.Size = New System.Drawing.Size(166, 15)
-        Me.btnNew.TabIndex = 182
-        Me.btnNew.TabStop = True
-        Me.btnNew.Text = "&ADD NEW COLLECTION (0)"
-        Me.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnNew.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
-        '
         'lblCount
         '
         Me.lblCount.AutoSize = True
@@ -162,7 +134,7 @@ Partial Class frm_collection
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.Column2, Me.Column3, Me.Column8, Me.Column1, Me.Column7, Me.Column5, Me.Column6})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.Column2, Me.Column3, Me.Column5, Me.Column8, Me.Column6, Me.Column9, Me.Column1, Me.Column7})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
@@ -192,6 +164,69 @@ Partial Class frm_collection
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1280, 30)
         Me.Panel4.TabIndex = 75
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.LL_Refresh)
+        Me.Panel2.Controls.Add(Me.Panel7)
+        Me.Panel2.Controls.Add(Me.Panel6)
+        Me.Panel2.Controls.Add(Me.Panel5)
+        Me.Panel2.Controls.Add(Me.tb_search)
+        Me.Panel2.Controls.Add(Me.LL_Collected)
+        Me.Panel2.Controls.Add(Me.LL_Processing)
+        Me.Panel2.Controls.Add(Me.btnNew)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 35)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1280, 36)
+        Me.Panel2.TabIndex = 73
+        '
+        'LL_Refresh
+        '
+        Me.LL_Refresh.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Refresh.AutoSize = True
+        Me.LL_Refresh.BackColor = System.Drawing.Color.White
+        Me.LL_Refresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LL_Refresh.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Refresh.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LL_Refresh.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_Refresh.Image = Global.RCSS.My.Resources.Resources.files16
+        Me.LL_Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Refresh.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LL_Refresh.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_Refresh.Location = New System.Drawing.Point(650, 11)
+        Me.LL_Refresh.Name = "LL_Refresh"
+        Me.LL_Refresh.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.LL_Refresh.Size = New System.Drawing.Size(68, 15)
+        Me.LL_Refresh.TabIndex = 188
+        Me.LL_Refresh.TabStop = True
+        Me.LL_Refresh.Text = "Refresh"
+        Me.LL_Refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_Refresh.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.DimGray
+        Me.Panel7.Location = New System.Drawing.Point(605, 8)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1, 20)
+        Me.Panel7.TabIndex = 187
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.DimGray
+        Me.Panel6.Location = New System.Drawing.Point(420, 8)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1, 20)
+        Me.Panel6.TabIndex = 186
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.DimGray
+        Me.Panel5.Location = New System.Drawing.Point(226, 8)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1, 20)
+        Me.Panel5.TabIndex = 185
         '
         'tb_search
         '
@@ -237,10 +272,11 @@ Partial Class frm_collection
         Me.LL_Collected.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LL_Collected.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LL_Collected.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_Collected.Image = Global.RCSS.My.Resources.Resources.files16
         Me.LL_Collected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_Collected.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LL_Collected.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_Collected.Location = New System.Drawing.Point(553, 11)
+        Me.LL_Collected.Location = New System.Drawing.Point(465, 11)
         Me.LL_Collected.Name = "LL_Collected"
         Me.LL_Collected.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LL_Collected.Size = New System.Drawing.Size(96, 15)
@@ -259,10 +295,11 @@ Partial Class frm_collection
         Me.LL_Processing.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.LL_Processing.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LL_Processing.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_Processing.Image = Global.RCSS.My.Resources.Resources.revision16
         Me.LL_Processing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_Processing.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LL_Processing.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_Processing.Location = New System.Drawing.Point(315, 11)
+        Me.LL_Processing.Location = New System.Drawing.Point(271, 11)
         Me.LL_Processing.Name = "LL_Processing"
         Me.LL_Processing.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LL_Processing.Size = New System.Drawing.Size(105, 15)
@@ -272,35 +309,36 @@ Partial Class frm_collection
         Me.LL_Processing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_Processing.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         '
-        'Panel2
+        'btnNew
         '
-        Me.Panel2.Controls.Add(Me.Panel6)
-        Me.Panel2.Controls.Add(Me.Panel5)
-        Me.Panel2.Controls.Add(Me.tb_search)
-        Me.Panel2.Controls.Add(Me.LL_Collected)
-        Me.Panel2.Controls.Add(Me.LL_Processing)
-        Me.Panel2.Controls.Add(Me.btnNew)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 35)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1280, 36)
-        Me.Panel2.TabIndex = 73
+        Me.btnNew.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNew.AutoSize = True
+        Me.btnNew.BackColor = System.Drawing.Color.White
+        Me.btnNew.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnNew.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNew.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNew.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNew.Image = Global.RCSS.My.Resources.Resources.add16
+        Me.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNew.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.btnNew.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btnNew.Location = New System.Drawing.Point(16, 11)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.btnNew.Size = New System.Drawing.Size(166, 15)
+        Me.btnNew.TabIndex = 182
+        Me.btnNew.TabStop = True
+        Me.btnNew.Text = "&ADD NEW COLLECTION (0)"
+        Me.btnNew.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNew.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         '
-        'Panel6
+        'DataGridViewImageColumn1
         '
-        Me.Panel6.BackColor = System.Drawing.Color.DimGray
-        Me.Panel6.Location = New System.Drawing.Point(486, 8)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1, 20)
-        Me.Panel6.TabIndex = 186
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.DimGray
-        Me.Panel5.Location = New System.Drawing.Point(248, 8)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1, 20)
-        Me.Panel5.TabIndex = 185
+        Me.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
         '
         'Column20
         '
@@ -334,12 +372,33 @@ Partial Class frm_collection
         Me.Column3.Name = "Column3"
         Me.Column3.Width = 155
         '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.FillWeight = 150.0!
+        Me.Column5.HeaderText = "MANIFESTO REFERENCE NUMBER"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 205
+        '
         'Column8
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column8.HeaderText = "AR DATE"
         Me.Column8.Name = "Column8"
         Me.Column8.Width = 73
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.FillWeight = 150.0!
+        Me.Column6.HeaderText = "DELIVERY RECEIPT #"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 134
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "AR AMOUNT"
+        Me.Column9.Name = "Column9"
         '
         'Column1
         '
@@ -352,22 +411,6 @@ Partial Class frm_collection
         Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.Column7.HeaderText = "ADDRESS"
         Me.Column7.Name = "Column7"
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "AR REFERENCE NUMBER"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 156
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.FillWeight = 150.0!
-        Me.Column6.HeaderText = "INVOICE"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 75
         '
         'frm_collection
         '
@@ -411,13 +454,16 @@ Partial Class frm_collection
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents LL_Refresh As LinkLabel
     Friend WithEvents Column20 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class

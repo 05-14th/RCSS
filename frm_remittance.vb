@@ -19,7 +19,7 @@ Public Class frm_remittance
         CountForApproval()
         CountRevise()
         CountApproved()
-
+        CountAll()
     End Sub
 
     Sub LoadRemittanceforApproval()
@@ -98,6 +98,24 @@ Public Class frm_remittance
             Dim count As String
             count = cm.ExecuteScalar().ToString()
             LL_approved.Text = "Approved (" & count & ")"
+
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+    End Sub
+    Sub CountAll()
+        Try
+
+            cn.Open()
+            'cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remittance", cn)
+            cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid", cn)
+
+            Dim count As String
+            count = cm.ExecuteScalar().ToString()
+            LL_ViewAll.Text = "View All (" & count & ")"
 
             cn.Close()
         Catch ex As Exception
@@ -403,13 +421,30 @@ Public Class frm_remittance
 
     Private Sub tb_search_TextChanged(sender As Object, e As EventArgs) Handles tb_search.TextChanged
         If tb_search.Text = "" Then
-            LoadRemittanceforApproval()
+            Try
+                Dim i As Integer = 0
+                DataGridView1.Rows.Clear()
+                cn.Open()
+                cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_remittance.rmt_status = 'For Approval' OR rcss_remittance.rmt_status = 'Checking'", cn)
+                dr = cm.ExecuteReader
+                While dr.Read
+                    i += 1
+                    DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, Format(CDec(dr.Item("remDB_cash").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_coins").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_gcash").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_online").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_check").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_ar").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_return").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_bo").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_discount").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_expenses").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_total").ToString), "###,###,##0.00"), dr.Item("rmt_remarks").ToString)
+
+                End While
+                dr.Close()
+                cn.Close()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                cn.Close()
+            End Try
         Else
             Try
                 Dim i As Integer = 0
                 DataGridView1.Rows.Clear()
                 cn.Open()
-                cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_rembd.remDB_transid like '%" & tb_search.Text & "%' AND rcss_remittance.rmt_status = 'For Approval' OR rcss_remittance.rmt_status = 'Checking' OR rcss_remittance.rmt_status = 'For Revision'", cn)
+                cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid WHERE rcss_remittance.rmt_status = 'For Approval' OR rcss_remittance.rmt_status = 'Checking' OR rcss_remittance.rmt_status = 'For Revision' AND rcss_remittance.rmt_transid like '%" & tb_search.Text & "%'", cn)
+
                 dr = cm.ExecuteReader
                 While dr.Read
                     i += 1
@@ -428,4 +463,28 @@ Public Class frm_remittance
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub LL_ViewAll_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_ViewAll.LinkClicked
+
+        Try
+            Dim i As Integer = 0
+            DataGridView1.Rows.Clear()
+            cn.Open()
+            cm = New MySqlCommand("SELECT * FROM rcss_remittance inner join rcss_rembd on rcss_remittance.rmt_transid = rcss_rembd.remDB_transid", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                i += 1
+                'DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, dr.Item("remDB_cash").ToString, dr.Item("remDB_coins").ToString, dr.Item("remDB_gcash").ToString, dr.Item("remDB_online").ToString, dr.Item("remDB_check").ToString, dr.Item("remDB_ar").ToString, dr.Item("remDB_return").ToString, dr.Item("remDB_bo").ToString, dr.Item("remDB_discount").ToString, dr.Item("remDB_expenses").ToString, dr.Item("remDB_total").ToString, dr.Item("rmt_remarks").ToString)
+                DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, Format(CDec(dr.Item("remDB_cash").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_coins").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_gcash").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_online").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_check").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_ar").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_return").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_bo").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_discount").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_expenses").ToString), "###,###,##0.00"), Format(CDec(dr.Item("remDB_total").ToString), "###,###,##0.00"), dr.Item("rmt_comment").ToString)
+                DataGridView1.Columns("Column19").HeaderText = "COMMENT/S"
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+    End Sub
+
 End Class

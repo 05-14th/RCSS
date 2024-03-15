@@ -123,6 +123,7 @@ Partial Class frm_remRecord
         Me.yearlyPanel.Name = "yearlyPanel"
         Me.yearlyPanel.Size = New System.Drawing.Size(200, 43)
         Me.yearlyPanel.TabIndex = 196
+        Me.yearlyPanel.Visible = False
         '
         'YearInput
         '
@@ -161,6 +162,7 @@ Partial Class frm_remRecord
         Me.dailyPanel.Name = "dailyPanel"
         Me.dailyPanel.Size = New System.Drawing.Size(200, 43)
         Me.dailyPanel.TabIndex = 193
+        Me.dailyPanel.Visible = False
         '
         'DateTimePicker1
         '

@@ -191,6 +191,12 @@
       <DependentUpon>rpt_Remitance.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="frm_placeSettlement.Designer.vb">
+      <DependentUpon>frm_placeSettlement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_placeSettlement.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_rptArsRecord.Designer.vb">
       <DependentUpon>frm_rptArsRecord.vb</DependentUpon>
     </Compile>
@@ -350,6 +356,9 @@
     <EmbeddedResource Include="bin\Debug\rpt_Remitance.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Remitance.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_placeSettlement.resx">
+      <DependentUpon>frm_placeSettlement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_rptArsRecord.resx">
       <DependentUpon>frm_rptArsRecord.vb</DependentUpon>
@@ -572,6 +581,8 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="MetroFramework.txt" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\files16.png" />
+    <None Include="Resources\files24.png" />
     <None Include="Resources\pngs.png" />
     <None Include="Resources\2.png" />
     <None Include="Resources\1.png" />

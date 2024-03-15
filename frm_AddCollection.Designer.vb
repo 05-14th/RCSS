@@ -22,10 +22,10 @@ Partial Class frm_AddCollection
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
@@ -38,7 +38,7 @@ Partial Class frm_AddCollection
         Me.tb_search = New MetroFramework.Controls.MetroTextBox()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.countselected = New System.Windows.Forms.Label()
-        Me.lblSelectedCount = New System.Windows.Forms.Label()
+        Me.lblCount = New System.Windows.Forms.Label()
         Me.lbl_TotalAR = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -230,16 +230,16 @@ Partial Class frm_AddCollection
         Me.countselected.TabIndex = 0
         Me.countselected.Text = " "
         '
-        'lblSelectedCount
+        'lblCount
         '
-        Me.lblSelectedCount.AutoSize = True
-        Me.lblSelectedCount.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSelectedCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lblSelectedCount.Location = New System.Drawing.Point(16, 8)
-        Me.lblSelectedCount.Name = "lblSelectedCount"
-        Me.lblSelectedCount.Size = New System.Drawing.Size(103, 15)
-        Me.lblSelectedCount.TabIndex = 1
-        Me.lblSelectedCount.Text = "(0) record selected"
+        Me.lblCount.AutoSize = True
+        Me.lblCount.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblCount.Location = New System.Drawing.Point(16, 8)
+        Me.lblCount.Name = "lblCount"
+        Me.lblCount.Size = New System.Drawing.Size(103, 15)
+        Me.lblCount.TabIndex = 1
+        Me.lblCount.Text = "(0) record selected"
         '
         'lbl_TotalAR
         '
@@ -272,7 +272,7 @@ Partial Class frm_AddCollection
         Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Controls.Add(Me.lbl_TotalAR)
-        Me.Panel4.Controls.Add(Me.lblSelectedCount)
+        Me.Panel4.Controls.Add(Me.lblCount)
         Me.Panel4.Controls.Add(Me.btn_save)
         Me.Panel4.Controls.Add(Me.countselected)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -288,26 +288,26 @@ Partial Class frm_AddCollection
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView2.ColumnHeadersHeight = 28
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cb_column, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.col_transid, Me.DataGridViewTextBoxColumn4, Me.col_refnum, Me.col_invoice, Me.customerID, Me.DataGridViewTextBoxColumn7, Me.TotalAR})
         Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
@@ -331,8 +331,8 @@ Partial Class frm_AddCollection
         'DataGridViewTextBoxColumn1
         '
         Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn1.HeaderText = "AR STATUS"
         Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
         Me.DataGridViewTextBoxColumn1.ReadOnly = True
@@ -401,8 +401,8 @@ Partial Class frm_AddCollection
         'TotalAR
         '
         Me.TotalAR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.TotalAR.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.TotalAR.DefaultCellStyle = DataGridViewCellStyle3
         Me.TotalAR.HeaderText = "TOTAL AR AMOUNT"
         Me.TotalAR.Name = "TotalAR"
         Me.TotalAR.ReadOnly = True
@@ -444,7 +444,7 @@ Partial Class frm_AddCollection
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents countselected As Label
-    Friend WithEvents lblSelectedCount As Label
+    Friend WithEvents lblCount As Label
     Friend WithEvents lbl_TotalAR As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel4 As Panel

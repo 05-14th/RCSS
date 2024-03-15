@@ -23,9 +23,11 @@ Partial Class frm_settlement
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
@@ -33,18 +35,23 @@ Partial Class frm_settlement
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.tb_search = New MetroFramework.Controls.MetroTextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.customer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_settle = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.settle_amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV1_colsettle = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -107,7 +114,8 @@ Partial Class frm_settlement
         '
         'tb_search
         '
-        Me.tb_search.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tb_search.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         '
         '
         '
@@ -123,7 +131,7 @@ Partial Class frm_settlement
         Me.tb_search.DisplayIcon = True
         Me.tb_search.Icon = Global.RCSS.My.Resources.Resources.search16
         Me.tb_search.Lines = New String(-1) {}
-        Me.tb_search.Location = New System.Drawing.Point(1002, 6)
+        Me.tb_search.Location = New System.Drawing.Point(8, 6)
         Me.tb_search.MaxLength = 32767
         Me.tb_search.Name = "tb_search"
         Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -149,16 +157,6 @@ Partial Class frm_settlement
         Me.Panel3.Size = New System.Drawing.Size(1280, 30)
         Me.Panel3.TabIndex = 78
         '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.DataGridView1)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel4.Location = New System.Drawing.Point(0, 71)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1280, 503)
-        Me.Panel4.TabIndex = 79
-        '
         'lblCount
         '
         Me.lblCount.AutoSize = True
@@ -169,6 +167,16 @@ Partial Class frm_settlement
         Me.lblCount.Size = New System.Drawing.Size(93, 15)
         Me.lblCount.TabIndex = 0
         Me.lblCount.Text = "(0) record found"
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.White
+        Me.Panel4.Controls.Add(Me.DataGridView1)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(0, 71)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(1280, 503)
+        Me.Panel4.TabIndex = 79
         '
         'DataGridView1
         '
@@ -188,16 +196,16 @@ Partial Class frm_settlement
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.Column2, Me.Column3, Me.Column8, Me.Column1, Me.Column7, Me.Column6, Me.btn_settle})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.Column2, Me.Column3, Me.Column8, Me.customer_ID, Me.Column1, Me.Column7, Me.Column5, Me.Column6, Me.settle_amount, Me.Column9, Me.Column10, Me.DGV1_colsettle})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Gray
@@ -216,14 +224,17 @@ Partial Class frm_settlement
         Me.Column20.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column20.HeaderText = "      #"
         Me.Column20.Name = "Column20"
+        Me.Column20.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Column20.Width = 54
         '
         'Column4
         '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.HeaderText = "STATUS"
+        Me.Column4.HeaderText = "COLLECTION STATUS"
         Me.Column4.Name = "Column4"
+        Me.Column4.Width = 136
         '
         'Column2
         '
@@ -248,32 +259,77 @@ Partial Class frm_settlement
         Me.Column8.Name = "Column8"
         Me.Column8.Width = 73
         '
+        'customer_ID
+        '
+        Me.customer_ID.HeaderText = "CUSTOMER ID"
+        Me.customer_ID.Name = "customer_ID"
+        Me.customer_ID.Visible = False
+        '
         'Column1
         '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column1.HeaderText = "CUSTOMER"
         Me.Column1.Name = "Column1"
+        Me.Column1.Width = 90
         '
         'Column7
         '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column7.HeaderText = "ADDRESS"
         Me.Column7.Name = "Column7"
+        Me.Column7.Width = 78
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.FillWeight = 150.0!
+        Me.Column5.HeaderText = "AR REFERENCE NUMBER"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 156
         '
         'Column6
         '
         Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.Column6.FillWeight = 150.0!
-        Me.Column6.HeaderText = "COLLECTION STATUS"
+        Me.Column6.HeaderText = "DELIVERY RECEIPT #"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 136
+        Me.Column6.Width = 134
         '
-        'btn_settle
+        'settle_amount
         '
-        Me.btn_settle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.btn_settle.HeaderText = ""
-        Me.btn_settle.Name = "btn_settle"
-        Me.btn_settle.Width = 5
+        Me.settle_amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.settle_amount.DefaultCellStyle = DataGridViewCellStyle4
+        Me.settle_amount.HeaderText = "AMOUNT"
+        Me.settle_amount.Name = "settle_amount"
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column9.HeaderText = "SETTLEMENT STATUS"
+        Me.Column9.Name = "Column9"
+        Me.Column9.Width = 136
+        '
+        'Column10
+        '
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column10.HeaderText = "BALANCE"
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 77
+        '
+        'DGV1_colsettle
+        '
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        Me.DGV1_colsettle.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DGV1_colsettle.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.DGV1_colsettle.HeaderText = ""
+        Me.DGV1_colsettle.Name = "DGV1_colsettle"
+        Me.DGV1_colsettle.Text = "SETTLE"
+        Me.DGV1_colsettle.ToolTipText = "SETTLE"
+        Me.DGV1_colsettle.UseColumnTextForButtonValue = True
         '
         'frm_settlement
         '
@@ -315,8 +371,13 @@ Partial Class frm_settlement
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents customer_ID As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents btn_settle As DataGridViewButtonColumn
+    Friend WithEvents settle_amount As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents DGV1_colsettle As DataGridViewButtonColumn
 End Class

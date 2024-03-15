@@ -141,7 +141,7 @@ Partial Class frm_arMonitoringSummary
         Me.dailyPicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dailyPicker.Location = New System.Drawing.Point(0, 0)
         Me.dailyPicker.Name = "dailyPicker"
-        Me.dailyPicker.Size = New System.Drawing.Size(205, 23)
+        Me.dailyPicker.Size = New System.Drawing.Size(280, 23)
         Me.dailyPicker.TabIndex = 190
         '
         'Panel3
@@ -284,7 +284,7 @@ Partial Class frm_arMonitoringSummary
         '
         Me.filterSelect.Cursor = System.Windows.Forms.Cursors.Hand
         Me.filterSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.filterSelect.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.filterSelect.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.filterSelect.ForeColor = System.Drawing.Color.Gray
         Me.filterSelect.FormattingEnabled = True
         Me.filterSelect.Items.AddRange(New Object() {"", "VIEW ALL", "DAILY", "AREA", "CUSTOMER"})
@@ -312,34 +312,12 @@ Partial Class frm_arMonitoringSummary
         Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btn_print.UseVisualStyleBackColor = False
         '
-<<<<<<< HEAD
-=======
-        'cus_namePanel
-        '
-        Me.cus_namePanel.Controls.Add(Me.cusSelect)
-        Me.cus_namePanel.Location = New System.Drawing.Point(797, 21)
-        Me.cus_namePanel.Name = "cus_namePanel"
-        Me.cus_namePanel.Size = New System.Drawing.Size(145, 27)
-        Me.cus_namePanel.TabIndex = 79
-        Me.cus_namePanel.Visible = False
-        '
-        'cusSelect
-        '
-        Me.cusSelect.Dock = System.Windows.Forms.DockStyle.Top
-        Me.cusSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cusSelect.FormattingEnabled = True
-        Me.cusSelect.Location = New System.Drawing.Point(0, 0)
-        Me.cusSelect.Name = "cusSelect"
-        Me.cusSelect.Size = New System.Drawing.Size(145, 21)
-        Me.cusSelect.TabIndex = 0
-        '
->>>>>>> 06a95dfd016ee14893f91bbd2dacaaeaabf95888
         'dailyPanel
         '
         Me.dailyPanel.Controls.Add(Me.dailyPicker)
         Me.dailyPanel.Location = New System.Drawing.Point(737, 21)
         Me.dailyPanel.Name = "dailyPanel"
-        Me.dailyPanel.Size = New System.Drawing.Size(205, 27)
+        Me.dailyPanel.Size = New System.Drawing.Size(280, 27)
         Me.dailyPanel.TabIndex = 75
         Me.dailyPanel.Visible = False
         '
@@ -348,7 +326,7 @@ Partial Class frm_arMonitoringSummary
         Me.areaPanel.Controls.Add(Me.areaSelect)
         Me.areaPanel.Location = New System.Drawing.Point(737, 21)
         Me.areaPanel.Name = "areaPanel"
-        Me.areaPanel.Size = New System.Drawing.Size(205, 27)
+        Me.areaPanel.Size = New System.Drawing.Size(280, 27)
         Me.areaPanel.TabIndex = 195
         Me.areaPanel.Visible = False
         '
@@ -361,7 +339,7 @@ Partial Class frm_arMonitoringSummary
         Me.areaSelect.FormattingEnabled = True
         Me.areaSelect.Location = New System.Drawing.Point(0, 0)
         Me.areaSelect.Name = "areaSelect"
-        Me.areaSelect.Size = New System.Drawing.Size(205, 23)
+        Me.areaSelect.Size = New System.Drawing.Size(280, 23)
         Me.areaSelect.TabIndex = 194
         '
         'cus_namePanel
@@ -369,7 +347,7 @@ Partial Class frm_arMonitoringSummary
         Me.cus_namePanel.Controls.Add(Me.cusSelect)
         Me.cus_namePanel.Location = New System.Drawing.Point(737, 21)
         Me.cus_namePanel.Name = "cus_namePanel"
-        Me.cus_namePanel.Size = New System.Drawing.Size(205, 27)
+        Me.cus_namePanel.Size = New System.Drawing.Size(280, 27)
         Me.cus_namePanel.TabIndex = 79
         Me.cus_namePanel.Visible = False
         '
@@ -382,7 +360,7 @@ Partial Class frm_arMonitoringSummary
         Me.cusSelect.FormattingEnabled = True
         Me.cusSelect.Location = New System.Drawing.Point(0, 0)
         Me.cusSelect.Name = "cusSelect"
-        Me.cusSelect.Size = New System.Drawing.Size(205, 23)
+        Me.cusSelect.Size = New System.Drawing.Size(280, 23)
         Me.cusSelect.TabIndex = 0
         '
         'ContextMenuStrip1
@@ -397,7 +375,7 @@ Partial Class frm_arMonitoringSummary
         Me.Panel1.Controls.Add(Me.lblAR)
         Me.Panel1.Controls.Add(Me.lblCount)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 381)
+        Me.Panel1.Location = New System.Drawing.Point(0, 512)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1024, 30)
         Me.Panel1.TabIndex = 81
@@ -476,7 +454,7 @@ Partial Class frm_arMonitoringSummary
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 30
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(1024, 289)
+        Me.DataGridView2.Size = New System.Drawing.Size(1024, 420)
         Me.DataGridView2.TabIndex = 83
         '
         'cus_name
@@ -591,7 +569,7 @@ Partial Class frm_arMonitoringSummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1024, 411)
+        Me.ClientSize = New System.Drawing.Size(1024, 542)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)

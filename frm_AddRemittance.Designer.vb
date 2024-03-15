@@ -22,18 +22,18 @@ Partial Class frm_AddRemittance
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle217 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle219 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle218 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle220 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle222 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle223 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle225 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle226 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle228 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle227 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle224 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle221 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.dtp_year = New System.Windows.Forms.Label()
         Me.dtp_day = New System.Windows.Forms.Label()
@@ -95,6 +95,7 @@ Partial Class frm_AddRemittance
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.Panel_Check = New System.Windows.Forms.Panel()
+        Me.Lbl_CheckCusID = New System.Windows.Forms.Label()
         Me.cb_checkcustomer = New System.Windows.Forms.ComboBox()
         Me.btn_addCHECK = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -109,11 +110,20 @@ Partial Class frm_AddRemittance
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Check_CustomerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV3colRemove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Check_close = New System.Windows.Forms.Label()
         Me.tb_CCustomer = New System.Windows.Forms.TextBox()
         Me.Panel_Online = New System.Windows.Forms.Panel()
+        Me.lbl_OnlineCusID = New System.Windows.Forms.Label()
         Me.cb_onlinecustomer = New System.Windows.Forms.ComboBox()
         Me.btn_addOnline = New System.Windows.Forms.Button()
         Me.Label34 = New System.Windows.Forms.Label()
@@ -128,6 +138,14 @@ Partial Class frm_AddRemittance
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OnlineCustomer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV4colRemove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.online_close = New System.Windows.Forms.Label()
@@ -146,6 +164,13 @@ Partial Class frm_AddRemittance
         Me.AR_close = New System.Windows.Forms.Label()
         Me.tb_ARcustomer = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Customer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DGV2colRemove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.tb_ARsino = New System.Windows.Forms.TextBox()
         Me.tb_ARrefnum = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -160,31 +185,6 @@ Partial Class frm_AddRemittance
         Me.Panel_AR = New System.Windows.Forms.Panel()
         Me.Lbl_Duedate = New System.Windows.Forms.Label()
         Me.lbl_CusID = New System.Windows.Forms.Label()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Customer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV2colRemove = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.lbl_OnlineCusID = New System.Windows.Forms.Label()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OnlineCustomer_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV4colRemove = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Lbl_CheckCusID = New System.Windows.Forms.Label()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Check_CustomerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DGV3colRemove = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -338,25 +338,25 @@ Partial Class frm_AddRemittance
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle217.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle217.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle217.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle217.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle217.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle217.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle217.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle217
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColRef, Me.Column2, Me.DGV1colRemove})
-        DataGridViewCellStyle219.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle219.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle219.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle219.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle219.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle219.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle219.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle219
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Gray
@@ -379,9 +379,9 @@ Partial Class frm_AddRemittance
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle218.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle218.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle218
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column2.HeaderText = "Amount"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
@@ -963,6 +963,16 @@ Partial Class frm_AddRemittance
         Me.Panel_Check.TabIndex = 97
         Me.Panel_Check.Visible = False
         '
+        'Lbl_CheckCusID
+        '
+        Me.Lbl_CheckCusID.AutoSize = True
+        Me.Lbl_CheckCusID.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbl_CheckCusID.Location = New System.Drawing.Point(534, 54)
+        Me.Lbl_CheckCusID.Name = "Lbl_CheckCusID"
+        Me.Lbl_CheckCusID.Size = New System.Drawing.Size(0, 20)
+        Me.Lbl_CheckCusID.TabIndex = 89
+        Me.Lbl_CheckCusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'cb_checkcustomer
         '
         Me.cb_checkcustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -1111,25 +1121,25 @@ Partial Class frm_AddRemittance
         Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle220.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle220.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle220.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle220.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle220.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle220.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle220.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle220
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView3.ColumnHeadersHeight = 28
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Check_CustomerID, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.Column5, Me.DGV3colRemove})
-        DataGridViewCellStyle222.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle222.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle222.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle222.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle222.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle222.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle222.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle222
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView3.EnableHeadersVisualStyles = False
         Me.DataGridView3.GridColor = System.Drawing.Color.Gray
@@ -1139,6 +1149,64 @@ Partial Class frm_AddRemittance
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView3.Size = New System.Drawing.Size(985, 295)
         Me.DataGridView3.TabIndex = 70
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "Manifesto Reference #"
+        Me.Column7.Name = "Column7"
+        '
+        'Check_CustomerID
+        '
+        Me.Check_CustomerID.HeaderText = "Customer ID"
+        Me.Check_CustomerID.Name = "Check_CustomerID"
+        Me.Check_CustomerID.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn3.FillWeight = 120.0!
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Customer"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Bank Name"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Check Number"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridViewTextBoxColumn6.FillWeight = 80.0!
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 85
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.HeaderText = "Date"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 64
+        '
+        'DGV3colRemove
+        '
+        Me.DGV3colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DGV3colRemove.HeaderText = ""
+        Me.DGV3colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
+        Me.DGV3colRemove.Name = "DGV3colRemove"
+        Me.DGV3colRemove.ReadOnly = True
+        Me.DGV3colRemove.Width = 5
         '
         'Panel4
         '
@@ -1212,6 +1280,16 @@ Partial Class frm_AddRemittance
         Me.Panel_Online.Size = New System.Drawing.Size(1008, 516)
         Me.Panel_Online.TabIndex = 98
         Me.Panel_Online.Visible = False
+        '
+        'lbl_OnlineCusID
+        '
+        Me.lbl_OnlineCusID.AutoSize = True
+        Me.lbl_OnlineCusID.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_OnlineCusID.Location = New System.Drawing.Point(71, 77)
+        Me.lbl_OnlineCusID.Name = "lbl_OnlineCusID"
+        Me.lbl_OnlineCusID.Size = New System.Drawing.Size(0, 20)
+        Me.lbl_OnlineCusID.TabIndex = 83
+        Me.lbl_OnlineCusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'cb_onlinecustomer
         '
@@ -1362,25 +1440,25 @@ Partial Class frm_AddRemittance
         Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle223.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle223.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle223.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle223.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle223.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle223.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle223.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle223
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView4.ColumnHeadersHeight = 28
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.OnlineCustomer_ID, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DGV4colRemove})
-        DataGridViewCellStyle225.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle225.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle225.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle225.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle225.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle225.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle225.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView4.DefaultCellStyle = DataGridViewCellStyle225
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView4.DefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView4.EnableHeadersVisualStyles = False
         Me.DataGridView4.GridColor = System.Drawing.Color.Gray
@@ -1390,6 +1468,63 @@ Partial Class frm_AddRemittance
         Me.DataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView4.Size = New System.Drawing.Size(985, 295)
         Me.DataGridView4.TabIndex = 70
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "Reference #"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 111
+        '
+        'OnlineCustomer_ID
+        '
+        Me.OnlineCustomer_ID.HeaderText = "Customer ID"
+        Me.OnlineCustomer_ID.Name = "OnlineCustomer_ID"
+        Me.OnlineCustomer_ID.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn7.FillWeight = 120.0!
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Customer"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Bank"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Width = 200
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Reference Number"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Width = 250
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle8
+        Me.DataGridViewTextBoxColumn10.FillWeight = 80.0!
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Amount"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 85
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
+        'DGV4colRemove
+        '
+        Me.DGV4colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DGV4colRemove.HeaderText = ""
+        Me.DGV4colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
+        Me.DGV4colRemove.Name = "DGV4colRemove"
+        Me.DGV4colRemove.ReadOnly = True
+        Me.DGV4colRemove.Width = 5
         '
         'Panel5
         '
@@ -1619,25 +1754,25 @@ Partial Class frm_AddRemittance
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle226.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle226.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle226.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle226.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle226.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle226.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle226.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle226
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridView2.ColumnHeadersHeight = 28
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.Customer_ID, Me.Column3, Me.Column4, Me.DGV2colRemove})
-        DataGridViewCellStyle228.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle228.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle228.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle228.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle228.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle228.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle228.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle228
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle12
         Me.DataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
@@ -1647,6 +1782,57 @@ Partial Class frm_AddRemittance
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView2.Size = New System.Drawing.Size(985, 295)
         Me.DataGridView2.TabIndex = 70
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "Manifesto Reference #"
+        Me.Column1.Name = "Column1"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn1.FillWeight = 120.0!
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Delivery Receipt #"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Date"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'Customer_ID
+        '
+        Me.Customer_ID.HeaderText = "Customer ID"
+        Me.Customer_ID.Name = "Customer_ID"
+        Me.Customer_ID.Visible = False
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column3.HeaderText = "Customer"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle11
+        Me.Column4.FillWeight = 80.0!
+        Me.Column4.HeaderText = "Amount"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 85
+        '
+        'DGV2colRemove
+        '
+        Me.DGV2colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DGV2colRemove.HeaderText = ""
+        Me.DGV2colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
+        Me.DGV2colRemove.Name = "DGV2colRemove"
+        Me.DGV2colRemove.ReadOnly = True
+        Me.DGV2colRemove.Width = 5
         '
         'tb_ARsino
         '
@@ -1816,192 +2002,6 @@ Partial Class frm_AddRemittance
         Me.lbl_CusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lbl_CusID.Visible = False
         '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "Manifesto Reference #"
-        Me.Column1.Name = "Column1"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn1.FillWeight = 120.0!
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Delivery Receipt #"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Date"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'Customer_ID
-        '
-        Me.Customer_ID.HeaderText = "Customer ID"
-        Me.Customer_ID.Name = "Customer_ID"
-        Me.Customer_ID.Visible = False
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column3.HeaderText = "Customer"
-        Me.Column3.Name = "Column3"
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle227.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle227.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle227
-        Me.Column4.FillWeight = 80.0!
-        Me.Column4.HeaderText = "Amount"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 85
-        '
-        'DGV2colRemove
-        '
-        Me.DGV2colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DGV2colRemove.HeaderText = ""
-        Me.DGV2colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
-        Me.DGV2colRemove.Name = "DGV2colRemove"
-        Me.DGV2colRemove.ReadOnly = True
-        Me.DGV2colRemove.Width = 5
-        '
-        'lbl_OnlineCusID
-        '
-        Me.lbl_OnlineCusID.AutoSize = True
-        Me.lbl_OnlineCusID.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_OnlineCusID.Location = New System.Drawing.Point(71, 77)
-        Me.lbl_OnlineCusID.Name = "lbl_OnlineCusID"
-        Me.lbl_OnlineCusID.Size = New System.Drawing.Size(0, 20)
-        Me.lbl_OnlineCusID.TabIndex = 83
-        Me.lbl_OnlineCusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "Reference #"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 111
-        '
-        'OnlineCustomer_ID
-        '
-        Me.OnlineCustomer_ID.HeaderText = "Customer ID"
-        Me.OnlineCustomer_ID.Name = "OnlineCustomer_ID"
-        Me.OnlineCustomer_ID.Visible = False
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn7.FillWeight = 120.0!
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Customer"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Bank"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.Width = 200
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Reference Number"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Width = 250
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle224.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle224.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle224
-        Me.DataGridViewTextBoxColumn10.FillWeight = 80.0!
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 85
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Date"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'DGV4colRemove
-        '
-        Me.DGV4colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DGV4colRemove.HeaderText = ""
-        Me.DGV4colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
-        Me.DGV4colRemove.Name = "DGV4colRemove"
-        Me.DGV4colRemove.ReadOnly = True
-        Me.DGV4colRemove.Width = 5
-        '
-        'Lbl_CheckCusID
-        '
-        Me.Lbl_CheckCusID.AutoSize = True
-        Me.Lbl_CheckCusID.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbl_CheckCusID.Location = New System.Drawing.Point(534, 54)
-        Me.Lbl_CheckCusID.Name = "Lbl_CheckCusID"
-        Me.Lbl_CheckCusID.Size = New System.Drawing.Size(0, 20)
-        Me.Lbl_CheckCusID.TabIndex = 89
-        Me.Lbl_CheckCusID.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "Manifesto Reference #"
-        Me.Column7.Name = "Column7"
-        '
-        'Check_CustomerID
-        '
-        Me.Check_CustomerID.HeaderText = "Customer ID"
-        Me.Check_CustomerID.Name = "Check_CustomerID"
-        Me.Check_CustomerID.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn3.FillWeight = 120.0!
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Customer"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Bank Name"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Check Number"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle221.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle221.Padding = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle221
-        Me.DataGridViewTextBoxColumn6.FillWeight = 80.0!
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Amount"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.Width = 85
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.HeaderText = "Date"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 64
-        '
-        'DGV3colRemove
-        '
-        Me.DGV3colRemove.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DGV3colRemove.HeaderText = ""
-        Me.DGV3colRemove.Image = Global.RCSS.My.Resources.Resources.delete16_2_
-        Me.DGV3colRemove.Name = "DGV3colRemove"
-        Me.DGV3colRemove.ReadOnly = True
-        Me.DGV3colRemove.Width = 5
-        '
         'frm_AddRemittance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2009,7 +2009,6 @@ Partial Class frm_AddRemittance
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1022, 565)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Panel_Online)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.Label43)
         Me.Controls.Add(Me.btnSubmit)
@@ -2021,6 +2020,7 @@ Partial Class frm_AddRemittance
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.Panel_AR)
         Me.Controls.Add(Me.Panel_Check)
+        Me.Controls.Add(Me.Panel_Online)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_AddRemittance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
