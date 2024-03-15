@@ -35,7 +35,6 @@ Partial Class frm_AddCollection
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.tb_collectionID = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.tb_search = New MetroFramework.Controls.MetroTextBox()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.countselected = New System.Windows.Forms.Label()
         Me.lblCount = New System.Windows.Forms.Label()
@@ -53,6 +52,7 @@ Partial Class frm_AddCollection
         Me.customerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tb_search = New MetroFramework.Controls.MetroTextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -166,42 +166,6 @@ Partial Class frm_AddCollection
         Me.Label2.TabIndex = 185
         Me.Label2.Text = "Collection No."
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'tb_search
-        '
-        Me.tb_search.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        '
-        '
-        '
-        Me.tb_search.CustomButton.Image = Nothing
-        Me.tb_search.CustomButton.Location = New System.Drawing.Point(250, 1)
-        Me.tb_search.CustomButton.Name = ""
-        Me.tb_search.CustomButton.Size = New System.Drawing.Size(23, 23)
-        Me.tb_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.tb_search.CustomButton.TabIndex = 1
-        Me.tb_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.tb_search.CustomButton.UseSelectable = True
-        Me.tb_search.CustomButton.Visible = False
-        Me.tb_search.DisplayIcon = True
-        Me.tb_search.Icon = Global.RCSS.My.Resources.Resources.search16
-        Me.tb_search.Lines = New String(-1) {}
-        Me.tb_search.Location = New System.Drawing.Point(796, 6)
-        Me.tb_search.MaxLength = 32767
-        Me.tb_search.Name = "tb_search"
-        Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_search.PromptText = "Search transaction #"
-        Me.tb_search.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.tb_search.SelectedText = ""
-        Me.tb_search.SelectionLength = 0
-        Me.tb_search.SelectionStart = 0
-        Me.tb_search.ShortcutsEnabled = True
-        Me.tb_search.Size = New System.Drawing.Size(274, 25)
-        Me.tb_search.TabIndex = 183
-        Me.tb_search.UseSelectable = True
-        Me.tb_search.WaterMark = "Search transaction #"
-        Me.tb_search.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.tb_search.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'btn_save
         '
@@ -408,6 +372,42 @@ Partial Class frm_AddCollection
         Me.TotalAR.ReadOnly = True
         Me.TotalAR.Width = 131
         '
+        'tb_search
+        '
+        Me.tb_search.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.tb_search.CustomButton.Image = Nothing
+        Me.tb_search.CustomButton.Location = New System.Drawing.Point(250, 1)
+        Me.tb_search.CustomButton.Name = ""
+        Me.tb_search.CustomButton.Size = New System.Drawing.Size(23, 23)
+        Me.tb_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tb_search.CustomButton.TabIndex = 1
+        Me.tb_search.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tb_search.CustomButton.UseSelectable = True
+        Me.tb_search.CustomButton.Visible = False
+        Me.tb_search.DisplayIcon = True
+        Me.tb_search.Icon = Global.RCSS.My.Resources.Resources.search16
+        Me.tb_search.Lines = New String(-1) {}
+        Me.tb_search.Location = New System.Drawing.Point(796, 6)
+        Me.tb_search.MaxLength = 32767
+        Me.tb_search.Name = "tb_search"
+        Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tb_search.PromptText = "Search transaction #"
+        Me.tb_search.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.tb_search.SelectedText = ""
+        Me.tb_search.SelectionLength = 0
+        Me.tb_search.SelectionStart = 0
+        Me.tb_search.ShortcutsEnabled = True
+        Me.tb_search.Size = New System.Drawing.Size(274, 25)
+        Me.tb_search.TabIndex = 183
+        Me.tb_search.UseSelectable = True
+        Me.tb_search.WaterMark = "Search transaction #"
+        Me.tb_search.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tb_search.WaterMarkFont = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'frm_AddCollection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -438,7 +438,6 @@ Partial Class frm_AddCollection
     Friend WithEvents lbl_addRemittance As Label
     Friend WithEvents lbl_close As Label
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents tb_search As MetroFramework.Controls.MetroTextBox
     Friend WithEvents btn_save As Button
     Friend WithEvents tb_collectionID As TextBox
     Friend WithEvents Label2 As Label
@@ -461,4 +460,5 @@ Partial Class frm_AddCollection
     Friend WithEvents customerID As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents TotalAR As DataGridViewTextBoxColumn
+    Friend WithEvents tb_search As MetroFramework.Controls.MetroTextBox
 End Class
