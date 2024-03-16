@@ -35,7 +35,7 @@ Public Class frm_Login
     End Sub
     Sub dbrefresh()
         If ConnectToDB() = False Then
-            MsgBox("Unable to connect to database, please contact your System Administrator!", vbCritical)
+            MsgBox("Unable to connect to database! " & vbLf & "Please contact your System Administrator!", vbCritical)
             DBStat.BackColor = Color.Red
         Else
             'MsgBox("Connected to database!", vbInformation)
@@ -138,6 +138,7 @@ Public Class frm_Login
     End Sub
 
     Private Sub pb_adminsetting_Click(sender As Object, e As EventArgs) Handles pb_adminsetting.Click
+
         frm_adminsetting.ShowDialog()
 
     End Sub
