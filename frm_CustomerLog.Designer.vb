@@ -53,10 +53,14 @@ Partial Class frm_CustomerLog
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.searchID = New System.Windows.Forms.Panel()
         Me.search = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbl_totalRecord = New System.Windows.Forms.Label()
+        Me.lbl_totalAmount = New System.Windows.Forms.Label()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.searchID.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Column9
@@ -155,13 +159,13 @@ Partial Class frm_CustomerLog
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.Gray
-        Me.DataGridView2.Location = New System.Drawing.Point(0, 273)
+        Me.DataGridView2.Location = New System.Drawing.Point(0, 213)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersVisible = False
         Me.DataGridView2.RowTemplate.Height = 30
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(800, 177)
+        Me.DataGridView2.Size = New System.Drawing.Size(800, 237)
         Me.DataGridView2.TabIndex = 85
         '
         'accountNum
@@ -182,7 +186,7 @@ Partial Class frm_CustomerLog
         '
         'cusName
         '
-        Me.cusName.Location = New System.Drawing.Point(97, 76)
+        Me.cusName.Location = New System.Drawing.Point(97, 61)
         Me.cusName.Name = "cusName"
         Me.cusName.Size = New System.Drawing.Size(170, 20)
         Me.cusName.TabIndex = 3
@@ -190,7 +194,7 @@ Partial Class frm_CustomerLog
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(21, 79)
+        Me.Label1.Location = New System.Drawing.Point(21, 64)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 13)
         Me.Label1.TabIndex = 4
@@ -198,7 +202,7 @@ Partial Class frm_CustomerLog
         '
         'cusAddress
         '
-        Me.cusAddress.Location = New System.Drawing.Point(97, 132)
+        Me.cusAddress.Location = New System.Drawing.Point(97, 97)
         Me.cusAddress.Name = "cusAddress"
         Me.cusAddress.Size = New System.Drawing.Size(170, 20)
         Me.cusAddress.TabIndex = 5
@@ -206,7 +210,7 @@ Partial Class frm_CustomerLog
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(21, 135)
+        Me.Label3.Location = New System.Drawing.Point(21, 100)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 13)
         Me.Label3.TabIndex = 6
@@ -230,7 +234,7 @@ Partial Class frm_CustomerLog
         '
         'contactNum
         '
-        Me.contactNum.Location = New System.Drawing.Point(495, 76)
+        Me.contactNum.Location = New System.Drawing.Point(495, 61)
         Me.contactNum.Name = "contactNum"
         Me.contactNum.Size = New System.Drawing.Size(170, 20)
         Me.contactNum.TabIndex = 9
@@ -238,7 +242,7 @@ Partial Class frm_CustomerLog
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(406, 79)
+        Me.Label5.Location = New System.Drawing.Point(406, 64)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 13)
         Me.Label5.TabIndex = 10
@@ -246,7 +250,7 @@ Partial Class frm_CustomerLog
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(495, 132)
+        Me.TextBox6.Location = New System.Drawing.Point(495, 97)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(170, 20)
         Me.TextBox6.TabIndex = 11
@@ -254,7 +258,7 @@ Partial Class frm_CustomerLog
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(406, 135)
+        Me.Label6.Location = New System.Drawing.Point(406, 100)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(39, 13)
         Me.Label6.TabIndex = 12
@@ -277,7 +281,7 @@ Partial Class frm_CustomerLog
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(0, 73)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(800, 200)
+        Me.Panel3.Size = New System.Drawing.Size(800, 140)
         Me.Panel3.TabIndex = 84
         '
         'lbl_close
@@ -333,11 +337,40 @@ Partial Class frm_CustomerLog
         Me.search.TabIndex = 0
         Me.search.Text = "Search Transaction #"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.lbl_totalAmount)
+        Me.Panel2.Controls.Add(Me.lbl_totalRecord)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel2.Location = New System.Drawing.Point(0, 416)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(800, 34)
+        Me.Panel2.TabIndex = 87
+        '
+        'lbl_totalRecord
+        '
+        Me.lbl_totalRecord.AutoSize = True
+        Me.lbl_totalRecord.Location = New System.Drawing.Point(9, 12)
+        Me.lbl_totalRecord.Name = "lbl_totalRecord"
+        Me.lbl_totalRecord.Size = New System.Drawing.Size(82, 13)
+        Me.lbl_totalRecord.TabIndex = 13
+        Me.lbl_totalRecord.Text = "(0) record found"
+        '
+        'lbl_totalAmount
+        '
+        Me.lbl_totalAmount.AutoSize = True
+        Me.lbl_totalAmount.Location = New System.Drawing.Point(406, 12)
+        Me.lbl_totalAmount.Name = "lbl_totalAmount"
+        Me.lbl_totalAmount.Size = New System.Drawing.Size(82, 13)
+        Me.lbl_totalAmount.TabIndex = 14
+        Me.lbl_totalAmount.Text = "Total Amount: 0"
+        '
         'frm_CustomerLog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.searchID)
@@ -352,6 +385,8 @@ Partial Class frm_CustomerLog
         Me.Panel1.PerformLayout()
         Me.searchID.ResumeLayout(False)
         Me.searchID.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -384,4 +419,7 @@ Partial Class frm_CustomerLog
     Friend WithEvents Panel1 As Panel
     Friend WithEvents searchID As Panel
     Friend WithEvents search As TextBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents lbl_totalAmount As Label
+    Friend WithEvents lbl_totalRecord As Label
 End Class
