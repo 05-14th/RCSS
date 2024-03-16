@@ -219,13 +219,17 @@ Public Class frm_remRecord
 
     Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
         ' frm_rptRemRecord.ShowDialog()
+        Try
+            With frm_rptRemRecord
+                .TopLevel = False
+                frm_dashAdmin.Panel5.Controls.Add(frm_rptRemRecord)
+                .BringToFront()
+                .Show()
+            End With
+        Catch ex As Exception
 
-        With frm_rptRemRecord
-            .TopLevel = False
-            frm_dashAdmin.Panel5.Controls.Add(frm_rptRemRecord)
-            .BringToFront()
-            .Show()
-        End With
+        End Try
+
 
     End Sub
 

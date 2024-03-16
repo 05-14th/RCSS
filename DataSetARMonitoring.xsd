@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetARMonitoring" targetNamespace="http://tempuri.org/DataSetARMonitoring.xsd" xmlns:mstns="http://tempuri.org/DataSetARMonitoring.xsd" xmlns="http://tempuri.org/DataSetARMonitoring.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetARMonitoring" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetARMonitoring" msprop:Generator_UserDSName="DataSetARMonitoring">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ARMonitoring" msprop:Generator_TableClassName="ARMonitoringDataTable" msprop:Generator_TableVarName="tableARMonitoring" msprop:Generator_TablePropName="ARMonitoring" msprop:Generator_RowDeletingName="ARMonitoringRowDeleting" msprop:Generator_RowChangingName="ARMonitoringRowChanging" msprop:Generator_RowEvHandlerName="ARMonitoringRowChangeEventHandler" msprop:Generator_RowDeletedName="ARMonitoringRowDeleted" msprop:Generator_UserTableName="ARMonitoring" msprop:Generator_RowChangedName="ARMonitoringRowChanged" msprop:Generator_RowEvArgName="ARMonitoringRowChangeEvent" msprop:Generator_RowClassName="ARMonitoringRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cus_name" msprop:Generator_ColumnVarNameInTable="columncus_name" msprop:Generator_ColumnPropNameInRow="cus_name" msprop:Generator_ColumnPropNameInTable="cus_nameColumn" msprop:Generator_UserColumnName="cus_name" type="xs:string" minOccurs="0" />
+              <xs:element name="cus_contactno" msprop:Generator_ColumnVarNameInTable="columncus_contactno" msprop:Generator_ColumnPropNameInRow="cus_contactno" msprop:Generator_ColumnPropNameInTable="cus_contactnoColumn" msprop:Generator_UserColumnName="cus_contactno" type="xs:string" minOccurs="0" />
+              <xs:element name="van_route" msprop:Generator_ColumnVarNameInTable="columnvan_route" msprop:Generator_ColumnPropNameInRow="van_route" msprop:Generator_ColumnPropNameInTable="van_routeColumn" msprop:Generator_UserColumnName="van_route" type="xs:string" minOccurs="0" />
+              <xs:element name="cus_terms" msprop:Generator_ColumnVarNameInTable="columncus_terms" msprop:Generator_ColumnPropNameInRow="cus_terms" msprop:Generator_ColumnPropNameInTable="cus_termsColumn" msprop:Generator_UserColumnName="cus_terms" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_date" msprop:Generator_ColumnVarNameInTable="columnremar_date" msprop:Generator_ColumnPropNameInRow="remar_date" msprop:Generator_ColumnPropNameInTable="remar_dateColumn" msprop:Generator_UserColumnName="remar_date" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_transid" msprop:Generator_ColumnVarNameInTable="columnremar_transid" msprop:Generator_ColumnPropNameInRow="remar_transid" msprop:Generator_ColumnPropNameInTable="remar_transidColumn" msprop:Generator_UserColumnName="remar_transid" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_amount" msprop:Generator_ColumnVarNameInTable="columnremar_amount" msprop:Generator_ColumnPropNameInRow="remar_amount" msprop:Generator_ColumnPropNameInTable="remar_amountColumn" msprop:Generator_UserColumnName="remar_amount" type="xs:string" minOccurs="0" />
+              <xs:element name="rmt_salesman" msprop:Generator_ColumnVarNameInTable="columnrmt_salesman" msprop:Generator_ColumnPropNameInRow="rmt_salesman" msprop:Generator_ColumnPropNameInTable="rmt_salesmanColumn" msprop:Generator_UserColumnName="rmt_salesman" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_status" msprop:Generator_ColumnVarNameInTable="columnremar_status" msprop:Generator_ColumnPropNameInRow="remar_status" msprop:Generator_ColumnPropNameInTable="remar_statusColumn" msprop:Generator_UserColumnName="remar_status" type="xs:string" minOccurs="0" />
+              <xs:element name="col_collectionDate" msprop:Generator_ColumnVarNameInTable="columncol_collectionDate" msprop:Generator_ColumnPropNameInRow="col_collectionDate" msprop:Generator_ColumnPropNameInTable="col_collectionDateColumn" msprop:Generator_UserColumnName="col_collectionDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

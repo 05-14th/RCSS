@@ -187,6 +187,14 @@
       <DependentUpon>rpt_Remitance.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataSetARMonitoring.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetARMonitoring.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetARMonitoring.vb">
+      <DependentUpon>DataSetARMonitoring.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
     </Compile>
@@ -361,6 +369,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="rptARMonitoring.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptARMonitoring.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="bin\Debug\rpt_ArMonitoring.rpt">
@@ -452,6 +466,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptARMonitoring.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptARMonitoring.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\DataSet1.xsc">
@@ -489,6 +507,17 @@
     </None>
     <None Include="bin\Debug\RCSS.exe.config" />
     <None Include="bin\Debug\test.xlsx" />
+    <None Include="DataSetARMonitoring.xsc">
+      <DependentUpon>DataSetARMonitoring.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetARMonitoring.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetARMonitoring.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetARMonitoring.xss">
+      <DependentUpon>DataSetARMonitoring.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -634,6 +663,7 @@
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="bin\Debug\ZstdSharp.dll" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\AdminLogin.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\admin setting1.png" />
     <None Include="Resources\admin setting.png" />

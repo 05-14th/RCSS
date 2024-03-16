@@ -28,6 +28,7 @@ Partial Class frm_arMonitoringSummary
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_arMonitoringSummary))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
@@ -70,6 +71,7 @@ Partial Class frm_arMonitoringSummary
         Me.salesman = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.settlement_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbl_query = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.btn_Refresh, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -565,11 +567,25 @@ Partial Class frm_arMonitoringSummary
         Me.settlement_date.ReadOnly = True
         Me.settlement_date.Width = 56
         '
+        'lbl_query
+        '
+        Me.lbl_query.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_query.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_query.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_query.Location = New System.Drawing.Point(70, 138)
+        Me.lbl_query.Name = "lbl_query"
+        Me.lbl_query.Size = New System.Drawing.Size(877, 105)
+        Me.lbl_query.TabIndex = 204
+        Me.lbl_query.Text = resources.GetString("lbl_query.Text")
+        Me.lbl_query.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lbl_query.Visible = False
+        '
         'frm_arMonitoringSummary
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1024, 542)
+        Me.Controls.Add(Me.lbl_query)
         Me.Controls.Add(Me.DataGridView2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
@@ -637,4 +653,5 @@ Partial Class frm_arMonitoringSummary
     Friend WithEvents Panel5 As Panel
     Friend WithEvents btn_Refresh As PictureBox
     Friend WithEvents Panel6 As Panel
+    Friend WithEvents lbl_query As Label
 End Class

@@ -127,14 +127,20 @@
   <data name="Icon 128 x 128 px (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon 128 x 128 px (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pesowhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pesowhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RCS Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RCS Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Approved1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Approved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete16(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete16(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,9 +153,6 @@
   </data>
   <data name="information-buttongray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\information-buttongray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="analytics64white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\analytics64white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="For Approval" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\For Approval.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,17 +184,14 @@
   <data name="passkeygray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\passkeygray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings64white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings64white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="report128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon 128 x 128 px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon 128 x 128 px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="peso512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\peso512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="opendetails24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\opendetails24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +199,8 @@
   <data name="For Approval1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\For Approval1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="analytics64white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analytics64white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buy-home16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buy-home16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,6 +214,9 @@
   <data name="RCS Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RCS Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="RCS Logo 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RCS Logo 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="report64white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report64white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,11 +226,11 @@
   <data name="pngs1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngs1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RCS Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RCS Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Approved1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Approved.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings64white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings64white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="revision16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\revision16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +241,8 @@
   <data name="admin setting1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin setting1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RCS Logo 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RCS Logo 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="peso512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\peso512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="files16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\files16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,7 +271,7 @@
   <data name="hidepass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hidepass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AdminLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -147,4 +147,7 @@
   <metadata name="settlement_date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="lbl_query.Text" xml:space="preserve">
+    <value>SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice</value>
+  </data>
 </root>

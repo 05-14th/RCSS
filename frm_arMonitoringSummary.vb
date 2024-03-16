@@ -34,7 +34,9 @@ Public Class frm_arMonitoringSummary
                 Lbl_Total_AR.Text = formattedSum
 
             Else
-                MessageBox.Show("No Record Found", "RCSS - Message!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("No Record Found", "RCSS", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim formattedSum As String = String.Format("₱{0:#,##0.00}", 0)
+                Lbl_Total_AR.Text = formattedSum
             End If
             cn.Close()
         Catch ex As Exception
@@ -197,18 +199,29 @@ Public Class frm_arMonitoringSummary
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles filterSelect.SelectedIndexChanged
         If filterSelect.SelectedItem Is "DAILY" Then
             togglePanelVisibility(True, False, False)
+            lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE remar_date = '{" & dailyPicker.Text & "}'"
+
         ElseIf filterSelect.SelectedItem Is "CUSTOMER" Then
             togglePanelVisibility(False, True, False)
+            lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice"
+
+
         ElseIf filterSelect.SelectedItem Is "AREA" Then
             togglePanelVisibility(False, False, True)
+            lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice"
+
+
         ElseIf filterSelect.SelectedItem Is "VIEW ALL" Then
             togglePanelVisibility(False, False, False)
+            lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice"
             LoadARData("SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice")
             updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY)")
         Else
             togglePanelVisibility(False, False, False)
+            lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice"
+
         End If
     End Sub
 
@@ -218,6 +231,7 @@ Public Class frm_arMonitoringSummary
 
     Private Sub dailyPicker_ValueChanged(sender As Object, e As EventArgs) Handles dailyPicker.ValueChanged
         LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE remar_date = '{dailyPicker.Text}'")
+        lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE remar_date = '{" & dailyPicker.Text & "}'"
         updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE remar_date = '{dailyPicker.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE remar_date = '{dailyPicker.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND remar_date = '{dailyPicker.Text}'")
@@ -225,6 +239,7 @@ Public Class frm_arMonitoringSummary
 
     Private Sub areaSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles areaSelect.SelectedIndexChanged
         LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE rcss_van.van_route = '{areaSelect.Text}'")
+        lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE rcss_van.van_route = '{" & areaSelect.Text & "}'"
         updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE rcss_van.van_route = '{areaSelect.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE rcss_van.van_route = '{areaSelect.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND rcss_van.van_route = '{areaSelect.Text}'")
@@ -239,6 +254,7 @@ Public Class frm_arMonitoringSummary
 
     Private Sub cusSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cusSelect.SelectedIndexChanged
         LoadARData($"SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE cus_name = '{cusSelect.Text}'")
+        lbl_query.Text = "SELECT * FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno INNER JOIN rcss_collection d ON d.col_invoice = rcss_remar.remar_invoice WHERE cus_name = '{" & cusSelect.Text & "}'"
         updateStats($"SELECT COUNT(*) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE cus_name = '{cusSelect.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE cus_name = '{cusSelect.Text}'",
                     $"SELECT SUM(remar_amount) FROM rcss_customer INNER JOIN rcss_remar ON rcss_remar.remar_cusID = rcss_customer.cus_accountno INNER JOIN rcss_remittance ON rcss_remittance.rmt_transid = rcss_remar.remar_transid INNER JOIN rcss_van ON rcss_van.van_number = rcss_remittance.rmt_vanno WHERE CURDATE() >= DATE_ADD(DATE_FORMAT(STR_TO_DATE(remar_date, '%m/%d/%Y'), '%Y-%m-%d'), INTERVAL 7 DAY) AND cus_name = '{cusSelect.Text}'")
@@ -252,11 +268,14 @@ Public Class frm_arMonitoringSummary
 
     End Sub
 
-    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+    Public Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
+        Dim dataQuery As String = lbl_query.Text
+
         Try
             With frm_rptArsRecord
                 .TopLevel = False
                 frm_dashAdmin.Panel5.Controls.Add(frm_rptArsRecord)
+                .LoadReport(dataQuery)
                 .BringToFront()
                 .Show()
             End With
