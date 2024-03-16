@@ -663,6 +663,7 @@
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="bin\Debug\ZstdSharp.dll" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\userAccount.png" />
     <None Include="Resources\AdminLogin.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\admin setting1.png" />

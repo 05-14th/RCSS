@@ -67,7 +67,7 @@ Public Class frm_customer
                 .tb_address.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString
                 .tb_conperson.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString
                 .tb_contactno.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString
-                .tb_limit.Text = Format(CDec(DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString), "###,###,##0.00")
+                .tb_limit.Text = String.Format("{0:N2}", Decimal.Parse(DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString()))
                 .tb_terms.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString
                 .btnSubmit.Visible = False
                 .btnUpdate.Visible = True
@@ -75,10 +75,17 @@ Public Class frm_customer
                 .ShowDialog()
             End With
         ElseIf colname = "cusName" Then
-            Dim selectedValue As Object = DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value
-            With frm_CustomerLog.GetInstance()
+            'Dim selectedValue As Object = DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value
+            With frm_CustomerLog
                 .BringToFront()
-                .LoadData($"SELECT * FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_customer = '{selectedValue}'")
+                .tb_accountNum.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
+                .tb_cusName.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString
+                .tb_contactPerson.Text = DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString
+                .tb_contactNum.Text = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString
+                .tb_terms.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString
+                .tb_cusAddress.Text = DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString
+                .tb_creditLimit.Text = String.Format("{0:N2}", Decimal.Parse(DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString()))
+                '.LoadData($"SELECT * FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_customer = '" & DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString & "'")
                 .ShowDialog()
             End With
 
