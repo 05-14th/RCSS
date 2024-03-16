@@ -280,7 +280,7 @@ Partial Class frm_user
         Me.cb_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cb_role.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cb_role.FormattingEnabled = True
-        Me.cb_role.Items.AddRange(New Object() {"Administrator", "Manager", "Encoder"})
+        Me.cb_role.Items.AddRange(New Object() {"Administrator", "Manager", "Encoder (Remittance)", "Encoder (Collection)", "Encoder (Settlement)"})
         Me.cb_role.Location = New System.Drawing.Point(124, 162)
         Me.cb_role.Name = "cb_role"
         Me.cb_role.Size = New System.Drawing.Size(328, 28)

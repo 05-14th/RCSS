@@ -90,6 +90,80 @@ Public Class frm_Login
                     .lbl_user.Text = _fullname.ToUpper
                     .lbl_userID.Text = _id
 
+                    If _role = "Encoder (Settlement)" Then
+                        .USERToolStripMenuItem.Enabled = False
+                        .VANROUTEToolStripMenuItem.Enabled = False
+                        .CUSTOMERToolStripMenuItem.Enabled = False
+
+                        .ARMonitoringSummaryToolStripMenuItem.Enabled = False
+                        .REMITTANCERECORDToolStripMenuItem.Enabled = False
+
+                        .REMITTANCEToolStripMenuItem.Enabled = False
+                        .COLLECTIONToolStripMenuItem.Enabled = False
+                        .SETTLEMENTToolStripMenuItem.Enabled = True
+
+                        .panel_close.Visible = True
+
+
+                    ElseIf _role = "Encoder (Collection)" Then
+                        .USERToolStripMenuItem.Enabled = False
+                        .VANROUTEToolStripMenuItem.Enabled = False
+                        .CUSTOMERToolStripMenuItem.Enabled = False
+
+                        .ARMonitoringSummaryToolStripMenuItem.Enabled = False
+                        .REMITTANCERECORDToolStripMenuItem.Enabled = False
+
+                        .REMITTANCEToolStripMenuItem.Enabled = False
+                        .COLLECTIONToolStripMenuItem.Enabled = True
+                        .SETTLEMENTToolStripMenuItem.Enabled = False
+
+                        .panel_close.Visible = True
+
+                    ElseIf _role = "Encoder (Remittance)" Then
+                        .USERToolStripMenuItem.Enabled = False
+                        .VANROUTEToolStripMenuItem.Enabled = False
+                        .CUSTOMERToolStripMenuItem.Enabled = False
+
+                        .ARMonitoringSummaryToolStripMenuItem.Enabled = False
+                        .REMITTANCERECORDToolStripMenuItem.Enabled = False
+
+                        .REMITTANCEToolStripMenuItem.Enabled = True
+                        .COLLECTIONToolStripMenuItem.Enabled = False
+                        .SETTLEMENTToolStripMenuItem.Enabled = False
+
+                        .panel_close.Visible = True
+
+                    ElseIf _role = "Manager" Then
+                        .USERToolStripMenuItem.Enabled = False
+                        .VANROUTEToolStripMenuItem.Enabled = False
+                        .CUSTOMERToolStripMenuItem.Enabled = False
+
+                        .ARMonitoringSummaryToolStripMenuItem.Enabled = True
+                        .REMITTANCERECORDToolStripMenuItem.Enabled = True
+
+                        .REMITTANCEToolStripMenuItem.Enabled = True
+                        .COLLECTIONToolStripMenuItem.Enabled = True
+                        .SETTLEMENTToolStripMenuItem.Enabled = True
+
+                        .panel_close.Visible = True
+
+                    Else
+                        .USERToolStripMenuItem.Enabled = True
+                        .VANROUTEToolStripMenuItem.Enabled = True
+                        .CUSTOMERToolStripMenuItem.Enabled = True
+
+                        .ARMonitoringSummaryToolStripMenuItem.Enabled = True
+                        .REMITTANCERECORDToolStripMenuItem.Enabled = True
+
+                        .REMITTANCEToolStripMenuItem.Enabled = True
+                        .COLLECTIONToolStripMenuItem.Enabled = True
+                        .SETTLEMENTToolStripMenuItem.Enabled = True
+
+                        .panel_close.Visible = False
+
+                    End If
+
+
                     .Show()
                 End With
                 Me.Hide()

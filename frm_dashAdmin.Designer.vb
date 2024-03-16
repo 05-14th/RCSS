@@ -83,6 +83,7 @@ Partial Class frm_dashAdmin
         Me.Lbl_Btn_ForApproval = New System.Windows.Forms.Label()
         Me.pb_btn_forApproval = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.panel_close = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -176,19 +177,19 @@ Partial Class frm_dashAdmin
         'REMITTANCEToolStripMenuItem
         '
         Me.REMITTANCEToolStripMenuItem.Name = "REMITTANCEToolStripMenuItem"
-        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.REMITTANCEToolStripMenuItem.Text = "&REMITTANCE"
         '
         'COLLECTIONToolStripMenuItem
         '
         Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
-        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.COLLECTIONToolStripMenuItem.Text = "&COLLECTION"
         '
         'SETTLEMENTToolStripMenuItem
         '
         Me.SETTLEMENTToolStripMenuItem.Name = "SETTLEMENTToolStripMenuItem"
-        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SETTLEMENTToolStripMenuItem.Text = "&SETTLEMENT"
         '
         'REPORTSToolStripMenuItem
@@ -396,6 +397,7 @@ Partial Class frm_dashAdmin
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel5.BackColor = System.Drawing.Color.Transparent
+        Me.Panel5.Controls.Add(Me.panel_close)
         Me.Panel5.Controls.Add(Me.PanelDock)
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Location = New System.Drawing.Point(0, 77)
@@ -768,6 +770,17 @@ Partial Class frm_dashAdmin
         'Timer1
         '
         '
+        'panel_close
+        '
+        Me.panel_close.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panel_close.Location = New System.Drawing.Point(11, 5)
+        Me.panel_close.Name = "panel_close"
+        Me.panel_close.Size = New System.Drawing.Size(1002, 599)
+        Me.panel_close.TabIndex = 6
+        Me.panel_close.Visible = False
+        '
         'frm_dashAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -873,4 +886,5 @@ Partial Class frm_dashAdmin
     Friend WithEvents Label5 As Label
     Friend WithEvents Lbl_Btn_ForCollection As Label
     Friend WithEvents pb_btn_ForCollection As PictureBox
+    Friend WithEvents panel_close As Panel
 End Class

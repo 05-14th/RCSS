@@ -32,6 +32,16 @@ Partial Class frm_collection
         Me.lblCount = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.LL_Refresh = New System.Windows.Forms.LinkLabel()
@@ -43,16 +53,6 @@ Partial Class frm_collection
         Me.LL_Processing = New System.Windows.Forms.LinkLabel()
         Me.btnNew = New System.Windows.Forms.LinkLabel()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +62,7 @@ Partial Class frm_collection
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.lbl_close)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -154,6 +154,78 @@ Partial Class frm_collection
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1280, 503)
         Me.DataGridView1.TabIndex = 70
+        '
+        'Column20
+        '
+        Me.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column20.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column20.HeaderText = "      #"
+        Me.Column20.Name = "Column20"
+        Me.Column20.Width = 54
+        '
+        'Column4
+        '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.HeaderText = "STATUS"
+        Me.Column4.Name = "Column4"
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.FillWeight = 150.0!
+        Me.Column2.HeaderText = "COLLECTION CODE"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 129
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.FillWeight = 150.0!
+        Me.Column3.HeaderText = "TRANSACTION NUMBER"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 155
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.FillWeight = 150.0!
+        Me.Column5.HeaderText = "MANIFESTO REFERENCE NUMBER"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 205
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "AR DATE"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 73
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.FillWeight = 150.0!
+        Me.Column6.HeaderText = "DELIVERY RECEIPT #"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 134
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "AR AMOUNT"
+        Me.Column9.Name = "Column9"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "CUSTOMER"
+        Me.Column1.Name = "Column1"
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "ADDRESS"
+        Me.Column7.Name = "Column7"
         '
         'Panel4
         '
@@ -339,78 +411,6 @@ Partial Class frm_collection
         Me.DataGridViewImageColumn1.Image = Global.RCSS.My.Resources.Resources.opendetails24
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
-        '
-        'Column20
-        '
-        Me.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column20.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column20.HeaderText = "      #"
-        Me.Column20.Name = "Column20"
-        Me.Column20.Width = 54
-        '
-        'Column4
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.HeaderText = "STATUS"
-        Me.Column4.Name = "Column4"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.FillWeight = 150.0!
-        Me.Column2.HeaderText = "COLLECTION CODE"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 129
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.FillWeight = 150.0!
-        Me.Column3.HeaderText = "TRANSACTION NUMBER"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 155
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "MANIFESTO REFERENCE NUMBER"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 205
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "AR DATE"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 73
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.FillWeight = 150.0!
-        Me.Column6.HeaderText = "DELIVERY RECEIPT #"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 134
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "AR AMOUNT"
-        Me.Column9.Name = "Column9"
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "CUSTOMER"
-        Me.Column1.Name = "Column1"
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "ADDRESS"
-        Me.Column7.Name = "Column7"
         '
         'frm_collection
         '
