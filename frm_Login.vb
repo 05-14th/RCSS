@@ -46,21 +46,21 @@ Public Class frm_Login
         Try
             Dim found As Boolean = False
             cn.Open()
-            cm = New MySqlCommand("SELECT * FROM superadmin_tb where sa_username = @sa_username AND sa_password = @sa_password", cn)
+            cm = New MySqlCommand("SELECT * FROM rcss_users where u_username = @u_username AND u_password = @u_password", cn)
 
             With cm
-                .Parameters.AddWithValue("@sa_username", tb_username.Text)
-                .Parameters.AddWithValue("@sa_password", tb_password.Text)
+                .Parameters.AddWithValue("@u_username", tb_username.Text)
+                .Parameters.AddWithValue("@u_password", tb_password.Text)
                 dr = cm.ExecuteReader
                 dr.Read()
 
                 If (dr.HasRows) Then
 
                     found = True
-                    _username = dr("sa_username").ToString()
-                    _fullname = dr("sa_fullname").ToString()
-                    _role = dr("sa_role").ToString()
-                    _id = dr("sa_id").ToString()
+                    _username = dr("u_username").ToString()
+                    _fullname = dr("u_fullname").ToString()
+                    _role = dr("u_role").ToString()
+                    _id = dr("u_id").ToString()
 
                 Else
                     found = False
@@ -72,7 +72,7 @@ Public Class frm_Login
             End With
 
             If found = True Then
-                MsgBox("WELCOME " & _fullname.ToUpper & "!", vbInformation)
+                MsgBox("WELCOME " & _fullname.ToUpper & " !", vbInformation)
 
                 tb_username.Clear()
                 tb_password.Clear()

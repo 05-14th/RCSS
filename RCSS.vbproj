@@ -624,6 +624,10 @@
     <Content Include="bin\Debug\ZstdSharp.dll" />
     <Content Include="MetroFramework.txt" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\admin setting1.png" />
+    <None Include="Resources\admin setting.png" />
+    <None Include="Resources\pngs1.png" />
     <None Include="Resources\files16.png" />
     <None Include="Resources\files24.png" />
     <None Include="Resources\pngs.png" />

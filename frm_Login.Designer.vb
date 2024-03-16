@@ -31,6 +31,7 @@ Partial Class frm_Login
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tb_password = New MetroFramework.Controls.MetroTextBox()
         Me.tb_username = New MetroFramework.Controls.MetroTextBox()
@@ -38,6 +39,7 @@ Partial Class frm_Login
         Me.pb_hidepass = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_showpass, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_hidepass, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,16 +147,28 @@ Partial Class frm_Login
         Me.Label4.TabIndex = 65
         Me.Label4.Text = "USER AUTHENTICATION"
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Image = Global.RCSS.My.Resources.Resources.admin_setting1
+        Me.PictureBox3.Location = New System.Drawing.Point(162, 440)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(27, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 71
+        Me.PictureBox3.TabStop = False
+        '
         'PictureBox2
         '
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.RCSS.My.Resources.Resources.information_buttongray
-        Me.PictureBox2.Location = New System.Drawing.Point(162, 441)
+        Me.PictureBox2.Image = Global.RCSS.My.Resources.Resources.information
+        Me.PictureBox2.Location = New System.Drawing.Point(30, 440)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(27, 25)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 70
         Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
         '
         'tb_password
         '
@@ -269,6 +283,7 @@ Partial Class frm_Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(350, 487)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tb_password)
         Me.Controls.Add(Me.tb_username)
@@ -288,6 +303,7 @@ Partial Class frm_Login
         Me.Text = " "
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_showpass, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_hidepass, System.ComponentModel.ISupportInitialize).EndInit()
@@ -310,4 +326,5 @@ Partial Class frm_Login
     Friend WithEvents tb_username As MetroFramework.Controls.MetroTextBox
     Friend WithEvents tb_password As MetroFramework.Controls.MetroTextBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class
