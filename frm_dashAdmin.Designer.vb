@@ -193,7 +193,7 @@ Partial Class frm_dashAdmin
         '
         'REPORTSToolStripMenuItem
         '
-        Me.REPORTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.REMITTANCERECORDToolStripMenuItem, Me.ARCollectionToolStripMenuItem, Me.ARMonitoringSummaryToolStripMenuItem, Me.ColletionsToolStripMenuItem})
+        Me.REPORTSToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ARMonitoringSummaryToolStripMenuItem, Me.REMITTANCERECORDToolStripMenuItem, Me.ARCollectionToolStripMenuItem, Me.ColletionsToolStripMenuItem})
         Me.REPORTSToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.REPORTSToolStripMenuItem.Image = Global.RCSS.My.Resources.Resources.analytics64white
         Me.REPORTSToolStripMenuItem.Name = "REPORTSToolStripMenuItem"
