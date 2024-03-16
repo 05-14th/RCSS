@@ -27,8 +27,7 @@ Public Class frm_CustomerLog
             cm = New MySqlCommand(query, cn)
             dr = cm.ExecuteReader
             While dr.Read
-                DataGridView2.Rows.Add(dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_amount").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_salesman").ToString,
-                                       dr.Item("rmt_custodian").ToString, dr.Item("rmt_driver").ToString, dr.Item("rmt_helper").ToString, dr.Item("remar_status").ToString)
+                DataGridView2.Rows.Add(dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_amount").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_refnum").ToString)
             End While
             accountNum.Text = dr.Item("cus_accountno").ToString
             cusName.Text = dr.Item("cus_name").ToString
@@ -44,8 +43,8 @@ Public Class frm_CustomerLog
             cn.Close()
         End Try
 
-        updateStats($"SELECT COUNT(*) FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE c.cus_accountno = '{accountNum.Text}'",
-                   $"SELECT SUM(remar_amount) FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE c.cus_accountno  = '{accountNum.Text}'")
+        updateStats($"SELECT COUNT(*) FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE c.cus_accountno = '{accountNum.Text}'",
+                   $"SELECT SUM(remar_amount) FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE c.cus_accountno  = '{accountNum.Text}'")
     End Sub
 
     Public Sub LoadTableData(query As String)
@@ -55,8 +54,7 @@ Public Class frm_CustomerLog
             cm = New MySqlCommand(query, cn)
             dr = cm.ExecuteReader
             While dr.Read
-                DataGridView2.Rows.Add(dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_amount").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_salesman").ToString,
-                                       dr.Item("rmt_custodian").ToString, dr.Item("rmt_driver").ToString, dr.Item("rmt_helper").ToString, dr.Item("remar_status").ToString)
+                DataGridView2.Rows.Add(dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_amount").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_refnum").ToString)
             End While
             dr.Close()
             cn.Close()
@@ -74,31 +72,30 @@ Public Class frm_CustomerLog
 
     Sub updateStats(countQuery As String, totalArQuery As String)
         Try
-            cn.Open()
-            cm = New MySqlCommand(countQuery, cn)
-            Dim countResult As Integer = Convert.ToInt32(cm.ExecuteScalar())
-            If countResult = 0 Then
-                lbl_totalRecord.Text = $"({countResult}) record found"
+            Dim totalRows As Integer = DataGridView2.RowCount
+
+            If totalRows = 0 Then
+                lbl_totalRecord.Text = $"({totalRows}) record found"
             Else
-                lbl_totalRecord.Text = $"({countResult}) records found"
+                lbl_totalRecord.Text = $"({totalRows}) records found"
             End If
-            dr.Close()
-            cn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()
         End Try
 
         Try
-            Dim totalArResult As Decimal = 0.0
-            cn.Open()
-            cm = New MySqlCommand(totalArQuery, cn)
-            If cm.ExecuteScalar() IsNot Nothing AndAlso cm.ExecuteScalar() IsNot DBNull.Value Then
-                totalArResult = Convert.ToDecimal(cm.ExecuteScalar())
-            End If
-            lbl_totalAmount.Text = $"Total Amount: {totalArResult}"
-            dr.Close()
-            cn.Close()
+
+            Dim totalSum As Double = 0
+
+            For Each row As DataGridViewRow In DataGridView2.Rows
+                If Not row.IsNewRow AndAlso IsNumeric(row.Cells("amountCol").Value) Then
+                    totalSum += CDbl(row.Cells("amountCol").Value)
+                End If
+            Next
+
+
+            lbl_totalAmount.Text = $"Total Amount: {totalSum.ToString()}"
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()
@@ -106,9 +103,9 @@ Public Class frm_CustomerLog
     End Sub
 
     Private Sub TextBox_TextChanged(sender As Object, e As EventArgs) Handles search.TextChanged
-        LoadTableData($"SELECT * FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_transid LIKE '%{search.Text}%' AND cus_accountno LIKE '%{accountNum.Text}%'")
-        updateStats($"SELECT COUNT(*) FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_transid LIKE '%{search.Text}%' AND cus_accountno = '{accountNum.Text}'",
-                    $"SELECT SUM(remar_amount) FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_transid LIKE '%{search.Text}%' AND cus_accountno = '{accountNum.Text}'")
+        LoadTableData($"SELECT * FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_transid LIKE '%{search.Text}%' AND cus_accountno = '{accountNum.Text}'")
+        updateStats($"SELECT COUNT(*) FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_transid LIKE '%{search.Text}%' AND cus_accountno = '{accountNum.Text}'",
+                    $"SELECT SUM(remar_amount) FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_transid LIKE '%{search.Text}%' AND cus_accountno = '{accountNum.Text}'")
     End Sub
 
     Private Sub TextBox_Click(sender As Object, e As EventArgs) Handles search.Click

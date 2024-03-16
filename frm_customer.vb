@@ -78,7 +78,7 @@ Public Class frm_customer
             Dim selectedValue As Object = DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value
             With frm_CustomerLog.GetInstance()
                 .BringToFront()
-                .LoadData($"SELECT * FROM rcss_remar a INNER JOIN rcss_remittance b ON a.remar_transid = b.rmt_transid INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_customer = '{selectedValue}'")
+                .LoadData($"SELECT * FROM rcss_remar a INNER JOIN rcss_customer c ON c.cus_accountno = a.remar_cusID  WHERE a.remar_customer = '{selectedValue}'")
                 .ShowDialog()
             End With
 
