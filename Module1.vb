@@ -12,7 +12,8 @@ Module Module1
     Function ConnectToDB() As Boolean
         Try
             With cn
-                .ConnectionString = "server=localhost; user id=root; password=; database=rcss_db"
+                '.ConnectionString = "server=localhost; user id=root; password=; database=rcss_db"
+                .ConnectionString = "server='" & My.Settings.rcssServer & "'; user id='" & My.Settings.rcssUsername & "'; password='" & My.Settings.rcssPassword & "'; database='" & My.Settings.rcssDBName & "'"
                 .Open()
             End With
             cn.Close()

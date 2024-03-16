@@ -86,10 +86,6 @@
       <HintPath>packages\Winform.Metroframework.1.4.0\lib\net20\MetroFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
@@ -162,7 +158,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_ArMonitoring.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="bin\Debug\DataSet1.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -189,113 +184,80 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_Remitance.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
+    <Compile Include="frm_adminsetting.Designer.vb">
+      <DependentUpon>frm_adminsetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_adminsetting.vb" />
     <Compile Include="frm_CustomerLog.Designer.vb">
       <DependentUpon>frm_CustomerLog.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_CustomerLog.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_CustomerLog.vb" />
     <Compile Include="frm_placeSettlement.Designer.vb">
       <DependentUpon>frm_placeSettlement.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_placeSettlement.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_placeSettlement.vb" />
     <Compile Include="frm_rptArsRecord.Designer.vb">
       <DependentUpon>frm_rptArsRecord.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_rptArsRecord.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_rptArsRecord.vb" />
     <Compile Include="frm_arMonitoringSummary.Designer.vb">
       <DependentUpon>frm_arMonitoringSummary.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_arMonitoringSummary.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_arMonitoringSummary.vb" />
     <Compile Include="frm_collectionRecord.Designer.vb">
       <DependentUpon>frm_collectionRecord.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_collectionRecord.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_collectionRecord.vb" />
     <Compile Include="frm_AddSettlement.Designer.vb">
       <DependentUpon>frm_AddSettlement.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_AddSettlement.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_AddSettlement.vb" />
     <Compile Include="frm_AddCollection.Designer.vb">
       <DependentUpon>frm_AddCollection.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_AddCollection.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_AddCollection.vb" />
     <Compile Include="frm_AddCustomer.Designer.vb">
       <DependentUpon>frm_AddCustomer.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_AddCustomer.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_AddCustomer.vb" />
     <Compile Include="frm_AddRemittance.Designer.vb">
       <DependentUpon>frm_AddRemittance.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_AddRemittance.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_AddRemittance.vb" />
     <Compile Include="frm_arcollectionRecord.Designer.vb">
       <DependentUpon>frm_arcollectionRecord.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_arcollectionRecord.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_arcollectionRecord.vb" />
     <Compile Include="frm_collection.Designer.vb">
       <DependentUpon>frm_collection.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_collection.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_collection.vb" />
     <Compile Include="frm_customer.Designer.vb">
       <DependentUpon>frm_customer.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_customer.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_customer.vb" />
     <Compile Include="frm_remApproval.Designer.vb">
       <DependentUpon>frm_remApproval.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_remApproval.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_remApproval.vb" />
     <Compile Include="frm_remApproved.Designer.vb">
       <DependentUpon>frm_remApproved.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_remApproved.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_remApproved.vb" />
     <Compile Include="frm_remDecide.Designer.vb">
       <DependentUpon>frm_remDecide.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_remDecide.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_remDecide.vb" />
     <Compile Include="frm_remittance.Designer.vb">
       <DependentUpon>frm_remittance.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_remittance.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_remittance.vb" />
     <Compile Include="frm_dashAdmin.Designer.vb">
       <DependentUpon>frm_dashAdmin.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_dashAdmin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Login.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_dashAdmin.vb" />
+    <Compile Include="frm_Login.vb" />
     <Compile Include="frm_Login.Designer.vb">
       <DependentUpon>frm_Login.vb</DependentUpon>
       <SubType>Form</SubType>
@@ -303,39 +265,27 @@
     <Compile Include="frm_remRecord.Designer.vb">
       <DependentUpon>frm_remRecord.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_remRecord.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_remRecord.vb" />
     <Compile Include="frm_remRevise.Designer.vb">
       <DependentUpon>frm_remRevise.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_remRevise.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_remRevise.vb" />
     <Compile Include="frm_rptRemRecord.Designer.vb">
       <DependentUpon>frm_rptRemRecord.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_rptRemRecord.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_rptRemRecord.vb" />
     <Compile Include="frm_settlement.Designer.vb">
       <DependentUpon>frm_settlement.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_settlement.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_settlement.vb" />
     <Compile Include="frm_user.Designer.vb">
       <DependentUpon>frm_user.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_user.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_user.vb" />
     <Compile Include="frm_van.Designer.vb">
       <DependentUpon>frm_van.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_van.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frm_van.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -362,6 +312,9 @@
     <EmbeddedResource Include="bin\Debug\rpt_Remitance.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Remitance.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_adminsetting.resx">
+      <DependentUpon>frm_adminsetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_CustomerLog.resx">
       <DependentUpon>frm_CustomerLog.vb</DependentUpon>
@@ -622,7 +575,6 @@
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="bin\Debug\ZstdSharp.dll" />
-    <Content Include="MetroFramework.txt" />
     <Content Include="RCS-Icon.ico" />
     <None Include="Resources\information.png" />
     <None Include="Resources\admin setting1.png" />

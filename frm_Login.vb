@@ -4,12 +4,17 @@ Public Class frm_Login
         pb_showpass.Visible = False
         pb_hidepass.Visible = True
         tb_password.UseSystemPasswordChar = False
+
     End Sub
 
     Private Sub pb_hidepass_Click(sender As Object, e As EventArgs) Handles pb_hidepass.Click
+
+
         pb_showpass.Visible = True
         pb_hidepass.Visible = False
         tb_password.UseSystemPasswordChar = True
+
+
     End Sub
 
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
@@ -23,12 +28,14 @@ Public Class frm_Login
         Me.WindowState = FormWindowState.Minimized
     End Sub
     Private Sub frm_Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        My.Settings.Reload()
+
         dbrefresh()
 
     End Sub
     Sub dbrefresh()
         If ConnectToDB() = False Then
-            MsgBox("Unable to connect to database!", vbCritical)
+            MsgBox("Unable to connect to database, please contact your System Administrator!", vbCritical)
             DBStat.BackColor = Color.Red
         Else
             'MsgBox("Connected to database!", vbInformation)
@@ -128,5 +135,10 @@ Public Class frm_Login
 
     Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox1.DoubleClick
         dbrefresh()
+    End Sub
+
+    Private Sub pb_adminsetting_Click(sender As Object, e As EventArgs) Handles pb_adminsetting.Click
+        frm_adminsetting.ShowDialog()
+
     End Sub
 End Class

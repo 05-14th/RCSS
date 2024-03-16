@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_Login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_Login
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Login))
         Me.lbl_minimize = New System.Windows.Forms.Label()
@@ -31,15 +31,16 @@ Partial Class frm_Login
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.pb_adminsetting = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tb_password = New MetroFramework.Controls.MetroTextBox()
         Me.tb_username = New MetroFramework.Controls.MetroTextBox()
         Me.pb_showpass = New System.Windows.Forms.PictureBox()
         Me.pb_hidepass = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_adminsetting, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_showpass, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_hidepass, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,16 +148,16 @@ Partial Class frm_Login
         Me.Label4.TabIndex = 65
         Me.Label4.Text = "USER AUTHENTICATION"
         '
-        'PictureBox3
+        'pb_adminsetting
         '
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.RCSS.My.Resources.Resources.admin_setting1
-        Me.PictureBox3.Location = New System.Drawing.Point(162, 440)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(27, 25)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 71
-        Me.PictureBox3.TabStop = False
+        Me.pb_adminsetting.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_adminsetting.Image = Global.RCSS.My.Resources.Resources.admin_setting1
+        Me.pb_adminsetting.Location = New System.Drawing.Point(162, 440)
+        Me.pb_adminsetting.Name = "pb_adminsetting"
+        Me.pb_adminsetting.Size = New System.Drawing.Size(27, 25)
+        Me.pb_adminsetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_adminsetting.TabIndex = 71
+        Me.pb_adminsetting.TabStop = False
         '
         'PictureBox2
         '
@@ -269,6 +270,7 @@ Partial Class frm_Login
         '
         'PictureBox1
         '
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_2
         Me.PictureBox1.Location = New System.Drawing.Point(36, 41)
         Me.PictureBox1.Name = "PictureBox1"
@@ -277,18 +279,25 @@ Partial Class frm_Login
         Me.PictureBox1.TabIndex = 69
         Me.PictureBox1.TabStop = False
         '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(30, 264)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(290, 23)
+        Me.TextBox1.TabIndex = 72
+        '
         'frm_Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(350, 487)
-        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.pb_adminsetting)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.tb_password)
         Me.Controls.Add(Me.tb_username)
-        Me.Controls.Add(Me.pb_showpass)
-        Me.Controls.Add(Me.pb_hidepass)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnCancel)
@@ -296,6 +305,8 @@ Partial Class frm_Login
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DBStat)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.pb_showpass)
+        Me.Controls.Add(Me.pb_hidepass)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_Login"
@@ -303,7 +314,7 @@ Partial Class frm_Login
         Me.Text = " "
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_adminsetting, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_showpass, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_hidepass, System.ComponentModel.ISupportInitialize).EndInit()
@@ -326,5 +337,6 @@ Partial Class frm_Login
     Friend WithEvents tb_username As MetroFramework.Controls.MetroTextBox
     Friend WithEvents tb_password As MetroFramework.Controls.MetroTextBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents pb_adminsetting As PictureBox
+    Friend WithEvents TextBox1 As TextBox
 End Class
