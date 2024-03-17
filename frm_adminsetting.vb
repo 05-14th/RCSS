@@ -33,28 +33,39 @@ Public Class frm_adminsetting
         Dim _fullname As String = ""
         Try
             Dim found As Boolean = False
-            cn.Open()
-            cm = New MySqlCommand("SELECT * FROM superadmin_tb where sa_username = @sa_username AND sa_password = @sa_password", cn)
+            'cn.Open()
+            'cm = New MySqlCommand("SELECT * FROM superadmin_tb where sa_username = @sa_username AND sa_password = @sa_password", cn)
 
-            With cm
-                .Parameters.AddWithValue("@sa_username", tb_SAusername.Text)
-                .Parameters.AddWithValue("@sa_password", tb_SApassword.Text)
-                dr = cm.ExecuteReader
-                dr.Read()
+            'With cm
+            '    .Parameters.AddWithValue("@sa_username", tb_SAusername.Text)
+            '    .Parameters.AddWithValue("@sa_password", tb_SApassword.Text)
+            '    dr = cm.ExecuteReader
+            '    dr.Read()
 
-                If (dr.HasRows) Then
+            '    If (dr.HasRows) Then
 
-                    found = True
-                    _fullname = dr("sa_fullname").ToString()
+            '        found = True
+            '        _fullname = dr("sa_fullname").ToString()
 
-                Else
-                    found = False
-                End If
+            '    Else
+            '        found = False
+            '    End If
 
-                dr.Close()
-                cn.Close()
+            '    dr.Close()
+            '    cn.Close()
 
-            End With
+            'End With
+
+            Dim saUsername As String = "Administrator"
+            Dim saPassword As String = "iC0nn3cth3r3"
+
+            If tb_SAusername.Text = saUsername Then
+                found = True
+                _fullname = "Glacier"
+            Else
+                found = False
+            End If
+
 
             If found = True Then
                 MsgBox("WELCOME BACK " & _fullname.ToUpper & " !", vbInformation)
