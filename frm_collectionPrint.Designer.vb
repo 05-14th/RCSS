@@ -25,10 +25,10 @@ Partial Class frm_collectionPrint
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.rptPrintCollection1 = New RCSS.rptPrintCollection()
         Me.tb_PrintcollectionID = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.rptPrintCollection1 = New RCSS.rptPrintCollection()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -77,6 +77,7 @@ Partial Class frm_collectionPrint
         Me.tb_PrintcollectionID.ReadOnly = True
         Me.tb_PrintcollectionID.Size = New System.Drawing.Size(180, 19)
         Me.tb_PrintcollectionID.TabIndex = 195
+        Me.tb_PrintcollectionID.Text = "1234567890"
         '
         'Label2
         '
