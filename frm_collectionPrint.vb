@@ -15,7 +15,8 @@ Public Class frm_collectionPrint
             Dim rpt1 As New rptPrintCollection
             rpt1.Load(Application.StartupPath & "\Reports\rptPrintCollection.rpt")
             rpt1.SetDataSource(ds.Tables("DSCollection"))
-
+            rpt1.SetParameterValue(0, frm_dashAdmin.lbl_user.Text)
+            rpt1.SetParameterValue(1, frm_dashAdmin.lbl_role.Text)
             CrystalReportViewer1.ReportSource = rpt1
             CrystalReportViewer1.RefreshReport()
             cn.Close()

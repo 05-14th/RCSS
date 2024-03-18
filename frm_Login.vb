@@ -89,6 +89,7 @@ Public Class frm_Login
                     .lblName.Text = _role.ToUpper & " | " & _fullname.ToUpper
                     .lbl_user.Text = _fullname.ToUpper
                     .lbl_userID.Text = _id
+                    .lbl_role.Text = _role
 
                     If _role = "Encoder (Settlement)" Then
                         .USERToolStripMenuItem.Enabled = False

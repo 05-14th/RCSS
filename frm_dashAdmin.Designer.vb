@@ -84,6 +84,7 @@ Partial Class frm_dashAdmin
         Me.Lbl_Btn_ForApproval = New System.Windows.Forms.Label()
         Me.pb_btn_forApproval = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lbl_role = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -108,6 +109,7 @@ Partial Class frm_dashAdmin
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(48, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.lbl_role)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.pb_Home)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -124,7 +126,7 @@ Partial Class frm_dashAdmin
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(370, 18)
+        Me.Label1.Location = New System.Drawing.Point(366, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 45)
         Me.Label1.TabIndex = 0
@@ -177,19 +179,19 @@ Partial Class frm_dashAdmin
         'REMITTANCEToolStripMenuItem
         '
         Me.REMITTANCEToolStripMenuItem.Name = "REMITTANCEToolStripMenuItem"
-        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.REMITTANCEToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.REMITTANCEToolStripMenuItem.Text = "&REMITTANCE"
         '
         'COLLECTIONToolStripMenuItem
         '
         Me.COLLECTIONToolStripMenuItem.Name = "COLLECTIONToolStripMenuItem"
-        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.COLLECTIONToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.COLLECTIONToolStripMenuItem.Text = "&COLLECTION"
         '
         'SETTLEMENTToolStripMenuItem
         '
         Me.SETTLEMENTToolStripMenuItem.Name = "SETTLEMENTToolStripMenuItem"
-        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SETTLEMENTToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.SETTLEMENTToolStripMenuItem.Text = "&SETTLEMENT"
         '
         'REPORTSToolStripMenuItem
@@ -781,6 +783,17 @@ Partial Class frm_dashAdmin
         'Timer1
         '
         '
+        'lbl_role
+        '
+        Me.lbl_role.AutoSize = True
+        Me.lbl_role.ForeColor = System.Drawing.Color.White
+        Me.lbl_role.Location = New System.Drawing.Point(371, 50)
+        Me.lbl_role.Name = "lbl_role"
+        Me.lbl_role.Size = New System.Drawing.Size(24, 13)
+        Me.lbl_role.TabIndex = 31
+        Me.lbl_role.Text = "role"
+        Me.lbl_role.Visible = False
+        '
         'frm_dashAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -887,4 +900,5 @@ Partial Class frm_dashAdmin
     Friend WithEvents Lbl_Btn_ForCollection As Label
     Friend WithEvents pb_btn_ForCollection As PictureBox
     Friend WithEvents panel_close As Panel
+    Friend WithEvents lbl_role As Label
 End Class

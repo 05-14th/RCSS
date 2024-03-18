@@ -8,6 +8,7 @@ Public Class frm_collection
         Countuncollected()
         CountCollected()
         CountProcessing()
+        CountPartial()
         DataGridView1.Sort(DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
     Sub LoadCol()
@@ -85,7 +86,22 @@ Public Class frm_collection
         End Try
 
     End Sub
+    Sub CountPartial()
+        Try
 
+            cn.Open()
+            cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_collection WHERE col_remar_status = 'Collected - Partial'", cn)
+            Dim count As String
+            count = cm.ExecuteScalar().ToString()
+            LL_Partial.Text = "Partial (" + count + ")"
+
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+    End Sub
     Public Sub LoadSelectedData(status As String)
         Try
             Dim i As Integer = 0
@@ -115,6 +131,9 @@ Public Class frm_collection
     End Sub
     Private Sub LL_Collected_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Collected.LinkClicked
         LoadSelectedData("Collected")
+    End Sub
+    Private Sub LL_Partial_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Partial.LinkClicked
+        LoadSelectedData("Collected - Partial")
     End Sub
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
@@ -161,7 +180,7 @@ Public Class frm_collection
         Countuncollected()
         CountCollected()
         CountProcessing()
-
+        CountPartial()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -192,4 +211,6 @@ Public Class frm_collection
             cn.Close()
         End Try
     End Sub
+
+
 End Class

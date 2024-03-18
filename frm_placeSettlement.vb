@@ -79,8 +79,8 @@ Public Class frm_placeSettlement
                 cm = New MySqlCommand("UPDATE rcss_collection SET col_balance = @col_balance, col_remar_status = @col_remar_status, col_status = @col_status, col_DateOfPayment = @col_DateOfPayment WHERE col_invoice = @col_invoice AND col_idno = @col_idno", cn)
                 With cm
                     .Parameters.AddWithValue("@col_balance", lbl_balance.Text)
-                    .Parameters.AddWithValue("@col_remar_status", "Collected")
-                    .Parameters.AddWithValue("@col_status", "Partial")
+                    .Parameters.AddWithValue("@col_remar_status", "Collected - Partial")
+                    .Parameters.AddWithValue("@col_status", "Collected - Partial")
                     .Parameters.AddWithValue("@col_DateOfPayment", DateTimePicker1.Text)
                     .Parameters.AddWithValue("@col_invoice", lbl_invoiceNo.Text)
                     .Parameters.AddWithValue("@col_idno", lbl_collectionCode.Text)
@@ -101,7 +101,7 @@ Public Class frm_placeSettlement
                 cn.Open()
                 cm = New MySqlCommand("UPDATE rcss_remar SET remar_status = @remar_status WHERE remar_invoice = @remar_invoice AND remar_transid = @remar_transid", cn)
                 With cm
-                    .Parameters.AddWithValue("@remar_status", "Partial")
+                    .Parameters.AddWithValue("@remar_status", "Collected - Partial")
                     .Parameters.AddWithValue("@remar_invoice", lbl_invoiceNo.Text)
                     .Parameters.AddWithValue("@remar_transid", lbl_transaction_Code.Text)
                     .ExecuteNonQuery()
