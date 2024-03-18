@@ -701,6 +701,12 @@
     <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
     <Content Include="bin\Debug\ZstdSharp.dll" />
     <Content Include="RCS-Icon.ico" />
+    <None Include="Resources\AR.png" />
+    <None Include="Resources\Check.png" />
+    <None Include="Resources\OnlineBanking.png" />
+    <None Include="Resources\GCash.png" />
+    <None Include="Resources\Cash.png" />
+    <None Include="Resources\Coins Logo.png" />
     <None Include="Resources\userAccount.png" />
     <None Include="Resources\AdminLogin.png" />
     <None Include="Resources\information.png" />

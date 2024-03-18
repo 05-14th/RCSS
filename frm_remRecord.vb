@@ -303,8 +303,8 @@ Public Class frm_remRecord
         DataGridView2.BringToFront()
     End Sub
 
-    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
-        selectedMonth = ComboBox2.Text
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cb_monthly.SelectedIndexChanged
+        selectedMonth = cb_monthly.Text
         GetMonthlyRecord()
         DataGridView2.BringToFront()
     End Sub
