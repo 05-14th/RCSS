@@ -2,6 +2,7 @@
 Public Class frm_collectionPrint
 
     Private Sub frm_collectionPrint_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         LoadToPrint()
     End Sub
     Public Sub LoadToPrint()
