@@ -231,7 +231,7 @@ Partial Class frm_placeSettlement
         Me.btn_save.ForeColor = System.Drawing.Color.White
         Me.btn_save.Location = New System.Drawing.Point(47, 351)
         Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(461, 30)
+        Me.btn_save.Size = New System.Drawing.Size(467, 30)
         Me.btn_save.TabIndex = 185
         Me.btn_save.Text = "SAVE"
         Me.btn_save.UseVisualStyleBackColor = False

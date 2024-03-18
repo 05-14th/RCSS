@@ -209,6 +209,12 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_AddRemIn.Designer.vb">
+      <DependentUpon>frm_AddRemIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddRemIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_adminsetting.Designer.vb">
       <DependentUpon>frm_adminsetting.vb</DependentUpon>
     </Compile>
@@ -404,6 +410,9 @@
     <EmbeddedResource Include="bin\Debug\rpt_Remitance.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_Remitance.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AddRemIn.resx">
+      <DependentUpon>frm_AddRemIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_adminsetting.resx">
       <DependentUpon>frm_adminsetting.vb</DependentUpon>

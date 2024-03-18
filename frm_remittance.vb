@@ -491,4 +491,8 @@ Public Class frm_remittance
 
     End Sub
 
+    Private Sub btn_inhouse_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btn_inhouse.LinkClicked
+        frm_AddRemIn.ShowDialog()
+
+    End Sub
 End Class

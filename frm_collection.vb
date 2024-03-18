@@ -203,8 +203,9 @@ Public Class frm_collection
             With frm_collectionPrint
                 .TopLevel = True
                 .tb_PrintcollectionID.Text = tb_search.Text
+
                 .BringToFront()
-                .Show()
+                .ShowDialog()
             End With
         Catch ex As Exception
             MsgBox(ex.Message, vbCritical)

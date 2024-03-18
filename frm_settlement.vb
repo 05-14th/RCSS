@@ -84,7 +84,7 @@ Public Class frm_settlement
                         .ShowDialog()
                     End With
                 End If
-            ElseIf DataGridView1.Rows(e.RowIndex).Cells(11).Value.ToString = "Partial" Then
+            ElseIf DataGridView1.Rows(e.RowIndex).Cells(11).Value.ToString = "Collected - Partial" Then
 
                 If colname = "DGV1_colsettle" Then
                     With frm_placeSettlement
