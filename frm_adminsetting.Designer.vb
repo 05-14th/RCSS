@@ -36,23 +36,23 @@ Partial Class frm_adminsetting
         Me.tb_Username = New System.Windows.Forms.TextBox()
         Me.tb_server = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pb_Home = New System.Windows.Forms.PictureBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.panelLogin = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.tb_SApassword = New System.Windows.Forms.TextBox()
+        Me.tb_SAusername = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnLogin = New System.Windows.Forms.Button()
-        Me.tb_SAusername = New System.Windows.Forms.TextBox()
-        Me.tb_SApassword = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.pb_Home = New System.Windows.Forms.PictureBox()
         Me.pb_adminsetting = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelLogin.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_adminsetting, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -165,7 +165,7 @@ Partial Class frm_adminsetting
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(111, 146)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(169, 0)
+        Me.Label5.Size = New System.Drawing.Size(169, 23)
         Me.Label5.TabIndex = 199
         Me.Label5.Text = "Welcome Christian!"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -222,6 +222,17 @@ Partial Class frm_adminsetting
         Me.Panel1.Size = New System.Drawing.Size(348, 87)
         Me.Panel1.TabIndex = 200
         '
+        'pb_Home
+        '
+        Me.pb_Home.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_Home.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
+        Me.pb_Home.Location = New System.Drawing.Point(15, 12)
+        Me.pb_Home.Name = "pb_Home"
+        Me.pb_Home.Size = New System.Drawing.Size(64, 62)
+        Me.pb_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_Home.TabIndex = 33
+        Me.pb_Home.TabStop = False
+        '
         'lblName
         '
         Me.lblName.AutoSize = True
@@ -260,6 +271,56 @@ Partial Class frm_adminsetting
         Me.panelLogin.Name = "panelLogin"
         Me.panelLogin.Size = New System.Drawing.Size(350, 487)
         Me.panelLogin.TabIndex = 201
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(29, 323)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(64, 17)
+        Me.Label9.TabIndex = 73
+        Me.Label9.Text = "Password"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(29, 275)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 17)
+        Me.Label8.TabIndex = 72
+        Me.Label8.Text = "Username"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.AdminLogin
+        Me.PictureBox1.Location = New System.Drawing.Point(33, 44)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(285, 158)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 71
+        Me.PictureBox1.TabStop = False
+        '
+        'tb_SApassword
+        '
+        Me.tb_SApassword.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_SApassword.Location = New System.Drawing.Point(32, 342)
+        Me.tb_SApassword.Name = "tb_SApassword"
+        Me.tb_SApassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.tb_SApassword.Size = New System.Drawing.Size(290, 27)
+        Me.tb_SApassword.TabIndex = 70
+        Me.tb_SApassword.UseSystemPasswordChar = True
+        '
+        'tb_SAusername
+        '
+        Me.tb_SAusername.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_SAusername.Location = New System.Drawing.Point(32, 295)
+        Me.tb_SAusername.Name = "tb_SAusername"
+        Me.tb_SAusername.Size = New System.Drawing.Size(290, 27)
+        Me.tb_SAusername.TabIndex = 69
         '
         'Label7
         '
@@ -302,43 +363,6 @@ Partial Class frm_adminsetting
         Me.btnLogin.Text = "LOGIN"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
-        'tb_SAusername
-        '
-        Me.tb_SAusername.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_SAusername.Location = New System.Drawing.Point(32, 295)
-        Me.tb_SAusername.Name = "tb_SAusername"
-        Me.tb_SAusername.Size = New System.Drawing.Size(290, 27)
-        Me.tb_SAusername.TabIndex = 69
-        '
-        'tb_SApassword
-        '
-        Me.tb_SApassword.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_SApassword.Location = New System.Drawing.Point(32, 342)
-        Me.tb_SApassword.Name = "tb_SApassword"
-        Me.tb_SApassword.Size = New System.Drawing.Size(290, 27)
-        Me.tb_SApassword.TabIndex = 70
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.RCSS.My.Resources.Resources.AdminLogin
-        Me.PictureBox1.Location = New System.Drawing.Point(33, 44)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(285, 158)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 71
-        Me.PictureBox1.TabStop = False
-        '
-        'pb_Home
-        '
-        Me.pb_Home.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_Home.Image = Global.RCSS.My.Resources.Resources.RCS_Logo_3
-        Me.pb_Home.Location = New System.Drawing.Point(15, 12)
-        Me.pb_Home.Name = "pb_Home"
-        Me.pb_Home.Size = New System.Drawing.Size(64, 62)
-        Me.pb_Home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_Home.TabIndex = 33
-        Me.pb_Home.TabStop = False
-        '
         'pb_adminsetting
         '
         Me.pb_adminsetting.Cursor = System.Windows.Forms.Cursors.Hand
@@ -349,28 +373,6 @@ Partial Class frm_adminsetting
         Me.pb_adminsetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pb_adminsetting.TabIndex = 72
         Me.pb_adminsetting.TabStop = False
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(29, 275)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 17)
-        Me.Label8.TabIndex = 72
-        Me.Label8.Text = "Username"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(29, 323)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(64, 17)
-        Me.Label9.TabIndex = 73
-        Me.Label9.Text = "Password"
         '
         'frm_adminsetting
         '
@@ -400,10 +402,10 @@ Partial Class frm_adminsetting
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panelLogin.ResumeLayout(False)
         Me.panelLogin.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_adminsetting, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

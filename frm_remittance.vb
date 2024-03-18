@@ -266,10 +266,10 @@ Public Class frm_remittance
                             dr = cm.ExecuteReader
                             While dr.Read
 
-                                .DataGridView4.Rows.Add(dr.Item("remOnline_Orefnum").ToString, dr.Item("remOnline_customer").ToString, dr.Item("remOnline_bank").ToString, dr.Item("remOnline_refno").ToString, Format(CDec(dr.Item("remOnline_amount").ToString), "###,###,##0.00"), dr.Item("remOnline_date").ToString)
+                                .DataGridView4.Rows.Add(dr.Item("remOnline_Orefnum").ToString, dr.Item("remOnline_cusID").ToString, dr.Item("remOnline_customer").ToString, dr.Item("remOnline_bank").ToString, dr.Item("remOnline_refno").ToString, String.Format("{0:N2}", dr.Item("remOnline_amount")), dr.Item("remOnline_date").ToString)
                                 Dim Osum As Decimal = 0
                                 For i = 0 To .DataGridView4.Rows.Count - 1
-                                    Osum += .DataGridView4.Rows(i).Cells(4).Value
+                                    Osum += .DataGridView4.Rows(i).Cells(5).Value
                                 Next
 
                                 .tb_online.Text = Format(CDec(Osum), "###,###,##0.00")
@@ -287,14 +287,14 @@ Public Class frm_remittance
                         Try
                             .DataGridView3.Rows.Clear()
                             cn.Open()
-                            cm = New MySqlCommand("SELECT * from rcss_remcheck WHERE remcheck_transid = '" & DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString & "'", cn)
+                            cm = New MySqlCommand("SELECT * from rcss_remcheck a INNER JOIN rcss_customer b ON a.remcheck_cusID = b.cus_accountno WHERE remcheck_transid = '" & DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString & "'", cn)
                             dr = cm.ExecuteReader
                             While dr.Read
 
-                                .DataGridView3.Rows.Add(dr.Item("remcheck_refnum").ToString, dr.Item("remcheck_customer").ToString, dr.Item("remcheck_bank").ToString, dr.Item("remcheck_checkno").ToString, Format(CDec(dr.Item("remcheck_amount").ToString), "###,###,##0.00"), dr.Item("remcheck_date").ToString)
+                                .DataGridView3.Rows.Add(dr.Item("remcheck_refnum").ToString, dr.Item("remcheck_cusID").ToString, dr.Item("cus_name").ToString, dr.Item("remcheck_bank").ToString, dr.Item("remcheck_checkno").ToString, String.Format("{0:N2}", dr.Item("remcheck_amount")), dr.Item("remcheck_date").ToString)
                                 Dim Csum As Decimal = 0
                                 For i = 0 To .DataGridView3.Rows.Count - 1
-                                    Csum += .DataGridView3.Rows(i).Cells(4).Value
+                                    Csum += .DataGridView3.Rows(i).Cells(5).Value
                                 Next
 
                                 .tb_check.Text = Format(CDec(Csum), "###,###,##0.00")
@@ -313,17 +313,21 @@ Public Class frm_remittance
                         Try
                             .DataGridView2.Rows.Clear()
                             cn.Open()
-                            cm = New MySqlCommand("SELECT * from rcss_remar WHERE remar_transid = '" & .tb_edittransID.Text & "'", cn)
+                            cm = New MySqlCommand("SELECT * from rcss_remar a INNER JOIN rcss_customer b ON a.remar_cusID = b.cus_accountno WHERE remar_transid = '" & .tb_edittransID.Text & "'", cn)
                             dr = cm.ExecuteReader
                             While dr.Read
 
-                                .DataGridView2.Rows.Add(dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_date").ToString, dr.Item("remar_customer").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
+                                .DataGridView2.Rows.Add(dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_date").ToString, dr.Item("remar_cusID").ToString, dr.Item("cus_name").ToString, String.Format("{0:N2}", dr.Item("remar_amount")))
                                 Dim ARsum As Decimal = 0
                                 For i = 0 To .DataGridView2.Rows.Count - 1
-                                    ARsum += .DataGridView2.Rows(i).Cells(4).Value
+                                    ARsum += .DataGridView2.Rows(i).Cells(5).Value
                                 Next
 
-                                .tb_AR.Text = Format(CDec(ARsum), "###,###,##0.00")
+                                '.tb_AR.Text = Format(CDec(ARsum), "###,###,##0.00")
+                                Dim formattedSum As String = String.Format("{0:#,##0.00}", ARsum)
+                                .tb_AR.Text = $"{formattedSum}"
+
+
 
                             End While
                             dr.Close()

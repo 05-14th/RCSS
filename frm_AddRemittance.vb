@@ -967,7 +967,7 @@ Public Class frm_AddRemittance
 
             Dim Csum As Decimal = 0
             For i = 0 To DataGridView3.Rows.Count - 1
-                Csum += DataGridView3.Rows(i).Cells(4).Value
+                Csum += DataGridView3.Rows(i).Cells(5).Value
             Next
 
             'tb_check.Text = Format(Csum, "###,###,###.00")
@@ -1571,7 +1571,7 @@ Public Class frm_AddRemittance
         Try
 
             cn.Open()
-            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_customers.SelectedItem & "' ", cn)
+            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_onlinecustomer.SelectedItem & "' ", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
@@ -1590,7 +1590,7 @@ Public Class frm_AddRemittance
         Try
 
             cn.Open()
-            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_customers.SelectedItem & "' ", cn)
+            cm = New MySqlCommand("SELECT * from rcss_customer WHERE cus_name = '" & cb_checkcustomer.SelectedIndex & "' ", cn)
             dr = cm.ExecuteReader
             While dr.Read
 
@@ -1606,6 +1606,12 @@ Public Class frm_AddRemittance
     End Sub
 
     Private Sub Panel_Online_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Online.Paint
+
+    End Sub
+
+    Private Sub cb_vanname_Click(sender As Object, e As EventArgs) Handles cb_vanname.Click
+        cb_vanname.Sorted = True
+
 
     End Sub
 End Class

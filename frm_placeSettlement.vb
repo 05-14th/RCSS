@@ -57,14 +57,14 @@ Public Class frm_placeSettlement
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        ' Convert the result to the appropriate data type (e.g., Decimal, Double, etc.)
+
         Dim sum As Decimal = Convert.ToDecimal(lbl_balance.Text)
-        ' Format the sum with a peso sign, commas for thousands, and two decimal places
+
         Dim formattedSum As String = String.Format("{0:#,##0.00}", sum)
 
-        ' Convert the result to the appropriate data type (e.g., Decimal, Double, etc.)
+
         Dim sum1 As Decimal = Convert.ToDecimal(lbl_amountSettle.Text)
-        ' Format the sum with a peso sign, commas for thousands, and two decimal places
+
         Dim AmountToSettle As String = String.Format("{0:#,##0.00}", sum1)
 
 

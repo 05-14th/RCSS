@@ -187,9 +187,10 @@ Public Class frm_remDecide
 
             Try
                 cn.Open()
-                cm = New MySqlCommand("UPDATE rcss_remar SET remar_rmtstatus = @remar_rmtstatus WHERE remar_transid = '" & tb_transID.Text & "'", cn)
+                cm = New MySqlCommand("UPDATE rcss_remar SET remar_rmtstatus = @remar_rmtstatus, remar_status = @remar_status WHERE remar_transid = '" & tb_transID.Text & "'", cn)
 
                 cm.Parameters.AddWithValue("@remar_rmtstatus", "Approved")
+                cm.Parameters.AddWithValue("@remar_status", "Uncollected")
                 cm.ExecuteNonQuery()
                 cn.Close()
 

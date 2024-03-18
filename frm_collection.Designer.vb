@@ -23,27 +23,19 @@ Partial Class frm_collection
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btn_ColPrint = New System.Windows.Forms.Button()
         Me.LL_Refresh = New System.Windows.Forms.LinkLabel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -53,6 +45,20 @@ Partial Class frm_collection
         Me.LL_Processing = New System.Windows.Forms.LinkLabel()
         Me.btnNew = New System.Windows.Forms.LinkLabel()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.btn_print = New System.Windows.Forms.Button()
+        Me.Column20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_code = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPrint = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,16 +140,16 @@ Partial Class frm_collection
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.Column2, Me.Column3, Me.Column5, Me.Column8, Me.Column6, Me.Column9, Me.Column1, Me.Column7})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column20, Me.Column4, Me.col_code, Me.Column10, Me.Column3, Me.Column5, Me.Column8, Me.Column6, Me.Column9, Me.Column11, Me.Column1, Me.Column7, Me.colPrint})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Gray
@@ -154,78 +160,6 @@ Partial Class frm_collection
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1280, 503)
         Me.DataGridView1.TabIndex = 70
-        '
-        'Column20
-        '
-        Me.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Column20.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column20.HeaderText = "      #"
-        Me.Column20.Name = "Column20"
-        Me.Column20.Width = 54
-        '
-        'Column4
-        '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column4.HeaderText = "STATUS"
-        Me.Column4.Name = "Column4"
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.FillWeight = 150.0!
-        Me.Column2.HeaderText = "COLLECTION CODE"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 129
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column3.FillWeight = 150.0!
-        Me.Column3.HeaderText = "TRANSACTION NUMBER"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 155
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column5.FillWeight = 150.0!
-        Me.Column5.HeaderText = "MANIFESTO REFERENCE NUMBER"
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 205
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "AR DATE"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 73
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.FillWeight = 150.0!
-        Me.Column6.HeaderText = "DELIVERY RECEIPT #"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 134
-        '
-        'Column9
-        '
-        Me.Column9.HeaderText = "AR AMOUNT"
-        Me.Column9.Name = "Column9"
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column1.HeaderText = "CUSTOMER"
-        Me.Column1.Name = "Column1"
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Column7.HeaderText = "ADDRESS"
-        Me.Column7.Name = "Column7"
         '
         'Panel4
         '
@@ -239,6 +173,7 @@ Partial Class frm_collection
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.btn_ColPrint)
         Me.Panel2.Controls.Add(Me.LL_Refresh)
         Me.Panel2.Controls.Add(Me.Panel7)
         Me.Panel2.Controls.Add(Me.Panel6)
@@ -252,6 +187,25 @@ Partial Class frm_collection
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1280, 36)
         Me.Panel2.TabIndex = 73
+        '
+        'btn_ColPrint
+        '
+        Me.btn_ColPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_ColPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btn_ColPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_ColPrint.FlatAppearance.BorderSize = 0
+        Me.btn_ColPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_ColPrint.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ColPrint.ForeColor = System.Drawing.Color.White
+        Me.btn_ColPrint.Image = Global.RCSS.My.Resources.Resources.printer
+        Me.btn_ColPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_ColPrint.Location = New System.Drawing.Point(1202, 5)
+        Me.btn_ColPrint.Name = "btn_ColPrint"
+        Me.btn_ColPrint.Size = New System.Drawing.Size(72, 27)
+        Me.btn_ColPrint.TabIndex = 193
+        Me.btn_ColPrint.Text = "PRINT"
+        Me.btn_ColPrint.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_ColPrint.UseVisualStyleBackColor = False
         '
         'LL_Refresh
         '
@@ -307,7 +261,7 @@ Partial Class frm_collection
         '
         '
         Me.tb_search.CustomButton.Image = Nothing
-        Me.tb_search.CustomButton.Location = New System.Drawing.Point(250, 1)
+        Me.tb_search.CustomButton.Location = New System.Drawing.Point(246, 1)
         Me.tb_search.CustomButton.Name = ""
         Me.tb_search.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.tb_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -318,7 +272,7 @@ Partial Class frm_collection
         Me.tb_search.DisplayIcon = True
         Me.tb_search.Icon = Global.RCSS.My.Resources.Resources.search16
         Me.tb_search.Lines = New String(-1) {}
-        Me.tb_search.Location = New System.Drawing.Point(1002, 6)
+        Me.tb_search.Location = New System.Drawing.Point(925, 6)
         Me.tb_search.MaxLength = 32767
         Me.tb_search.Name = "tb_search"
         Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -328,7 +282,7 @@ Partial Class frm_collection
         Me.tb_search.SelectionLength = 0
         Me.tb_search.SelectionStart = 0
         Me.tb_search.ShortcutsEnabled = True
-        Me.tb_search.Size = New System.Drawing.Size(274, 25)
+        Me.tb_search.Size = New System.Drawing.Size(270, 25)
         Me.tb_search.TabIndex = 183
         Me.tb_search.UseSelectable = True
         Me.tb_search.WaterMark = "Search collection ID here"
@@ -412,6 +366,127 @@ Partial Class frm_collection
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "SEE DETAILS"
         '
+        'btn_print
+        '
+        Me.btn_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_print.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.btn_print.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_print.FlatAppearance.BorderSize = 0
+        Me.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_print.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_print.ForeColor = System.Drawing.Color.White
+        Me.btn_print.Image = Global.RCSS.My.Resources.Resources.printer
+        Me.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_print.Location = New System.Drawing.Point(66, 6)
+        Me.btn_print.Name = "btn_print"
+        Me.btn_print.Size = New System.Drawing.Size(100, 100)
+        Me.btn_print.TabIndex = 192
+        Me.btn_print.Text = "PRINT"
+        Me.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_print.UseVisualStyleBackColor = False
+        '
+        'Column20
+        '
+        Me.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Column20.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column20.HeaderText = "      #"
+        Me.Column20.Name = "Column20"
+        Me.Column20.Width = 54
+        '
+        'Column4
+        '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column4.HeaderText = "STATUS"
+        Me.Column4.Name = "Column4"
+        '
+        'col_code
+        '
+        Me.col_code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.col_code.FillWeight = 150.0!
+        Me.col_code.HeaderText = "COLLECTION CODE"
+        Me.col_code.Name = "col_code"
+        Me.col_code.Width = 129
+        '
+        'Column10
+        '
+        Me.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column10.HeaderText = "TO BE COLLECTED BY"
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 139
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.FillWeight = 150.0!
+        Me.Column3.HeaderText = "TRANSACTION NUMBER"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 155
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column5.FillWeight = 150.0!
+        Me.Column5.HeaderText = "MANIFESTO REFERENCE NUMBER"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 205
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "AR DATE"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 73
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.FillWeight = 150.0!
+        Me.Column6.HeaderText = "DELIVERY RECEIPT #"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 134
+        '
+        'Column9
+        '
+        Me.Column9.HeaderText = "AR AMOUNT"
+        Me.Column9.Name = "Column9"
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = "BALANCE"
+        Me.Column11.Name = "Column11"
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column1.HeaderText = "CUSTOMER"
+        Me.Column1.Name = "Column1"
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Column7.HeaderText = "ADDRESS"
+        Me.Column7.Name = "Column7"
+        '
+        'colPrint
+        '
+        Me.colPrint.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.colPrint.DefaultCellStyle = DataGridViewCellStyle4
+        Me.colPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.colPrint.HeaderText = ""
+        Me.colPrint.Name = "colPrint"
+        Me.colPrint.Text = "PRINT"
+        Me.colPrint.ToolTipText = "PRINT"
+        Me.colPrint.UseColumnTextForButtonValue = True
+        Me.colPrint.Visible = False
+        Me.colPrint.Width = 5
+        '
         'frm_collection
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -456,14 +531,19 @@ Partial Class frm_collection
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel7 As Panel
     Friend WithEvents LL_Refresh As LinkLabel
+    Friend WithEvents btn_ColPrint As Button
+    Friend WithEvents btn_print As Button
     Friend WithEvents Column20 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents col_code As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents colPrint As DataGridViewButtonColumn
 End Class

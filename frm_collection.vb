@@ -23,7 +23,7 @@ Public Class frm_collection
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("remar_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("remar_date").ToString, dr.Item("col_invoice").ToString, String.Format("{0:N2}", dr.Item("remar_amount")), dr.Item("cus_name").ToString, dr.Item("cus_address").ToString)
+                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_assignedTo").ToString, dr.Item("remar_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("remar_date").ToString, dr.Item("col_invoice").ToString, String.Format("{0:N2}", dr.Item("remar_amount")), String.Format("{0:N2}", dr.Item("col_balance")), dr.Item("cus_name").ToString, dr.Item("cus_address").ToString)
 
             End While
             dr.Close()
@@ -100,7 +100,7 @@ Public Class frm_collection
             While dr.Read
                 i += 1
                 'DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_transid").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString, dr.Item("col_refnum").ToString, dr.Item("col_invoice").ToString)
-                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("remar_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("remar_date").ToString, dr.Item("col_invoice").ToString, dr.Item("remar_amount").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString)
+                DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_assignedTo").ToString, dr.Item("remar_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("remar_date").ToString, dr.Item("col_invoice").ToString, String.Format("{0:N2}", dr.Item("remar_amount")), String.Format("{0:N2}", dr.Item("col_balance")), dr.Item("cus_name").ToString, dr.Item("cus_address").ToString)
 
             End While
             dr.Close()
@@ -143,7 +143,7 @@ Public Class frm_collection
                 dr = cm.ExecuteReader
                 While dr.Read
                     i += 1
-                    DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("remar_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("remar_date").ToString, dr.Item("col_invoice").ToString, dr.Item("col_balance").ToString, dr.Item("cus_name").ToString, dr.Item("cus_address").ToString)
+                    DataGridView1.Rows.Add(i, dr.Item("col_remar_status").ToString, dr.Item("col_idno").ToString, dr.Item("col_assignedTo").ToString, dr.Item("remar_transid").ToString, dr.Item("col_refnum").ToString, dr.Item("remar_date").ToString, dr.Item("col_invoice").ToString, String.Format("{0:N2}", dr.Item("remar_amount")), String.Format("{0:N2}", dr.Item("col_balance")), dr.Item("cus_name").ToString, dr.Item("cus_address").ToString)
 
                 End While
                 dr.Close()
@@ -165,6 +165,31 @@ Public Class frm_collection
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Try
+            Dim colname As String = DataGridView1.Columns(e.ColumnIndex).Name
+            If colname = "col_code" Then
 
+                tb_search.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+    End Sub
+
+    Private Sub btn_ColPrint_Click(sender As Object, e As EventArgs) Handles btn_ColPrint.Click
+
+        Try
+            With frm_collectionPrint
+                .TopLevel = True
+                .tb_PrintcollectionID.Text = tb_search.Text
+                .BringToFront()
+                .Show()
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, vbCritical)
+            cn.Close()
+        End Try
     End Sub
 End Class

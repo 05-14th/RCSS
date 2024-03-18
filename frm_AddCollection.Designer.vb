@@ -30,6 +30,8 @@ Partial Class frm_AddCollection
         Me.lbl_addRemittance = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -52,6 +54,7 @@ Partial Class frm_AddCollection
         Me.customerID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalAR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tb_assignedTo = New System.Windows.Forms.TextBox()
         Me.tb_search = New MetroFramework.Controls.MetroTextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -97,6 +100,9 @@ Partial Class frm_AddCollection
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.tb_assignedTo)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Controls.Add(Me.ComboBox1)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Panel3)
@@ -109,6 +115,26 @@ Partial Class frm_AddCollection
         Me.Panel2.Size = New System.Drawing.Size(1074, 36)
         Me.Panel2.TabIndex = 77
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(629, 12)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(49, 15)
+        Me.Label4.TabIndex = 191
+        Me.Label4.Text = "Filter by"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Panel5.Location = New System.Drawing.Point(618, 6)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1, 25)
+        Me.Panel5.TabIndex = 190
+        '
         'ComboBox1
         '
         Me.ComboBox1.BackColor = System.Drawing.Color.White
@@ -118,9 +144,9 @@ Partial Class frm_AddCollection
         Me.ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"AR STATUS", "VAN / AREA", "DUE DATE", "CUSTOMER"})
-        Me.ComboBox1.Location = New System.Drawing.Point(342, 7)
+        Me.ComboBox1.Location = New System.Drawing.Point(684, 7)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(188, 23)
+        Me.ComboBox1.Size = New System.Drawing.Size(137, 23)
         Me.ComboBox1.TabIndex = 189
         '
         'Label3
@@ -128,17 +154,17 @@ Partial Class frm_AddCollection
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(287, 11)
+        Me.Label3.Location = New System.Drawing.Point(284, 11)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(49, 15)
+        Me.Label3.Size = New System.Drawing.Size(108, 15)
         Me.Label3.TabIndex = 188
-        Me.Label3.Text = "Filter by"
+        Me.Label3.Text = "To be Collected by :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(268, 5)
+        Me.Panel3.Location = New System.Drawing.Point(274, 5)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1, 25)
         Me.Panel3.TabIndex = 187
@@ -149,7 +175,7 @@ Partial Class frm_AddCollection
         Me.tb_collectionID.Enabled = False
         Me.tb_collectionID.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_collectionID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.tb_collectionID.Location = New System.Drawing.Point(96, 7)
+        Me.tb_collectionID.Location = New System.Drawing.Point(104, 7)
         Me.tb_collectionID.Name = "tb_collectionID"
         Me.tb_collectionID.ReadOnly = True
         Me.tb_collectionID.Size = New System.Drawing.Size(151, 23)
@@ -372,6 +398,16 @@ Partial Class frm_AddCollection
         Me.TotalAR.ReadOnly = True
         Me.TotalAR.Width = 131
         '
+        'tb_assignedTo
+        '
+        Me.tb_assignedTo.BackColor = System.Drawing.Color.White
+        Me.tb_assignedTo.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_assignedTo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tb_assignedTo.Location = New System.Drawing.Point(398, 7)
+        Me.tb_assignedTo.Name = "tb_assignedTo"
+        Me.tb_assignedTo.Size = New System.Drawing.Size(207, 23)
+        Me.tb_assignedTo.TabIndex = 192
+        '
         'tb_search
         '
         Me.tb_search.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -380,7 +416,7 @@ Partial Class frm_AddCollection
         '
         '
         Me.tb_search.CustomButton.Image = Nothing
-        Me.tb_search.CustomButton.Location = New System.Drawing.Point(250, 1)
+        Me.tb_search.CustomButton.Location = New System.Drawing.Point(176, 1)
         Me.tb_search.CustomButton.Name = ""
         Me.tb_search.CustomButton.Size = New System.Drawing.Size(23, 23)
         Me.tb_search.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -391,7 +427,7 @@ Partial Class frm_AddCollection
         Me.tb_search.DisplayIcon = True
         Me.tb_search.Icon = Global.RCSS.My.Resources.Resources.search16
         Me.tb_search.Lines = New String(-1) {}
-        Me.tb_search.Location = New System.Drawing.Point(796, 6)
+        Me.tb_search.Location = New System.Drawing.Point(870, 6)
         Me.tb_search.MaxLength = 32767
         Me.tb_search.Name = "tb_search"
         Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -401,7 +437,7 @@ Partial Class frm_AddCollection
         Me.tb_search.SelectionLength = 0
         Me.tb_search.SelectionStart = 0
         Me.tb_search.ShortcutsEnabled = True
-        Me.tb_search.Size = New System.Drawing.Size(274, 25)
+        Me.tb_search.Size = New System.Drawing.Size(200, 25)
         Me.tb_search.TabIndex = 183
         Me.tb_search.UseSelectable = True
         Me.tb_search.WaterMark = "Search transaction #"
@@ -461,4 +497,7 @@ Partial Class frm_AddCollection
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents TotalAR As DataGridViewTextBoxColumn
     Friend WithEvents tb_search As MetroFramework.Controls.MetroTextBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents tb_assignedTo As TextBox
 End Class

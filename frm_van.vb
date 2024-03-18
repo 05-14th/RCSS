@@ -100,6 +100,11 @@ Public Class frm_van
                 End With
                 cn.Close()
 
+                tb_vanno.Clear()
+                tb_plateno.Clear()
+                tb_route.Clear()
+                tb_vanno.Focus()
+
                 LoadVan()
                 frm_AddRemittance.LoadVanList()
                 MessageBox.Show("Record successfully updated!", "RCSS", MessageBoxButtons.OK, MessageBoxIcon.Information)

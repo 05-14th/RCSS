@@ -79,7 +79,7 @@ Public Class frm_Login
             End With
 
             If found = True Then
-                MsgBox("WELCOME " & _fullname.ToUpper & " !", vbInformation)
+                MsgBox("WELCOME " & _fullname.ToUpper & " !" & vbLf & vbLf & " Psalm:31 Lord, Be My Rock of Safety ", vbInformation)
 
                 tb_username.Clear()
                 tb_password.Clear()

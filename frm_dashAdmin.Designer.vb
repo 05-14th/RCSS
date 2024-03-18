@@ -34,9 +34,9 @@ Partial Class frm_dashAdmin
         Me.COLLECTIONToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SETTLEMENTToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.REPORTSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ARMonitoringSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.REMITTANCERECORDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ARCollectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ARMonitoringSummaryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ColletionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SETTINGSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.USERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,6 +54,7 @@ Partial Class frm_dashAdmin
         Me.lbl_date = New System.Windows.Forms.Label()
         Me.lbl_time = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.panel_close = New System.Windows.Forms.Panel()
         Me.PanelDock = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -83,7 +84,6 @@ Partial Class frm_dashAdmin
         Me.Lbl_Btn_ForApproval = New System.Windows.Forms.Label()
         Me.pb_btn_forApproval = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.panel_close = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         CType(Me.pb_Home, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -201,6 +201,12 @@ Partial Class frm_dashAdmin
         Me.REPORTSToolStripMenuItem.Size = New System.Drawing.Size(111, 71)
         Me.REPORTSToolStripMenuItem.Text = "     &REPORTS     "
         '
+        'ARMonitoringSummaryToolStripMenuItem
+        '
+        Me.ARMonitoringSummaryToolStripMenuItem.Name = "ARMonitoringSummaryToolStripMenuItem"
+        Me.ARMonitoringSummaryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
+        Me.ARMonitoringSummaryToolStripMenuItem.Text = "AR MONITORING SUMMARY"
+        '
         'REMITTANCERECORDToolStripMenuItem
         '
         Me.REMITTANCERECORDToolStripMenuItem.Name = "REMITTANCERECORDToolStripMenuItem"
@@ -214,12 +220,6 @@ Partial Class frm_dashAdmin
         Me.ARCollectionToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
         Me.ARCollectionToolStripMenuItem.Text = "AR COLLECTION"
         Me.ARCollectionToolStripMenuItem.Visible = False
-        '
-        'ARMonitoringSummaryToolStripMenuItem
-        '
-        Me.ARMonitoringSummaryToolStripMenuItem.Name = "ARMonitoringSummaryToolStripMenuItem"
-        Me.ARMonitoringSummaryToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.ARMonitoringSummaryToolStripMenuItem.Text = "AR MONITORING SUMMARY"
         '
         'ColletionsToolStripMenuItem
         '
@@ -241,19 +241,19 @@ Partial Class frm_dashAdmin
         'USERToolStripMenuItem
         '
         Me.USERToolStripMenuItem.Name = "USERToolStripMenuItem"
-        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.USERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.USERToolStripMenuItem.Text = "USER"
         '
         'VANROUTEToolStripMenuItem
         '
         Me.VANROUTEToolStripMenuItem.Name = "VANROUTEToolStripMenuItem"
-        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VANROUTEToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.VANROUTEToolStripMenuItem.Text = "VAN / ROUTE"
         '
         'CUSTOMERToolStripMenuItem
         '
         Me.CUSTOMERToolStripMenuItem.Name = "CUSTOMERToolStripMenuItem"
-        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CUSTOMERToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
         Me.CUSTOMERToolStripMenuItem.Text = "CUSTOMER"
         '
         'LOGOUTToolStripMenuItem
@@ -404,6 +404,17 @@ Partial Class frm_dashAdmin
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1024, 604)
         Me.Panel5.TabIndex = 29
+        '
+        'panel_close
+        '
+        Me.panel_close.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.panel_close.Location = New System.Drawing.Point(11, 5)
+        Me.panel_close.Name = "panel_close"
+        Me.panel_close.Size = New System.Drawing.Size(1002, 599)
+        Me.panel_close.TabIndex = 6
+        Me.panel_close.Visible = False
         '
         'PanelDock
         '
@@ -769,17 +780,6 @@ Partial Class frm_dashAdmin
         '
         'Timer1
         '
-        '
-        'panel_close
-        '
-        Me.panel_close.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.panel_close.Location = New System.Drawing.Point(11, 5)
-        Me.panel_close.Name = "panel_close"
-        Me.panel_close.Size = New System.Drawing.Size(1002, 599)
-        Me.panel_close.TabIndex = 6
-        Me.panel_close.Visible = False
         '
         'frm_dashAdmin
         '

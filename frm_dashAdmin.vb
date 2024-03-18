@@ -318,4 +318,8 @@ Public Class frm_dashAdmin
         lbl_date.Text = (DateTime.Now.ToString("D")) & "        |"
 
     End Sub
+
+    Private Sub MENUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MENUToolStripMenuItem.Click
+
+    End Sub
 End Class

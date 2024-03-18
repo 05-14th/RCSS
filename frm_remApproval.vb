@@ -17,7 +17,7 @@ Public Class frm_remApproval
             dr = cm.ExecuteReader
             While dr.Read
                 i += 1
-                DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, Format(CDec(dr.Item("rmt_remsum").ToString), "###,###,##0.00"))
+                DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, String.Format("{0:N2}", dr.Item("rmt_remsum")))
 
             End While
             dr.Close()
@@ -82,23 +82,36 @@ Public Class frm_remApproval
                     dr = cm.ExecuteReader
                     While dr.Read
                         .tb_status.Text = dr.Item("rmt_status").ToString
-                        .tb_cash.Text = Format(CDec(dr.Item("remDB_cash").ToString), "###,###,##0.00")
-                        .tb_coins.Text = Format(CDec(dr.Item("remDB_coins").ToString), "###,###,##0.00")
-                        .tb_gcash.Text = Format(CDec(dr.Item("remDB_gcash").ToString), "###,###,##0.00")
-                        .tb_online.Text = Format(CDec(dr.Item("remDB_online").ToString), "###,###,##0.00")
-                        .tb_check.Text = Format(CDec(dr.Item("remDB_check").ToString), "###,###,##0.00")
-                        .tb_AR.Text = Format(CDec(dr.Item("remDB_AR").ToString), "###,###,##0.00")
-                        .tb_return.Text = Format(CDec(dr.Item("remDB_return").ToString), "###,###,##0.00")
-                        .tb_bo.Text = Format(CDec(dr.Item("remDB_bo").ToString), "###,###,##0.00")
-                        .tb_discount.Text = Format(CDec(dr.Item("remDB_discount").ToString), "###,###,##0.00")
-                        .tb_expenses.Text = Format(CDec(dr.Item("remDB_expenses").ToString), "###,###,##0.00")
-                        .tb_total.Text = Format(CDec(dr.Item("remDB_total").ToString), "###,###,##0.00")
+                        '.tb_cash.Text = Format(CDec(dr.Item("remDB_cash").ToString), "###,###,##0.00")
+                        .tb_cash.Text = String.Format("{0:N2}", dr.Item("remDB_cash"))
+                        '.tb_coins.Text = Format(CDec(dr.Item("remDB_coins").ToString), "###,###,##0.00")
+                        .tb_coins.Text = String.Format("{0:N2}", dr.Item("remDB_coins"))
+                        '.tb_gcash.Text = Format(CDec(dr.Item("remDB_gcash").ToString), "###,###,##0.00")
+                        .tb_gcash.Text = String.Format("{0:N2}", dr.Item("remDB_gcash"))
+                        '.tb_online.Text = Format(CDec(dr.Item("remDB_online").ToString), "###,###,##0.00")
+                        .tb_online.Text = String.Format("{0:N2}", dr.Item("remDB_online"))
+                        '.tb_check.Text = Format(CDec(dr.Item("remDB_check").ToString), "###,###,##0.00")
+                        .tb_check.Text = String.Format("{0:N2}", dr.Item("remDB_check"))
+                        '.tb_AR.Text = Format(CDec(dr.Item("remDB_AR").ToString), "###,###,##0.00")
+                        .tb_AR.Text = String.Format("{0:N2}", dr.Item("remDB_AR"))
+                        '.tb_return.Text = Format(CDec(dr.Item("remDB_return").ToString), "###,###,##0.00")
+                        .tb_return.Text = String.Format("{0:N2}", dr.Item("remDB_return"))
+                        '.tb_bo.Text = Format(CDec(dr.Item("remDB_bo").ToString), "###,###,##0.00")
+                        .tb_bo.Text = String.Format("{0:N2}", dr.Item("remDB_bo"))
+                        '.tb_discount.Text = Format(CDec(dr.Item("remDB_discount").ToString), "###,###,##0.00")
+                        .tb_discount.Text = String.Format("{0:N2}", dr.Item("remDB_discount"))
+                        '.tb_expenses.Text = Format(CDec(dr.Item("remDB_expenses").ToString), "###,###,##0.00")
+                        .tb_expenses.Text = String.Format("{0:N2}", dr.Item("remDB_expenses"))
+                        '.tb_total.Text = Format(CDec(dr.Item("remDB_total").ToString), "###,###,##0.00")
+                        .tb_total.Text = String.Format("{0:N2}", dr.Item("remDB_total"))
+
                         .tb_remarks.Text = dr.Item("rmt_remarks").ToString
                         .tb_comment.Text = dr.Item("rmt_comment").ToString
 
-                        .DataGridView1.Rows.Add(dr.Item("remref_references").ToString, Format(CDec(dr.Item("remref_amount").ToString)), "###,###,##0.00")
+                        '.DataGridView1.Rows.Add(dr.Item("remref_references").ToString, Format(CDec(dr.Item("remref_amount").ToString)), "###,###,##0.00")
+                        .DataGridView1.Rows.Add(dr.Item("remref_references").ToString, String.Format("{0:N2}", dr.Item("remref_amount")))
 
-                        .tb_refsum.Text = Format(CDec(dr.Item("remref_total").ToString), "###,###,##0.00")
+                        .tb_refsum.Text = String.Format("{0:N2}", dr.Item("remref_total"))
 
                     End While
                     dr.Close()
@@ -136,7 +149,7 @@ Public Class frm_remApproval
                 dr = cm.ExecuteReader
                 While dr.Read
                     i += 1
-                    DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, Format(CDec(dr.Item("rmt_remsum").ToString), "###,###,##0.00"))
+                    DataGridView1.Rows.Add(i, dr.Item("rmt_status").ToString, dr.Item("rmt_transid").ToString, dr.Item("rmt_vanno").ToString, dr.Item("rmt_date").ToString, dr.Item("rmt_salesman").ToString, dr.Item("rmt_custodian").ToString, String.Format("{0:N2}", dr.Item("rmt_remsum")))
 
                 End While
                 dr.Close()

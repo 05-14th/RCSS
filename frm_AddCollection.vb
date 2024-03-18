@@ -44,7 +44,7 @@ Public Class frm_AddCollection
             dr = cm.ExecuteReader
             While dr.Read
 
-                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_cusID").ToString, dr.Item("cus_name").ToString, Format(CDec(dr.Item("remar_amount").ToString), "###,###,##0.00"))
+                DataGridView2.Rows.Add(0, dr.Item("remar_status").ToString, dr.Item("rmt_vanno").ToString, dr.Item("remar_transid").ToString, dr.Item("remar_date").ToString, dr.Item("remar_refnum").ToString, dr.Item("remar_invoice").ToString, dr.Item("remar_cusID").ToString, dr.Item("cus_name").ToString, String.Format("{0:N2}", dr.Item("remar_amount")))
 
             End While
             dr.Close()
@@ -130,66 +130,91 @@ Public Class frm_AddCollection
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Try
-            If MsgBox("Do you want to save this selection?", vbYesNo + vbQuestion) = vbYes Then
+            If String.IsNullOrEmpty(tb_assignedTo.Text) Then
+                MessageBox.Show("This collection is assigned to whom?", "RCSS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Else
+
+
 
                 For Each row As DataGridViewRow In DataGridView2.Rows
                     Dim isSelected As Boolean = Convert.ToBoolean(row.Cells("cb_column").Value)
                     Dim currentDate As String = Date.Now.ToString("MM/dd/yyyy")
                     If isSelected = True Then
-                        'SAVE TO COLLECTION
-                        cn.Open()
-                        'cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_cusID)", cn)
-                        cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_refnum, col_invoice, col_cusID, col_balance, col_collectiondate) values(@col_remar_status, @col_idno, @col_refnum, @col_invoice, @col_cusID, @col_balance, @col_collectiondate)", cn)
-                        cm.Parameters.AddWithValue("@col_remar_status", "Processing")
-                        cm.Parameters.AddWithValue("@col_idno", tb_collectionID.Text)
-                        cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
-                        cm.Parameters.AddWithValue("@col_refnum", row.Cells(5).Value.ToString())
-                        cm.Parameters.AddWithValue("@col_invoice", row.Cells(6).Value.ToString())
-                        cm.Parameters.AddWithValue("@col_cusID", row.Cells(7).Value.ToString())
-                        cm.Parameters.AddWithValue("@col_balance", row.Cells(9).Value.ToString())
-                        cm.Parameters.AddWithValue("@col_collectiondate", currentDate)
-                        cm.ExecuteNonQuery()
-                        cn.Close()
+                        If MsgBox("Do you want to save this selection?", vbYesNo + vbQuestion) = vbYes Then
+                            'SAVE TO COLLECTION
+                            cn.Open()
+                            'cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_transid, col_refnum, col_invoice, col_cusID) values(@col_remar_status, @col_idno, @col_transid, @col_refnum, @col_invoice, @col_cusID)", cn)
+                            cm = New MySqlCommand("INSERT INTO rcss_collection (col_remar_status, col_idno, col_assignedTo, col_refnum, col_invoice, col_cusID, col_balance, col_collectiondate) values(@col_remar_status, @col_idno, @col_assignedTo, @col_refnum, @col_invoice, @col_cusID, @col_balance, @col_collectiondate)", cn)
+                            cm.Parameters.AddWithValue("@col_remar_status", "Processing")
+                            cm.Parameters.AddWithValue("@col_idno", tb_collectionID.Text)
+                            cm.Parameters.AddWithValue("@col_assignedTo", tb_assignedTo.Text)
+                            cm.Parameters.AddWithValue("@col_transid", row.Cells(3).Value.ToString())
+                            cm.Parameters.AddWithValue("@col_refnum", row.Cells(5).Value.ToString())
+                            cm.Parameters.AddWithValue("@col_invoice", row.Cells(6).Value.ToString())
+                            cm.Parameters.AddWithValue("@col_cusID", row.Cells(7).Value.ToString())
+                            cm.Parameters.AddWithValue("@col_balance", row.Cells(9).Value.ToString())
+                            cm.Parameters.AddWithValue("@col_collectiondate", currentDate)
+                            cm.ExecuteNonQuery()
+                            cn.Close()
 
-                        'UPDATE FOR AR DETAILS
+                            'UPDATE FOR AR DETAILS
 
-                        cn.Open()
-                        cm = New MySqlCommand("UPDATE rcss_remar SET remar_status=@remar_status WHERE remar_transid=@remar_transid AND remar_invoice=@remar_invoice", cn)
+                            cn.Open()
+                            cm = New MySqlCommand("UPDATE rcss_remar SET remar_status=@remar_status WHERE remar_transid=@remar_transid AND remar_invoice=@remar_invoice", cn)
 
-                        cm.Parameters.AddWithValue("@remar_status", "Processing")
-                        cm.Parameters.AddWithValue("@remar_transid", row.Cells(3).Value.ToString)
-                        cm.Parameters.AddWithValue("@remar_invoice", row.Cells(6).Value.ToString)
-                        cm.ExecuteNonQuery()
-                        cn.Close()
+                            cm.Parameters.AddWithValue("@remar_status", "Processing")
+                            cm.Parameters.AddWithValue("@remar_transid", row.Cells(3).Value.ToString)
+                            cm.Parameters.AddWithValue("@remar_invoice", row.Cells(6).Value.ToString)
+                            cm.ExecuteNonQuery()
+                            cn.Close()
 
-                        'SAVE TO COLLECTION ID
+                            'SAVE TO COLLECTION ID
 
-                        cn.Open()
-                        cm = New MySqlCommand("INSERT INTO rcss_collectionid (collection_number, collection_TOTAL) values(@collection_number, @collection_TOTAL)", cn)
-                        cm.Parameters.AddWithValue("@collection_number", tb_collectionID.Text)
-                        cm.Parameters.AddWithValue("@collection_TOTAL", CDec(lbl_TotalAR.Text))
+                            cn.Open()
+                            cm = New MySqlCommand("INSERT INTO rcss_collectionid (collection_number, collection_TOTAL) values(@collection_number, @collection_TOTAL)", cn)
+                            cm.Parameters.AddWithValue("@collection_number", tb_collectionID.Text)
+                            cm.Parameters.AddWithValue("@collection_TOTAL", CDec(lbl_TotalAR.Text))
 
-                        cm.ExecuteNonQuery()
-                        cn.Close()
+                            cm.ExecuteNonQuery()
+                            cn.Close()
 
-                        'END SAVE TO COLLECTION ID
+                            'END SAVE TO COLLECTION ID
 
-                        LoadAR()
-                        RANDID()
-                        frm_collection.LoadCol()
-                        countcheck = 0
-                        lbl_TotalAR.Text = "0.00"
-                        lblCount.Text = "(" & countcheck & ") record selected"
+                            LoadAR()
+                            RANDID()
+                            frm_collection.LoadCol()
+                            countcheck = 0
+                            lbl_TotalAR.Text = "0.00"
+                            lblCount.Text = "(" & countcheck & ") record selected"
 
-                        frm_collection.Countuncollected()
-                        frm_collection.CountProcessing()
-                        frm_collection.CountCollected()
+                            frm_collection.Countuncollected()
+                            frm_collection.CountProcessing()
+                            frm_collection.CountCollected()
 
+                            tb_assignedTo.Clear()
+
+                            With frm_collectionPrint
+                                .TopLevel = True
+                                .tb_PrintcollectionID.Text = tb_collectionID.Text
+                                .BringToFront()
+                                .ShowDialog()
+                            End With
+
+                            Me.Dispose()
+
+
+                        ElseIf isSelected = False Then
+
+                            MessageBox.Show("There is no item selected.", "RCSS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+                        End If
                     End If
-
                 Next
 
             End If
+
+
+
         Catch ex As Exception
             MsgBox(ex.Message)
             cn.Close()

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetPrintCollection" targetNamespace="http://tempuri.org/DataSetPrintCollection.xsd" xmlns:mstns="http://tempuri.org/DataSetPrintCollection.xsd" xmlns="http://tempuri.org/DataSetPrintCollection.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetPrintCollection" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetPrintCollection" msprop:Generator_UserDSName="DataSetPrintCollection">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DSCollection" msprop:Generator_TableClassName="DSCollectionDataTable" msprop:Generator_TableVarName="tableDSCollection" msprop:Generator_TablePropName="DSCollection" msprop:Generator_RowDeletingName="DSCollectionRowDeleting" msprop:Generator_RowChangingName="DSCollectionRowChanging" msprop:Generator_RowEvHandlerName="DSCollectionRowChangeEventHandler" msprop:Generator_RowDeletedName="DSCollectionRowDeleted" msprop:Generator_UserTableName="DSCollection" msprop:Generator_RowChangedName="DSCollectionRowChanged" msprop:Generator_RowEvArgName="DSCollectionRowChangeEvent" msprop:Generator_RowClassName="DSCollectionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="col_remar_status" msprop:Generator_ColumnVarNameInTable="columncol_remar_status" msprop:Generator_ColumnPropNameInRow="col_remar_status" msprop:Generator_ColumnPropNameInTable="col_remar_statusColumn" msprop:Generator_UserColumnName="col_remar_status" type="xs:string" minOccurs="0" />
+              <xs:element name="col_idno" msprop:Generator_ColumnVarNameInTable="columncol_idno" msprop:Generator_ColumnPropNameInRow="col_idno" msprop:Generator_ColumnPropNameInTable="col_idnoColumn" msprop:Generator_UserColumnName="col_idno" type="xs:string" minOccurs="0" />
+              <xs:element name="col_assignedTo" msprop:Generator_ColumnVarNameInTable="columncol_assignedTo" msprop:Generator_ColumnPropNameInRow="col_assignedTo" msprop:Generator_ColumnPropNameInTable="col_assignedToColumn" msprop:Generator_UserColumnName="col_assignedTo" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_transid" msprop:Generator_ColumnVarNameInTable="columnremar_transid" msprop:Generator_ColumnPropNameInRow="remar_transid" msprop:Generator_ColumnPropNameInTable="remar_transidColumn" msprop:Generator_UserColumnName="remar_transid" type="xs:string" minOccurs="0" />
+              <xs:element name="col_refnum" msprop:Generator_ColumnVarNameInTable="columncol_refnum" msprop:Generator_ColumnPropNameInRow="col_refnum" msprop:Generator_ColumnPropNameInTable="col_refnumColumn" msprop:Generator_UserColumnName="col_refnum" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_date" msprop:Generator_ColumnVarNameInTable="columnremar_date" msprop:Generator_ColumnPropNameInRow="remar_date" msprop:Generator_ColumnPropNameInTable="remar_dateColumn" msprop:Generator_UserColumnName="remar_date" type="xs:string" minOccurs="0" />
+              <xs:element name="col_invoice" msprop:Generator_ColumnVarNameInTable="columncol_invoice" msprop:Generator_ColumnPropNameInRow="col_invoice" msprop:Generator_ColumnPropNameInTable="col_invoiceColumn" msprop:Generator_UserColumnName="col_invoice" type="xs:string" minOccurs="0" />
+              <xs:element name="remar_amount" msprop:Generator_ColumnVarNameInTable="columnremar_amount" msprop:Generator_ColumnPropNameInRow="remar_amount" msprop:Generator_ColumnPropNameInTable="remar_amountColumn" msprop:Generator_UserColumnName="remar_amount" type="xs:string" minOccurs="0" />
+              <xs:element name="cus_name" msprop:Generator_ColumnVarNameInTable="columncus_name" msprop:Generator_ColumnPropNameInRow="cus_name" msprop:Generator_ColumnPropNameInTable="cus_nameColumn" msprop:Generator_UserColumnName="cus_name" type="xs:string" minOccurs="0" />
+              <xs:element name="cus_address" msprop:Generator_ColumnVarNameInTable="columncus_address" msprop:Generator_ColumnPropNameInRow="cus_address" msprop:Generator_ColumnPropNameInTable="cus_addressColumn" msprop:Generator_UserColumnName="cus_address" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
