@@ -117,4 +117,11 @@ Public Class frm_CustomerLog
     Private Sub search_LostFocus(sender As Object, e As EventArgs) Handles search.LostFocus
         search.Text = "Search Transaction #"
     End Sub
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class
