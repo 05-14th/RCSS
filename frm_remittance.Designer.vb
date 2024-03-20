@@ -37,10 +37,18 @@ Partial Class frm_remittance
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.LL_forIHApproval = New System.Windows.Forms.LinkLabel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.LL_ViewAll = New System.Windows.Forms.LinkLabel()
         Me.Divider4 = New System.Windows.Forms.Panel()
@@ -75,6 +83,17 @@ Partial Class frm_remittance
         Me.Column19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colUpdate = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewImageColumn2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.lblCount = New System.Windows.Forms.Label()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
@@ -82,6 +101,7 @@ Partial Class frm_remittance
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -123,6 +143,9 @@ Partial Class frm_remittance
         '
         'Panel2
         '
+        Me.Panel2.AutoScroll = True
+        Me.Panel2.Controls.Add(Me.Panel6)
+        Me.Panel2.Controls.Add(Me.LL_forIHApproval)
         Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Controls.Add(Me.LL_ViewAll)
         Me.Panel2.Controls.Add(Me.Divider4)
@@ -138,13 +161,44 @@ Partial Class frm_remittance
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 35)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1024, 36)
+        Me.Panel2.Size = New System.Drawing.Size(1024, 58)
         Me.Panel2.TabIndex = 69
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.DimGray
+        Me.Panel6.Location = New System.Drawing.Point(644, 10)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1, 20)
+        Me.Panel6.TabIndex = 183
+        '
+        'LL_forIHApproval
+        '
+        Me.LL_forIHApproval.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_forIHApproval.AutoSize = True
+        Me.LL_forIHApproval.BackColor = System.Drawing.Color.White
+        Me.LL_forIHApproval.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LL_forIHApproval.DisabledLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_forIHApproval.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LL_forIHApproval.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(197, Byte), Integer))
+        Me.LL_forIHApproval.Image = Global.RCSS.My.Resources.Resources.checking16
+        Me.LL_forIHApproval.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_forIHApproval.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.LL_forIHApproval.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.LL_forIHApproval.Location = New System.Drawing.Point(430, 13)
+        Me.LL_forIHApproval.Name = "LL_forIHApproval"
+        Me.LL_forIHApproval.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
+        Me.LL_forIHApproval.Size = New System.Drawing.Size(200, 15)
+        Me.LL_forIHApproval.TabIndex = 184
+        Me.LL_forIHApproval.TabStop = True
+        Me.LL_forIHApproval.Text = "In-house Approval/Checking (0)"
+        Me.LL_forIHApproval.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LL_forIHApproval.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.DimGray
-        Me.Panel5.Location = New System.Drawing.Point(856, 8)
+        Me.Panel5.Location = New System.Drawing.Point(1111, 10)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1, 20)
         Me.Panel5.TabIndex = 184
@@ -162,7 +216,7 @@ Partial Class frm_remittance
         Me.LL_ViewAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_ViewAll.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LL_ViewAll.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_ViewAll.Location = New System.Drawing.Point(870, 11)
+        Me.LL_ViewAll.Location = New System.Drawing.Point(1126, 13)
         Me.LL_ViewAll.Name = "LL_ViewAll"
         Me.LL_ViewAll.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LL_ViewAll.Size = New System.Drawing.Size(89, 15)
@@ -175,7 +229,7 @@ Partial Class frm_remittance
         'Divider4
         '
         Me.Divider4.BackColor = System.Drawing.Color.DimGray
-        Me.Divider4.Location = New System.Drawing.Point(731, 8)
+        Me.Divider4.Location = New System.Drawing.Point(985, 10)
         Me.Divider4.Name = "Divider4"
         Me.Divider4.Size = New System.Drawing.Size(1, 20)
         Me.Divider4.TabIndex = 74
@@ -183,7 +237,7 @@ Partial Class frm_remittance
         'Divider3
         '
         Me.Divider3.BackColor = System.Drawing.Color.DimGray
-        Me.Divider3.Location = New System.Drawing.Point(594, 8)
+        Me.Divider3.Location = New System.Drawing.Point(843, 10)
         Me.Divider3.Name = "Divider3"
         Me.Divider3.Size = New System.Drawing.Size(1, 20)
         Me.Divider3.TabIndex = 73
@@ -191,7 +245,7 @@ Partial Class frm_remittance
         'Divider2
         '
         Me.Divider2.BackColor = System.Drawing.Color.DimGray
-        Me.Divider2.Location = New System.Drawing.Point(401, 8)
+        Me.Divider2.Location = New System.Drawing.Point(415, 10)
         Me.Divider2.Name = "Divider2"
         Me.Divider2.Size = New System.Drawing.Size(1, 20)
         Me.Divider2.TabIndex = 72
@@ -199,7 +253,7 @@ Partial Class frm_remittance
         'Divider1
         '
         Me.Divider1.BackColor = System.Drawing.Color.DimGray
-        Me.Divider1.Location = New System.Drawing.Point(227, 8)
+        Me.Divider1.Location = New System.Drawing.Point(235, 10)
         Me.Divider1.Name = "Divider1"
         Me.Divider1.Size = New System.Drawing.Size(1, 20)
         Me.Divider1.TabIndex = 71
@@ -222,7 +276,7 @@ Partial Class frm_remittance
         Me.tb_search.DisplayIcon = True
         Me.tb_search.Icon = Global.RCSS.My.Resources.Resources.search16
         Me.tb_search.Lines = New String(-1) {}
-        Me.tb_search.Location = New System.Drawing.Point(848, 6)
+        Me.tb_search.Location = New System.Drawing.Point(1155, 6)
         Me.tb_search.MaxLength = 32767
         Me.tb_search.Name = "tb_search"
         Me.tb_search.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -253,7 +307,7 @@ Partial Class frm_remittance
         Me.LL_approved.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_approved.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LL_approved.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_approved.Location = New System.Drawing.Point(745, 11)
+        Me.LL_approved.Location = New System.Drawing.Point(1000, 13)
         Me.LL_approved.Name = "LL_approved"
         Me.LL_approved.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LL_approved.Size = New System.Drawing.Size(97, 15)
@@ -276,7 +330,7 @@ Partial Class frm_remittance
         Me.LL_revise.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_revise.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LL_revise.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_revise.Location = New System.Drawing.Point(608, 11)
+        Me.LL_revise.Location = New System.Drawing.Point(858, 13)
         Me.LL_revise.Name = "LL_revise"
         Me.LL_revise.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LL_revise.Size = New System.Drawing.Size(113, 15)
@@ -299,7 +353,7 @@ Partial Class frm_remittance
         Me.LL_forApproval.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.LL_forApproval.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LL_forApproval.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LL_forApproval.Location = New System.Drawing.Point(414, 11)
+        Me.LL_forApproval.Location = New System.Drawing.Point(659, 13)
         Me.LL_forApproval.Name = "LL_forApproval"
         Me.LL_forApproval.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.LL_forApproval.Size = New System.Drawing.Size(170, 15)
@@ -322,7 +376,7 @@ Partial Class frm_remittance
         Me.btn_inhouse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_inhouse.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.btn_inhouse.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btn_inhouse.Location = New System.Drawing.Point(240, 11)
+        Me.btn_inhouse.Location = New System.Drawing.Point(250, 13)
         Me.btn_inhouse.Name = "btn_inhouse"
         Me.btn_inhouse.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.btn_inhouse.Size = New System.Drawing.Size(151, 15)
@@ -345,7 +399,7 @@ Partial Class frm_remittance
         Me.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNew.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.btnNew.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btnNew.Location = New System.Drawing.Point(16, 11)
+        Me.btnNew.Location = New System.Drawing.Point(16, 13)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.btnNew.Size = New System.Drawing.Size(205, 15)
@@ -389,7 +443,7 @@ Partial Class frm_remittance
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1024, 503)
+        Me.DataGridView1.Size = New System.Drawing.Size(1024, 445)
         Me.DataGridView1.TabIndex = 70
         '
         'Column20
@@ -566,18 +620,139 @@ Partial Class frm_remittance
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.DataGridView1)
+        Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(0, 71)
+        Me.Panel3.Location = New System.Drawing.Point(0, 93)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1024, 503)
+        Me.Panel3.Size = New System.Drawing.Size(1024, 445)
         Me.Panel3.TabIndex = 71
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
+        Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
+        Me.DataGridView2.ColumnHeadersHeight = 28
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn19, Me.DataGridViewImageColumn2})
+        Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle21
+        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView2.EnableHeadersVisualStyles = False
+        Me.DataGridView2.GridColor = System.Drawing.Color.Gray
+        Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersVisible = False
+        Me.DataGridView2.RowTemplate.Height = 30
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView2.Size = New System.Drawing.Size(1024, 445)
+        Me.DataGridView2.TabIndex = 71
+        Me.DataGridView2.Visible = False
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle17
+        Me.DataGridViewTextBoxColumn1.HeaderText = "#"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 36
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridViewTextBoxColumn2.DefaultCellStyle = DataGridViewCellStyle18
+        Me.DataGridViewTextBoxColumn2.HeaderText = "STATUS"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn3.FillWeight = 150.0!
+        Me.DataGridViewTextBoxColumn3.HeaderText = "TRANSACTION NO."
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic
+        Me.DataGridViewTextBoxColumn3.Width = 128
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn5.FillWeight = 150.0!
+        Me.DataGridViewTextBoxColumn5.HeaderText = "DATE"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.Width = 56
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.FillWeight = 150.0!
+        Me.DataGridViewTextBoxColumn6.HeaderText = "ORDERED BY"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.Width = 120
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.FillWeight = 150.0!
+        Me.DataGridViewTextBoxColumn7.HeaderText = "ITEM"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.Width = 120
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle19.Format = "N2"
+        DataGridViewCellStyle19.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle19
+        Me.DataGridViewTextBoxColumn8.HeaderText = "PRICE"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.Width = 61
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle20
+        Me.DataGridViewTextBoxColumn9.HeaderText = "QTY"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Width = 51
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn19.HeaderText = "REMARKS"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        '
+        'DataGridViewImageColumn2
+        '
+        Me.DataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewImageColumn2.HeaderText = ""
+        Me.DataGridViewImageColumn2.Image = Global.RCSS.My.Resources.Resources.edit16
+        Me.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2"
+        Me.DataGridViewImageColumn2.ToolTipText = "SEE DETAILS"
+        Me.DataGridViewImageColumn2.Width = 5
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.lblCount)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(0, 574)
+        Me.Panel4.Location = New System.Drawing.Point(0, 538)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1024, 30)
         Me.Panel4.TabIndex = 72
@@ -606,7 +781,7 @@ Partial Class frm_remittance
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1024, 604)
+        Me.ClientSize = New System.Drawing.Size(1024, 568)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
@@ -622,6 +797,7 @@ Partial Class frm_remittance
         Me.Panel2.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
@@ -669,4 +845,17 @@ Partial Class frm_remittance
     Friend WithEvents Divider4 As Panel
     Friend WithEvents Panel5 As Panel
     Friend WithEvents LL_ViewAll As LinkLabel
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents LL_forIHApproval As LinkLabel
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewImageColumn2 As DataGridViewImageColumn
 End Class

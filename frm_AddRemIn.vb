@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Globalization
 Public Class frm_AddRemIn
     Private Sub lbl_close_Click(sender As Object, e As EventArgs) Handles lbl_close.Click
         Me.Dispose()
@@ -8,6 +9,9 @@ Public Class frm_AddRemIn
         tb_customer.Focus()
 
         RANDID()
+
+        DateTimePicker1.Value = Date.Today
+        DateTimePicker1.Format = DateTimePickerFormat.Custom
 
         ' Set up AutoComplete properties
         tb_item.AutoCompleteMode = AutoCompleteMode.SuggestAppend
@@ -204,89 +208,80 @@ Public Class frm_AddRemIn
     End Sub
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
-        'Try
-        '    If DataGridView1.Rows.Count = 0 Then
-        '        MessageBox.Show("No remittance available!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        '    Else
-        '        If MsgBox("Do you want to save this record?", vbYesNo + vbQuestion) = vbYes Then
+        Try
+            If DataGridView1.Rows.Count = 0 Then
+                MessageBox.Show("No remittance available!", "WARNING!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Else
+                If MsgBox("Do you want to save this record?", vbYesNo + vbQuestion) = vbYes Then
 
-        '            'FOR REMITTANCE DETAILS'
-        '            Try
-        '                cn.Open()
-        '                cm = New MySqlCommand("INSERT INTO rcss_remittanceIH (IHrmt_transid, rmt_date, rmt_month, rmt_day, rmt_year, rmt_time, rmt_vanno, rmt_salesman, rmt_custodian, rmt_driver, rmt_helper, rmt_refsum, rmt_remsum, rmt_remarks, rmt_status, rmt_week) values(@rmt_transid, @rmt_date, @rmt_month, @rmt_day, @rmt_year, @rmt_time, @rmt_vanno, @rmt_salesman, @rmt_custodian, @rmt_driver, @rmt_helper, @rmt_refsum, @rmt_remsum, @rmt_remarks, @rmt_status, @rmt_week)", cn)
+                    'FOR REMITTANCE IH DETAILS'
+                    Try
+                        Dim i As Integer
+                        For i = 0 To DataGridView1.RowCount - 1
+                            cn.Open()
+                            cm = New MySqlCommand("INSERT INTO rcss_remittanceIH(IHrmt_transid, IHrmt_date, IHrmt_month, IHrmt_day, IHrmt_year, IHrmt_week, IHrmt_time, IHrmt_orderedBy, IHrmt_item, IHrmt_price, IHrmt_qty, IHrmt_remarks, IHrmt_status) values(@IHrmt_transid, @IHrmt_date, @IHrmt_month, @IHrmt_day, @IHrmt_year, @IHrmt_week, @IHrmt_time, @IHrmt_orderedBy, @IHrmt_item, @IHrmt_price, @IHrmt_qty, @IHrmt_remarks, @IHrmt_status)", cn)
 
-        '                cm.Parameters.AddWithValue("@rmt_transid", tb_transID.Text)
-        '                cm.Parameters.AddWithValue("@rmt_date", DateTimePicker1.Text)
-        '                cm.Parameters.AddWithValue("@rmt_month", dtp_month.Text)
-        '                cm.Parameters.AddWithValue("@rmt_day", dtp_day.Text)
-        '                cm.Parameters.AddWithValue("@rmt_year", dtp_year.Text)
-        '                cm.Parameters.AddWithValue("@rmt_time", frm_dashAdmin.lbl_time.Text)
-        '                cm.Parameters.AddWithValue("@rmt_vanno", tb_vanchoice.Text)
-        '                cm.Parameters.AddWithValue("@rmt_salesman", tb_salesman.Text)
-        '                cm.Parameters.AddWithValue("@rmt_custodian", tb_custodian.Text)
-        '                cm.Parameters.AddWithValue("@rmt_driver", tb_driver.Text)
-        '                cm.Parameters.AddWithValue("@rmt_helper", tb_helper.Text)
-        '                cm.Parameters.AddWithValue("@rmt_refsum", CDec(tb_refsum.Text))
-        '                cm.Parameters.AddWithValue("@rmt_remsum", CDec(tb_total.Text))
-        '                cm.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text & " - " & DateTimePicker1.Text & " - " & frm_dashAdmin.lbl_time.Text & vbLf)
-        '                cm.Parameters.AddWithValue("@rmt_status", tb_status.Text)
-        '                cm.Parameters.AddWithValue("@rmt_week", CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(DateTimePicker1.Value, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday))
-        '                cm.ExecuteNonQuery()
-        '                cn.Close()
+                            cm.Parameters.AddWithValue("@IHrmt_transid", tb_IHtransID.Text)
+                            cm.Parameters.AddWithValue("@IHrmt_date", DateTimePicker1.Text)
+                            cm.Parameters.AddWithValue("@IHrmt_month", dtp_month.Text)
+                            cm.Parameters.AddWithValue("@IHrmt_day", dtp_day.Text)
+                            cm.Parameters.AddWithValue("@IHrmt_year", dtp_year.Text)
+                            cm.Parameters.AddWithValue("@IHrmt_week", CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(DateTimePicker1.Value, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday))
+                            cm.Parameters.AddWithValue("@IHrmt_time", frm_dashAdmin.lbl_time.Text)
 
-        '                cb_vanname.SelectedIndex = -1
+                            cm.Parameters.AddWithValue("@IHrmt_orderedBy", DataGridView1.Rows(i).Cells(1).Value.ToString)
+                            cm.Parameters.AddWithValue("@IHrmt_item", DataGridView1.Rows(i).Cells(2).Value.ToString)
+                            cm.Parameters.AddWithValue("@IHrmt_price", CDec(DataGridView1.Rows(i).Cells(3).Value.ToString))
+                            cm.Parameters.AddWithValue("@IHrmt_qty", DataGridView1.Rows(i).Cells(4).Value.ToString)
+                            cm.Parameters.AddWithValue("@IHrmt_remarks", tb_remarks.Text)
+                            cm.Parameters.AddWithValue("@IHrmt_status", tb_status.Text)
+                            cm.ExecuteNonQuery()
+                            cn.Close()
+                        Next
 
-        '                frm_dashAdmin.CountForApproval()
-        '                frm_dashAdmin.CountRevise()
-        '                frm_dashAdmin.CountApproved()
-        '            Catch ex As Exception
-        '                cn.Close()
-        '                MsgBox(ex.Message, vbCritical)
-        '            End Try
+                    Catch ex As Exception
+                        cn.Close()
+                        MsgBox(ex.Message, vbCritical)
+                    End Try
 
-        '            'FOR REFERENCES DETAILS
-        '            Try
-        '                Dim i As Integer
-        '                For i = 0 To DataGridView1.RowCount - 1
-        '                    cn.Open()
-        '                    cm = New MySqlCommand("INSERT INTO rcss_remref (remref_transid, remref_date, remref_time, remref_references, remref_amount, remref_total) values(@remref_transid, @remref_date, @remref_time, @remref_references, @remref_amount, @remref_total)", cn)
+                    'FOR REMITTANCE  DETAILS'
+                    Try
+                        cn.Open()
+                        cm1 = New MySqlCommand("INSERT INTO rcss_remittance(rmt_transid, rmt_date, rmt_month, rmt_day, rmt_year, rmt_week, rmt_remarks, rmt_status, rmt_remsum) values(@rmt_transid, @rmt_date, @rmt_remarks, @rmt_status, @rmt_remsum)", cn)
+                        cm1.Parameters.AddWithValue("@rmt_transid", tb_IHtransID.Text)
 
-        '                    cm.Parameters.AddWithValue("@remref_transid", tb_transID.Text)
-        '                    cm.Parameters.AddWithValue("@remref_date", DateTimePicker1.Text)
-        '                    cm.Parameters.AddWithValue("@remref_time", frm_dashAdmin.lbl_time.Text)
-        '                    cm.Parameters.AddWithValue("@remref_references", DataGridView1.Rows(i).Cells(0).Value.ToString)
-        '                    cm.Parameters.AddWithValue("@remref_amount", CDec(DataGridView1.Rows(i).Cells(1).Value.ToString))
-        '                    cm.Parameters.AddWithValue("@remref_total", CDec(tb_refsum.Text))
-        '                    cm.ExecuteNonQuery()
-        '                    cn.Close()
-        '                    Console.WriteLine("Hit5")
-        '                Next
+                        cm1.Parameters.AddWithValue("@rmt_date", DateTimePicker1.Text)
+                        cm1.Parameters.AddWithValue("@rmt_remarks", tb_remarks.Text)
+                        cm1.Parameters.AddWithValue("@rmt_status", tb_status.Text)
+                        cm1.Parameters.AddWithValue("@rmt_remsum", CDec(lbl_GrandTotal.Text))
+                        cm1.ExecuteNonQuery()
+                        cn.Close()
+                    Catch ex As Exception
+                        cn.Close()
+                        MsgBox(ex.Message, vbCritical)
+                    End Try
 
-        '                DataGridView1.Rows.Clear()
-        '                tb_refsum.Clear()
+                    frm_dashAdmin.CountForApproval()
+                    frm_dashAdmin.CountRevise()
+                    frm_dashAdmin.CountApproved()
+                    frm_remittance.CountFetchIHRem()
+                    frm_remittance.FetchIHRemittance()
 
 
-        '            Catch ex As Exception
-        '                cn.Close()
-        '                MsgBox(ex.Message, vbCritical)
-        '            End Try
+                    RANDID()
+                    frm_remittance.LoadRemittanceforApproval()
+                    frm_remittance.Count()
+                    MsgBox("Remittance successfully saved!", vbInformation)
 
+                End If
+            End If
+            frm_remittance.CountForApproval()
+            Me.Dispose()
 
-
-        '            RANDID()
-        '            frm_remittance.LoadRemittanceforApproval()
-        '            frm_remittance.Count()
-        '            MsgBox("Remittance successfully saved!", vbInformation)
-
-        '        End If
-        '    End If
-        '    frm_remittance.CountForApproval()
-        '    Me.Dispose()
-
-        'Catch ex As Exception
-        '    cn.Close()
-        '    MsgBox(ex.Message, vbCritical)
-        'End Try
+        Catch ex As Exception
+            cn.Close()
+            MsgBox(ex.Message, vbCritical)
+        End Try
     End Sub
 
     Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged

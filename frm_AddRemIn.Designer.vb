@@ -22,12 +22,15 @@ Partial Class frm_AddRemIn
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.dtp_year = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.dtp_day = New System.Windows.Forms.Label()
+        Me.dtp_month = New System.Windows.Forms.Label()
         Me.lbl_close = New System.Windows.Forms.Label()
         Me.tb_IHtransID = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -53,22 +56,21 @@ Partial Class frm_AddRemIn
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cusName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDelete = New System.Windows.Forms.DataGridViewImageColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lbl_GrandTotal = New System.Windows.Forms.Label()
+        Me.lbl_counterItemDisplay = New System.Windows.Forms.Label()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.btn_clear = New System.Windows.Forms.Button()
-        Me.lbl_counterItemDisplay = New System.Windows.Forms.Label()
         Me.lbl_counter = New System.Windows.Forms.Label()
         Me.lbl_couterItem = New System.Windows.Forms.Label()
-        Me.dtp_year = New System.Windows.Forms.Label()
-        Me.dtp_day = New System.Windows.Forms.Label()
-        Me.dtp_month = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.tb_remarks = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -91,6 +93,17 @@ Partial Class frm_AddRemIn
         Me.Panel1.Size = New System.Drawing.Size(1022, 35)
         Me.Panel1.TabIndex = 70
         '
+        'dtp_year
+        '
+        Me.dtp_year.AutoSize = True
+        Me.dtp_year.ForeColor = System.Drawing.Color.White
+        Me.dtp_year.Location = New System.Drawing.Point(497, 15)
+        Me.dtp_year.Name = "dtp_year"
+        Me.dtp_year.Size = New System.Drawing.Size(29, 13)
+        Me.dtp_year.TabIndex = 118
+        Me.dtp_year.Text = "Year"
+        Me.dtp_year.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -101,6 +114,28 @@ Partial Class frm_AddRemIn
         Me.Label1.Size = New System.Drawing.Size(244, 30)
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "INHOUSE REMITTANCE"
+        '
+        'dtp_day
+        '
+        Me.dtp_day.AutoSize = True
+        Me.dtp_day.ForeColor = System.Drawing.Color.White
+        Me.dtp_day.Location = New System.Drawing.Point(398, 15)
+        Me.dtp_day.Name = "dtp_day"
+        Me.dtp_day.Size = New System.Drawing.Size(26, 13)
+        Me.dtp_day.TabIndex = 117
+        Me.dtp_day.Text = "Day"
+        Me.dtp_day.Visible = False
+        '
+        'dtp_month
+        '
+        Me.dtp_month.AutoSize = True
+        Me.dtp_month.ForeColor = System.Drawing.Color.White
+        Me.dtp_month.Location = New System.Drawing.Point(287, 15)
+        Me.dtp_month.Name = "dtp_month"
+        Me.dtp_month.Size = New System.Drawing.Size(37, 13)
+        Me.dtp_month.TabIndex = 116
+        Me.dtp_month.Text = "Month"
+        Me.dtp_month.Visible = False
         '
         'lbl_close
         '
@@ -131,6 +166,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(32, 71)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(111, 20)
@@ -181,6 +217,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(32, 269)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 20)
@@ -204,6 +241,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
         Me.Label6.Location = New System.Drawing.Point(32, 203)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 20)
@@ -238,6 +276,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
         Me.Label5.Location = New System.Drawing.Point(32, 236)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(65, 20)
@@ -284,6 +323,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.Location = New System.Drawing.Point(32, 170)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(110, 20)
@@ -307,6 +347,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
         Me.Label3.Location = New System.Drawing.Point(32, 38)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 20)
@@ -318,6 +359,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Black
         Me.Label20.Location = New System.Drawing.Point(32, 137)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(84, 20)
@@ -340,6 +382,7 @@ Partial Class frm_AddRemIn
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(32, 106)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(41, 20)
@@ -362,26 +405,26 @@ Partial Class frm_AddRemIn
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeight = 28
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.cusName, Me.Column3, Me.Column6, Me.Column2, Me.colDelete})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column7, Me.Column1, Me.cusName, Me.Column6, Me.Column3, Me.Column2, Me.colDelete})
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.Snow
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Snow
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Gray
@@ -391,7 +434,7 @@ Partial Class frm_AddRemIn
         Me.DataGridView1.RowTemplate.Height = 30
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(495, 263)
-        Me.DataGridView1.TabIndex = 8
+        Me.DataGridView1.TabIndex = 9
         '
         'Column7
         '
@@ -415,6 +458,14 @@ Partial Class frm_AddRemIn
         Me.cusName.Name = "cusName"
         Me.cusName.Width = 111
         '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column6.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column6.HeaderText = "PRICE"
+        Me.Column6.Name = "Column6"
+        '
         'Column3
         '
         Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
@@ -422,19 +473,11 @@ Partial Class frm_AddRemIn
         Me.Column3.Name = "Column3"
         Me.Column3.Width = 84
         '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column6.DefaultCellStyle = DataGridViewCellStyle30
-        Me.Column6.HeaderText = "PRICE"
-        Me.Column6.Name = "Column6"
-        '
         'Column2
         '
         Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.Column2.DefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.Column2.DefaultCellStyle = DataGridViewCellStyle3
         Me.Column2.HeaderText = "TOTAL PRICE"
         Me.Column2.Name = "Column2"
         Me.Column2.Width = 96
@@ -462,6 +505,7 @@ Partial Class frm_AddRemIn
         '
         Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.lbl_GrandTotal)
+        Me.Panel3.Controls.Add(Me.lbl_counterItemDisplay)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(3, 282)
         Me.Panel3.Name = "Panel3"
@@ -491,6 +535,18 @@ Partial Class frm_AddRemIn
         Me.lbl_GrandTotal.Text = "0.00"
         Me.lbl_GrandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'lbl_counterItemDisplay
+        '
+        Me.lbl_counterItemDisplay.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lbl_counterItemDisplay.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_counterItemDisplay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lbl_counterItemDisplay.Location = New System.Drawing.Point(0, 0)
+        Me.lbl_counterItemDisplay.Name = "lbl_counterItemDisplay"
+        Me.lbl_counterItemDisplay.Size = New System.Drawing.Size(167, 25)
+        Me.lbl_counterItemDisplay.TabIndex = 113
+        Me.lbl_counterItemDisplay.Text = "(0) Item/s found"
+        Me.lbl_counterItemDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'btn_Save
         '
         Me.btn_Save.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
@@ -502,7 +558,7 @@ Partial Class frm_AddRemIn
         Me.btn_Save.Location = New System.Drawing.Point(878, 370)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(123, 37)
-        Me.btn_Save.TabIndex = 6
+        Me.btn_Save.TabIndex = 7
         Me.btn_Save.Text = "SAVE"
         Me.btn_Save.UseVisualStyleBackColor = False
         '
@@ -517,21 +573,9 @@ Partial Class frm_AddRemIn
         Me.btn_clear.Location = New System.Drawing.Point(749, 370)
         Me.btn_clear.Name = "btn_clear"
         Me.btn_clear.Size = New System.Drawing.Size(123, 37)
-        Me.btn_clear.TabIndex = 7
+        Me.btn_clear.TabIndex = 8
         Me.btn_clear.Text = "CLEAR"
         Me.btn_clear.UseVisualStyleBackColor = False
-        '
-        'lbl_counterItemDisplay
-        '
-        Me.lbl_counterItemDisplay.AutoSize = True
-        Me.lbl_counterItemDisplay.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_counterItemDisplay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.lbl_counterItemDisplay.Location = New System.Drawing.Point(497, 379)
-        Me.lbl_counterItemDisplay.Name = "lbl_counterItemDisplay"
-        Me.lbl_counterItemDisplay.Size = New System.Drawing.Size(97, 17)
-        Me.lbl_counterItemDisplay.TabIndex = 113
-        Me.lbl_counterItemDisplay.Text = "(0) Item/s found"
-        Me.lbl_counterItemDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbl_counter
         '
@@ -546,45 +590,35 @@ Partial Class frm_AddRemIn
         'lbl_couterItem
         '
         Me.lbl_couterItem.AutoSize = True
-        Me.lbl_couterItem.Location = New System.Drawing.Point(478, 382)
+        Me.lbl_couterItem.Location = New System.Drawing.Point(478, 343)
         Me.lbl_couterItem.Name = "lbl_couterItem"
         Me.lbl_couterItem.Size = New System.Drawing.Size(13, 13)
         Me.lbl_couterItem.TabIndex = 115
         Me.lbl_couterItem.Text = "0"
         Me.lbl_couterItem.Visible = False
         '
-        'dtp_year
+        'Label9
         '
-        Me.dtp_year.AutoSize = True
-        Me.dtp_year.ForeColor = System.Drawing.Color.White
-        Me.dtp_year.Location = New System.Drawing.Point(497, 15)
-        Me.dtp_year.Name = "dtp_year"
-        Me.dtp_year.Size = New System.Drawing.Size(29, 13)
-        Me.dtp_year.TabIndex = 118
-        Me.dtp_year.Text = "Year"
-        Me.dtp_year.Visible = False
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(494, 370)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(52, 15)
+        Me.Label9.TabIndex = 116
+        Me.Label9.Text = "Remarks"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'dtp_day
+        'tb_remarks
         '
-        Me.dtp_day.AutoSize = True
-        Me.dtp_day.ForeColor = System.Drawing.Color.White
-        Me.dtp_day.Location = New System.Drawing.Point(398, 15)
-        Me.dtp_day.Name = "dtp_day"
-        Me.dtp_day.Size = New System.Drawing.Size(26, 13)
-        Me.dtp_day.TabIndex = 117
-        Me.dtp_day.Text = "Day"
-        Me.dtp_day.Visible = False
-        '
-        'dtp_month
-        '
-        Me.dtp_month.AutoSize = True
-        Me.dtp_month.ForeColor = System.Drawing.Color.White
-        Me.dtp_month.Location = New System.Drawing.Point(287, 15)
-        Me.dtp_month.Name = "dtp_month"
-        Me.dtp_month.Size = New System.Drawing.Size(37, 13)
-        Me.dtp_month.TabIndex = 116
-        Me.dtp_month.Text = "Month"
-        Me.dtp_month.Visible = False
+        Me.tb_remarks.BackColor = System.Drawing.Color.White
+        Me.tb_remarks.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.tb_remarks.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_remarks.Location = New System.Drawing.Point(557, 370)
+        Me.tb_remarks.Multiline = True
+        Me.tb_remarks.Name = "tb_remarks"
+        Me.tb_remarks.Size = New System.Drawing.Size(186, 37)
+        Me.tb_remarks.TabIndex = 6
         '
         'frm_AddRemIn
         '
@@ -593,9 +627,10 @@ Partial Class frm_AddRemIn
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1022, 425)
         Me.ControlBox = False
+        Me.Controls.Add(Me.tb_remarks)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lbl_couterItem)
         Me.Controls.Add(Me.lbl_counter)
-        Me.Controls.Add(Me.lbl_counterItemDisplay)
         Me.Controls.Add(Me.btn_clear)
         Me.Controls.Add(Me.btn_Save)
         Me.Controls.Add(Me.GroupBox2)
@@ -652,14 +687,16 @@ Partial Class frm_AddRemIn
     Friend WithEvents lbl_GrandTotal As Label
     Friend WithEvents lbl_counter As Label
     Friend WithEvents lbl_couterItem As Label
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents cusName As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents colDelete As DataGridViewImageColumn
     Friend WithEvents dtp_year As Label
     Friend WithEvents dtp_day As Label
     Friend WithEvents dtp_month As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents tb_remarks As TextBox
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents cusName As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents colDelete As DataGridViewImageColumn
 End Class

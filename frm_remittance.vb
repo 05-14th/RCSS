@@ -13,9 +13,10 @@ Public Class frm_remittance
         End With
     End Sub
 
-    Private Sub frm_dash_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub frm_remittance_Load(sender As Object, e As EventArgs) Handles Me.Load
         LoadRemittanceforApproval()
         Count()
+        CountFetchIHRem()
         CountForApproval()
         CountRevise()
         CountApproved()
@@ -41,6 +42,41 @@ Public Class frm_remittance
             cn.Close()
         End Try
 
+    End Sub
+    Sub FetchIHRemittance()
+        Try
+            Dim i As Integer = 0
+            DataGridView2.Rows.Clear()
+            cn.Open()
+            cm = New MySqlCommand("SELECT * FROM rcss_remittanceIH ", cn)
+            dr = cm.ExecuteReader
+            While dr.Read
+                i += 1
+                DataGridView2.Rows.Add(i, dr.Item("IHrmt_status").ToString, dr.Item("IHrmt_transid").ToString, dr.Item("IHrmt_date").ToString, dr.Item("IHrmt_orderedBy").ToString, dr.Item("IHrmt_item").ToString, dr.Item("IHrmt_price").ToString, dr.Item("IHrmt_qty").ToString)
+
+            End While
+            dr.Close()
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
+
+    End Sub
+    Sub CountFetchIHRem()
+        Try
+
+            cn.Open()
+            cm = New MySqlCommand("SELECT COUNT(*) FROM rcss_remittanceih", cn)
+            Dim count As String
+            count = cm.ExecuteScalar().ToString()
+            LL_forIHApproval.Text = "In-house Approval/Checking (" & count & ")"
+
+            cn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            cn.Close()
+        End Try
     End Sub
     Sub Count()
         Try
@@ -355,7 +391,8 @@ Public Class frm_remittance
     End Sub
 
     Private Sub LL_approved_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_approved.LinkClicked
-
+        DataGridView2.Visible = False
+        DataGridView1.Visible = True
         Try
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
@@ -378,6 +415,8 @@ Public Class frm_remittance
     End Sub
 
     Private Sub LL_revise_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_revise.LinkClicked
+        DataGridView2.Visible = False
+        DataGridView1.Visible = True
         Try
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
@@ -400,6 +439,8 @@ Public Class frm_remittance
     End Sub
 
     Private Sub LL_forApproval_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_forApproval.LinkClicked
+        DataGridView2.Visible = False
+        DataGridView1.Visible = True
         Try
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
@@ -469,7 +510,8 @@ Public Class frm_remittance
     End Sub
 
     Private Sub LL_ViewAll_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_ViewAll.LinkClicked
-
+        DataGridView2.Visible = False
+        DataGridView1.Visible = True
         Try
             Dim i As Integer = 0
             DataGridView1.Rows.Clear()
@@ -493,6 +535,17 @@ Public Class frm_remittance
 
     Private Sub btn_inhouse_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles btn_inhouse.LinkClicked
         frm_AddRemIn.ShowDialog()
+
+    End Sub
+
+    Private Sub LL_forIHApproval_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_forIHApproval.LinkClicked
+        'DataGridView1.Visible = False
+        'DataGridView2.Visible = True
+        FetchIHRemittance()
+        CountFetchIHRem()
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
     End Sub
 End Class
